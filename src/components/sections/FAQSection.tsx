@@ -1,67 +1,86 @@
 "use client";
 
-import { useState } from "react";
+import { useRef } from "react";
 import { faqs } from "@/data/site-content";
 import { TestimonialsMarquee } from "@/components/sections/TestimonialsMarquee";
+import { LuChevronDown } from "react-icons/lu";
 
 export function FAQSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const summaryRef = useRef<HTMLDetailsElement[]>([]);
 
   return (
-    <section id="faq" className="section-container space-y-12">
-      
+    <section id="faq" className="py-24 sm:py-32 lg:py-14 bg-gray-950 border-t border-white/5">
+      <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16">
+        <div className="text-center space-y-5 mb-16">
 
-      <div className="relative overflow-hidden rounded-[2.5rem] border border-white/20 bg-white/40 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(12,44,62,0.15)]">
-        <div className="absolute -left-20 top-0 h-56 w-56 rounded-full bg-brand-aqua/20 blur-3xl" aria-hidden />
-        <div className="absolute -right-14 bottom-0 h-48 w-48 rounded-full bg-brand-mint/20 blur-3xl" aria-hidden />
-        <span className="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand-mint/15 via-brand-aqua/10 to-transparent opacity-60" aria-hidden />
-        <span className="pointer-events-none absolute inset-0 rounded-[2.5rem] border border-white/30" aria-hidden />
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white">
+            Frequently Asked
+            <span className="ml-2 bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+              Questions
+            </span>
+          </h2>
+          <p className="max-w-3xl mx-auto text-base sm:text-lg text-gray-400 leading-relaxed">
+            Explore enhanced recovery timelines, appointment logistics, and specialty care details. Every answer is aligned with Dr. Nayak’s current protocols so you can plan confidently.
+          </p>
+        </div>
 
-        <div className="relative z-10 space-y-5 px-6 py-8 sm:px-10 lg:px-14 lg:py-12">
-        <div className="section-heading">
-        <h2 className="text-4xl font-extrabold text-brand-navy sm:text-5xl">
-          Frequently Asked Questions
-        </h2>
-        <p className="max-w-3xl text-brand-charcoal/70">
-          Explore quick answers for appointment planning, recovery journeys, and insurance support.
-        </p>
-      </div>
-
-            <div className="mt-6 grid gap-4 md:grid-cols-2">
-            {faqs.map((faq, index) => {
-              const isOpen = openIndex === index;
-              return (
-                <div
-                  key={faq.question}
-                  className="group relative overflow-hidden rounded-3xl border border-white/20 bg-white/50 backdrop-blur-md shadow-[0_8px_24px_0_rgba(12,44,62,0.12)] transition-all duration-300 hover:border-white/30 hover:bg-white/60 hover:shadow-[0_12px_32px_0_rgba(10,47,77,0.2)]"
-                >
-                  <span className="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand-mint/10 via-brand-aqua/5 to-transparent opacity-40 group-hover:opacity-60 transition duration-300" aria-hidden />
-                  <button
-                    type="button"
-                    onClick={() => setOpenIndex(isOpen ? null : index)}
-                    className="relative z-10 flex w-full items-center justify-between gap-6 px-6 py-5 text-left"
-                  >
-                    <span className="text-base font-medium leading-snug text-brand-navy">{faq.question}</span>
-                    <span
-                      className="flex h-10 w-10 items-center justify-center rounded-full bg-white/60 backdrop-blur-sm border border-white/30 text-brand-teal transition duration-300 group-hover:bg-white/80 group-hover:scale-110"
-                      aria-hidden
-                    >
-                      {isOpen ? "–" : "+"}
-                    </span>
-                  </button>
-                  {isOpen ? (
-                    <div className="relative z-10 border-t border-white/20 bg-white/40 backdrop-blur-sm px-6 py-5 text-brand-charcoal/75">
-                      {faq.answer}
-                    </div>
-                  ) : null}
+        <div className="grid gap-6 lg:grid-cols-[1.2fr_1fr]">
+          <div className="space-y-4">
+            {faqs.map((faq, index) => (
+              <details
+                key={faq.question}
+                ref={(el) => {
+                  if (el) summaryRef.current[index] = el;
+                }}
+                className="group rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md shadow-[0_35px_90px_-55px_rgba(15,23,42,0.9)] transition-all duration-300 open:bg-white/8 open:border-indigo-400/40"
+              >
+                <summary className="flex items-center justify-between gap-4 cursor-pointer px-6 sm:px-8 py-5 text-left text-white text-base sm:text-lg font-semibold">
+                  <span>{faq.question}</span>
+                  <span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-white/10 transition-transform group-open:rotate-180">
+                    <LuChevronDown className="h-6 w-6 text-indigo-300" />
+                  </span>
+                </summary>
+                <div className="px-6 sm:px-8 pb-6 pt-3 border-t border-white/10 text-sm sm:text-base text-gray-300 leading-7">
+                  {faq.answer}
                 </div>
-              );
-            })}
+              </details>
+            ))}
           </div>
+
+          <aside className="rounded-3xl border border-white/10 bg-gradient-to-br from-indigo-500/10 via-purple-500/10 to-pink-500/10 backdrop-blur-2xl p-6 sm:p-8 space-y-6 flex flex-col justify-between">
+            <div className="space-y-4">
+              <h3 className="text-xl font-bold text-white">Still have a question?</h3>
+              <p className="text-sm text-gray-300 leading-relaxed">
+                Send us your reports on WhatsApp or request a callback. The care team responds within 24 hours with a tailored plan.
+              </p>
+            </div>
+            <div className="space-y-4 text-sm text-gray-200">
+              <div>
+                <p className="uppercase text-xs tracking-[0.35em] text-indigo-200">Phone</p>
+                <p className="text-base font-semibold text-white">+91 88106 05887</p>
+              </div>
+              <div>
+                <p className="uppercase text-xs tracking-[0.35em] text-indigo-200">Email</p>
+                <p className="text-base font-semibold text-white">orthopaedicsurgeontushar@gmail.com</p>
+              </div>
+              <div>
+                <p className="uppercase text-xs tracking-[0.35em] text-indigo-200">Clinic Hours</p>
+                <p className="text-base font-semibold text-white">Mon – Sat · 10:30 AM – 9:00 PM</p>
+              </div>
+            </div>
+            <a
+              href="/booking"
+              className="inline-flex items-center justify-center px-6 py-4 rounded-full bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white text-xs font-bold uppercase tracking-[0.35em] hover:scale-105 transition-transform"
+            >
+              Book an Appointment
+            </a>
+          </aside>
+        </div>
+
+        <div className="mt-20">
+          <TestimonialsMarquee />
         </div>
       </div>
-      <TestimonialsMarquee />
     </section>
   );
 }
-

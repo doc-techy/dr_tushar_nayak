@@ -1,128 +1,142 @@
 "use client";
 
-import Image from "next/image";
-import { heroContent, doctorProfile, servicesOffered } from "@/data/site-content";
-import { LuAward, LuActivity, LuGraduationCap, LuStethoscope } from "react-icons/lu";
+import Link from "next/link";
+import { doctorProfile, servicesOffered } from "@/data/site-content";
+import { LuArrowRight, LuPhone, LuClock, LuMapPin, LuArrowUpRight } from "react-icons/lu";
 
 export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative isolate overflow-hidden min-h-[calc(100vh-5rem)] sm:min-h-[calc(100vh-6rem)] flex items-center"
+      className="relative min-h-[90vh] bg-gray-950 text-white overflow-hidden"
     >
-      <div className="section-container relative z-10 w-full py-[2rem] sm:py-[2.5rem] lg:py-[3rem]">
-        {/* Liquid glass background - only covers content area */}
-        <div className="absolute inset-0 -z-0 overflow-hidden rounded-[2rem]">
-          {/* Base glass layer */}
-          <div className="absolute inset-0 bg-white/20 backdrop-blur-2xl border border-white/30 rounded-[2rem]" aria-hidden />
-          
-          {/* Animated liquid glass waves */}
-          <div className="absolute inset-0 bg-gradient-to-br from-brand-teal/15 via-brand-aqua/20 to-brand-mint/15 backdrop-blur-xl rounded-[2rem]" aria-hidden />
-          <div className="absolute top-0 left-0 right-0 h-1/3 bg-gradient-to-b from-brand-teal/25 via-transparent to-transparent backdrop-blur-2xl rounded-t-[2rem]" aria-hidden />
-          <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-brand-aqua/25 via-transparent to-transparent backdrop-blur-2xl rounded-b-[2rem]" aria-hidden />
-          
-          {/* Glass refraction effects */}
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-brand-teal/20 blur-3xl animate-pulse-slow" aria-hidden />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-brand-aqua/25 blur-3xl animate-pulse-slow delay-1000" aria-hidden />
-          
-          {/* Liquid glass shine effect */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 animate-shimmer rounded-[2rem]" aria-hidden />
-          
-          {/* Border glow */}
-          <div className="absolute inset-0 border border-white/40 shadow-[0_0_60px_rgba(30,154,162,0.3)] rounded-[2rem]" aria-hidden />
-        </div>
-        
-        <div className="relative z-10 grid gap-[2rem] lg:grid-cols-[1.1fr_1fr] lg:items-center lg:gap-[3rem]">
-          {/* Left Content */}
-          <div className="space-y-[2rem] order-2 lg:order-1">
-            {/* Badge */}
-            {/* <div className="inline-flex items-center gap-2 rounded-full bg-white/60 backdrop-blur-sm border border-white/40 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-brand-teal shadow-sm">
-              <LuSparkles className="h-3.5 w-3.5" />
-              <span>{heroContent.badge}</span>
-            </div> */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-40" aria-hidden />
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-950/70 via-gray-950 to-purple-950/60" aria-hidden />
+      <div className="absolute top-10 left-20 w-[480px] h-[480px] bg-indigo-600/20 blur-3xl rounded-full" aria-hidden />
+      <div className="absolute bottom-16 right-16 w-[420px] h-[420px] bg-purple-600/25 blur-3xl rounded-full" aria-hidden />
 
-            {/* Headline */}
-            <div className="space-y-4">
-              <h1 className="text-xl font-bold leading-[1.1] text-brand-navy sm:text-3xl lg:text-4xl xl:text-5xl">
-                {heroContent.headline}
+      <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-24 lg:py-9">
+        <div className="grid gap-16 lg:grid-cols-[1.25fr_0.85fr] items-start">
+          <div className="space-y-12">
+            
+
+            <div className="space-y-5">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight">
+                Dr.Tushar Nayak
               </h1>
-              <p className="text-base sm:text-base text-brand-charcoal/75 leading-relaxed max-w-2xl">
-                {heroContent.subheadline}
-              </p>
+              <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-indigo-500/10 border border-indigo-400/30 text-xs font-bold uppercase tracking-[0.4em] text-indigo-200">
+              Renowned Orthopaedic Surgeon – Bengaluru
+            </div>
+              <p className="max-w-3xl text-lg text-gray-300 leading-relaxed">
               
-              {/* Credentials */}
-              <div className="flex items-center gap-2 flex-wrap pt-2">
-                <div className="flex items-center gap-2 text-sm text-brand-charcoal/70">
-                  <LuGraduationCap className="h-4 w-4 text-brand-teal" />
-                  <span className="font-medium">{doctorProfile.credentials.split(",")[0]}</span>
-                </div>
-                <span className="text-brand-charcoal/40">•</span>
-                <div className="flex items-center gap-2 text-sm text-brand-charcoal/70">
-                  <LuStethoscope className="h-4 w-4 text-brand-teal" />
-                  <span className="font-medium">Fellowship in Advanced Arthroplasty</span>
-                </div>
-              </div>
+
+With over 10 years of clinical excellence, Dr. Tushar Nayak stands among Bengaluru’s most trusted orthopaedic specialists. Having served at leading hospitals across the city, he combines advanced surgical expertise with compassionate patient care. Committed to the highest standards of ethics and professionalism, Dr. Nayak leverages cutting-edge technology to deliver precise, evidence-based solutions for all orthopaedic concerns.
+
+              </p>
             </div>
 
-            {/* Stats Grid */}
-            <div className="grid grid-cols-3 gap-4 pt-2">
-              {heroContent.stats.map((stat, index) => (
-                <div key={index} className="rounded-xl bg-white/40 backdrop-blur-sm border border-white/30 p-4 text-center">
-                  <div className="text-2xl font-bold text-brand-navy mb-1">{stat.value}</div>
-                  <div className="text-xs text-brand-charcoal/70 leading-tight">{stat.label}</div>
-                </div>
-              ))}
-            </div>
-
-            {/* Key Specializations */}
-            <div className="space-y-3 pt-2">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-teal">Specialized Treatments</p>
-              <div className="flex flex-wrap gap-2">
-                {servicesOffered.slice(0, 4).map((service) => (
-                  <div
+            <div className="space-y-3">
+              <p className="text-xs font-bold uppercase tracking-[0.35em] text-gray-500">Signature Programmes</p>
+              <div className="flex flex-wrap gap-3">
+                {servicesOffered.slice(0, 4).map((service, index) => (
+                  <Link
                     key={service.slug}
-                    className="inline-flex items-center gap-2 rounded-lg bg-white/50 backdrop-blur-sm border border-white/40 px-3 py-2 text-xs font-medium text-brand-navy hover:bg-white/70 hover:border-brand-teal/40 transition-colors"
+                    href={`/treatments/${service.slug}`}
+                    className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-widest transition hover:scale-105 ${
+                      index % 3 === 0
+                        ? "bg-indigo-500/10 border-indigo-500/30 text-indigo-200 hover:bg-indigo-500/20"
+                        : index % 3 === 1
+                        ? "bg-purple-500/10 border-purple-500/30 text-purple-200 hover:bg-purple-500/20"
+                        : "bg-pink-500/10 border-pink-500/30 text-pink-200 hover:bg-pink-500/20"
+                    }`}
                   >
-                    <LuActivity className="h-3.5 w-3.5 text-brand-teal" />
-                    <span>{service.title}</span>
-                  </div>
+                    {service.title}
+                    <LuArrowUpRight className="h-3.5 w-3.5" />
+                  </Link>
                 ))}
               </div>
             </div>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                href="/booking"
+                className="group inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 px-10 py-4 text-sm font-bold uppercase tracking-[0.35em] shadow-lg shadow-indigo-500/40 transition hover:scale-105"
+              >
+                Book Consultation
+                <LuArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2" />
+              </Link>
+              <Link
+                href="/#services"
+                className="inline-flex items-center justify-center rounded-full border-2 border-white/20 px-10 py-4 text-sm font-bold uppercase tracking-[0.35em] text-gray-200 transition hover:bg-white/10 hover:border-indigo-400 hover:text-white"
+              >
+                Explore Programmes
+              </Link>
+            </div>
+
+            {/* <div className="grid gap-6 sm:grid-cols-3">
+              {heroContent.stats.map((stat) => (
+                <div
+                  key={stat.label}
+                  className="rounded-2xl bg-white/5 border border-white/10 px-6 py-5 backdrop-blur-md shadow-[0_40px_120px_-60px_rgba(15,23,42,0.9)]"
+                >
+                  <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
+                    {stat.value}
+                  </div>
+                  <p className="mt-2 text-xs font-bold uppercase tracking-[0.35em] text-gray-500">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
+            </div> */}
+
+ 
           </div>
 
-          {/* Right Image - Clean PNG Display */}
-          <div className="relative order-1 lg:order-2 flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg">
-              {/* Image container - clean for PNG */}
-              <div className="relative h-[20rem] md:h-[24rem] lg:h-[28rem] xl:h-[32rem]">
-                <Image
-                  src="/images/drtushar.png"
-                  alt="Dr. Tushar Nayak - Orthopaedic Surgeon"
-                  fill
-                  priority
-                  sizes="(min-width: 1280px) 500px, (min-width: 1024px) 450px, (min-width: 768px) 400px, 100vw"
-                  className="object-contain object-bottom transition-transform duration-500 hover:scale-105"
-                />
+          <aside className="space-y-6 lg:sticky lg:top-24">
+            <div className="rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md p-8 shadow-[0_40px_110px_-60px_rgba(15,23,42,0.9)] space-y-6">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-[0.35em] text-indigo-200 mb-2">Fast-track access</p>
+                <h2 className="text-2xl font-bold text-white">Talk to the care concierge</h2>
               </div>
-
-              {/* Floating badge */}
-              <div className="absolute -bottom-6 -right-6 lg:-right-8 bg-white/80 backdrop-blur-xl border border-white/50 rounded-2xl px-4 py-3 shadow-xl z-10">
-                <div className="flex items-center gap-3">
-                  <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-brand-teal to-brand-aqua">
-                    <LuAward className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-teal">Expert Care</p>
-                    <p className="text-sm font-bold text-brand-navy">18+ Years</p>
-                  </div>
+              <div className="space-y-4 text-sm text-gray-300">
+                <a
+                  href={`tel:${doctorProfile.contact.phone}`}
+                  className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 hover:bg-white/10"
+                >
+                  <LuPhone className="h-5 w-5 text-indigo-300" />
+                  <span className="font-semibold text-white">{doctorProfile.contact.phone}</span>
+                </a>
+                <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+                  <LuClock className="h-5 w-5 text-purple-300" />
+                  <span>Mon – Sat · 10:30 AM – 9:00 PM</span>
+                </div>
+                <div className="flex gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+                  <LuMapPin className="mt-1 h-5 w-5 text-pink-300" />
+                  <span className="text-sm leading-relaxed">
+                    Apex Orthocare Hospital<br />Ahmedabad, Gujarat
+                  </span>
                 </div>
               </div>
+              <Link
+                href="/booking"
+                className="flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 px-6 py-3 text-xs font-bold uppercase tracking-[0.35em] hover:scale-105"
+              >
+                Request Same-day Slot
+                <LuArrowRight className="h-4 w-4" />
+              </Link>
             </div>
-          </div>
+
+            <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md p-6 space-y-5">
+              <h3 className="text-lg font-semibold text-white">What patients choose us for</h3>
+              <ul className="space-y-3 text-sm text-gray-300">
+                <li>• Robotic joint replacement with enhanced recovery</li>
+                <li>• Day-care arthroscopy and sports injury solutions</li>
+                <li>• Multidisciplinary spine programmes focused on mobility</li>
+              </ul>
+            </div>
+          </aside>
         </div>
       </div>
     </section>
   );
 }
-

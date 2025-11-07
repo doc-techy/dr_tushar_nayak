@@ -1,8 +1,4 @@
-import type {
-  DoctorProfile,
-  EducationHighlight,
-  ExperienceHighlight,
-} from "@/data/site-content";
+import type { DoctorProfile, EducationHighlight, ExperienceHighlight } from "@/data/site-content";
 
 type AboutSectionProps = {
   profile: DoctorProfile;
@@ -11,124 +7,173 @@ type AboutSectionProps = {
 };
 
 export function AboutSection({ profile, education, experience }: AboutSectionProps) {
+  const timelineRows = Array.from({ length: Math.max(education.length, experience.length) }, (_, index) => ({
+    education: education[index],
+    experience: experience[index],
+  }));
+
   return (
-    <section id="about" className="section-container space-y-12">
-      <div className="relative overflow-hidden rounded-[2.75rem] border border-brand-aqua/50 bg-gradient-to-br from-white via-brand-mint/40 to-brand-aqua/30 p-10 shadow-[0_35px_80px_-45px_rgba(10,47,77,0.35)]">
-        <div className="absolute -right-32 top-10 h-72 w-72 rounded-full bg-brand-aqua/20 blur-3xl" aria-hidden />
-        <div className="absolute -left-24 bottom-0 h-60 w-60 rounded-full bg-brand-teal/15 blur-3xl" aria-hidden />
-        <div className="relative z-10 space-y-6">
-          <span className="badge bg-white/70 text-brand-navy">Meet Doctor Tushar Nayak</span>
-          <h2 className="text-3xl font-semibold text-brand-navy sm:text-4xl">
-            Dedicated to restoring mobility with precision orthopaedics
-          </h2>
-          <p className="text-lg text-brand-charcoal/75">
-            {profile.intro} Patients receive detailed counselling, transparent milestones, and tailor-made
-            rehabilitation plans designed around their lifestyle goals.
-          </p>
-          <dl className="grid gap-4 text-sm text-brand-charcoal/80 sm:grid-cols-3">
-            <div>
-              <dt className="uppercase tracking-[0.3em] text-brand-teal">Credentials</dt>
-              <dd className="mt-2 text-brand-navy">{profile.credentials}</dd>
-            </div>
-            <div>
-              <dt className="uppercase tracking-[0.3em] text-brand-teal">Primary clinic</dt>
-              <dd className="mt-2">{profile.primaryLocation}</dd>
-            </div>
-            <div>
-              <dt className="uppercase tracking-[0.3em] text-brand-teal">Connect</dt>
-              <dd className="mt-2 flex flex-wrap gap-3">
-                {profile.socials.map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="link-pill"
-                  >
-                    {social.label}
-                  </a>
-                ))}
-              </dd>
-            </div>
-          </dl>
-        </div>
+    <section id="about" className="relative overflow-hidden bg-gray-950 py-8 text-gray-200">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute left-[-15%] top-[-10%] h-[520px] w-[520px] rounded-full bg-gradient-to-br from-indigo-500/25 via-purple-500/15 to-transparent blur-3xl" aria-hidden />
+        <div className="absolute right-[-20%] bottom-[-15%] h-[680px] w-[680px] rounded-full bg-gradient-to-tr from-pink-500/20 via-purple-400/10 to-transparent blur-3xl" aria-hidden />
       </div>
 
-      <div className="space-y-8">
-        <h3 className="text-2xl font-semibold text-brand-navy">Education & Experience</h3>
-        <div className="relative overflow-hidden rounded-[2rem]">
-          {/* Liquid glass background */}
-          <div className="absolute inset-0 -z-0 overflow-hidden rounded-[2rem]">
-            {/* Base glass layer */}
-            <div className="absolute inset-0 bg-white/20 backdrop-blur-2xl border border-white/30 rounded-[2rem]" aria-hidden />
-            
-            {/* Animated liquid glass waves */}
-            <div className="absolute inset-0 bg-gradient-to-br from-brand-teal/15 via-brand-aqua/20 to-brand-mint/15 backdrop-blur-xl rounded-[2rem]" aria-hidden />
-            <div className="absolute top-0 left-0 right-0 h-1/3 bg-gradient-to-b from-brand-teal/25 via-transparent to-transparent backdrop-blur-2xl rounded-t-[2rem]" aria-hidden />
-            <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-brand-aqua/25 via-transparent to-transparent backdrop-blur-2xl rounded-b-[2rem]" aria-hidden />
-            
-            {/* Glass refraction effects */}
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-brand-teal/20 blur-3xl animate-pulse-slow" aria-hidden />
-            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-brand-aqua/25 blur-3xl animate-pulse-slow delay-1000" aria-hidden />
-            
-            {/* Liquid glass shine effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 animate-shimmer rounded-[2rem]" aria-hidden />
-            
-            {/* Border glow */}
-            <div className="absolute inset-0 border border-white/40 shadow-[0_0_60px_rgba(30,154,162,0.3)] rounded-[2rem]" aria-hidden />
-          </div>
-          
-          <div className="relative z-10 p-6 sm:p-8 lg:p-10">
-            <div className="grid gap-6 md:grid-cols-2">
-          <section className="space-y-5">
-            <h4 className="text-sm font-semibold uppercase tracking-[0.35em] text-brand-teal">
-              Education timeline
-            </h4>
-            <div className="space-y-5">
-              {education.map((entry) => (
-                <article
-                  key={entry.heading}
-                  className="group relative overflow-hidden rounded-[2rem] border border-white/20 bg-white/40 backdrop-blur-xl p-6 shadow-[0_8px_32px_0_rgba(12,44,62,0.15)] transition-all duration-300 hover:-translate-y-1 hover:border-white/30 hover:bg-white/50 hover:shadow-[0_12px_48px_0_rgba(10,47,77,0.25)]"
-                >
-                  <span className="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand-mint/15 via-brand-aqua/10 to-transparent opacity-50 transition duration-300 group-hover:opacity-70" aria-hidden />
-                  <span className="pointer-events-none absolute inset-0 rounded-[2rem] border border-white/30" aria-hidden />
-                  <div className="relative z-10 space-y-3">
-                    <p className="text-xs font-semibold uppercase tracking-[0.35em] text-brand-teal">
-                      {entry.year}
-                    </p>
-                    <h5 className="text-lg font-semibold text-brand-navy">{entry.heading}</h5>
-                    <p className="text-sm text-brand-charcoal/75">{entry.details}</p>
-                  </div>
-                </article>
-              ))}
+      <div className="relative z-10 mx-auto flex max-w-7xl flex-col gap-16 px-4 sm:px-6 lg:px-8">
+        <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+          <div className="space-y-8">
+            <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-5 py-2 text-4xl font-bold uppercase text-indigo-200">
+              Meet Dr.Tushar Nayak
             </div>
-          </section>
+            <h2 className="text-4xl font-black text-white sm:text-[2.75rem]">
+              Precision orthopaedics designed around your movement goals
+            </h2>
+            <p className="max-w-2xl text-lg leading-relaxed text-gray-300">
+              {profile.intro} Patients receive detailed counselling, transparent milestones, and tailor-made rehabilitation plans designed around their lifestyle goals.
+            </p>
 
-          <section className="space-y-5">
-            <h4 className="text-sm font-semibold uppercase tracking-[0.35em] text-brand-teal">
-              Professional milestones
-            </h4>
-            <div className="space-y-5">
-              {experience.map((role) => (
-                <article
-                  key={`${role.institution}-${role.role}`}
-                  className="group relative overflow-hidden rounded-[2rem] border border-white/20 bg-white/40 backdrop-blur-xl p-6 shadow-[0_8px_32px_0_rgba(12,44,62,0.15)] transition-all duration-300 hover:-translate-y-1 hover:border-white/30 hover:bg-white/50 hover:shadow-[0_12px_48px_0_rgba(10,47,77,0.25)]"
-                >
-                  <span className="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand-mint/15 via-brand-aqua/10 to-transparent opacity-50 transition duration-300 group-hover:opacity-70" aria-hidden />
-                  <span className="pointer-events-none absolute inset-0 rounded-[2rem] border border-white/30" aria-hidden />
-                  <div className="relative z-10 space-y-3">
-                    <p className="text-xs font-semibold uppercase tracking-[0.35em] text-brand-teal">
-                      {role.period}
-                    </p>
-                    <h5 className="text-lg font-semibold text-brand-navy">
-                      {role.role}, {role.institution}
-                    </h5>
-                    <p className="text-sm text-brand-charcoal/75">{role.summary}</p>
-                  </div>
-                </article>
-              ))}
+            {/* <div className="grid gap-6 rounded-3xl border border-white/10 bg-white/5 p-8 shadow-[0_35px_120px_-60px_rgba(99,102,241,0.85)] sm:grid-cols-3">
+              <div className="space-y-3">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.45em] text-indigo-200">
+                  Credentials
+                </p>
+                <p className="text-sm leading-relaxed text-gray-200">{profile.credentials}</p>
+              </div>
+              <div className="space-y-3">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.45em] text-indigo-200">
+                  Primary Clinic
+                </p>
+                <p className="text-sm leading-relaxed text-gray-200">{profile.primaryLocation}</p>
+              </div>
+              <div className="space-y-3">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.45em] text-indigo-200">
+                  Connect
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  {profile.socials.map((social) => (
+                    <a
+                      key={social.label}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-indigo-100 transition hover:border-indigo-400/50 hover:bg-indigo-500/10"
+                    >
+                      {social.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div> */}
+          </div>
+
+          <div className="relative overflow-hidden rounded-[2.75rem] border border-white/10 bg-white/5 p-10 shadow-[0_45px_160px_-70px_rgba(79,70,229,0.8)]">
+            <div className="absolute inset-0 rounded-[2.75rem] border border-white/10 bg-gradient-to-br from-indigo-500/15 via-transparent to-purple-500/10" aria-hidden />
+            <div className="relative z-10 space-y-6">
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="rounded-2xl border border-white/10 bg-white/10 px-5 py-4">
+                  <p className="text-sm font-semibold uppercase tracking-[0.35em] text-indigo-200">
+                    Years of Expertise
+                  </p>
+                  <p className="mt-2 text-3xl font-bold text-white">18+</p>
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-white/10 px-5 py-4">
+                  <p className="text-sm font-semibold uppercase tracking-[0.35em] text-indigo-200">
+                    Surgeries Performed
+                  </p>
+                  <p className="mt-2 text-3xl font-bold text-white">12K+</p>
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-white/10 px-5 py-4">
+                  <p className="text-sm font-semibold uppercase tracking-[0.35em] text-indigo-200">
+                    Fellowship Training
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-gray-200">
+                    Advanced arthroplasty fellowship at EndoKlinik Hamburg specialising in minimally invasive joint replacement.
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-white/10 px-5 py-4">
+                  <p className="text-sm font-semibold uppercase tracking-[0.35em] text-indigo-200">
+                    Philosophy
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-gray-200">
+                    Evidence-led protocols, precision implants, and personalised rehab to restore pain-free movement.
+                  </p>
+                </div>
+              </div>
             </div>
-          </section>
+          </div>
+        </div>
+
+        <div className="space-y-10">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-center">
+            <div>
+              <p className="text-4xl font-bold uppercase tracking-[0.2em] text-indigo-200">
+                Education & Experience
+              </p>
+              <h3 className="text-l text-center font-semibold text-white just">
+                A journey shaped by advanced training and complex caseloads
+              </h3>
+            </div>
+
+          </div>
+
+          <div className="space-y-6">
+            {/* <div className="inline-flex items-center justify-center gap-3 rounded-full border border-white/10 bg-white/5 px-5 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-indigo-200">
+              Education + Professional Milestones
+            </div> */}
+
+            <div className="grid gap-4 md:grid-cols-2 text-center">
+              <div className="inline-flex items-center justify-center gap-3 rounded-full border border-white/10 bg-white/5 px-5 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-indigo-200">
+                <span>Education Timeline</span>
+              </div>
+              <div className="flex flex-col items-center gap-2 rounded-3xl border border-white/10 bg-pink-500/10 px-6 py-4 text-xs font-semibold uppercase tracking-[0.4em] text-pink-100">
+                <span>Professional Milestones</span>
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              {timelineRows.map((row, index) => (
+                <div
+                  key={`timeline-row-${index}`}
+                  className="grid gap-6 md:grid-cols-2 md:items-stretch"
+                >
+                  {row.education ? (
+                    <article
+                      className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_30px_100px_-60px_rgba(99,102,241,0.7)] transition hover:border-indigo-400/40 hover:bg-white/10"
+                    >
+                      <span className="pointer-events-none absolute inset-0 rounded-3xl border border-white/10 bg-gradient-to-br from-indigo-500/15 via-transparent to-purple-500/10" aria-hidden />
+                      <div className="relative flex h-full flex-col gap-3">
+                        <p className="text-[11px] font-semibold uppercase tracking-[0.4em] text-indigo-200">
+                          {row.education.year}
+                        </p>
+                        <h4 className="text-xl font-semibold text-white">{row.education.heading}</h4>
+                        <p className="text-sm leading-relaxed text-gray-200">{row.education.details}</p>
+                      </div>
+                    </article>
+                  ) : (
+                    <span className="hidden md:block" aria-hidden />
+                  )}
+
+                  {row.experience ? (
+                    <article
+                      className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_30px_100px_-60px_rgba(244,114,182,0.6)] transition hover:border-pink-400/40 hover:bg-white/10"
+                    >
+                      <span className="pointer-events-none absolute inset-0 rounded-3xl border border-white/10 bg-gradient-to-br from-pink-500/15 via-transparent to-indigo-500/10" aria-hidden />
+                      <div className="relative flex h-full flex-col gap-3">
+                        <p className="text-[11px] font-semibold uppercase tracking-[0.4em] text-indigo-200">
+                          {row.experience.period}
+                        </p>
+                        <h4 className="text-xl font-semibold text-white">
+                          {row.experience.role}
+                          <span className="block text-sm font-normal text-indigo-100/80">{row.experience.institution}</span>
+                        </h4>
+                        <p className="text-sm leading-relaxed text-gray-200">{row.experience.summary}</p>
+                      </div>
+                    </article>
+                  ) : (
+                    <span className="hidden md:block" aria-hidden />
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </div>

@@ -3,13 +3,12 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: light;
-  background-color: #f3f8fb;
+  color-scheme: dark;
   scroll-behavior: smooth;
 }
 
 body {
-  @apply text-brand-charcoal font-sans antialiased;
+  @apply text-white font-sans antialiased;
 }
 
 main {
@@ -111,4 +110,9 @@ main {
 
 .animate-shimmer {
   animation: shimmer 8s ease-in-out infinite;
+}
+
+/* Custom border width */
+.border-3 {
+  border-width: 3px;
 }

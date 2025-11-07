@@ -1,11 +1,10 @@
 import Link from "next/link";
-import { doctorProfile, servicesOffered } from "@/data/site-content";
+import { doctorProfile } from "@/data/site-content";
 import {
   LuPhone,
   LuMail,
   LuMap,
-  LuClock,
-  LuArrowUpRight,
+  LuArrowRight,
   LuLinkedin,
   LuInstagram,
   LuYoutube,
@@ -21,117 +20,119 @@ const quickLinks = [
 
 const socialIconMap: Record<string, { icon: JSX.Element; bg: string }> = {
   linkedin: {
-    icon: <LuLinkedin className="h-4 w-4" />,
-    bg: "bg-[#0A66C2]",
+    icon: <LuLinkedin className="h-5 w-5" />,
+    bg: "from-blue-600 to-blue-700",
   },
   instagram: {
-    icon: <LuInstagram className="h-4 w-4" />,
-    bg: "bg-[#E1306C]",
+    icon: <LuInstagram className="h-5 w-5" />,
+    bg: "from-pink-600 to-purple-600",
   },
   youtube: {
-    icon: <LuYoutube className="h-4 w-4" />,
-    bg: "bg-[#FF0000]",
+    icon: <LuYoutube className="h-5 w-5" />,
+    bg: "from-red-600 to-red-700",
   },
 };
 
 export function SiteFooter() {
   return (
-    <footer className="relative bg-gradient-to-br from-brand-navy via-[#0b2039] to-[#040e1b] text-white">
-      <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#f5b754] via-[#ffcf67] to-[#f5b754]" aria-hidden />
-      <div className="section-container space-y-12">
-        <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr_1fr_1fr]">
-          <div className="space-y-3">
-            {/* <div className="flex items-center gap-3 rounded-2xl bg-white/10 px-4 py-3 text-sm font-semibold text-white"> */}
-              <div>
-                <p className="text-2xl font-bold">{doctorProfile.name}</p>
-                <p className="text-l font-medium text-brand-mint/80">Orthopaedic Surgeon</p>
-              </div>
-            {/* </div> */}
-            <p className="text-sm leading-relaxed text-white/70">{doctorProfile.intro}</p>
+    <footer className="relative bg-gray-950 text-white border-t-2 border-white/10 transition before:content-[''] before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-gradient-to-r before:from-indigo-600 before:via-purple-600 before:to-pink-600 before:opacity-80 after:content-[''] after:absolute after:inset-x-0 after:bottom-0 after:h-1 after:bg-gradient-to-r after:from-indigo-600 after:via-purple-600 after:to-pink-600 after:opacity-80">
+      <div className="max-w-7xl mx-auto px-6 py-16 sm:px-8 lg:px-12 space-y-16">
+        {/* Top Section */}
+        <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr_1fr]">
+          {/* About */}
+          <div className="space-y-6">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-brand-mint/80">
-                Connect with Dr. Nayak
-              </p>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {doctorProfile.socials.map((social) => {
-                  const match = socialIconMap[social.label.toLowerCase()];
-                  return (
-                    <a
-                      key={social.label}
-                      href={social.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`flex h-10 w-10 items-center justify-center rounded-xl font-medium text-white transition hover:opacity-90 ${
-                        match?.bg ?? "bg-white/10"
-                      }`}
-                    >
-                      {match?.icon ?? <LuArrowUpRight className="h-4 w-4" />}
-                    </a>
-                  );
-                })}
-              </div>
+              <p className="text-3xl font-black text-white mb-2">{doctorProfile.name}</p>
+              <p className="text-sm font-bold text-indigo-400 uppercase tracking-widest">Orthopaedic Surgeon</p>
+            </div>
+            <p className="text-sm leading-relaxed text-gray-400 max-w-md">
+              {doctorProfile.intro}
+            </p>
+            
+            {/* Social Links */}
+            <div className="flex items-center gap-3">
+              {doctorProfile.socials.map((social) => {
+                const iconKey = social.label.toLowerCase();
+                const socialConfig = socialIconMap[iconKey];
+                if (!socialConfig) return null;
+                return (
+                  <a
+                    key={social.label}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r ${socialConfig.bg} text-white transition-all hover:scale-110 shadow-lg`}
+                    aria-label={social.label}
+                  >
+                    {socialConfig.icon}
+                  </a>
+                );
+              })}
             </div>
           </div>
 
-          <div className="space-y-4 text-sm text-white/75">
-            <p className="text-base font-semibold text-white">Contact Info</p>
-            <p className="flex items-start gap-3">
-              <LuPhone className="mt-0.5 h-4 w-4 text-brand-mint" />
-              <a href={`tel:${doctorProfile.contact.phone}`} className="underline-offset-4 hover:underline">
-                {doctorProfile.contact.phone}
-              </a>
-            </p>
-            <p className="flex items-start gap-3">
-              <LuMail className="mt-0.5 h-4 w-4 text-brand-mint" />
-              <a href={`mailto:${doctorProfile.contact.email}`} className="underline-offset-4 hover:underline">
-                {doctorProfile.contact.email}
-              </a>
-            </p>
-          <a
-            href="https://share.google/GymCgRnl41JuRMxLz"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-start gap-3"
-          >
-            <LuMap className="mt-0.5 h-10 w-10 text-brand-mint" />
-            {doctorProfile.primaryLocation}
-          </a>
-            <p className="flex items-start gap-3">
-              <LuClock className="mt-0.5 h-4 w-4 text-brand-mint" />
-              Monday to Saturday 10:30 AM–9:00 PM
-            </p>
-          </div>
-
-          <div className="space-y-4 text-sm text-white/75">
-            <p className="text-base font-semibold text-white">Quick Links</p>
-            <ul className="space-y-2">
+          {/* Quick Links */}
+          <div className="space-y-6">
+            <h3 className="text-sm font-black text-white uppercase tracking-widest">Quick Links</h3>
+            <nav className="flex flex-col gap-3">
               {quickLinks.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="transition hover:text-white">
-                    {link.label}
-                  </Link>
-                </li>
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm text-gray-400 hover:text-indigo-400 transition flex items-center gap-2 group"
+                >
+                  <LuArrowRight className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  {link.label}
+                </Link>
               ))}
-            </ul>
+            </nav>
           </div>
 
-          <div className="space-y-4 text-sm text-white/75">
-            <p className="text-base font-semibold text-white">Services</p>
-            <ul className="space-y-2">
-              {servicesOffered.map((service) => (
-                <li key={service.title}>{service.title}</li>
-              ))}
-            </ul>
+          {/* Contact */}
+          <div className="space-y-6">
+            <h3 className="text-sm font-black text-white uppercase tracking-widest">Contact</h3>
+            <div className="space-y-4">
+              <a
+                href={`tel:${doctorProfile.contact.phone}`}
+                className="flex items-start gap-3 text-sm text-gray-400 hover:text-indigo-400 transition group"
+              >
+                <LuPhone className="h-5 w-5 flex-shrink-0 mt-0.5 text-indigo-400" />
+                <span>{doctorProfile.contact.phone}</span>
+              </a>
+              
+              <a
+                href={`mailto:${doctorProfile.contact.email}`}
+                className="flex items-start gap-3 text-sm text-gray-400 hover:text-purple-400 transition group"
+              >
+                <LuMail className="h-5 w-5 flex-shrink-0 mt-0.5 text-purple-400" />
+                <span className="break-all">{doctorProfile.contact.email}</span>
+              </a>
+              
+              <a
+                href="https://share.google/GymCgRnl41JuRMxLz"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 text-sm text-gray-400 hover:text-pink-400 transition group"
+              >
+                <LuMap className="h-5 w-5 flex-shrink-0 mt-0.5 text-pink-400" />
+                <span>{doctorProfile.primaryLocation}</span>
+              </a>
+            </div>
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-6 text-xs text-white/60">
-          <div className="flex flex-col items-center gap-3 text-center">
-            <p>© {new Date().getFullYear()} {doctorProfile.name}. All rights reserved.</p>
+        {/* Bottom Section */}
+        <div className="pt-8 border-t border-white/10">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-sm text-gray-500">
+              © {new Date().getFullYear()} {doctorProfile.name}. All rights reserved.
+            </p>
+            <p className="text-xs text-gray-600">
+              Designed with precision care
+            </p>
           </div>
         </div>
       </div>
     </footer>
   );
 }
-

@@ -45,9 +45,24 @@ export type ExperienceHighlight = {
 
 export type BlogPost = {
   title: string;
+  slug: string;
   excerpt: string;
-  url: string;
   readingTime: string;
+};
+
+export type BlogContentBlock =
+  | { type: "paragraph"; text: string }
+  | { type: "heading"; text: string }
+  | { type: "list"; items: string[] };
+
+export type BlogArticle = {
+  slug: string;
+  title: string;
+  heroImage: string;
+  heroAlt: string;
+  excerpt: string;
+  readingTime: string;
+  content: BlogContentBlock[];
 };
 
 export type SocialLink = {
@@ -525,29 +540,259 @@ export const testimonials: Testimonial[] = [
   },
 ];
 
-export const blogSpotlight: BlogPost[] = [
+export const blogArticles: BlogArticle[] = [
   {
-    title: "Is Robotic Knee Replacement Right for You?",
+    slug: "experiencing-hand-pain-tech-might-be-held-guilty",
+    title: "Experiencing Hand Pain? - Tech Might Be Held Guilty!",
+    heroImage: "/images/experiencing-hand-pain-tech-might-be-held-guilty.jpg",
+    heroAlt: "Person rubbing hand while using laptop",
     excerpt:
-      "Understand candidacy, implant precision benefits, and the recovery milestones of robotic-assisted knee surgery.",
-    url: "https://drtusharnayak.getmy.clinic/blog/robotic-knee-replacement",
-    readingTime: "6 min read",
+      "Tech overuse can strain your hands, wrists, and forearms. Learn the warning signs and when to seek specialist care.",
+    readingTime: "7 min read",
+    content: [
+      {
+        type: "paragraph",
+        text:
+          "We live in a consistently advancing society, where efficiency and productivity are critical. Technology has turned out to be consistently present in day-to-day existence, whether that be staying aware of loved ones through your cell phone, telecommuting (considerably more typical now than many would have naturally suspected a couple of years prior) on a PC for 40 hours per week, or even through playing computer games in your vacation.",
+      },
+      {
+        type: "paragraph",
+        text:
+          "The headway we've made in the last 10-20 years is surprising and has gotten us numerous new innovative advances in the field of medication, however, it is not necessarily the case that there are no downsides. On the off chance that you're encountering hand pain, tech might be, in some measure partly, at fault!",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Today we're investigating the expected reasons for tech-related hand pain and how you might safeguard yourself. Assuming you're living with hand pain, or on the off chance that something has begun to irritate you lately, it is an indication that you must consult with our experts. We'd be glad just to help you restore pain-free living.",
+      },
+      {
+        type: "paragraph",
+        text:
+          "While utilizing technology, particularly cell phones, and PCs, individuals tend to hunch forward, causing additional tension around your spine that can prompt constant pain, in the neck, shoulders, and back. Past focusing on posture, and using technology can put an abundance of strain on your hands, wrists, and lower arms.",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Inflammation of the tendons and joints, small joints and tendons of the hand, as well as strains of the forearm muscles, are all possible. This can lead to more subtle issues like \"mommy’s thumb,\" which is inflammation along the base of the thumb, as well as tennis elbow and general tendonitis in the wrist area.",
+      },
+      {
+        type: "paragraph",
+        text:
+          "It's critical to be proactive in protecting your body from injuries and conditions caused by long-term intensive use, which begins with addressing the warning signs. After spending extended hours at your computer or on your phone, you might notice discomfort in your fingers, hands, wrists, or forearms. If you end your workday with neck pain from hunching over your laptop, your body is telling you that something needs to be done, or it will only get worse. If you're experiencing pain in and around your thumb after playing video games, you may have \"Gamer's Thumb,\" which is similar to de Quervain's tenosynovitis.",
+      },
+      {
+        type: "paragraph",
+        text:
+          "The good news is that if you catch it early enough, resting and limiting your time using whatever piece of technology is causing your pain will help you feel better and give your body time to heal. If you're still in pain after a brief break from the offending technology, it's time to see a pain specialist figure out what's wrong.",
+      },
+      {
+        type: "paragraph",
+        text: "We'd love nothing more than to help you get back to living pain-free!",
+      },
+    ],
   },
   {
-    title: "Rehab Roadmap After ACL Reconstruction",
+    slug: "common-overlooked-signs-of-sports-injuries",
+    title: "Common Overlooked Signs Of Sports Injuries",
+    heroImage: "/images/common-overlooked-signs-of-sports-injuries.jpg",
+    heroAlt: "Athlete holding injured knee on sports field",
     excerpt:
-      "Week-by-week guide covering strength benchmarks, gait training, and return-to-sport readiness testing.",
-    url: "https://drtusharnayak.getmy.clinic/blog/acl-rehab-roadmap",
+      "Muscle pain, joint pain, and numbness are often ignored warning signs of sports injuries. Know when to take them seriously.",
     readingTime: "8 min read",
+    content: [
+      {
+        type: "paragraph",
+        text:
+          "Injuries can occur during any activity, but they are more likely to occur in high-intensity sports or activities that require repetitive or strong motions. There are some obvious warning signs to look out for, such as pain, swelling, and stiffness, but other symptoms may be less obvious or easily neglected.",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Let's take a look at some of the most common injury warning signs that both athletes and nonathletes overlook.",
+      },
+      {
+        type: "heading",
+        text: "Muscle pain",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Muscle pain is often overlooked as a result of the mentality of \"No pain, no gain.\" However, muscle pain is a genuine indication of a potential physical injury, particularly assuming it is serious or progressing - and furthermore on the off chance that you are not consistent enough about performing warm-ups before weighty movement.",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Many people suffer from muscle pain on a daily basis, especially if they:",
+      },
+      {
+        type: "list",
+        items: [
+          "Have sleeping habits that include lying down in the same spot for an extended period",
+          "Maintain the same posture when working, studying, or sitting still for an extended time",
+          "Are you on a medication course that may cause muscle aches",
+          "Have a medical condition that causes muscle pain",
+          "Regularly exercise and workout",
+        ],
+      },
+      {
+        type: "paragraph",
+        text:
+          "Muscle pain is easy to dismiss as insignificant, especially when it occurs during a workout, sports practice, or competition. Any new aches, on the other hand, should be taken seriously because they could indicate an orthopedic injury that necessitates medical attention.",
+      },
+      {
+        type: "heading",
+        text: "Joint pain",
+      },
+      {
+        type: "paragraph",
+        text:
+          "A joint is a point where two or more bones meet to allow movement. Knees, elbows, hips, ankles, wrists, shoulders, and fingers are the most commonly injured joints in sports.",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Joint pain can be caused by a variety of factors, including:",
+      },
+      {
+        type: "list",
+        items: [
+          "Keeping your joints in the same position for an extended period",
+          "Performing motions that are repeated",
+          "Being overweight or rapidly gaining weight",
+        ],
+      },
+      {
+        type: "paragraph",
+        text:
+          "If you have persistent or severe joint pain, see our orthopedic doctors. The doctors here can suggest a treatment plan that will target the source of your pain, provide relief, and help you avoid the recurrence of the sports injury.",
+      },
+      {
+        type: "heading",
+        text: "Numbness",
+      },
+      {
+        type: "paragraph",
+        text:
+          "The sensation of pins and needles in the affected area is common with numbness or tingling. Arms, legs, hands, feet, fingers, and/or toes are typically affected. A burning sensation can accompany the numbness and tingling.",
+      },
+      {
+        type: "paragraph",
+        text:
+          "If the numbness and tingling are accompanied by the following symptoms, see our orthopedic doctors right away.",
+      },
+      {
+        type: "list",
+        items: [
+          "Weakness of muscles and limbs",
+          "Loss of control over your limbs, bladder, or bowels",
+          "Inability to move a part of your body",
+          "Instability and walking difficulties",
+          "Confusion or unconsciousness",
+        ],
+      },
+    ],
   },
   {
-    title: "How To Sleep Better With Chronic Back Pain",
+    slug: "top-5-most-common-foot-and-ankle-injuries",
+    title: "Top 5 Most Common Foot And Ankle Injuries To Look Out For",
+    heroImage: "/images/top-5-most-common-foot-and-ankle-injuries-to-look-out-for.jpg",
+    heroAlt: "Close-up of ankle being supported after injury",
     excerpt:
-      "Evidence-backed sleep hygiene tweaks, ergonomic hacks, and when to seek specialist help.",
-    url: "https://drtusharnayak.getmy.clinic/blog/sleep-and-back-pain",
-    readingTime: "5 min read",
+      "Heading back to training? Know the five foot and ankle injuries that strike most often and how to respond quickly.",
+    readingTime: "9 min read",
+    content: [
+      {
+        type: "paragraph",
+        text:
+          "If you’re just getting back into exercising, you should always make sure to avoid injury. Foot and ankle injuries are common after long bouts of inactivity. Explore our list to help you identify the most common foot and ankle injuries, so you know when it’s time to seek treatment.",
+      },
+      {
+        type: "heading",
+        text: "1. Ankle Sprains",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Ankle sprains are one of the most common exercise-related injuries we see. When the foot twists, rolls, or turns beyond its range of motion, this occurs. An ankle sprain can also occur when running or hiking on uneven terrains, such as rocky ground. After an injury, you may experience pain and stiffness for a few days, but it will usually heal on its own with rest. Icing your ankle can also help to reduce swelling. High ankle sprains, on the other hand, which affect the ligaments just above the ankle, are more serious. Advanced sprain treatments, such as a brace or boot to keep the ankle straight while it heals, may be required. It's possible that chronic pain from an ankle sprain is the result of a more serious underlying condition. In these cases, you should seek immediate medical attention from a sports medicine specialist.",
+      },
+      {
+        type: "heading",
+        text: "2. Plantar Fasciitis",
+      },
+      {
+        type: "paragraph",
+        text:
+          "The plantar fascia is a tendon that runs beneath the foot and crosses the arch. It's a thick tissue band that runs from the heel's inner edge to the toes.",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Plantar fasciitis is a condition in which the band of the foot becomes swollen or inflamed, usually as a result of striking the ground while running or jumping. Pain on the inner edge of the heel is common, especially in the morning after long periods of inactivity.",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Although there is no cure for this condition, it can be managed by staying as off your feet as possible. Switching to shoes with good arch support can also help, so avoid wearing sandals or flip-flops.",
+      },
+      {
+        type: "heading",
+        text: "3. Achilles Tendonitis or Tears",
+      },
+      {
+        type: "paragraph",
+        text:
+          "The Achilles tendon connects the back of your heel to the calf muscle. This tendon can swell after repeated impacts with the ground, causing minor pain or discomfort. The most common causes of these injuries are not stretching before a workout or having \"flat feet,\" which occur when your entire sole touches the ground when standing straight up. Tendonitis pain is usually mild to moderate, and it will go away with plenty of rest.",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Tears in the Achilles tendon are much more severe and cause immediate, severe pain. If you're suffering from this type of pain, you should seek medical help to determine the extent of your injury and develop a rehabilitation plan with your sports medicine physician to get you back in shape!",
+      },
+      {
+        type: "heading",
+        text: "4. Turf Toe",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Turf toe is a common injury among football players who play on artificial turf — but that doesn't mean amateur athletes can't get it, too! It is caused by toe hyperextension, which causes pain, swelling, and limited movement.",
+      },
+      {
+        type: "paragraph",
+        text:
+          "As with most foot injuries, it is best to stay off your feet. If you are in severe pain or swelling, you should seek medical attention as soon as possible. A doctor may advise you to brace your toe by taping it to another toe or by putting your foot in a brace or boot.",
+      },
+      {
+        type: "heading",
+        text: "5. Broken Metatarsal",
+      },
+      {
+        type: "paragraph",
+        text:
+          "A broken metatarsal (or broken toe) is a common injury that can happen to anyone at any time. People returning to sports after a long period of inactivity, on the other hand, are especially vulnerable because their form may not be what it used to be. The most common causes of these injuries are impacts, such as stubbing your toe against furniture. Running or exercising with a high impact can also cause tiny metatarsal stress fractures in the toe. These stress fractures can eventually result in foot abnormalities, crooked toes, or osteoporosis.",
+      },
+      {
+        type: "paragraph",
+        text:
+          "\"If you can walk on it, it's not broken,\" as the saying goes. That is not correct. Many athletes will ignore the pain of a broken toe and walk for miles, convinced that their toe is fine. When attempting to identify a broken metatarsal, look for crooked or misaligned toes, as well as bruising and swelling the next morning.",
+      },
+      {
+        type: "paragraph",
+        text:
+          "If you are experiencing severe pain as a result of an impact, you should seek medical help right away.",
+      },
+    ],
   },
 ];
+
+export const blogSpotlight: BlogPost[] = blogArticles.map(({ title, slug, excerpt, readingTime }) => ({
+  title,
+  slug,
+  excerpt,
+  readingTime,
+}));
+
+export const getBlogBySlug = (slug: string) => blogArticles.find((article) => article.slug === slug);
 
 export const faqs: FAQItem[] = [
   {

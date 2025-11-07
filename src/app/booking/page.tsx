@@ -3,6 +3,15 @@
 import { useState } from "react";
 import { doctorProfile, mapEmbed } from "@/data/site-content";
 
+const timeSlots = [
+  "09:00 AM",
+  "10:30 AM",
+  "12:00 PM",
+  "02:30 PM",
+  "04:00 PM",
+  "06:00 PM",
+];
+
 type FormState = {
   fullName: string;
   email: string;
@@ -21,15 +30,6 @@ const defaultState: FormState = {
   notes: "",
 };
 
-const timeSlots = [
-  "09:00 AM",
-  "10:30 AM",
-  "12:00 PM",
-  "02:30 PM",
-  "04:00 PM",
-  "06:00 PM",
-];
-
 export default function BookingPage() {
   const [formState, setFormState] = useState<FormState>(defaultState);
   const [submitted, setSubmitted] = useState(false);
@@ -45,138 +45,114 @@ export default function BookingPage() {
   };
 
   return (
-    <div className="relative isolate min-h-screen overflow-hidden bg-gradient-to-br from-white via-brand-mint/40 to-brand-aqua/30">
-      <div className="absolute -left-32 top-20 h-[420px] w-[420px] rounded-full bg-brand-aqua/25 blur-3xl" aria-hidden />
-      <div className="absolute -right-28 bottom-10 h-[360px] w-[360px] rounded-full bg-brand-teal/25 blur-3xl" aria-hidden />
+    <section className="relative min-h-screen bg-gray-950 text-white overflow-hidden">
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:5rem_5rem] opacity-30" aria-hidden />
+      <div className="absolute top-20 left-1/3 w-[420px] h-[420px] bg-indigo-600/20 blur-3xl rounded-full" aria-hidden />
+      <div className="absolute bottom-10 right-10 w-[360px] h-[360px] bg-purple-600/20 blur-3xl rounded-full" aria-hidden />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-10 px-6 py-6 sm:px-8 lg:px-12">
-        <div className="flex flex-col gap-4 text-brand-navy">
-          <h1 className="mx-auto text-4xl text-center font-semibold sm:text-5xl">
-            Book a consultation with {doctorProfile.name}
+      <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-20 space-y-16">
+        <header className="text-center space-y-5">
+
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black">
+            Book a Consultation with {doctorProfile.name}
           </h1>
-          <p className="mx-auto max-w-3xl text-center text-brand-charcoal/80">
-            Emergency or post-operative queries? Reach us instantly on WhatsApp or call the clinic team.
+          <p className="max-w-3xl mx-auto text-base sm:text-lg text-gray-300 leading-relaxed">
+            Share a few details and the care concierge will confirm your slot within 24 hours. Emergency queries? Call {doctorProfile.contact.phone} directly.
           </p>
-        </div>
+        </header>
 
-        <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="card w-full space-y-8 border border-brand-aqua/50 bg-white/95 px-10 py-10 shadow-[0_35px_80px_-40px_rgba(10,47,77,0.35)]">
-            <div className="space-y-3">
-              <p className="text-sm font-semibold uppercase tracking-[0.35em] text-brand-teal">
-                Booking details
-              </p>
-              <p className="text-sm text-brand-charcoal/70">
-                Fields marked with * are required. Preferred time and program help us prepare a personalised plan before the visit.
+        <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="rounded-[32px] border border-white/15 bg-white/5 backdrop-blur-md p-8 sm:p-10 shadow-[0_40px_120px_-60px_rgba(15,23,42,0.9)]">
+            <div className="space-y-2 mb-8">
+              <p className="text-xs font-bold uppercase tracking-[0.35em] text-indigo-200">Booking details</p>
+              <p className="text-sm text-gray-400">
+                Fields marked with * are required. Preferred date and programme help us tailor preparation before your visit.
               </p>
             </div>
 
             {submitted ? (
-              <div className="rounded-3xl border border-brand-teal/30 bg-brand-mint/70 p-6 text-brand-charcoal">
-                <h2 className="text-xl font-semibold text-brand-navy">Thank you! 🗓️</h2>
-                <p className="mt-3 text-sm">
-                  We have noted your request. Our care concierge will connect with you shortly on {formState.phone ||
-                    "your provided contact"} to finalise the slot.
+              <div className="rounded-3xl border border-indigo-500/40 bg-indigo-500/10 px-6 py-8 text-indigo-100">
+                <h2 className="text-xl font-semibold text-white">Thank you! 🗓️</h2>
+                <p className="mt-3 text-sm text-gray-200">
+                  We&apos;ve recorded your request. The care concierge will call/text {formState.phone || "your number"} shortly to confirm the appointment.
                 </p>
-                <p className="mt-4 text-sm">
-                  Need changes or faster assistance? Call {doctorProfile.contact.phone} or chat with the WhatsApp team anytime.
+                <p className="mt-4 text-sm text-gray-300">
+                  Need urgent support? Reach the clinic at {doctorProfile.contact.phone} or chat on WhatsApp anytime.
                 </p>
               </div>
             ) : (
-              <form onSubmit={onSubmit} className="w-full space-y-6">
-                <div className="w-full space-y-2">
-                  <label
-                    htmlFor="fullName"
-                    className="block text-sm font-medium uppercase tracking-[0.3em] text-brand-navy"
-                  >
+              <form onSubmit={onSubmit} className="space-y-6">
+                <div className="space-y-2">
+                  <label htmlFor="fullName" className="text-xs font-bold uppercase tracking-[0.35em] text-indigo-200">
                     Full name*
                   </label>
                   <input
                     id="fullName"
                     name="fullName"
-                    className="w-full rounded-2xl border border-brand-aqua/60 bg-white px-4 py-4 text-base shadow-sm focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/30"
+                    className="w-full rounded-2xl border border-white/15 bg-white/5 px-4 py-3 text-sm text-white placeholder-gray-500 focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/30"
                     value={formState.fullName}
                     onChange={onChange("fullName")}
                     required
                   />
                 </div>
 
-                <div className="grid w-full gap-6 md:grid-cols-2">
+                <div className="grid gap-6 sm:grid-cols-2">
                   <div className="space-y-2">
-                    <div className="flex flex-col gap-1 md:flex-row md:items-center md:justify-between">
-                      <label htmlFor="phone" className="text-sm font-medium text-brand-navy">
-                        Phone number*
-                      </label>
-                      {formState.phone ? (
-                        <a
-                          href={`tel:${formState.phone.replace(/\s+/g, "")}`}
-                          className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-teal transition hover:text-brand-navy"
-                        >
-                          Call {formState.phone}
-                        </a>
-                      ) : null}
-                    </div>
+                    <label htmlFor="phone" className="text-xs font-bold uppercase tracking-[0.35em] text-indigo-200">
+                      Phone number*
+                    </label>
                     <input
                       id="phone"
                       name="phone"
-                      className="rounded-2xl border border-brand-aqua/60 bg-white px-4 py-3 shadow-sm focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/30"
+                      className="w-full rounded-2xl border border-white/15 bg-white/5 px-4 py-3 text-sm text-white focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/30"
                       value={formState.phone}
                       onChange={onChange("phone")}
                       required
                     />
                   </div>
                   <div className="space-y-2">
-                    <div className="flex flex-col gap-1 md:flex-row md:items-center md:justify-between">
-                      <label htmlFor="email" className="text-sm font-medium text-brand-navy">
-                        Email
-                      </label>
-                      {formState.email ? (
-                        <a
-                          href={`mailto:${formState.email}`}
-                          className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-teal transition hover:text-brand-navy"
-                        >
-                          Email {formState.email}
-                        </a>
-                      ) : null}
-                    </div>
+                    <label htmlFor="email" className="text-xs font-bold uppercase tracking-[0.35em] text-indigo-200">
+                      Email
+                    </label>
                     <input
                       id="email"
-                      type="email"
                       name="email"
-                      className="rounded-2xl border border-brand-aqua/60 bg-white px-4 py-3 shadow-sm focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/30"
+                      type="email"
+                      className="w-full rounded-2xl border border-white/15 bg-white/5 px-4 py-3 text-sm text-white focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/30"
                       value={formState.email}
                       onChange={onChange("email")}
                     />
                   </div>
                 </div>
 
-                <div className="grid w-full gap-6 md:grid-cols-2">
+                <div className="grid gap-6 sm:grid-cols-2">
                   <div className="space-y-2">
-                    <label htmlFor="preferredDate" className="text-sm font-medium text-brand-navy">
+                    <label htmlFor="preferredDate" className="text-xs font-bold uppercase tracking-[0.35em] text-indigo-200">
                       Preferred date
                     </label>
                     <input
                       id="preferredDate"
-                      type="date"
                       name="preferredDate"
-                      className="w-full rounded-2xl border border-brand-aqua/60 bg-white px-4 py-3 shadow-sm focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/30"
+                      type="date"
+                      className="w-full rounded-2xl border border-white/15 bg-white/5 px-4 py-3 text-sm text-white focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/30"
                       value={formState.preferredDate}
                       onChange={onChange("preferredDate")}
                     />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="timeSlot" className="text-sm font-medium text-brand-navy">
+                    <label htmlFor="timeSlot" className="text-xs font-bold uppercase tracking-[0.35em] text-indigo-200">
                       Preferred time slot
                     </label>
                     <select
                       id="timeSlot"
                       name="timeSlot"
-                      className="w-full rounded-2xl border border-brand-aqua/60 bg-white px-4 py-3 pr-10 shadow-sm focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/30"
+                      className="w-full rounded-2xl border border-white/15 bg-white/5 px-4 py-3 text-sm text-white focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/30"
                       value={formState.timeSlot}
                       onChange={onChange("timeSlot")}
                     >
-                      <option value="">Select a time slot</option>
+                      <option value="" className="text-gray-900">Select a time slot</option>
                       {timeSlots.map((slot) => (
-                        <option key={slot} value={slot}>
+                        <option key={slot} value={slot} className="text-gray-900">
                           {slot}
                         </option>
                       ))}
@@ -185,14 +161,14 @@ export default function BookingPage() {
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="notes" className="text-sm font-medium text-brand-navy">
-                    Notes (symptoms, imaging, insurance, etc.)
+                  <label htmlFor="notes" className="text-xs font-bold uppercase tracking-[0.35em] text-indigo-200">
+                    Notes (symptoms, insurance, imaging)
                   </label>
                   <textarea
                     id="notes"
                     name="notes"
                     rows={4}
-                    className="w-full rounded-2xl border border-brand-aqua/60 bg-white px-4 py-3 shadow-sm focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/30"
+                    className="w-full rounded-2xl border border-white/15 bg-white/5 px-4 py-3 text-sm text-white focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/30"
                     value={formState.notes}
                     onChange={onChange("notes")}
                   />
@@ -200,7 +176,7 @@ export default function BookingPage() {
 
                 <button
                   type="submit"
-                  className="w-full rounded-full bg-brand-teal px-6 py-3 text-white shadow-lg shadow-brand-teal/30 transition hover:bg-brand-navy"
+                  className="w-full rounded-full bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 px-6 py-3 text-sm font-bold uppercase tracking-[0.35em] shadow-lg shadow-indigo-600/30 transition hover:scale-105"
                 >
                   Submit booking request
                 </button>
@@ -208,58 +184,59 @@ export default function BookingPage() {
             )}
           </div>
 
-          <aside className="card space-y-8 border border-brand-aqua/40 bg-brand-navy/95 text-white shadow-[0_30px_70px_-45px_rgba(5,15,25,0.7)]">
-            <div className="space-y-2">
-              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-brand-teal">
-                Clinic details
-              </p>
-              <h2 className="text-2xl font-bold text-black">Orthocare</h2>
-              <p className="text-sm text-brand-charcoal/70">{doctorProfile.intro}</p>
+          <aside className="rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-md p-8 sm:p-10 space-y-8 shadow-[0_30px_80px_-55px_rgba(15,23,42,0.85)]">
+            <div className="space-y-3">
+              <p className="text-xs font-bold uppercase tracking-[0.35em] text-indigo-200">Clinic details</p>
+              <h2 className="text-2xl font-bold text-white">Orthocare Clinic</h2>
+              <p className="text-sm text-gray-300 leading-relaxed">{doctorProfile.intro}</p>
             </div>
-            <div className="space-y-4 text-sm text-brand-charcoal/80">
-              <p>
-                <span className="text-black">Phone:</span> {doctorProfile.contact.phone}
-              </p>
-              <p>
-                <span className="text-black">Email:</span> {doctorProfile.contact.email}
-              </p>
-              <p>
-                <span className="text-black">Address:</span>
-                <br />
-                {doctorProfile.primaryLocation}
-              </p>
-            </div>
-            <div className="space-y-4">
-              <a
-                href={mapEmbed.iframeSrc.replace("&output=embed", "")}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link-pill bg-brand-charcoal/10 text-brand-charcoal hover:bg-brand-charcoal/20"
-              >
-                Get directions
-              </a>
-              <div className="overflow-hidden rounded-3xl border border-brand-charcoal/20">
-                <iframe
-                  title={mapEmbed.title}
-                  src={mapEmbed.iframeSrc}
-                  width="100%"
-                  height="220"
-                  loading="lazy"
-                  allowFullScreen
-                  className="w-full"
-                />
+
+            <div className="space-y-4 text-sm text-gray-300">
+              <div>
+                <p className="text-xs uppercase tracking-[0.35em] text-indigo-200">Call</p>
+                <p className="text-lg font-semibold text-white">{doctorProfile.contact.phone}</p>
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-[0.35em] text-indigo-200">Email</p>
+                <p className="text-lg font-semibold text-white">{doctorProfile.contact.email}</p>
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-[0.35em] text-indigo-200">Visit</p>
+                <p className="text-sm leading-relaxed">{doctorProfile.primaryLocation}</p>
               </div>
             </div>
-            <div className="rounded-2xl border border-brand-charcoal/15 bg-brand-charcoal/10 p-4 text-sm text-brand-charcoal/70">
-              <p className="font-semibold text-brand-charcoal">Need to talk first?</p>
-              <p className="mt-2">
-                Message us on WhatsApp for insurance clarifications, pre-operative queries, or to reschedule.
+
+            <a
+              href={mapEmbed.iframeSrc.replace("&output=embed", "")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center w-full rounded-full border border-white/15 px-6 py-3 text-xs font-bold uppercase tracking-[0.35em] text-gray-200 hover:bg-white/10"
+            >
+              Get directions
+            </a>
+
+            <div className="overflow-hidden rounded-3xl border border-white/15">
+              <iframe
+                title={mapEmbed.title}
+                src={mapEmbed.iframeSrc}
+                width="100%"
+                height="220"
+                loading="lazy"
+                allowFullScreen
+                className="w-full"
+              />
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/10 p-5 text-sm text-gray-200 space-y-3">
+              <p className="font-semibold text-white">Need to talk first?</p>
+              <p>
+                Message us on WhatsApp for insurance clarifications, pre-operative queries, or to reschedule. We respond within 24 hours.
               </p>
               <a
                 href={doctorProfile.contact.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-3 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-brand-teal hover:text-black"
+                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.35em] text-indigo-200 hover:text-white"
               >
                 Chat on WhatsApp
               </a>
@@ -267,7 +244,7 @@ export default function BookingPage() {
           </aside>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

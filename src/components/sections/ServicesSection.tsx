@@ -1,68 +1,155 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
-import { LuArrowUpRight } from "react-icons/lu";
+import { LuArrowRight } from "react-icons/lu";
 import { servicesOffered } from "@/data/site-content";
-import { renderServiceIcon } from "@/lib/service-icons";
 
 export function ServicesSection() {
+  const [showAll, setShowAll] = useState(false);
+  const visibleServices = showAll ? servicesOffered : servicesOffered.slice(0, 6);
+
   return (
-    <section id="services" className="section-container">
-      <div className="section-heading">
-        <h2 className="text-4xl font-extrabold text-brand-navy sm:text-5xl">
-          Specialized Ortho Treatments
-        </h2>
-        <p className="max-w-3xl text-brand-charcoal/70">
-          From prevention and diagnostics to surgical excellence and rehab, choose a program designed
-          around your activity goals and recovery speed.
-        </p>
-      </div>
-      <div className="mt-14 grid gap-6 md:grid-cols-3">
-         {servicesOffered.map((service) => (
-           <Link
-             key={service.title}
-             href={`/treatments/${service.slug}`}
-            className="group relative flex h-full flex-col gap-5 overflow-hidden rounded-[2rem] border border-white/20 bg-white/40 backdrop-blur-xl p-6 shadow-[0_8px_32px_0_rgba(12,44,62,0.15)] transition-all duration-300 hover:-translate-y-1.5 hover:border-white/30 hover:bg-white/50 hover:shadow-[0_12px_48px_0_rgba(10,47,77,0.25)]"
-          >
-            <span className="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand-mint/20 via-brand-aqua/10 to-transparent opacity-60 transition duration-300 group-hover:opacity-80" aria-hidden />
-            <span className="pointer-events-none absolute inset-0 rounded-[2rem] border border-white/30" aria-hidden />
+    <section id="services" className="py-24 sm:py-32 lg:py-14 px-4 bg-gray-950 border-t border-white/5">
+      <div className="max-w-7xl mx-auto">
+        <div className="mb-20 text-center">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-6 text-white">
+            Specialized
+            <span className="ml-2 bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+              Ortho Treatments
+            </span>
+          </h2>
+          <p className="max-w-3xl mx-auto text-xl text-gray-400 leading-relaxed font-light">
+            From prevention and diagnostics to surgical excellence and rehab, choose a program designed
+            around your activity goals and recovery speed.
+          </p>
+        </div>
 
-            <div className="relative flex items-start justify-between">
-              <div className="space-y-3">
-                <span className="inline-flex items-center gap-2 rounded-full bg-white/60 backdrop-blur-sm border border-white/30 px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.35em] text-brand-teal shadow-sm">
-                  {service.focus}
-                </span>
-                <h3 className="max-w-xs text-left text-2xl font-semibold text-brand-navy transition duration-300 group-hover:text-brand-teal">
-                  {service.title}
-                </h3>
-              </div>
-              <span className="relative inline-flex items-center justify-center rounded-2xl bg-white/50 backdrop-blur-md border border-white/40 p-3.5 text-brand-teal shadow-[0_8px_24px_-8px_rgba(12,44,62,0.3)] transition duration-300 group-hover:scale-110 group-hover:bg-white/70 group-hover:shadow-[0_12px_32px_-8px_rgba(10,47,77,0.4)]">
-                {renderServiceIcon(service.iconKey, "h-10 w-10")}
-              </span>
-            </div>
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {visibleServices.map((service, index) => {
+            const colorIndex = index % 3;
+            return (
+              <Link
+                key={service.title}
+                href={`/treatments/${service.slug}`}
+                className="group relative overflow-hidden rounded-3xl bg-white/5 border-2 border-white/10 p-8 backdrop-blur-md hover:bg-white/10 hover:border-indigo-500/50 transition-all duration-500 hover:-translate-y-4 hover:shadow-2xl hover:shadow-indigo-500/20"
+              >
+                <div
+                  className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
+                    colorIndex === 0
+                      ? "bg-gradient-to-br from-indigo-500/10 to-transparent"
+                      : colorIndex === 1
+                      ? "bg-gradient-to-br from-purple-500/10 to-transparent"
+                      : "bg-gradient-to-br from-pink-500/10 to-transparent"
+                  }`}
+                />
 
-            <p className="relative text-sm leading-relaxed text-brand-charcoal/75">
-              {service.description}
-            </p>
+                {/* <div className="relative mb-6">
+                  <div
+                    className={`inline-flex items-center justify-center w-20 h-20 rounded-2xl shadow-lg ${
+                      colorIndex === 0
+                        ? "bg-gradient-to-br from-indigo-500 to-indigo-600"
+                        : colorIndex === 1
+                        ? "bg-gradient-to-br from-purple-500 to-purple-600"
+                        : "bg-gradient-to-br from-pink-500 to-pink-600"
+                    } group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}
+                  >
+                    <span className="text-white">
+                      {renderServiceIcon(service.iconKey, "h-10 w-10")}
+                    </span>
+                  </div>
+                </div> */}
 
-            <ul className="relative grid gap-2 text-sm text-brand-charcoal/70">
-              {service.highlights.slice(0, 2).map((highlight) => (
-                <li key={highlight} className="flex items-start gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-brand-teal/80" aria-hidden />
-                  <span>{highlight}</span>
-                </li>
-              ))}
-            </ul>
+                <div className="relative space-y-4">
+                  <div className="space-y-2">
+                    {/* <span
+                      className={`inline-block px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider border ${
+                        colorIndex === 0
+                          ? "bg-indigo-500/10 border-indigo-500/30 text-indigo-300"
+                          : colorIndex === 1
+                          ? "bg-purple-500/10 border-purple-500/30 text-purple-300"
+                          : "bg-pink-500/10 border-pink-500/30 text-pink-300"
+                      }`}
+                    >
+                      {service.focus}
+                    </span> */}
+                    <h3
+                      className={`text-2xl font-black leading-tight transition-colors duration-300 ${
+                        colorIndex === 0
+                          ? "text-white group-hover:text-indigo-300"
+                          : colorIndex === 1
+                          ? "text-white group-hover:text-purple-300"
+                          : "text-white group-hover:text-pink-300"
+                      }`}
+                    >
+                      {service.title}
+                    </h3>
+                  </div>
 
-            <div className="relative flex items-center justify-between pt-2">
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/40 backdrop-blur-sm px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.35em] text-brand-teal transition duration-300 group-hover:border-white/40 group-hover:bg-white/60">
-                View journey
-              </span>
-              <span className="inline-flex items-center gap-1 text-[0.68rem] font-semibold uppercase tracking-[0.4em] text-brand-charcoal/60 transition duration-300 group-hover:gap-2.5 group-hover:text-brand-teal">
-                Explore
-                <LuArrowUpRight className="h-3 w-3 transition duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
-              </span>
-            </div>
-          </Link>
-        ))}
+                  <p className="text-gray-400 leading-relaxed line-clamp-3 text-sm">
+                    {service.description}
+                  </p>
+
+                  <ul className="space-y-2">
+                    {service.highlights.slice(0, 2).map((highlight) => (
+                      <li key={highlight} className="flex items-start gap-3 text-sm text-gray-500">
+                        <span
+                          className={`mt-1.5 h-2 w-2 rounded-full flex-shrink-0 ${
+                            colorIndex === 0
+                              ? "bg-indigo-500"
+                              : colorIndex === 1
+                              ? "bg-purple-500"
+                              : "bg-pink-500"
+                          }`}
+                        />
+                        <span>{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="relative mt-8 pt-6 border-t-2 border-white/10 group-hover:border-white/20 transition-colors">
+                  <div className="flex items-center justify-between">
+                    <span
+                      className={`text-sm font-black uppercase tracking-wider transition-colors ${
+                        colorIndex === 0
+                          ? "text-indigo-400"
+                          : colorIndex === 1
+                          ? "text-purple-400"
+                          : "text-pink-400"
+                      }`}
+                    >
+                      Learn More
+                    </span>
+                    <div
+                      className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 ${
+                        colorIndex === 0
+                          ? "bg-indigo-500/10 group-hover:bg-gradient-to-r group-hover:from-indigo-600 group-hover:to-indigo-700"
+                          : colorIndex === 1
+                          ? "bg-purple-500/10 group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-purple-700"
+                          : "bg-pink-500/10 group-hover:bg-gradient-to-r group-hover:from-pink-600 group-hover:to-pink-700"
+                      }`}
+                    >
+                      <LuArrowRight className="h-6 w-6 text-gray-400 group-hover:text-white transition-colors group-hover:translate-x-1" />
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+
+        {servicesOffered.length > 6 && (
+          <div className="mt-12 flex justify-center">
+            <button
+              type="button"
+              onClick={() => setShowAll((prev) => !prev)}
+              className="px-10 py-4 rounded-full border-2 border-white/20 text-white font-bold text-xs uppercase tracking-[0.4em] transition-all duration-300 hover:bg-white/10 hover:border-indigo-400 hover:scale-105"
+            >
+              {showAll ? "Show Less" : "Load More"}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

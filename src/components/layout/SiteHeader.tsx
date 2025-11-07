@@ -23,38 +23,43 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`sticky top-0 z-40 border-y-4 border-brand-teal/70 transition ${
+      className={`sticky top-0 z-40 transition before:content-[''] before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-gradient-to-r before:from-indigo-600 before:via-purple-600 before:to-pink-600 before:opacity-80 after:content-[''] after:absolute after:inset-x-0 after:bottom-0 after:h-1 after:bg-gradient-to-r after:from-indigo-600 after:via-purple-600 after:to-pink-600 after:opacity-80 ${
         scrolled
-          ? "bg-white/90 shadow-[0_15px_45px_-30px_rgba(16,20,28,0.75)] backdrop-blur-xl"
-          : "bg-white/60 backdrop-blur"
+          ? "bg-gray-950/95 shadow-2xl backdrop-blur-xl"
+          : "bg-gray-950/80 backdrop-blur"
       }`}
     >
-      <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4 sm:px-8 lg:px-12">
+      <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-5 sm:px-8 lg:px-12">
         <Link
-          href="#hero"
-          className="flex items-center gap-3 text-brand-navy transition hover:text-brand-teal"
+          href="/"
+          className="flex items-center gap-3 transition hover:opacity-80"
         >
-
           <span className="leading-tight">
-            <span className="text-[1.9rem] font-extrabold tracking-[0.08em]">ORTHOCARE</span>
-            <span className="block text-sm font-bold uppercase tracking-[0.25em] text-brand-charcoal">
+            <span className="text-2xl font-black tracking-tight text-white">ORTHOCARE</span>
+            <span className="block text-xs font-bold uppercase tracking-widest text-gray-400">
               Dr. Tushar Nayak
             </span>
           </span>
         </Link>
-        <nav className="hidden items-center gap-6 text-sm font-medium text-brand-charcoal/80 md:flex">
+        
+        <nav className="hidden items-center gap-8 text-sm font-semibold text-gray-300 md:flex">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="transition hover:text-brand-teal">
+            <Link 
+              key={link.href} 
+              href={link.href} 
+              className="transition hover:text-indigo-400"
+            >
               {link.label}
             </Link>
           ))}
           <Link
             href="/booking"
-            className="rounded-full bg-brand-teal px-4 py-2 text-white shadow-md shadow-brand-teal/30 transition hover:bg-brand-navy"
+            className="px-6 py-3 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold shadow-lg shadow-indigo-500/30 transition hover:scale-105 hover:shadow-indigo-500/50"
           >
             Book now
           </Link>
         </nav>
+        
         <button
           type="button"
           className="md:hidden"
@@ -62,21 +67,22 @@ export function SiteHeader() {
           aria-label="Toggle navigation"
         >
           <span className="sr-only">Toggle navigation</span>
-          <div className="flex h-10 w-10 flex-col justify-center gap-1.5 rounded-full border border-brand-teal/40 bg-white px-2">
-            <span className="h-0.5 w-full bg-brand-teal" />
-            <span className="h-0.5 w-full bg-brand-teal" />
-            <span className="h-0.5 w-full bg-brand-teal" />
+          <div className="flex h-10 w-10 flex-col justify-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-2">
+            <span className="h-0.5 w-full bg-indigo-400" />
+            <span className="h-0.5 w-full bg-purple-400" />
+            <span className="h-0.5 w-full bg-pink-400" />
           </div>
         </button>
       </div>
+      
       {mobileOpen ? (
-        <div className="border-t border-brand-aqua/60 bg-white/95 px-6 py-4 text-sm text-brand-charcoal/80 md:hidden">
+        <div className="border-t border-white/10 bg-gray-950/95 backdrop-blur-xl px-6 py-4 md:hidden">
           <nav className="flex flex-col gap-3">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="rounded-full px-3 py-2 hover:bg-brand-mint/60"
+                className="rounded-xl px-4 py-3 text-gray-300 font-semibold transition hover:bg-white/10 hover:text-white"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
@@ -84,7 +90,7 @@ export function SiteHeader() {
             ))}
             <Link
               href="/booking"
-              className="rounded-full bg-brand-teal px-4 py-2 text-center text-white"
+              className="rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 px-6 py-3 text-center text-white font-bold transition hover:scale-105"
               onClick={() => setMobileOpen(false)}
             >
               Book now
@@ -95,4 +101,3 @@ export function SiteHeader() {
     </header>
   );
 }
-

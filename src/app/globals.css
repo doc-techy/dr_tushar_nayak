@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  background-color: #f3f8fb;
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply text-brand-charcoal font-sans antialiased;
+}
+
+main {
+  @apply relative z-0;
+}
+
+.section-container {
+  @apply relative mx-auto w-full max-w-6xl px-6 py-20 sm:px-8 lg:px-12;
+}
+
+.section-heading {
+  @apply mx-auto flex max-w-3xl flex-col items-center gap-4 text-center;
+}
+
+.badge {
+  @apply inline-flex items-center gap-2 rounded-full border border-brand-teal/40 bg-brand-mint/70 px-4 py-1 text-xs font-medium uppercase tracking-[0.3em] text-brand-navy shadow-sm;
+}
+
+.card {
+  @apply rounded-[2.25rem] border border-white/60 bg-white/80 p-8 shadow-[0_20px_60px_-25px_rgba(15,46,77,0.3)] backdrop-blur-xl transition duration-300;
+}
+
+.card:hover {
+  @apply border-brand-aqua/70 shadow-[0_25px_70px_-20px_rgba(20,84,105,0.35)];
+}
+
+.link-pill {
+  @apply inline-flex items-center gap-2 rounded-full border border-brand-navy/15 bg-white px-4 py-2 text-sm font-medium text-brand-navy transition hover:-translate-y-0.5 hover:border-brand-teal/40 hover:bg-brand-mint/70;
+}
+
+.grid-backdrop::after {
+  content: "";
+  position: absolute;
+  inset: 10% 5% auto;
+  height: 70%;
+  border-radius: 3rem;
+  background: linear-gradient(135deg, rgba(196, 233, 255, 0.45), rgba(214, 247, 239, 0.1));
+  filter: blur(0);
+  z-index: -1;
+}
+
+/* Animated glow effects */
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  33% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  66% {
+    transform: translateY(10px) translateX(-10px);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 12s ease-in-out infinite;
+}
+
+.delay-1000 {
+  animation-delay: 1s;
+}
+
+.delay-1500 {
+  animation-delay: 1.5s;
+}
+
+.delay-2000 {
+  animation-delay: 2s;
+}
+
+.delay-3000 {
+  animation-delay: 3s;
+}
+
+/* Liquid glass shimmer effect */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) skewX(-12deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-12deg);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 8s ease-in-out infinite;
+}

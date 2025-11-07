@@ -10,12 +10,20 @@ export function ServicesSection() {
   const visibleServices = showAll ? servicesOffered : servicesOffered.slice(0, 6);
 
   return (
-    <section id="services" className="py-24 sm:py-32 lg:py-14 px-4 bg-gray-950 border-t border-white/5">
-      <div className="max-w-7xl mx-auto">
+    <section
+      id="services"
+      className="relative py-24 sm:py-32 lg:py-14 px-4 bg-gray-950 text-white overflow-hidden border-t border-white/5"
+    >
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-40" aria-hidden />
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-950/70 via-gray-950 to-purple-950/60" aria-hidden />
+      <div className="absolute top-24 -left-20 w-[420px] h-[420px] bg-indigo-600/20 blur-3xl rounded-full" aria-hidden />
+      <div className="absolute bottom-16 right-10 w-[380px] h-[380px] bg-purple-600/25 blur-3xl rounded-full" aria-hidden />
+
+      <div className="relative max-w-7xl mx-auto">
         <div className="mb-20 text-center">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-6 text-white">
             Specialized
-            <span className="ml-2 bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <span className="ml-2 text-white">
               Ortho Treatments
             </span>
           </h2>

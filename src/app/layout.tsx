@@ -58,23 +58,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-950`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-950 text-white overflow-x-hidden`}>
         <div className="fixed inset-0 -z-10 overflow-hidden">
-          {/* Dark base layer */}
           <div className="absolute inset-0 bg-gray-950" aria-hidden />
-          
-          {/* Grid pattern */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:4rem_4rem]" aria-hidden />
-          
-          {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-indigo-950/50 via-gray-950 to-purple-950/50" aria-hidden />
-          
-          {/* Large glowing orbs with animation */}
-          <div className="absolute left-[10%] top-[15%] h-[500px] w-[500px] rounded-full bg-indigo-600/20 blur-[120px] animate-pulse-slow" aria-hidden />
-          <div className="absolute right-[15%] top-[25%] h-[450px] w-[450px] rounded-full bg-purple-600/20 blur-[100px] animate-pulse-slow delay-1000" aria-hidden />
-          <div className="absolute left-[50%] top-[50%] h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-pink-600/15 blur-[110px] animate-pulse-slow delay-2000" aria-hidden />
-          <div className="absolute bottom-[20%] left-[20%] h-[480px] w-[480px] rounded-full bg-indigo-600/18 blur-[130px] animate-pulse-slow delay-3000" aria-hidden />
-          <div className="absolute bottom-[10%] right-[25%] h-[420px] w-[420px] rounded-full bg-purple-600/15 blur-[115px] animate-pulse-slow delay-1500" aria-hidden />
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-40" aria-hidden />
+          <div className="absolute inset-0 bg-gradient-to-br from-indigo-950/70 via-gray-950 to-purple-950/60" aria-hidden />
+          <div className="absolute top-10 left-20 w-[480px] h-[480px] bg-indigo-600/20 blur-3xl rounded-full" aria-hidden />
+          <div className="absolute bottom-16 right-16 w-[420px] h-[420px] bg-purple-600/25 blur-3xl rounded-full" aria-hidden />
         </div>
         <SiteHeader />
         <main className="relative z-0">{children}</main>

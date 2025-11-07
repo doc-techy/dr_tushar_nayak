@@ -38,7 +38,7 @@ export function TestimonialsMarquee() {
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 mb-12 text-center">
         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white">
           Patient
-          <span className="ml-2 bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+          <span className="ml-2 text-white">
             Testimonials
           </span>
           <span className="ml-2 text-white">and Reviews</span>

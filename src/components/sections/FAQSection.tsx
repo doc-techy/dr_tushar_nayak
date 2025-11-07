@@ -9,13 +9,21 @@ export function FAQSection() {
   const summaryRef = useRef<HTMLDetailsElement[]>([]);
 
   return (
-    <section id="faq" className="py-24 sm:py-32 lg:py-14 bg-gray-950 border-t border-white/5">
-      <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16">
+    <section
+      id="faq"
+      className="relative py-24 sm:py-32 lg:py-14 bg-gray-950 text-white overflow-hidden border-t border-white/5"
+    >
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-40" aria-hidden />
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-950/70 via-gray-950 to-purple-950/60" aria-hidden />
+      <div className="absolute top-10 left-20 w-[440px] h-[440px] bg-indigo-600/18 blur-3xl rounded-full" aria-hidden />
+      <div className="absolute bottom-12 right-16 w-[360px] h-[360px] bg-purple-600/25 blur-3xl rounded-full" aria-hidden />
+
+      <div className="relative max-w-6xl mx-auto px-6 sm:px-10 lg:px-16">
         <div className="text-center space-y-5 mb-16">
 
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white">
             Frequently Asked
-            <span className="ml-2 bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <span className="ml-2 text-white">
               Questions
             </span>
           </h2>

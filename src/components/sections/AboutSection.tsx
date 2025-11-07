@@ -56,23 +56,52 @@ export function AboutSection({ profile, education, experience }: AboutSectionPro
 
       <div className="space-y-8">
         <h3 className="text-2xl font-semibold text-brand-navy">Education & Experience</h3>
-        <div className="space-y-10">
+        <div className="relative overflow-hidden rounded-[2rem]">
+          {/* Liquid glass background */}
+          <div className="absolute inset-0 -z-0 overflow-hidden rounded-[2rem]">
+            {/* Base glass layer */}
+            <div className="absolute inset-0 bg-white/20 backdrop-blur-2xl border border-white/30 rounded-[2rem]" aria-hidden />
+            
+            {/* Animated liquid glass waves */}
+            <div className="absolute inset-0 bg-gradient-to-br from-brand-teal/15 via-brand-aqua/20 to-brand-mint/15 backdrop-blur-xl rounded-[2rem]" aria-hidden />
+            <div className="absolute top-0 left-0 right-0 h-1/3 bg-gradient-to-b from-brand-teal/25 via-transparent to-transparent backdrop-blur-2xl rounded-t-[2rem]" aria-hidden />
+            <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-brand-aqua/25 via-transparent to-transparent backdrop-blur-2xl rounded-b-[2rem]" aria-hidden />
+            
+            {/* Glass refraction effects */}
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-brand-teal/20 blur-3xl animate-pulse-slow" aria-hidden />
+            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-brand-aqua/25 blur-3xl animate-pulse-slow delay-1000" aria-hidden />
+            
+            {/* Liquid glass shine effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 animate-shimmer rounded-[2rem]" aria-hidden />
+            
+            {/* Border glow */}
+            <div className="absolute inset-0 border border-white/40 shadow-[0_0_60px_rgba(30,154,162,0.3)] rounded-[2rem]" aria-hidden />
+          </div>
+          
+          <div className="relative z-10 p-6 sm:p-8 lg:p-10">
+            <div className="grid gap-6 md:grid-cols-2">
           <section className="space-y-5">
             <h4 className="text-sm font-semibold uppercase tracking-[0.35em] text-brand-teal">
               Education timeline
             </h4>
-            <ol className="space-y-5 border-l-2 border-dashed border-brand-aqua/60 pl-6">
+            <div className="space-y-5">
               {education.map((entry) => (
-                <li key={entry.heading} className="relative">
-                  <span className="absolute -left-[0.7rem] top-2 h-3.5 w-3.5 rounded-full border-2 border-white bg-brand-teal shadow" />
-                  <p className="text-xs font-semibold uppercase tracking-[0.35em] text-brand-teal">
-                    {entry.year}
-                  </p>
-                  <h5 className="text-lg font-semibold text-brand-navy">{entry.heading}</h5>
-                  <p className="text-sm text-brand-charcoal/75">{entry.details}</p>
-                </li>
+                <article
+                  key={entry.heading}
+                  className="group relative overflow-hidden rounded-[2rem] border border-white/20 bg-white/40 backdrop-blur-xl p-6 shadow-[0_8px_32px_0_rgba(12,44,62,0.15)] transition-all duration-300 hover:-translate-y-1 hover:border-white/30 hover:bg-white/50 hover:shadow-[0_12px_48px_0_rgba(10,47,77,0.25)]"
+                >
+                  <span className="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand-mint/15 via-brand-aqua/10 to-transparent opacity-50 transition duration-300 group-hover:opacity-70" aria-hidden />
+                  <span className="pointer-events-none absolute inset-0 rounded-[2rem] border border-white/30" aria-hidden />
+                  <div className="relative z-10 space-y-3">
+                    <p className="text-xs font-semibold uppercase tracking-[0.35em] text-brand-teal">
+                      {entry.year}
+                    </p>
+                    <h5 className="text-lg font-semibold text-brand-navy">{entry.heading}</h5>
+                    <p className="text-sm text-brand-charcoal/75">{entry.details}</p>
+                  </div>
+                </article>
               ))}
-            </ol>
+            </div>
           </section>
 
           <section className="space-y-5">
@@ -83,19 +112,25 @@ export function AboutSection({ profile, education, experience }: AboutSectionPro
               {experience.map((role) => (
                 <article
                   key={`${role.institution}-${role.role}`}
-                  className="rounded-3xl border border-brand-aqua/50 bg-white/90 p-6 shadow-[0_25px_70px_-45px_rgba(10,47,77,0.25)]"
+                  className="group relative overflow-hidden rounded-[2rem] border border-white/20 bg-white/40 backdrop-blur-xl p-6 shadow-[0_8px_32px_0_rgba(12,44,62,0.15)] transition-all duration-300 hover:-translate-y-1 hover:border-white/30 hover:bg-white/50 hover:shadow-[0_12px_48px_0_rgba(10,47,77,0.25)]"
                 >
-                  <p className="text-xs font-semibold uppercase tracking-[0.35em] text-brand-teal">
-                    {role.period}
-                  </p>
-                  <h5 className="mt-2 text-lg font-semibold text-brand-navy">
-                    {role.role}, {role.institution}
-                  </h5>
-                  <p className="mt-2 text-sm text-brand-charcoal/75">{role.summary}</p>
+                  <span className="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand-mint/15 via-brand-aqua/10 to-transparent opacity-50 transition duration-300 group-hover:opacity-70" aria-hidden />
+                  <span className="pointer-events-none absolute inset-0 rounded-[2rem] border border-white/30" aria-hidden />
+                  <div className="relative z-10 space-y-3">
+                    <p className="text-xs font-semibold uppercase tracking-[0.35em] text-brand-teal">
+                      {role.period}
+                    </p>
+                    <h5 className="text-lg font-semibold text-brand-navy">
+                      {role.role}, {role.institution}
+                    </h5>
+                    <p className="text-sm text-brand-charcoal/75">{role.summary}</p>
+                  </div>
                 </article>
               ))}
             </div>
           </section>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { heroContent, doctorProfile, servicesOffered } from "@/data/site-content";
-import { LuSparkles, LuAward, LuActivity, LuGraduationCap, LuStethoscope } from "react-icons/lu";
+import { LuAward, LuActivity, LuGraduationCap, LuStethoscope } from "react-icons/lu";
 
 export function HeroSection() {
   return (

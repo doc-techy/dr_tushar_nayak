@@ -34,7 +34,7 @@ export function TestimonialsMarquee() {
   }, []);
 
   return (
-    <section className="relative w-screen -mx-[calc(50vw-50%)] bg-gray-950 py-16">
+    <section className="relative w-screen -mx-[calc(50vw-50%)] py-16">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 mb-12 text-center">
         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white">
           Patient

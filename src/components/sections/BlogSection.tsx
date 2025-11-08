@@ -6,13 +6,8 @@ export function BlogSection() {
   return (
     <section
       id="blogs"
-      className="relative py-24 sm:py-32 lg:py-14 px-4 bg-gray-950 text-white overflow-hidden border-t border-white/5"
+      className="relative py-24 sm:py-32 lg:py-14 px-4 text-white overflow-hidden border-t border-white/5"
     >
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-40" aria-hidden />
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-950/70 via-gray-950 to-purple-950/60" aria-hidden />
-      <div className="absolute top-12 left-16 w-[420px] h-[420px] bg-indigo-600/18 blur-3xl rounded-full" aria-hidden />
-      <div className="absolute bottom-12 right-12 w-[380px] h-[380px] bg-purple-600/25 blur-3xl rounded-full" aria-hidden />
-
       <div className="relative max-w-7xl mx-auto">
         <div className="mb-20 text-center">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-6 text-white">

@@ -25,15 +25,7 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section
-      id="hero"
-      className="relative min-h-[90vh] bg-gray-950 text-white overflow-hidden"
-    >
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-40" aria-hidden />
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-950/70 via-gray-950 to-purple-950/60" aria-hidden />
-      <div className="absolute top-10 left-20 w-[480px] h-[480px] bg-indigo-600/20 blur-3xl rounded-full" aria-hidden />
-      <div className="absolute bottom-16 right-16 w-[420px] h-[420px] bg-purple-600/25 blur-3xl rounded-full" aria-hidden />
-
+    <section id="hero" className="relative min-h-[90vh] overflow-hidden text-white">
       <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-24 lg:py-9">
         <div className="grid gap-16 lg:grid-cols-[1.25fr_0.85fr] items-start">
           <div className="space-y-12">

@@ -59,13 +59,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-950 text-white overflow-x-hidden`}>
-        <div className="fixed inset-0 -z-10 overflow-hidden">
-          <div className="absolute inset-0 bg-gray-950" aria-hidden />
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-40" aria-hidden />
-          <div className="absolute inset-0 bg-gradient-to-br from-indigo-950/70 via-gray-950 to-purple-950/60" aria-hidden />
-          <div className="absolute top-10 left-20 w-[480px] h-[480px] bg-indigo-600/20 blur-3xl rounded-full" aria-hidden />
-          <div className="absolute bottom-16 right-16 w-[420px] h-[420px] bg-purple-600/25 blur-3xl rounded-full" aria-hidden />
-        </div>
         <SiteHeader />
         <main className="relative z-0">{children}</main>
         <SiteFooter />

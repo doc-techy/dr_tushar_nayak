@@ -129,7 +129,16 @@ export default function AdminDashboardPage() {
           </button>
         </header>
         {appointments.length ? (
-          <AppointmentTable appointments={formattedAppointments} />
+          <AppointmentTable
+            appointments={formattedAppointments}
+            onUpdateStatus={() => {
+              /* status updates not supported from overview */
+            }}
+            onDelete={() => {
+              /* deletions not supported from overview */
+            }}
+            disabled
+          />
         ) : (
           <div className="rounded-3xl border border-white/10 bg-white/5 p-8 text-sm text-gray-400">
             No upcoming appointments found. New bookings will appear here automatically.

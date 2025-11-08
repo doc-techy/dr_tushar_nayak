@@ -176,7 +176,7 @@ export default function AdminDashboardPage() {
               </li>
               <li className="rounded-2xl border border-purple-400/30 bg-purple-500/10 px-4 py-4">
                 <span className="font-semibold text-purple-50">MRI reports uploaded</span> for 2 patients. Review before
-                tomorrow's clinic.
+                tomorrow&apos;s clinic.
               </li>
               <li className="rounded-2xl border border-indigo-400/30 bg-indigo-500/10 px-4 py-4">
                 <span className="font-semibold text-indigo-50">9 physiotherapy sessions</span> scheduled this week with

@@ -3,8 +3,6 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import { login as apiLogin, type LoginResponse } from "@/lib/admin-api";
 
-type SessionMode = "real" | "demo";
-
 type AdminAuthContextValue = {
   isAuthenticated: boolean;
   isDemo: boolean;

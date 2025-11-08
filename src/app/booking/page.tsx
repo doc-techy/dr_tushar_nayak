@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { createAppointment } from "@/lib/admin-api";
 import { doctorProfile, mapEmbed } from "@/data/site-content";
 
 const timeSlots = [
@@ -32,16 +33,44 @@ const defaultState: FormState = {
 
 export default function BookingPage() {
   const [formState, setFormState] = useState<FormState>(defaultState);
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const onChange = (field: keyof FormState) =>
     (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
       setFormState((prev) => ({ ...prev, [field]: event.target.value }));
     };
 
-  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setSubmitted(true);
+    setErrorMessage(null);
+
+    if (!formState.preferredDate || !formState.timeSlot) {
+      setErrorMessage("Please select a preferred date and time slot.");
+      setStatus("error");
+      return;
+    }
+
+    setStatus("loading");
+    try {
+      await createAppointment({
+        name: formState.fullName.trim(),
+        email: formState.email.trim() || undefined,
+        phone: formState.phone.trim(),
+        date: formState.preferredDate,
+        time: formState.timeSlot,
+        message: formState.notes.trim() || undefined,
+      });
+      setStatus("success");
+      setFormState(defaultState);
+    } catch (error) {
+      setStatus("error");
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : "We couldn’t submit the booking right now. Please try again in a moment.",
+      );
+    }
   };
 
   return (
@@ -70,11 +99,11 @@ export default function BookingPage() {
               </p>
             </div>
 
-            {submitted ? (
+            {status === "success" ? (
               <div className="rounded-3xl border border-indigo-500/40 bg-indigo-500/10 px-6 py-8 text-indigo-100">
                 <h2 className="text-xl font-semibold text-white">Thank you! 🗓️</h2>
                 <p className="mt-3 text-sm text-gray-200">
-                  We&apos;ve recorded your request. The care concierge will call/text {formState.phone || "your number"} shortly to confirm the appointment.
+                  We&apos;ve recorded your request. The care concierge will call/text you shortly to confirm the appointment.
                 </p>
                 <p className="mt-4 text-sm text-gray-300">
                   Need urgent support? Reach the clinic at {doctorProfile.contact.phone} or chat on WhatsApp anytime.
@@ -82,6 +111,12 @@ export default function BookingPage() {
               </div>
             ) : (
               <form onSubmit={onSubmit} className="space-y-6">
+                {status === "error" && errorMessage ? (
+                  <div className="rounded-2xl border border-red-500/40 bg-red-500/10 px-4 py-3 text-sm text-red-100">
+                    {errorMessage}
+                  </div>
+                ) : null}
+
                 <div className="space-y-2">
                   <label htmlFor="fullName" className="text-xs font-bold uppercase tracking-[0.35em] text-indigo-200">
                     Full name*
@@ -137,6 +172,7 @@ export default function BookingPage() {
                       className="w-full rounded-2xl border border-white/15 bg-white/5 px-4 py-3 text-sm text-white focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/30"
                       value={formState.preferredDate}
                       onChange={onChange("preferredDate")}
+                      required
                     />
                   </div>
                   <div className="space-y-2">
@@ -149,6 +185,7 @@ export default function BookingPage() {
                       className="w-full rounded-2xl border border-white/15 bg-white/5 px-4 py-3 text-sm text-white focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/30"
                       value={formState.timeSlot}
                       onChange={onChange("timeSlot")}
+                      required
                     >
                       <option value="" className="text-gray-900">Select a time slot</option>
                       {timeSlots.map((slot) => (
@@ -176,9 +213,10 @@ export default function BookingPage() {
 
                 <button
                   type="submit"
+                  disabled={status === "loading"}
                   className="w-full rounded-full bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 px-6 py-3 text-sm font-bold uppercase tracking-[0.35em] shadow-lg shadow-indigo-600/30 transition hover:scale-105"
                 >
-                  Submit booking request
+                  {status === "loading" ? "Submitting..." : "Submit booking request"}
                 </button>
               </form>
             )}

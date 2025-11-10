@@ -22,9 +22,9 @@ type StoredSession =
       user: LoginResponse["user"];
     }
   | {
-      mode: "demo";
-      user: LoginResponse["user"];
-    };
+    mode: "demo";
+    user: LoginResponse["user"];
+  };
 
 const STORAGE_KEY = "admin-auth-session";
 const DEMO_USERNAME = "demo";
@@ -70,44 +70,41 @@ export function AdminAuthProvider({ children }: ProviderProps) {
     }
   }, []);
 
-  const login = useCallback(
-    async (username: string, password: string) => {
-      const trimmedUsername = username.trim();
+  const login = useCallback(async (username: string, password: string) => {
+    const trimmedUsername = username.trim();
 
-      if (trimmedUsername === DEMO_USERNAME && password === DEMO_PASSWORD) {
-        const demoUser: LoginResponse["user"] = {
-          id: -1,
-          username: DEMO_USERNAME,
-          email: "demo@example.com",
-          first_name: "Demo",
-          last_name: "Admin",
-          is_staff: true,
-          is_superuser: true,
-        };
-
-        persistSession({
-          mode: "demo",
-          user: demoUser,
-        });
-        return;
-      }
-
-      const response = await apiLogin(trimmedUsername, password);
-      if (!response.success) {
-        throw new Error(response.message ?? "Unable to authenticate.");
-      }
-
-      const nextSession: StoredSession = {
-        mode: "real",
-        accessToken: response.tokens.access,
-        refreshToken: response.tokens.refresh,
-        user: response.user,
+    if (trimmedUsername === DEMO_USERNAME && password === DEMO_PASSWORD) {
+      const demoUser: LoginResponse["user"] = {
+        id: -1,
+        username: DEMO_USERNAME,
+        email: "demo@example.com",
+        first_name: "Demo",
+        last_name: "Admin",
+        is_staff: true,
+        is_superuser: true,
       };
 
-      persistSession(nextSession);
-    },
-    [persistSession],
-  );
+      persistSession({
+        mode: "demo",
+        user: demoUser,
+      });
+      return;
+    }
+
+    const response = await apiLogin(trimmedUsername, password);
+    if (!response.success) {
+      throw new Error(response.message ?? "Unable to authenticate.");
+    }
+
+    const nextSession: StoredSession = {
+      mode: "real",
+      accessToken: response.tokens.access,
+      refreshToken: response.tokens.refresh,
+      user: response.user,
+    };
+
+    persistSession(nextSession);
+  }, [persistSession]);
 
   const logout = useCallback(() => {
     setSession(null);
@@ -117,20 +114,20 @@ export function AdminAuthProvider({ children }: ProviderProps) {
   }, []);
 
   const value = useMemo<AdminAuthContextValue>(
-    () => ({
-      isAuthenticated: Boolean(session),
-      isDemo: session?.mode === "demo",
-      accessToken: session?.mode === "real" ? session.accessToken : null,
-      refreshToken: session?.mode === "real" ? session.refreshToken : null,
-      user: session?.user ?? null,
-      login,
-      logout,
-      isLoading,
-    }),
-    [session, login, logout, isLoading],
-  );
+  () => ({
+    isAuthenticated: Boolean(session),
+    isDemo: session?.mode === "demo",
+    accessToken: session?.mode === "real" ? session.accessToken : null,
+    refreshToken: session?.mode === "real" ? session.refreshToken : null,
+    user: session?.user ?? null,
+    login,
+    logout,
+    isLoading,
+  }),
+  [session, login, logout, isLoading],
+);
 
-  return <AdminAuthContext.Provider value={value}>{children}</AdminAuthContext.Provider>;
+return <AdminAuthContext.Provider value={value}>{children}</AdminAuthContext.Provider>;
 }
 
 export function useAdminAuth() {

@@ -1,12 +1,12 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { LuCalendarClock, LuCalendarRange, LuClock3, LuActivity, LuTriangleAlert } from "react-icons/lu";
-import { useAdminAuth } from "@/contexts/AdminAuthContext";
-import { Appointment, fetchAppointmentStats, fetchAppointments } from "@/lib/admin-api";
 import { StatCard } from "@/components/admin/StatCard";
 import { AppointmentTable } from "@/components/admin/AppointmentTable";
 import { formatDate } from "@/utils/date";
+import { demoAppointments, demoStats } from "@/data/admin-demo";
+import type { Appointment } from "@/lib/admin-api";
 
 type DashboardStats = {
   total: number;
@@ -17,45 +17,8 @@ type DashboardStats = {
 };
 
 export default function AdminDashboardPage() {
-  const { accessToken, isDemo } = useAdminAuth();
-  const [stats, setStats] = useState<DashboardStats | null>(null);
-  const [appointments, setAppointments] = useState<Appointment[]>([]);
-  const [isFetching, setIsFetching] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (!accessToken) {
-      setStats(null);
-      setAppointments([]);
-      return;
-    }
-
-    let isMounted = true;
-    setIsFetching(true);
-    setError(null);
-
-    Promise.all([
-      fetchAppointmentStats(accessToken),
-      fetchAppointments(accessToken, 1, 6),
-    ])
-      .then(([statsResponse, appointmentsResponse]) => {
-        if (!isMounted) return;
-        setStats(statsResponse.stats);
-        setAppointments(appointmentsResponse.appointments);
-        setIsFetching(false);
-      })
-      .catch((err) => {
-        if (!isMounted) return;
-        setError(err instanceof Error ? err.message : "Failed to load dashboard data.");
-        setStats(null);
-        setAppointments([]);
-        setIsFetching(false);
-      });
-
-    return () => {
-      isMounted = false;
-    };
-  }, [accessToken, isDemo]);
+  const [stats] = useState<DashboardStats>(demoStats);
+  const [appointments] = useState<Appointment[]>(demoAppointments);
 
   const formattedAppointments = useMemo(() => {
     return appointments.map((appointment) => ({
@@ -101,17 +64,9 @@ export default function AdminDashboardPage() {
         />
       </section>
 
-      {isDemo ? (
-        <div className="rounded-3xl border border-indigo-400/30 bg-indigo-500/10 px-6 py-5 text-sm text-indigo-100">
-          Demo dashboard activated. Connect with live credentials to stream real-time clinic analytics.
-        </div>
-      ) : null}
-
-      {error ? (
-        <div className="rounded-3xl border border-red-400/40 bg-red-500/10 px-6 py-5 text-sm text-red-100">
-          {error}
-        </div>
-      ) : null}
+      <div className="rounded-3xl border border-indigo-400/30 bg-indigo-500/10 px-6 py-5 text-sm text-indigo-100">
+        Demo insights active. Enjoy the sample dashboard walkthrough.
+      </div>
 
       <section className="space-y-4">
         <header className="flex flex-col justify-between gap-3 sm:flex-row sm:items-center">
@@ -129,16 +84,7 @@ export default function AdminDashboardPage() {
           </button>
         </header>
         {appointments.length ? (
-          <AppointmentTable
-            appointments={formattedAppointments}
-            onUpdateStatus={() => {
-              /* status updates not supported from overview */
-            }}
-            onDelete={() => {
-              /* deletions not supported from overview */
-            }}
-            disabled
-          />
+          <AppointmentTable appointments={formattedAppointments} onUpdateStatus={() => {}} onDelete={() => {}} disabled />
         ) : (
           <div className="rounded-3xl border border-white/10 bg-white/5 p-8 text-sm text-gray-400">
             No upcoming appointments found. New bookings will appear here automatically.
@@ -195,30 +141,17 @@ export default function AdminDashboardPage() {
           </div>
 
           <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-indigo-500/10 via-transparent to-purple-500/10 p-6 backdrop-blur-xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-gray-400">
-              API Integration Guide
-            </p>
-            <h3 className="mt-2 text-xl font-bold text-white">Steps to enable live data</h3>
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-gray-400">Clinic playbook</p>
+            <h3 className="mt-2 text-xl font-bold text-white">Operational next steps</h3>
             <ol className="mt-4 space-y-3 text-sm text-gray-300">
-              <li>
-                1. Replace the static login logic with <code className="rounded bg-gray-900 px-1 text-indigo-200">login()</code> from <code className="rounded bg-gray-900 px-1 text-indigo-200">admin-api.ts</code>.
-              </li>
-              <li>
-                2. Persist tokens (access & refresh) and pass them to <code className="rounded bg-gray-900 px-1 text-indigo-200">fetchAppointmentStats</code> and other helpers.
-              </li>
-              <li>
-                3. Hook mutation actions (confirm/cancel) to the endpoints outlined in the API reference.
-              </li>
+              <li>1. Confirm pending surgeries and notify the physiotherapy team.</li>
+              <li>2. Slot in MRI review calls for newly uploaded scans.</li>
+              <li>3. Coordinate follow-ups with concierge for patients flagged below.</li>
             </ol>
           </div>
         </div>
       </section>
 
-      {isFetching ? (
-        <div className="rounded-3xl border border-white/10 bg-white/5 px-6 py-5 text-sm text-gray-300">
-          Syncing live metrics with the clinic backend...
-        </div>
-      ) : null}
     </div>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import {
   LuTriangleAlert,
   LuCalendarX2,
@@ -9,9 +9,8 @@ import {
   LuCirclePlus,
   LuShieldAlert,
 } from "react-icons/lu";
-import { BlockedSlot, fetchBlockedSlots } from "@/lib/admin-api";
-import { useAdminAuth } from "@/contexts/AdminAuthContext";
 import { formatDate } from "@/utils/date";
+import { demoBlockedSlots } from "@/data/admin-demo";
 
 const weekdayMap: Record<number, string> = {
   1: "Monday",
@@ -31,37 +30,7 @@ function toUTCValue(value?: string | null) {
 }
 
 export default function AdminBlockedSlotsPage() {
-  const { accessToken } = useAdminAuth();
-  const [blockedSlots, setBlockedSlots] = useState<BlockedSlot[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (!accessToken) {
-      setBlockedSlots([]);
-      return;
-    }
-    let isMounted = true;
-    setIsLoading(true);
-    setError(null);
-
-    fetchBlockedSlots(accessToken)
-      .then((response) => {
-        if (!isMounted) return;
-        const collection = Array.isArray(response) ? response : response.blocked_slots ?? [];
-        setBlockedSlots(collection);
-        setIsLoading(false);
-      })
-      .catch((err) => {
-        if (!isMounted) return;
-        setError(err instanceof Error ? err.message : "Failed to fetch blocked slots.");
-        setIsLoading(false);
-      });
-
-    return () => {
-      isMounted = false;
-    };
-  }, [accessToken]);
+  const [blockedSlots] = useState(demoBlockedSlots);
 
   const recurringBlocks = useMemo(() => blockedSlots.filter((item) => item.is_recurring), [blockedSlots]);
   const upcomingBlocks = useMemo(() => {
@@ -110,9 +79,9 @@ export default function AdminBlockedSlotsPage() {
         </div>
       </section>
 
-      {error ? (
-        <div className="rounded-3xl border border-red-400/40 bg-red-500/10 px-6 py-5 text-sm text-red-100">{error}</div>
-      ) : null}
+      <div className="rounded-3xl border border-indigo-400/30 bg-indigo-500/10 px-6 py-5 text-sm text-indigo-100">
+        Demo blocked slot schedule preview. Swap with live data when ready.
+      </div>
 
       <section className="grid gap-6 lg:grid-cols-2">
         <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
@@ -173,56 +142,42 @@ export default function AdminBlockedSlotsPage() {
       </section>
 
       <section className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
-        <p className="text-xs font-semibold uppercase tracking-[0.35em] text-gray-400">Email helper endpoints</p>
-        <h2 className="mt-2 text-xl font-bold text-white">Automate patient notifications</h2>
+        <p className="text-xs font-semibold uppercase tracking-[0.35em] text-gray-400">Email helper flows</p>
+        <h2 className="mt-2 text-xl font-bold text-white">Automate notifications</h2>
         <div className="mt-5 grid gap-4 md:grid-cols-2">
           <div className="rounded-2xl border border-indigo-400/30 bg-indigo-500/10 px-4 py-4 text-sm text-indigo-100">
-            <p className="text-xs uppercase tracking-[0.35em] text-indigo-200">Confirm link</p>
-            <p className="mt-2 font-semibold text-white">GET /api/admin/appointments/&lt;id&gt;/confirm/</p>
-            <p className="mt-1 text-xs text-indigo-200">
-              Generates an HTML snippet for email buttons that auto-confirm slots.
+            <p className="text-xs uppercase tracking-[0.35em] text-indigo-200">Confirmations</p>
+            <p className="mt-2 text-xs text-indigo-100">
+              Auto-confirm emails when operations slots are green-lit.
             </p>
           </div>
           <div className="rounded-2xl border border-rose-400/30 bg-rose-500/10 px-4 py-4 text-sm text-rose-100">
-            <p className="text-xs uppercase tracking-[0.35em] text-rose-200">Cancel link</p>
-            <p className="mt-2 font-semibold text-white">GET /api/admin/appointments/&lt;id&gt;/cancel/</p>
-            <p className="mt-1 text-xs text-rose-200">
-              Embed in email when patients can self-cancel pending appointments.
+            <p className="text-xs uppercase tracking-[0.35em] text-rose-200">Cancellations</p>
+            <p className="mt-2 text-xs text-rose-100">
+              Provide quick-cancel links for patients on hold.
             </p>
           </div>
         </div>
       </section>
 
       <section className="rounded-3xl border border-white/10 bg-gradient-to-br from-indigo-500/10 via-transparent to-purple-500/10 p-6 backdrop-blur-xl">
-        <p className="text-xs font-semibold uppercase tracking-[0.35em] text-gray-400">Integration blueprint</p>
-        <h2 className="mt-2 text-xl font-bold text-white">How to wire the API</h2>
+        <p className="text-xs font-semibold uppercase tracking-[0.35em] text-gray-400">Demo blueprint</p>
+        <h2 className="mt-2 text-xl font-bold text-white">Smart blocking ideas</h2>
         <div className="mt-5 space-y-4 text-sm text-gray-300">
           <div className="flex items-start gap-3 rounded-2xl border border-indigo-400/30 bg-indigo-500/10 px-4 py-4">
             <LuExternalLink className="mt-1 h-5 w-5 text-indigo-200" />
-            <p>
-              <strong>Fetch data:</strong> Call <code className="rounded bg-gray-900 px-1 text-indigo-200">GET /api/blocked-slots/</code> with the admin access token.
-            </p>
+            <p>Reserve time after major surgeries for detailed follow-ups.</p>
           </div>
           <div className="flex items-start gap-3 rounded-2xl border border-emerald-400/30 bg-emerald-500/10 px-4 py-4">
             <LuTriangleAlert className="mt-1 h-5 w-5 text-emerald-200" />
-            <p>
-              <strong>Create or update:</strong> Use <code className="rounded bg-gray-900 px-1 text-emerald-200">POST /api/blocked-slots/</code> or <code className="rounded bg-gray-900 px-1 text-emerald-200">PUT /api/blocked-slots/&lt;id&gt;/</code> with conflict detection baked in.
-            </p>
+            <p>Mark recurring R&D hours so the core team stays aligned.</p>
           </div>
           <div className="flex items-start gap-3 rounded-2xl border border-rose-400/30 bg-rose-500/10 px-4 py-4">
             <LuCalendarX2 className="mt-1 h-5 w-5 text-rose-200" />
-            <p>
-              <strong>Delete:</strong> Hit <code className="rounded bg-gray-900 px-1 text-rose-200">DELETE /api/blocked-slots/&lt;id&gt;/</code>. No appointment checks required.
-            </p>
+            <p>Block staff offsites in advance to avoid last-minute gaps.</p>
           </div>
         </div>
       </section>
-
-      {isLoading ? (
-        <div className="rounded-3xl border border-white/10 bg-white/5 px-6 py-5 text-sm text-gray-300">
-          Syncing blocked windows with the backend...
-        </div>
-      ) : null}
     </div>
   );
 }

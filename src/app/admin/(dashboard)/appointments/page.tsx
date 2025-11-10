@@ -1,16 +1,11 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { LuFilter, LuRefreshCw, LuSearch, LuCircleCheck, LuCircleX, LuClock3, LuDownload } from "react-icons/lu";
-import {
-  Appointment,
-  deleteAppointment as apiDeleteAppointment,
-  fetchAppointments,
-  updateAppointment,
-} from "@/lib/admin-api";
 import { AppointmentTable } from "@/components/admin/AppointmentTable";
-import { useAdminAuth } from "@/contexts/AdminAuthContext";
 import { formatDate } from "@/utils/date";
+import { demoAppointments } from "@/data/admin-demo";
+import type { Appointment } from "@/lib/admin-api";
 
 const statusLabels: Record<Appointment["status"], string> = {
   pending: "Pending review",
@@ -30,47 +25,10 @@ function toUTCValue(value: string) {
 }
 
 export default function AdminAppointmentsPage() {
-  const auth = useAdminAuth();
-  const accessToken = auth.accessToken;
-  const [appointments, setAppointments] = useState<Appointment[]>([]);
+  const [appointments] = useState(demoAppointments);
   const [statusFilter, setStatusFilter] = useState<Appointment["status"] | "all">("all");
   const [searchTerm, setSearchTerm] = useState("");
-  const [page, setPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
-  const [isFetching, setIsFetching] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [actionError, setActionError] = useState<string | null>(null);
-  const [actionSuccess, setActionSuccess] = useState<string | null>(null);
-  const [processingId, setProcessingId] = useState<number | null>(null);
-
-  useEffect(() => {
-    if (!accessToken) {
-      setAppointments([]);
-      setTotalPages(1);
-      return;
-    }
-
-    let isMounted = true;
-    setIsFetching(true);
-    setError(null);
-
-    fetchAppointments(accessToken, page, 12)
-      .then((data) => {
-        if (!isMounted) return;
-        setAppointments(data.appointments);
-        setTotalPages(data.pagination.total_pages);
-        setIsFetching(false);
-      })
-      .catch((err) => {
-        if (!isMounted) return;
-        setError(err instanceof Error ? err.message : "Unable to fetch appointments.");
-        setIsFetching(false);
-      });
-
-    return () => {
-      isMounted = false;
-    };
-  }, [accessToken, page]);
+  const [actionMessage, setActionMessage] = useState<string | null>(null);
 
   const filteredAppointments = useMemo(() => {
     return appointments
@@ -104,45 +62,6 @@ export default function AdminAppointmentsPage() {
       .sort(([dateA], [dateB]) => toUTCValue(dateA) - toUTCValue(dateB))
       .slice(0, 4);
   }, [appointments]);
-
-  const handleStatusChange = useCallback(
-    async (appointment: Appointment, status: Appointment["status"]) => {
-      if (!accessToken || status === appointment.status) return;
-      setProcessingId(appointment.id);
-      setActionError(null);
-      setActionSuccess(null);
-      try {
-        const response = await updateAppointment(accessToken, appointment.id, { status });
-        const updated = response.appointment ?? response;
-        setAppointments((prev) => prev.map((item) => (item.id === appointment.id ? { ...item, ...updated } : item)));
-        setActionSuccess(`Updated ${appointment.name} to ${status}.`);
-      } catch (err) {
-        setActionError(err instanceof Error ? err.message : "Unable to update appointment.");
-      } finally {
-        setProcessingId(null);
-      }
-    },
-    [accessToken],
-  );
-
-  const handleDelete = useCallback(
-    async (appointment: Appointment) => {
-      if (!accessToken) return;
-      setProcessingId(appointment.id);
-      setActionError(null);
-      setActionSuccess(null);
-      try {
-        await apiDeleteAppointment(accessToken, appointment.id);
-        setAppointments((prev) => prev.filter((item) => item.id !== appointment.id));
-        setActionSuccess(`Removed appointment for ${appointment.name}.`);
-      } catch (err) {
-        setActionError(err instanceof Error ? err.message : "Unable to delete appointment.");
-      } finally {
-        setProcessingId(null);
-      }
-    },
-    [accessToken],
-  );
 
   return (
     <div className="space-y-8">
@@ -194,7 +113,7 @@ export default function AdminAppointmentsPage() {
           <div className="flex items-center gap-3">
             <button
               type="button"
-              onClick={() => setPage(1)}
+              onClick={() => setActionMessage("Demo data refreshed.")}
               className="flex items-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-gray-300 transition hover:border-indigo-400/40 hover:bg-indigo-500/10 hover:text-white"
             >
               <LuRefreshCw className="h-4 w-4" />
@@ -202,6 +121,7 @@ export default function AdminAppointmentsPage() {
             </button>
             <button
               type="button"
+              onClick={() => setActionMessage("Sample CSV export triggered in demo mode.")}
               className="flex items-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-gray-300 transition hover:border-indigo-400/40 hover:bg-indigo-500/10 hover:text-white"
             >
               <LuDownload className="h-4 w-4" />
@@ -211,28 +131,22 @@ export default function AdminAppointmentsPage() {
         </div>
       </section>
 
-      {error ? (
-        <div className="rounded-3xl border border-red-400/40 bg-red-500/10 px-6 py-5 text-sm text-red-100">{error}</div>
-      ) : null}
-
-      {actionError ? (
-        <div className="rounded-3xl border border-red-400/40 bg-red-500/10 px-6 py-4 text-sm text-red-100">
-          {actionError}
-        </div>
-      ) : null}
-
-      {actionSuccess ? (
-        <div className="rounded-3xl border border-emerald-400/30 bg-emerald-500/10 px-6 py-4 text-sm text-emerald-100">
-          {actionSuccess}
+      {actionMessage ? (
+        <div className="rounded-3xl border border-indigo-400/30 bg-indigo-500/10 px-6 py-4 text-sm text-indigo-100">
+          {actionMessage}
         </div>
       ) : null}
 
       {filteredAppointments.length ? (
         <AppointmentTable
           appointments={filteredAppointments}
-          onUpdateStatus={handleStatusChange}
-          onDelete={handleDelete}
-          processingId={processingId}
+          onUpdateStatus={(appointment, status) => {
+            setActionMessage(`Simulated update: ${appointment.name} → ${status}`);
+          }}
+          onDelete={(appointment) => {
+            setActionMessage(`Simulated removal: ${appointment.name}`);
+          }}
+          disabled
         />
       ) : (
         <div className="rounded-3xl border border-white/10 bg-white/5 px-6 py-8 text-sm text-gray-400">
@@ -283,60 +197,27 @@ export default function AdminAppointmentsPage() {
         </div>
 
         <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-gray-400">Workflow automation</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-gray-400">Workflow ideas</p>
           <h2 className="mt-2 text-xl font-bold text-white">Integrate next actions</h2>
           <div className="mt-6 space-y-4 text-sm text-gray-300">
             <div className="flex items-start gap-3 rounded-2xl border border-emerald-400/30 bg-emerald-500/10 px-4 py-4">
               <LuCircleCheck className="mt-1 h-5 w-5 text-emerald-300" />
-              <p>
-                Call <code className="rounded bg-gray-900 px-1 text-emerald-200">PUT /api/appointments/&lt;id&gt;/</code> when updating status or time. The backend will trigger patient emails automatically.
-              </p>
+              <p>Confirm upcoming surgeries and trigger concierge callbacks.</p>
             </div>
             <div className="flex items-start gap-3 rounded-2xl border border-red-400/30 bg-red-500/10 px-4 py-4">
               <LuCircleX className="mt-1 h-5 w-5 text-red-300" />
-              <p>
-                Use <code className="rounded bg-gray-900 px-1 text-red-200">POST /api/appointments/&lt;id&gt;/cancel/</code> for cancellation links embedded in patient emails.
-              </p>
+              <p>Flag patient-requested cancellations for manual review.</p>
             </div>
             <div className="flex items-start gap-3 rounded-2xl border border-indigo-400/30 bg-indigo-500/10 px-4 py-4">
               <LuClock3 className="mt-1 h-5 w-5 text-indigo-200" />
-              <p>
-                Combine <code className="rounded bg-gray-900 px-1 text-indigo-200">GET /api/availability/</code> with the appointment payloads to surface smart rescheduling suggestions.
-              </p>
+              <p>Cross-check availability for high-demand evening sessions.</p>
             </div>
           </div>
         </div>
       </section>
-
-      {totalPages > 1 ? (
-        <div className="flex items-center justify-between rounded-3xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-gray-300">
-          <button
-            type="button"
-            disabled={page === 1}
-            onClick={() => setPage((prev) => Math.max(1, prev - 1))}
-            className="rounded-full border border-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] transition hover:border-indigo-400/40 hover:bg-indigo-500/10 hover:text-white disabled:cursor-not-allowed disabled:opacity-50"
-          >
-            Previous
-          </button>
-          <p className="text-xs uppercase tracking-[0.35em] text-gray-400">
-            Page {page} of {totalPages}
-          </p>
-          <button
-            type="button"
-            disabled={page === totalPages}
-            onClick={() => setPage((prev) => prev + 1)}
-            className="rounded-full border border-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] transition hover:border-indigo-400/40 hover:bg-indigo-500/10 hover:text-white disabled:cursor-not-allowed disabled:opacity-50"
-          >
-            Next
-          </button>
-        </div>
-      ) : null}
-
-      {isFetching ? (
-        <div className="rounded-3xl border border-white/10 bg-white/5 px-6 py-5 text-sm text-gray-300">
-          Fetching latest appointments from the backend...
-        </div>
-      ) : null}
+      <div className="rounded-3xl border border-white/10 bg-white/5 px-6 py-5 text-sm text-gray-300">
+        Demo mode preview. Toggle through sample data.
+      </div>
     </div>
   );
 }

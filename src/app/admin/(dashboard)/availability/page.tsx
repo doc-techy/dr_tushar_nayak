@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import {
   LuCalendarClock,
   LuCalendarPlus,
@@ -10,9 +10,8 @@ import {
   LuMapPin,
   LuSettings2,
 } from "react-icons/lu";
-import { AvailabilityEntry, fetchAvailability } from "@/lib/admin-api";
-import { useAdminAuth } from "@/contexts/AdminAuthContext";
 import { formatDate } from "@/utils/date";
+import { demoAvailability } from "@/data/admin-demo";
 
 const weekdayMap: Record<number, string> = {
   1: "Monday",
@@ -32,47 +31,15 @@ function toUTCValue(value?: string | null) {
 }
 
 export default function AdminAvailabilityPage() {
-  const { accessToken } = useAdminAuth();
-
-  const [availability, setAvailability] = useState<AvailabilityEntry[]>([]);
   const [isRecurring, setIsRecurring] = useState(true);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    if (!accessToken) {
-      setAvailability([]);
-      return;
-    }
-    let isMounted = true;
-    setIsLoading(true);
-    setError(null);
-
-    fetchAvailability(accessToken, isRecurring ? { recurring: true } : undefined)
-      .then((response) => {
-        if (!isMounted) return;
-        const collection = Array.isArray(response) ? response : response.availability ?? [];
-        setAvailability(collection);
-        setIsLoading(false);
-      })
-      .catch((err) => {
-        if (!isMounted) return;
-        setError(err instanceof Error ? err.message : "Failed to fetch availability.");
-        setIsLoading(false);
-      });
-
-    return () => {
-      isMounted = false;
-    };
-  }, [accessToken, isRecurring]);
-
-  const recurringSlots = useMemo(() => availability.filter((item) => item.is_recurring), [availability]);
+  const recurringSlots = useMemo(() => demoAvailability.filter((item) => item.is_recurring), []);
   const specificSlots = useMemo(
     () =>
-      availability
+      demoAvailability
         .filter((item) => !item.is_recurring)
         .sort((a, b) => toUTCValue(a.date) - toUTCValue(b.date)),
-    [availability],
+    [],
   );
 
   return (
@@ -131,10 +98,6 @@ export default function AdminAvailabilityPage() {
           </button>
         </div>
       </section>
-
-      {error ? (
-        <div className="rounded-3xl border border-red-400/40 bg-red-500/10 px-6 py-5 text-sm text-red-100">{error}</div>
-      ) : null}
 
       <section className="grid gap-6 lg:grid-cols-2">
         <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
@@ -207,9 +170,7 @@ export default function AdminAvailabilityPage() {
               Clinic map visualization placeholder
             </span>
           </div>
-          <p className="mt-4 text-xs text-gray-400">
-            Connect <code className="rounded bg-gray-900 px-1 text-indigo-200">GET /api/slots/detailed/?date=YYYY-MM-DD</code> to drive this visualization with live slot data.
-          </p>
+          <p className="mt-4 text-xs text-gray-400">Demo view: plug in your slot API to replace this heat map.</p>
         </div>
 
         <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
@@ -218,31 +179,20 @@ export default function AdminAvailabilityPage() {
           <div className="mt-5 space-y-4 text-sm text-gray-300">
             <div className="flex items-start gap-3 rounded-2xl border border-emerald-400/30 bg-emerald-500/10 px-4 py-4">
               <LuSettings2 className="mt-1 h-5 w-5 text-emerald-300" />
-              <p>
-                POST <code className="rounded bg-gray-900 px-1 text-emerald-200">/api/availability/</code> to create new availability windows. Include <code className="rounded bg-gray-900 px-1 text-emerald-200">days[]</code> for recurring schedules.
-              </p>
+              <p>Sample tip: open weekly blocks for sports consults.</p>
             </div>
             <div className="flex items-start gap-3 rounded-2xl border border-amber-400/30 bg-amber-500/10 px-4 py-4">
               <LuCircleDot className="mt-1 h-5 w-5 text-amber-300" />
-              <p>
-                Use PUT <code className="rounded bg-gray-900 px-1 text-amber-200">/api/availability/&lt;id&gt;/</code> to adjust slots. Conflicts automatically return <code className="rounded bg-gray-900 px-1 text-amber-200">400</code>.
-              </p>
+              <p>Sample tip: adjust timings around OT schedules.</p>
             </div>
             <div className="flex items-start gap-3 rounded-2xl border border-red-400/30 bg-red-500/10 px-4 py-4">
               <LuLoader className="mt-1 h-5 w-5 text-red-300" />
-              <p>
-                When removing slots, guard against in-flight appointments. The API will block deletes if pending/confirmed bookings exist.
-              </p>
+              <p>Sample tip: block off theatre days in advance.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {isLoading ? (
-        <div className="rounded-3xl border border-white/10 bg-white/5 px-6 py-5 text-sm text-gray-300">
-          Syncing availability with the backend...
-        </div>
-      ) : null}
     </div>
   );
 }

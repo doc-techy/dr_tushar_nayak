@@ -74,57 +74,57 @@ export default function BookingPage() {
   };
 
   return (
-    <section className="relative min-h-screen bg-gray-950 text-white overflow-hidden">
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:5rem_5rem] opacity-30" aria-hidden />
-      <div className="absolute top-20 left-1/3 w-[420px] h-[420px] bg-indigo-600/20 blur-3xl rounded-full" aria-hidden />
-      <div className="absolute bottom-10 right-10 w-[360px] h-[360px] bg-purple-600/20 blur-3xl rounded-full" aria-hidden />
+    <section className="relative min-h-screen bg-white text-gray-900 overflow-hidden">
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:5rem_5rem] opacity-30" aria-hidden />
+      <div className="absolute top-20 left-1/3 w-[420px] h-[420px] bg-indigo-100/40 blur-3xl rounded-full" aria-hidden />
+      <div className="absolute bottom-10 right-10 w-[360px] h-[360px] bg-purple-100/40 blur-3xl rounded-full" aria-hidden />
 
-      <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-20 space-y-16">
-        <header className="text-center space-y-5">
+      <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-10 lg:py-20 space-y-8 lg:space-y-16">
+        <header className="text-left sm:text-center">
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 mb-0 lg:mb-5">
             Book a Consultation with {doctorProfile.name}
           </h1>
-          <p className="max-w-3xl mx-auto text-base sm:text-lg text-gray-300 leading-relaxed">
+          <p className="max-w-3xl mx-auto text-[10px] sm:text-lg text-gray-700 leading-relaxed">
             Share a few details and the care concierge will confirm your slot within 24 hours. Emergency queries? Call {doctorProfile.contact.phone} directly.
           </p>
         </header>
 
-        <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="rounded-[32px] border border-white/15 bg-white/5 backdrop-blur-md p-8 sm:p-10 shadow-[0_40px_120px_-60px_rgba(15,23,42,0.9)]">
-            <div className="space-y-2 mb-8">
-              <p className="text-xs font-bold uppercase tracking-[0.35em] text-indigo-200">Booking details</p>
-              <p className="text-sm text-gray-400">
+        <div className="grid gap-6 lg:gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="rounded-[32px] border border-gray-200 bg-white p-6 lg:p-8 sm:p-10 shadow-lg">
+            <div className="space-y-2 mb-6 lg:mb-8">
+              <p className="text-xs font-bold uppercase tracking-[0.35em] text-indigo-600">Booking details</p>
+              <p className="text-sm text-gray-600">
                 Fields marked with * are required. Preferred date and programme help us tailor preparation before your visit.
               </p>
             </div>
 
             {status === "success" ? (
-              <div className="rounded-3xl border border-indigo-500/40 bg-indigo-500/10 px-6 py-8 text-indigo-100">
-                <h2 className="text-xl font-semibold text-white">Thank you! 🗓️</h2>
-                <p className="mt-3 text-sm text-gray-200">
+              <div className="rounded-3xl border border-indigo-300 bg-indigo-50 px-6 py-8 text-indigo-900">
+                <h2 className="text-xl font-semibold text-indigo-900">Thank you! 🗓️</h2>
+                <p className="mt-3 text-sm text-indigo-800">
                   We&apos;ve recorded your request. The care concierge will call/text you shortly to confirm the appointment.
                 </p>
-                <p className="mt-4 text-sm text-gray-300">
+                <p className="mt-4 text-sm text-indigo-700">
                   Need urgent support? Reach the clinic at {doctorProfile.contact.phone} or chat on WhatsApp anytime.
                 </p>
               </div>
             ) : (
               <form onSubmit={onSubmit} className="space-y-6">
                 {status === "error" && errorMessage ? (
-                  <div className="rounded-2xl border border-red-500/40 bg-red-500/10 px-4 py-3 text-sm text-red-100">
+                  <div className="rounded-2xl border border-red-300 bg-red-50 px-4 py-3 text-sm text-red-800">
                     {errorMessage}
                   </div>
                 ) : null}
 
                 <div className="space-y-2">
-                  <label htmlFor="fullName" className="text-xs font-bold uppercase tracking-[0.35em] text-indigo-200">
+                  <label htmlFor="fullName" className="text-xs font-bold uppercase tracking-[0.35em] text-indigo-600">
                     Full name*
                   </label>
                   <input
                     id="fullName"
                     name="fullName"
-                    className="w-full rounded-2xl border border-white/15 bg-white/5 px-4 py-3 text-sm text-white placeholder-gray-500 focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/30"
+                    className="w-full rounded-2xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-500 focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/30"
                     value={formState.fullName}
                     onChange={onChange("fullName")}
                     required
@@ -133,27 +133,27 @@ export default function BookingPage() {
 
                 <div className="grid gap-6 sm:grid-cols-2">
                   <div className="space-y-2">
-                    <label htmlFor="phone" className="text-xs font-bold uppercase tracking-[0.35em] text-indigo-200">
+                    <label htmlFor="phone" className="text-xs font-bold uppercase tracking-[0.35em] text-indigo-600">
                       Phone number*
                     </label>
                     <input
                       id="phone"
                       name="phone"
-                      className="w-full rounded-2xl border border-white/15 bg-white/5 px-4 py-3 text-sm text-white focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/30"
+                      className="w-full rounded-2xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/30"
                       value={formState.phone}
                       onChange={onChange("phone")}
                       required
                     />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="email" className="text-xs font-bold uppercase tracking-[0.35em] text-indigo-200">
+                    <label htmlFor="email" className="text-xs font-bold uppercase tracking-[0.35em] text-indigo-600">
                       Email
                     </label>
                     <input
                       id="email"
                       name="email"
                       type="email"
-                      className="w-full rounded-2xl border border-white/15 bg-white/5 px-4 py-3 text-sm text-white focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/30"
+                      className="w-full rounded-2xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/30"
                       value={formState.email}
                       onChange={onChange("email")}
                     />
@@ -162,27 +162,27 @@ export default function BookingPage() {
 
                 <div className="grid gap-6 sm:grid-cols-2">
                   <div className="space-y-2">
-                    <label htmlFor="preferredDate" className="text-xs font-bold uppercase tracking-[0.35em] text-indigo-200">
+                    <label htmlFor="preferredDate" className="text-xs font-bold uppercase tracking-[0.35em] text-indigo-600">
                       Preferred date
                     </label>
                     <input
                       id="preferredDate"
                       name="preferredDate"
                       type="date"
-                      className="w-full rounded-2xl border border-white/15 bg-white/5 px-4 py-3 text-sm text-white focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/30"
+                      className="w-full rounded-2xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/30"
                       value={formState.preferredDate}
                       onChange={onChange("preferredDate")}
                       required
                     />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="timeSlot" className="text-xs font-bold uppercase tracking-[0.35em] text-indigo-200">
+                    <label htmlFor="timeSlot" className="text-xs font-bold uppercase tracking-[0.35em] text-indigo-600">
                       Preferred time slot
                     </label>
                     <select
                       id="timeSlot"
                       name="timeSlot"
-                      className="w-full rounded-2xl border border-white/15 bg-white/5 px-4 py-3 text-sm text-white focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/30"
+                      className="w-full rounded-2xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/30"
                       value={formState.timeSlot}
                       onChange={onChange("timeSlot")}
                       required
@@ -198,14 +198,14 @@ export default function BookingPage() {
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="notes" className="text-xs font-bold uppercase tracking-[0.35em] text-indigo-200">
+                  <label htmlFor="notes" className="text-xs font-bold uppercase tracking-[0.35em] text-indigo-600">
                     Notes (symptoms, insurance, imaging)
                   </label>
                   <textarea
                     id="notes"
                     name="notes"
                     rows={4}
-                    className="w-full rounded-2xl border border-white/15 bg-white/5 px-4 py-3 text-sm text-white focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/30"
+                    className="w-full rounded-2xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/30"
                     value={formState.notes}
                     onChange={onChange("notes")}
                   />
@@ -222,24 +222,24 @@ export default function BookingPage() {
             )}
           </div>
 
-          <aside className="rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-md p-8 sm:p-10 space-y-8 shadow-[0_30px_80px_-55px_rgba(15,23,42,0.85)]">
+          <aside className="rounded-[32px] border border-gray-200 bg-white p-8 sm:p-10 space-y-8 shadow-lg">
             <div className="space-y-3">
-              <p className="text-xs font-bold uppercase tracking-[0.35em] text-indigo-200">Clinic details</p>
-              <h2 className="text-2xl font-bold text-white">Orthocare Clinic</h2>
-              <p className="text-sm text-gray-300 leading-relaxed">{doctorProfile.intro}</p>
+              <p className="text-xs font-bold uppercase tracking-[0.35em] text-indigo-600">Clinic details</p>
+              <h2 className="text-2xl font-bold text-gray-900">Orthocare Clinic</h2>
+              <p className="text-sm text-gray-700 leading-relaxed">{doctorProfile.intro}</p>
             </div>
 
-            <div className="space-y-4 text-sm text-gray-300">
+            <div className="space-y-4 text-sm text-gray-700">
               <div>
-                <p className="text-xs uppercase tracking-[0.35em] text-indigo-200">Call</p>
-                <p className="text-lg font-semibold text-white">{doctorProfile.contact.phone}</p>
+                <p className="text-xs uppercase tracking-[0.35em] text-indigo-600">Call</p>
+                <p className="text-lg font-semibold text-gray-900">{doctorProfile.contact.phone}</p>
               </div>
               <div>
-                <p className="text-xs uppercase tracking-[0.35em] text-indigo-200">Email</p>
-                <p className="text-lg font-semibold text-white">{doctorProfile.contact.email}</p>
+                <p className="text-xs uppercase tracking-[0.35em] text-indigo-600">Email</p>
+                <p className="text-lg font-semibold text-gray-900">{doctorProfile.contact.email}</p>
               </div>
               <div>
-                <p className="text-xs uppercase tracking-[0.35em] text-indigo-200">Visit</p>
+                <p className="text-xs uppercase tracking-[0.35em] text-indigo-600">Visit</p>
                 <p className="text-sm leading-relaxed">{doctorProfile.primaryLocation}</p>
               </div>
             </div>
@@ -248,12 +248,12 @@ export default function BookingPage() {
               href={mapEmbed.iframeSrc.replace("&output=embed", "")}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-full rounded-full border border-white/15 px-6 py-3 text-xs font-bold uppercase tracking-[0.35em] text-gray-200 hover:bg-white/10"
+              className="inline-flex items-center justify-center w-full rounded-full border border-gray-300 px-6 py-3 text-xs font-bold uppercase tracking-[0.35em] text-gray-700 hover:bg-gray-100"
             >
               Get directions
             </a>
 
-            <div className="overflow-hidden rounded-3xl border border-white/15">
+            <div className="overflow-hidden rounded-3xl border border-gray-200">
               <iframe
                 title={mapEmbed.title}
                 src={mapEmbed.iframeSrc}
@@ -265,8 +265,8 @@ export default function BookingPage() {
               />
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-white/10 p-5 text-sm text-gray-200 space-y-3">
-              <p className="font-semibold text-white">Need to talk first?</p>
+            <div className="rounded-2xl border border-gray-200 bg-gray-50 p-5 text-sm text-gray-700 space-y-3">
+              <p className="font-semibold text-gray-900">Need to talk first?</p>
               <p>
                 Message us on WhatsApp for insurance clarifications, pre-operative queries, or to reschedule. We respond within 24 hours.
               </p>
@@ -274,7 +274,7 @@ export default function BookingPage() {
                 href={doctorProfile.contact.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.35em] text-indigo-200 hover:text-white"
+                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.35em] text-indigo-600 hover:text-indigo-700"
               >
                 Chat on WhatsApp
               </a>

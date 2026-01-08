@@ -12,92 +12,65 @@ export function ServicesSection() {
   return (
     <section
       id="services"
-      className="relative py-24 sm:py-32 lg:py-14 px-4 text-white overflow-hidden border-t border-white/5"
+      className="relative py-12 sm:py-24 lg:py-14 px-4 text-gray-900 overflow-hidden border-t border-gray-200"
     >
       <div className="relative max-w-7xl mx-auto">
-        <div className="mb-20 text-center">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-6 text-white">
+        <div className="mb-10 lg:mb-20 text-left sm:text-center">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-0 lg:mb-6 text-gray-900">
             Specialized
-            <span className="ml-2 text-white">
+            <span className="ml-2 text-gray-900">
               Ortho Treatments
             </span>
           </h2>
-          <p className="max-w-3xl mx-auto text-xl text-gray-400 leading-relaxed font-light">
+          <p className="max-w-3xl mx-auto text-sm sm:text-xl text-gray-600 leading-relaxed font-light">
             From prevention and diagnostics to surgical excellence and rehab, choose a program designed
             around your activity goals and recovery speed.
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-2 gap-4 lg:gap-8 lg:grid-cols-3">
           {visibleServices.map((service, index) => {
             const colorIndex = index % 3;
             return (
               <Link
                 key={service.title}
                 href={`/treatments/${service.slug}`}
-                className="group relative overflow-hidden rounded-3xl bg-white/5 border-2 border-white/10 p-8 backdrop-blur-md hover:bg-white/10 hover:border-indigo-500/50 transition-all duration-500 hover:-translate-y-4 hover:shadow-2xl hover:shadow-indigo-500/20"
+                className="group relative overflow-hidden rounded-2xl sm:rounded-3xl bg-white border-2 border-gray-200 p-3 sm:p-8 shadow-md hover:bg-gray-50 hover:border-indigo-400 transition-all duration-500 hover:-translate-y-4 hover:shadow-xl hover:shadow-indigo-500/20"
               >
                 <div
                   className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
                     colorIndex === 0
-                      ? "bg-gradient-to-br from-indigo-500/10 to-transparent"
+                      ? "bg-gradient-to-br from-indigo-50 to-transparent"
                       : colorIndex === 1
-                      ? "bg-gradient-to-br from-purple-500/10 to-transparent"
-                      : "bg-gradient-to-br from-pink-500/10 to-transparent"
+                      ? "bg-gradient-to-br from-purple-50 to-transparent"
+                      : "bg-gradient-to-br from-pink-50 to-transparent"
                   }`}
                 />
 
-                {/* <div className="relative mb-6">
-                  <div
-                    className={`inline-flex items-center justify-center w-20 h-20 rounded-2xl shadow-lg ${
-                      colorIndex === 0
-                        ? "bg-gradient-to-br from-indigo-500 to-indigo-600"
-                        : colorIndex === 1
-                        ? "bg-gradient-to-br from-purple-500 to-purple-600"
-                        : "bg-gradient-to-br from-pink-500 to-pink-600"
-                    } group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}
-                  >
-                    <span className="text-white">
-                      {renderServiceIcon(service.iconKey, "h-10 w-10")}
-                    </span>
-                  </div>
-                </div> */}
-
-                <div className="relative space-y-4">
-                  <div className="space-y-2">
-                    {/* <span
-                      className={`inline-block px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider border ${
-                        colorIndex === 0
-                          ? "bg-indigo-500/10 border-indigo-500/30 text-indigo-300"
-                          : colorIndex === 1
-                          ? "bg-purple-500/10 border-purple-500/30 text-purple-300"
-                          : "bg-pink-500/10 border-pink-500/30 text-pink-300"
-                      }`}
-                    >
-                      {service.focus}
-                    </span> */}
+                <div className="relative space-y-2 sm:space-y-4">
+                  <div className="space-y-1 sm:space-y-2">
                     <h3
-                      className={`text-2xl font-black leading-tight transition-colors duration-300 ${
+                      className={`text-sm sm:text-2xl font-black leading-tight transition-colors duration-300 ${
                         colorIndex === 0
-                          ? "text-white group-hover:text-indigo-300"
+                          ? "text-gray-900 group-hover:text-indigo-600"
                           : colorIndex === 1
-                          ? "text-white group-hover:text-purple-300"
-                          : "text-white group-hover:text-pink-300"
+                          ? "text-gray-900 group-hover:text-purple-600"
+                          : "text-gray-900 group-hover:text-pink-600"
                       }`}
                     >
                       {service.title}
                     </h3>
                   </div>
 
-                  <p className="text-gray-400 leading-relaxed line-clamp-3 text-sm">
+                  <p className="text-gray-600 leading-relaxed line-clamp-2 sm:line-clamp-3 text-[10px] sm:text-sm">
                     {service.description}
                   </p>
 
-                  <ul className="space-y-2">
+                  <ul className="space-y-1 sm:space-y-2">
                     {service.highlights.slice(0, 2).map((highlight) => (
-                      <li key={highlight} className="flex items-start gap-3 text-sm text-gray-500">
+                      <li key={highlight} className="flex items-start gap-1.5 sm:gap-3 text-[10px] sm:text-sm text-gray-700">
                         <span
-                          className={`mt-1.5 h-2 w-2 rounded-full flex-shrink-0 ${
+                          className={`hidden sm:block mt-1 h-1.5 w-1.5 sm:mt-1.5 sm:h-2 sm:w-2 rounded-full flex-shrink-0 ${
                             colorIndex === 0
                               ? "bg-indigo-500"
                               : colorIndex === 1
@@ -105,35 +78,35 @@ export function ServicesSection() {
                               : "bg-pink-500"
                           }`}
                         />
-                        <span>{highlight}</span>
+                        <span className="line-clamp-1">{highlight}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <div className="relative mt-8 pt-6 border-t-2 border-white/10 group-hover:border-white/20 transition-colors">
-                  <div className="flex items-center justify-between">
+                <div className="relative mt-3 sm:mt-8 pt-3 sm:pt-6 border-t-2 border-gray-200 group-hover:border-gray-300 transition-colors">
+                  <div className="flex items-center justify-between gap-1 sm:gap-0">
                     <span
-                      className={`text-sm font-black uppercase tracking-wider transition-colors ${
+                      className={`text-[9px] sm:text-sm font-black uppercase tracking-wider transition-colors ${
                         colorIndex === 0
-                          ? "text-indigo-400"
+                          ? "text-indigo-600"
                           : colorIndex === 1
-                          ? "text-purple-400"
-                          : "text-pink-400"
+                          ? "text-purple-600"
+                          : "text-pink-600"
                       }`}
                     >
                       Learn More
                     </span>
                     <div
-                      className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 ${
+                      className={`hidden sm:flex w-6 h-6 sm:w-12 sm:h-12 rounded-full items-center justify-center transition-all duration-300 group-hover:scale-110 flex-shrink-0 ${
                         colorIndex === 0
-                          ? "bg-indigo-500/10 group-hover:bg-gradient-to-r group-hover:from-indigo-600 group-hover:to-indigo-700"
+                          ? "bg-indigo-100 group-hover:bg-gradient-to-r group-hover:from-indigo-600 group-hover:to-indigo-700"
                           : colorIndex === 1
-                          ? "bg-purple-500/10 group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-purple-700"
-                          : "bg-pink-500/10 group-hover:bg-gradient-to-r group-hover:from-pink-600 group-hover:to-pink-700"
+                          ? "bg-purple-100 group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-purple-700"
+                          : "bg-pink-100 group-hover:bg-gradient-to-r group-hover:from-pink-600 group-hover:to-pink-700"
                       }`}
                     >
-                      <LuArrowRight className="h-6 w-6 text-gray-400 group-hover:text-white transition-colors group-hover:translate-x-1" />
+                      <LuArrowRight className="h-3 w-3 sm:h-6 sm:w-6 text-gray-600 group-hover:text-white transition-colors group-hover:translate-x-1" />
                     </div>
                   </div>
                 </div>
@@ -143,11 +116,11 @@ export function ServicesSection() {
         </div>
 
         {servicesOffered.length > 6 && (
-          <div className="mt-12 flex justify-center">
+          <div className="mt-6 lg:mt-12 flex justify-center">
             <button
               type="button"
               onClick={() => setShowAll((prev) => !prev)}
-              className="px-10 py-4 rounded-full border-2 border-white/20 text-white font-bold text-xs uppercase tracking-[0.4em] transition-all duration-300 hover:bg-white/10 hover:border-indigo-400 hover:scale-105"
+              className="px-10 py-4 rounded-full border-2 border-gray-300 text-gray-700 font-bold text-xs uppercase tracking-[0.4em] transition-all duration-300 hover:bg-gray-100 hover:border-indigo-400 hover:text-indigo-600 hover:scale-105"
             >
               {showAll ? "Show Less" : "Load More"}
             </button>

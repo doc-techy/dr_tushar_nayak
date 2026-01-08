@@ -34,47 +34,44 @@ export function TestimonialsMarquee() {
   }, []);
 
   return (
-    <section className="relative w-screen -mx-[calc(50vw-50%)] py-16">
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 mb-12 text-center">
-        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white">
+    <section className="relative w-screen -mx-[calc(50vw-50%)] py-8 lg:py-16 bg-white">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 mb-6 lg:mb-12 text-center">
+        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900">
           Patient
-          <span className="ml-2 text-white">
+          <span className="ml-2 text-gray-900">
             Testimonials
           </span>
-          <span className="ml-2 text-white">and Reviews</span>
+          <span className="ml-2 text-gray-900">and Reviews</span>
         </h2>
       </div>
 
       <div className="relative overflow-hidden">
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-gray-950 to-transparent z-10" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-gray-950 to-transparent z-10" />
-
         <div
           ref={trackRef}
-          className="flex gap-6 sm:gap-8"
+          className="flex gap-3 sm:gap-6 lg:gap-8"
           style={{ transform: "translateX(0)", willChange: "transform" }}
         >
           {duplicated.map((testimonial, index) => (
             <article
               key={`${testimonial.name}-${index}`}
-              className="flex-shrink-0 w-[18rem] sm:w-[20rem] lg:w-[22rem] rounded-[26px] border border-white/15 bg-white/5 backdrop-blur-md px-6 py-7 shadow-[0_30px_70px_-50px_rgba(15,23,42,0.6)]"
+              className="flex-shrink-0 w-[calc((100vw-1.5rem)/3)] sm:w-[20rem] lg:w-[22rem] rounded-[20px] sm:rounded-[26px] border border-gray-200 bg-white px-3 py-4 sm:px-6 sm:py-7 shadow-[0_30px_70px_-50px_rgba(15,23,42,0.15)]"
             >
-              <div className="flex items-center justify-between text-indigo-400 mb-5">
-                <LuQuote className="h-6 w-6" />
-                <div className="flex items-center text-amber-400 text-xs sm:text-sm gap-1">
+              <div className="flex items-center justify-between text-indigo-600 mb-3 sm:mb-5">
+                <LuQuote className="h-4 w-4 sm:h-6 sm:w-6" />
+                <div className="flex items-center text-amber-500 text-xs gap-0.5 sm:gap-1">
                   {Array.from({ length: 5 }).map((_, starIdx) => (
-                    <LuStar key={starIdx} className="h-3 w-3 fill-current" />
+                    <LuStar key={starIdx} className="h-2.5 w-2.5 sm:h-3 sm:w-3 fill-current" />
                   ))}
                 </div>
               </div>
 
-              <p className="text-xs sm:text-sm text-gray-300 leading-relaxed mb-6">
-                “{testimonial.quote}”
+              <p className="text-[10px] sm:text-xs lg:text-sm text-gray-700 leading-relaxed mb-3 sm:mb-6 line-clamp-4 sm:line-clamp-none">
+                "{testimonial.quote}"
               </p>
 
-              <div className="pt-4 border-t border-white/10">
-                <p className="text-sm font-semibold text-white">{testimonial.name}</p>
-                <p className="text-xs uppercase tracking-widest text-gray-500">{testimonial.role}</p>
+              <div className="pt-2 sm:pt-4 border-t border-gray-200">
+                <p className="text-[10px] sm:text-sm font-semibold text-gray-900">{testimonial.name}</p>
+                {/* <p className="text-[9px] sm:text-xs uppercase tracking-widest text-gray-600">{testimonial.role}</p> */}
               </div>
             </article>
           ))}

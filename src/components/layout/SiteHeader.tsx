@@ -8,6 +8,7 @@ const navLinks = [
   { label: "About", href: "/about" },
   { label: "Services", href: "/#services" },
   { label: "Blogs", href: "/#blogs" },
+  { label: "Videos", href: "/educational-videos" },
 ];
 
 export function SiteHeader() {

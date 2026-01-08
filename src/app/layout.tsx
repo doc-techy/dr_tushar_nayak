@@ -58,9 +58,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-950 text-white overflow-x-hidden`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-gray-900 overflow-x-hidden`}>
         <SiteHeader />
-        <main className="relative z-0">{children}</main>
+        <main className="relative z-0 bg-white">{children}</main>
         <SiteFooter />
         <FloatingWhatsAppButton />
       </body>

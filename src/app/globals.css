@@ -8,7 +8,7 @@
 }
 
 body {
-  @apply text-white font-sans antialiased;
+  @apply text-gray-900 font-sans antialiased;
 }
 
 main {

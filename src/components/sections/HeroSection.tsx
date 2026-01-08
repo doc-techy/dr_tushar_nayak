@@ -25,85 +25,10 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section id="hero" className="relative min-h-[90vh] overflow-hidden text-white">
-      <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-24 lg:py-9">
-        <div className="grid gap-16 lg:grid-cols-[1.25fr_0.85fr] items-start">
-          <div className="space-y-12">
-            
-
-            <div className="space-y-5">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight">
-                Dr.Tushar Nayak
-              </h1>
-              <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-indigo-500/10 border border-indigo-400/30 text-xs font-bold uppercase tracking-[0.4em] text-indigo-200">
-              Renowned Orthopaedic Surgeon – Bengaluru
-            </div>
-              <p className="max-w-3xl text-lg text-gray-300 leading-relaxed">
-              
-
-With over 10 years of clinical excellence, Dr. Tushar Nayak stands among Bengaluru’s most trusted orthopaedic specialists. Having served at leading hospitals across the city, he combines advanced surgical expertise with compassionate patient care. Committed to the highest standards of ethics and professionalism, Dr. Nayak leverages cutting-edge technology to deliver precise, evidence-based solutions for all orthopaedic concerns.
-
-              </p>
-            </div>
-
-            <div className="space-y-3">
-              <p className="text-xs font-bold uppercase tracking-[0.35em] text-gray-500">Signature Programmes</p>
-              <div className="flex flex-wrap gap-3">
-                {servicesOffered.slice(0, 4).map((service, index) => (
-                  <Link
-                    key={service.slug}
-                    href={`/treatments/${service.slug}`}
-                    className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-widest transition hover:scale-105 ${
-                      index % 3 === 0
-                        ? "bg-indigo-500/10 border-indigo-500/30 text-indigo-200 hover:bg-indigo-500/20"
-                        : index % 3 === 1
-                        ? "bg-purple-500/10 border-purple-500/30 text-purple-200 hover:bg-purple-500/20"
-                        : "bg-pink-500/10 border-pink-500/30 text-pink-200 hover:bg-pink-500/20"
-                    }`}
-                  >
-                    {service.title}
-                    <LuArrowUpRight className="h-3.5 w-3.5" />
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/booking"
-                className="group inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 px-10 py-4 text-sm font-bold uppercase tracking-[0.1em] shadow-lg shadow-indigo-500/40 transition hover:scale-105"
-              >
-                Book Consultation
-                <LuArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2" />
-              </Link>
-              <Link
-                href="tel:8810605887"
-                className="inline-flex items-center justify-center rounded-full border-2 border-white/20 px-10 py-4 text-sm font-bold uppercase tracking-[0.35em] text-gray-200 transition hover:bg-white/10 hover:border-indigo-400 hover:text-white"
-              >
-                Contact Us
-              </Link>
-            </div>
-
-            {/* <div className="grid gap-6 sm:grid-cols-3">
-              {heroContent.stats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="rounded-2xl bg-white/5 border border-white/10 px-6 py-5 backdrop-blur-md shadow-[0_40px_120px_-60px_rgba(15,23,42,0.9)]"
-                >
-                  <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
-                    {stat.value}
-                  </div>
-                  <p className="mt-2 text-xs font-bold uppercase tracking-[0.35em] text-gray-500">
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
-            </div> */}
-
- 
-          </div>
-
-          <aside className="lg:sticky lg:top-24">
+    <section id="hero" className="relative min-h-[90vh] overflow-hidden text-gray-900">
+      <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pt-4 pb-24 lg:py-9">
+        <div className="grid gap-8 lg:gap-16 lg:grid-cols-[0.85fr_1.25fr] items-start">
+          <aside className="lg:sticky lg:top-24 lg:order-1">
             <div className="group relative rounded-[2.75rem] bg-[conic-gradient(from_140deg_at_70%_20%,rgba(165,180,252,0.45),rgba(244,114,182,0.4),rgba(129,140,248,0.5))] p-[10px] shadow-[0_45px_140px_-70px_rgba(79,70,229,0.95)] transition duration-500 hover:shadow-[0_70px_160px_-65px_rgba(192,132,252,0.8)]">
               <div className="rounded-[2.5rem] bg-gray-950/40 p-[3px] backdrop-blur-xl">
                 <div className="relative overflow-hidden rounded-[2.3rem] border border-white/20 bg-white/5">
@@ -143,6 +68,81 @@ With over 10 years of clinical excellence, Dr. Tushar Nayak stands among Bengalu
               </div>
             </div>
           </aside>
+
+          <div className="space-y-6 lg:space-y-12 lg:order-2">
+            
+
+            <div className="space-y-3 lg:space-y-5">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight text-gray-900">
+                Dr.Tushar Nayak
+              </h1>
+              <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-indigo-100 border border-indigo-300 text-xs font-bold uppercase tracking-[0.4em] text-indigo-700">
+              Renowned Orthopaedic Surgeon – Bengaluru
+            </div>
+              <p className="max-w-3xl text-sm sm:text-lg text-gray-700 leading-relaxed">
+              
+
+With over 10 years of clinical excellence, Dr. Tushar Nayak stands among Bengaluru's most trusted orthopaedic specialists. Having served at leading hospitals across the city, he combines advanced surgical expertise with compassionate patient care. Committed to the highest standards of ethics and professionalism, Dr. Nayak leverages cutting-edge technology to deliver precise, evidence-based solutions for all orthopaedic concerns.
+
+              </p>
+            </div>
+
+            <div className="hidden lg:block space-y-3">
+              <p className="text-xs font-bold uppercase tracking-[0.35em] text-gray-600">Signature Programmes</p>
+              <div className="flex flex-wrap gap-3">
+                {servicesOffered.slice(0, 4).map((service, index) => (
+                  <Link
+                    key={service.slug}
+                    href={`/treatments/${service.slug}`}
+                    className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-widest transition hover:scale-105 ${
+                      index % 3 === 0
+                        ? "bg-indigo-100 border-indigo-300 text-indigo-700 hover:bg-indigo-200"
+                        : index % 3 === 1
+                        ? "bg-purple-100 border-purple-300 text-purple-700 hover:bg-purple-200"
+                        : "bg-pink-100 border-pink-300 text-pink-700 hover:bg-pink-200"
+                    }`}
+                  >
+                    {service.title}
+                    <LuArrowUpRight className="h-3.5 w-3.5" />
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                href="/booking"
+                className="group inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 px-10 py-4 text-sm font-bold uppercase tracking-[0.1em] shadow-lg shadow-indigo-500/40 transition hover:scale-105 text-white"
+              >
+                Book Consultation
+                <LuArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2" />
+              </Link>
+              <Link
+                href="tel:8810605887"
+                className="inline-flex items-center justify-center rounded-full border-2 border-gray-300 px-10 py-4 text-sm font-bold uppercase tracking-[0.35em] text-gray-700 transition hover:bg-gray-100 hover:border-indigo-400 hover:text-indigo-600"
+              >
+                Contact Us
+              </Link>
+            </div>
+
+            {/* <div className="grid gap-6 sm:grid-cols-3">
+              {heroContent.stats.map((stat) => (
+                <div
+                  key={stat.label}
+                  className="rounded-2xl bg-white/5 border border-white/10 px-6 py-5 backdrop-blur-md shadow-[0_40px_120px_-60px_rgba(15,23,42,0.9)]"
+                >
+                  <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
+                    {stat.value}
+                  </div>
+                  <p className="mt-2 text-xs font-bold uppercase tracking-[0.35em] text-gray-500">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
+            </div> */}
+
+ 
+          </div>
         </div>
       </div>
     </section>

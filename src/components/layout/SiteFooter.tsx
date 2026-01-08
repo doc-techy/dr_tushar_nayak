@@ -123,12 +123,9 @@ export function SiteFooter() {
 
         {/* Bottom Section */}
         <div className="pt-8 border-t border-white/10">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-gray-500">
+          <div className="flex items-center justify-center">
+            <p className="text-sm text-gray-500 text-center">
               © {new Date().getFullYear()} {doctorProfile.name}. All rights reserved.
-            </p>
-            <p className="text-xs text-gray-600">
-              Designed with precision care
             </p>
           </div>
         </div>

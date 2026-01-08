@@ -35,7 +35,7 @@ export default async function BlogArticlePage({ params }: BlogArticlePageParams)
   }
 
   return (
-    <article className="min-h-screen bg-gray-950 text-white pb-24">
+    <article className="min-h-screen bg-white text-gray-900 pb-24">
       <div className="relative w-screen -mx-[calc(50vw-50%)] h-[320px] sm:h-[420px] lg:h-[500px] overflow-hidden">
         <Image
           src={article.heroImage}
@@ -44,26 +44,26 @@ export default async function BlogArticlePage({ params }: BlogArticlePageParams)
           priority
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/70 to-gray-950/10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-white via-white/70 to-white/10" />
         <div className="relative h-full flex flex-col justify-end px-6 sm:px-10 lg:px-14 pb-10 sm:pb-14">
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight max-w-4xl">
+          <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black leading-tight max-w-4xl text-gray-900">
             {article.title}
           </h1>
-          <p className="mt-4 text-sm font-semibold text-indigo-200 uppercase tracking-widest">
+          <p className="mt-4 text-sm font-semibold text-indigo-600 uppercase tracking-widest">
             {article.readingTime}
           </p>
         </div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-6 sm:px-12 lg:px-16 space-y-10 mt-16">
-        <div className="grid gap-6">
+      <div className="max-w-5xl mx-auto px-6 sm:px-12 lg:px-16">
+        <div className="grid gap-4 lg:gap-6">
           {article.content.map((block, index) => {
             if (block.type === "heading") {
               return (
-                <div key={`${article.slug}-heading-${index}`} className="space-y-2 pt-6">
+                <div key={`${article.slug}-heading-${index}`} className="space-y-2 pt-4 lg:pt-6">
                   <span className="block h-1 w-14 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-full" />
-                  <h2 className="text-3xl font-bold text-white">
+                  <h2 className="text-3xl font-bold text-gray-900">
                     {block.text}
                   </h2>
                 </div>
@@ -74,7 +74,7 @@ export default async function BlogArticlePage({ params }: BlogArticlePageParams)
               return (
                 <ul
                   key={`${article.slug}-list-${index}`}
-                  className="space-y-3 pl-5 list-disc text-gray-300 text-sm sm:text-base"
+                  className="space-y-3 pl-5 list-disc text-gray-700 text-sm sm:text-base"
                 >
                   {block.items.map((item) => (
                     <li key={item} className="leading-relaxed">{item}</li>
@@ -86,7 +86,7 @@ export default async function BlogArticlePage({ params }: BlogArticlePageParams)
             return (
               <p
                 key={`${article.slug}-paragraph-${index}`}
-                className="text-base sm:text-lg text-gray-300 leading-8"
+                className="text-base sm:text-lg text-gray-700 leading-8"
               >
                 {block.text}
               </p>
@@ -94,8 +94,8 @@ export default async function BlogArticlePage({ params }: BlogArticlePageParams)
           })}
         </div>
 
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-10 border-t border-white/10">
-          <span className="text-xs uppercase tracking-[0.35em] text-gray-500">
+        {/* <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-10 border-t border-gray-200">
+          <span className="text-xs uppercase tracking-[0.35em] text-gray-600">
             Share this article
           </span>
           <div className="flex items-center gap-3">
@@ -108,13 +108,13 @@ export default async function BlogArticlePage({ params }: BlogArticlePageParams)
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 rounded-full border border-white/15 text-xs font-semibold uppercase tracking-widest text-gray-200 hover:bg-white/10 hover:border-indigo-400 transition"
+                className="px-4 py-2 rounded-full border border-gray-300 text-xs font-semibold uppercase tracking-widest text-gray-700 hover:bg-gray-100 hover:border-indigo-400 transition"
               >
                 {social.label}
               </a>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </article>
   );

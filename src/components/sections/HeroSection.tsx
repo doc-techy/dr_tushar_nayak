@@ -82,7 +82,7 @@ export function HeroSection() {
               <p className="max-w-3xl text-sm sm:text-lg text-gray-700 leading-relaxed">
               
 
-With over 10 years of clinical excellence, Dr. Tushar Nayak stands among Bengaluru's most trusted orthopaedic specialists. Having served at leading hospitals across the city, he combines advanced surgical expertise with compassionate patient care. Committed to the highest standards of ethics and professionalism, Dr. Nayak leverages cutting-edge technology to deliver precise, evidence-based solutions for all orthopaedic concerns.
+With over 10 years of clinical excellence, Dr. Tushar Nayak stands among Bengaluru&apos;s most trusted orthopaedic specialists. Having served at leading hospitals across the city, he combines advanced surgical expertise with compassionate patient care. Committed to the highest standards of ethics and professionalism, Dr. Nayak leverages cutting-edge technology to deliver precise, evidence-based solutions for all orthopaedic concerns.
 
               </p>
             </div>

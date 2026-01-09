@@ -23,7 +23,7 @@ export function FAQSection() {
             </span>
           </h2>
           <p className="max-w-3xl mx-auto text-sm sm:text-lg text-gray-600 leading-relaxed">
-            Explore enhanced recovery timelines, appointment logistics, and specialty care details. Every answer is aligned with Dr. Nayak's current protocols so you can plan confidently.
+            Explore enhanced recovery timelines, appointment logistics, and specialty care details. Every answer is aligned with Dr. Nayak&apos;s current protocols so you can plan confidently.
           </p>
         </div>
 

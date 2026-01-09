@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import type { StaticImageData } from "next/image";
 import { notFound } from "next/navigation";
 import { getServiceBySlug } from "@/data/site-content";
-import { renderServiceIcon } from "@/lib/service-icons";
 
 import kneeReplacementImage from "@/public/images/knee-replacement.jpg";
 import hipJointReplacementImage from "@/public/images/hip_joint_replacement.jpg";

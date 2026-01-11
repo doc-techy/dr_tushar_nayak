@@ -77,7 +77,7 @@ export function SiteHeader() {
       </div>
       
       {mobileOpen ? (
-        <div className="border-t border-white/10 bg-gray-950/95 backdrop-blur-xl px-6 py-4 md:hidden">
+        <div className="absolute top-full left-0 right-0 border-t border-white/10 bg-gray-950 px-6 py-4 md:hidden shadow-2xl">
           <nav className="flex flex-col gap-3">
             {navLinks.map((link) => (
               <Link

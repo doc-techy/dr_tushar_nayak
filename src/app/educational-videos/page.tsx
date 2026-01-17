@@ -187,7 +187,7 @@ export default function EducationalVideosPage() {
                               window.open(video.videoUrl, '_blank');
                             }}
                           >
-                            <span className={`text-[7px] font-black uppercase tracking-wider transition-colors ${
+                            <span className={`text-[7px] font-black uppercase tracking-normal transition-colors ${
                               colorIndex === 0 ? "text-indigo-600" 
                               : colorIndex === 1 ? "text-purple-600"
                               : "text-pink-600"
@@ -280,7 +280,7 @@ export default function EducationalVideosPage() {
                               window.open(video.videoUrl, '_blank');
                             }}
                           >
-                            <span className={`text-[9px] sm:text-sm lg:text-xs font-black uppercase tracking-wider transition-colors ${
+                            <span className={`text-[9px] sm:text-sm lg:text-xs font-black uppercase tracking-normal transition-colors ${
                               colorIndex === 0 ? "text-indigo-600" 
                               : colorIndex === 1 ? "text-purple-600"
                               : "text-pink-600"
@@ -311,7 +311,7 @@ export default function EducationalVideosPage() {
                 <button
                   type="button"
                   onClick={() => setShowAllMobile((prev) => !prev)}
-                  className="px-10 py-4 rounded-full border-2 border-gray-300 text-gray-700 font-bold text-xs uppercase tracking-[0.4em] transition-all duration-300 hover:bg-gray-100 hover:border-indigo-400 hover:text-indigo-600 hover:scale-105"
+                  className="px-10 py-4 rounded-full border-2 border-gray-300 text-gray-700 font-bold text-xs uppercase tracking-[0.1em] transition-all duration-300 hover:bg-gray-100 hover:border-indigo-400 hover:text-indigo-600 hover:scale-105"
                 >
                   {showAllMobile ? "Show Less" : "Load More"}
                 </button>

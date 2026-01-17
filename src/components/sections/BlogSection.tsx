@@ -69,7 +69,7 @@ export function BlogSection() {
                     href={`/blogs/${post.slug}`}
                     className="flex items-center justify-between gap-1 sm:gap-0"
                   >
-                    <span className={`text-[9px] sm:text-sm font-black uppercase tracking-wider transition-colors ${
+                    <span className={`text-[9px] sm:text-sm font-black uppercase tracking-normal transition-colors ${
                       colorIndex === 0 ? "text-indigo-600" 
                       : colorIndex === 1 ? "text-purple-600"
                       : "text-pink-600"

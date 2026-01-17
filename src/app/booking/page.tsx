@@ -93,7 +93,7 @@ export default function BookingPage() {
         <div className="grid gap-6 lg:gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="rounded-[32px] border border-gray-200 bg-white p-6 lg:p-8 sm:p-10 shadow-lg">
             <div className="space-y-2 mb-6 lg:mb-8">
-              <p className="text-xs font-bold uppercase tracking-[0.35em] text-indigo-600">Booking details</p>
+              <p className="text-xs font-bold uppercase tracking-[0.08em] text-indigo-600">Booking details</p>
               <p className="text-sm text-gray-600">
                 Fields marked with * are required. Preferred date and programme help us tailor preparation before your visit.
               </p>
@@ -118,7 +118,7 @@ export default function BookingPage() {
                 ) : null}
 
                 <div className="space-y-2">
-                  <label htmlFor="fullName" className="text-xs font-bold uppercase tracking-[0.35em] text-indigo-600">
+                  <label htmlFor="fullName" className="text-xs font-bold uppercase tracking-[0.08em] text-indigo-600">
                     Full name*
                   </label>
                   <input
@@ -133,7 +133,7 @@ export default function BookingPage() {
 
                 <div className="grid gap-6 sm:grid-cols-2">
                   <div className="space-y-2">
-                    <label htmlFor="phone" className="text-xs font-bold uppercase tracking-[0.35em] text-indigo-600">
+                    <label htmlFor="phone" className="text-xs font-bold uppercase tracking-[0.08em] text-indigo-600">
                       Phone number*
                     </label>
                     <input
@@ -146,7 +146,7 @@ export default function BookingPage() {
                     />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="email" className="text-xs font-bold uppercase tracking-[0.35em] text-indigo-600">
+                    <label htmlFor="email" className="text-xs font-bold uppercase tracking-[0.08em] text-indigo-600">
                       Email
                     </label>
                     <input
@@ -162,7 +162,7 @@ export default function BookingPage() {
 
                 <div className="grid gap-6 sm:grid-cols-2">
                   <div className="space-y-2">
-                    <label htmlFor="preferredDate" className="text-xs font-bold uppercase tracking-[0.35em] text-indigo-600">
+                    <label htmlFor="preferredDate" className="text-xs font-bold uppercase tracking-[0.08em] text-indigo-600">
                       Preferred date
                     </label>
                     <input
@@ -176,7 +176,7 @@ export default function BookingPage() {
                     />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="timeSlot" className="text-xs font-bold uppercase tracking-[0.35em] text-indigo-600">
+                    <label htmlFor="timeSlot" className="text-xs font-bold uppercase tracking-[0.08em] text-indigo-600">
                       Preferred time slot
                     </label>
                     <select
@@ -198,7 +198,7 @@ export default function BookingPage() {
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="notes" className="text-xs font-bold uppercase tracking-[0.35em] text-indigo-600">
+                  <label htmlFor="notes" className="text-xs font-bold uppercase tracking-[0.08em] text-indigo-600">
                     Notes (symptoms, insurance, imaging)
                   </label>
                   <textarea
@@ -214,7 +214,7 @@ export default function BookingPage() {
                 <button
                   type="submit"
                   disabled={status === "loading"}
-                  className="w-full rounded-full bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 px-6 py-3 text-sm font-bold uppercase tracking-[0.35em] shadow-lg shadow-indigo-600/30 transition hover:scale-105"
+                  className="w-full rounded-full bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 px-6 py-3 text-sm font-bold uppercase tracking-[0.08em] shadow-lg shadow-indigo-600/30 transition hover:scale-105"
                 >
                   {status === "loading" ? "Submitting..." : "Submit booking request"}
                 </button>
@@ -224,22 +224,22 @@ export default function BookingPage() {
 
           <aside className="rounded-[32px] border border-gray-200 bg-white p-8 sm:p-10 space-y-8 shadow-lg">
             <div className="space-y-3">
-              <p className="text-xs font-bold uppercase tracking-[0.35em] text-indigo-600">Clinic details</p>
+              <p className="text-xs font-bold uppercase tracking-[0.08em] text-indigo-600">Clinic details</p>
               <h2 className="text-2xl font-bold text-gray-900">Orthocare Clinic</h2>
               <p className="text-sm text-gray-700 leading-relaxed">{doctorProfile.intro}</p>
             </div>
 
             <div className="space-y-4 text-sm text-gray-700">
               <div>
-                <p className="text-xs uppercase tracking-[0.35em] text-indigo-600">Call</p>
+                <p className="text-xs uppercase tracking-[0.08em] text-indigo-600">Call</p>
                 <p className="text-lg font-semibold text-gray-900">{doctorProfile.contact.phone}</p>
               </div>
               <div>
-                <p className="text-xs uppercase tracking-[0.35em] text-indigo-600">Email</p>
+                <p className="text-xs uppercase tracking-[0.08em] text-indigo-600">Email</p>
                 <p className="text-lg font-semibold text-gray-900">{doctorProfile.contact.email}</p>
               </div>
               <div>
-                <p className="text-xs uppercase tracking-[0.35em] text-indigo-600">Visit</p>
+                <p className="text-xs uppercase tracking-[0.08em] text-indigo-600">Visit</p>
                 <p className="text-sm leading-relaxed">{doctorProfile.primaryLocation}</p>
               </div>
             </div>
@@ -248,7 +248,7 @@ export default function BookingPage() {
               href={mapEmbed.iframeSrc.replace("&output=embed", "")}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-full rounded-full border border-gray-300 px-6 py-3 text-xs font-bold uppercase tracking-[0.35em] text-gray-700 hover:bg-gray-100"
+              className="inline-flex items-center justify-center w-full rounded-full border border-gray-300 px-6 py-3 text-xs font-bold uppercase tracking-[0.08em] text-gray-700 hover:bg-gray-100"
             >
               Get directions
             </a>
@@ -274,7 +274,7 @@ export default function BookingPage() {
                 href={doctorProfile.contact.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.35em] text-indigo-600 hover:text-indigo-700"
+                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.08em] text-indigo-600 hover:text-indigo-700"
               >
                 Chat on WhatsApp
               </a>

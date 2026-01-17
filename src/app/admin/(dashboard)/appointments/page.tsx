@@ -68,13 +68,13 @@ export default function AdminAppointmentsPage() {
       <section className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
         <header className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-gray-400">Appointments Command</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.08em] text-gray-400">Appointments Command</p>
             <h1 className="text-3xl font-bold text-white">Manage patient requests and pipeline</h1>
             <p className="mt-3 text-sm text-gray-300">
               Confirm, reschedule or cancel appointments with smart triage and automated notifications.
             </p>
           </div>
-          <div className="flex items-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-xs uppercase tracking-[0.35em] text-indigo-200">
+          <div className="flex items-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-xs uppercase tracking-[0.08em] text-indigo-200">
             <LuClock3 className="h-5 w-5" />
             Auto reminders enabled
           </div>

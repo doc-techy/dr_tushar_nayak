@@ -50,7 +50,7 @@ export default async function BlogArticlePage({ params }: BlogArticlePageParams)
           <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black leading-tight max-w-4xl text-gray-900">
             {article.title}
           </h1>
-          <p className="mt-4 text-sm font-semibold text-indigo-600 uppercase tracking-widest">
+          <p className="mt-4 text-sm font-semibold text-indigo-600 uppercase tracking-normal">
             {article.readingTime}
           </p>
         </div>
@@ -108,7 +108,7 @@ export default async function BlogArticlePage({ params }: BlogArticlePageParams)
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 rounded-full border border-gray-300 text-xs font-semibold uppercase tracking-widest text-gray-700 hover:bg-gray-100 hover:border-indigo-400 transition"
+                className="px-4 py-2 rounded-full border border-gray-300 text-xs font-semibold uppercase tracking-normal text-gray-700 hover:bg-gray-100 hover:border-indigo-400 transition"
               >
                 {social.label}
               </a>

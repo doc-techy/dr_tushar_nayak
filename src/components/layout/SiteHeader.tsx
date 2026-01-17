@@ -37,7 +37,7 @@ export function SiteHeader() {
         >
           <span className="leading-tight">
             <span className="text-2xl font-black tracking-tight text-white">ORTHOCARE</span>
-            <span className="block text-xs font-bold uppercase tracking-widest text-gray-400">
+            <span className="block text-xs font-bold uppercase tracking-normal text-gray-400">
               Dr. Tushar Nayak
             </span>
           </span>

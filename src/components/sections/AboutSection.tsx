@@ -71,19 +71,19 @@ export function AboutSection({ profile, education, experience }: AboutSectionPro
             <div className="relative z-10 space-y-3 sm:space-y-6">
               <div className="grid gap-3 sm:gap-4 grid-cols-2">
                 <div className="rounded-xl sm:rounded-2xl border border-gray-200 bg-gray-50 px-3 sm:px-5 py-3 sm:py-4">
-                  <p className="text-[9px] sm:text-sm font-semibold uppercase tracking-[0.35em] text-indigo-600">
+                  <p className="text-[9px] sm:text-sm font-semibold uppercase tracking-[0.08em] text-indigo-600">
                     Years of Expertise
                   </p>
                   <p className="mt-1 sm:mt-2 text-xl sm:text-3xl font-bold text-gray-900">18+</p>
                 </div>
                 <div className="rounded-xl sm:rounded-2xl border border-gray-200 bg-gray-50 px-3 sm:px-5 py-3 sm:py-4">
-                  <p className="text-[9px] sm:text-sm font-semibold uppercase tracking-[0.35em] text-indigo-600">
+                  <p className="text-[9px] sm:text-sm font-semibold uppercase tracking-[0.08em] text-indigo-600">
                     Surgeries Performed
                   </p>
                   <p className="mt-1 sm:mt-2 text-xl sm:text-3xl font-bold text-gray-900">12K+</p>
                 </div>
                 <div className="rounded-xl sm:rounded-2xl border border-gray-200 bg-gray-50 px-3 sm:px-5 py-3 sm:py-4 col-span-2">
-                  <p className="text-[9px] sm:text-sm font-semibold uppercase tracking-[0.35em] text-indigo-600">
+                  <p className="text-[9px] sm:text-sm font-semibold uppercase tracking-[0.08em] text-indigo-600">
                     Fellowship Training
                   </p>
                   <p className="mt-1 sm:mt-2 text-[10px] sm:text-sm leading-relaxed text-gray-700">
@@ -91,7 +91,7 @@ export function AboutSection({ profile, education, experience }: AboutSectionPro
                   </p>
                 </div>
                 <div className="rounded-xl sm:rounded-2xl border border-gray-200 bg-gray-50 px-3 sm:px-5 py-3 sm:py-4 col-span-2">
-                  <p className="text-[9px] sm:text-sm font-semibold uppercase tracking-[0.35em] text-indigo-600">
+                  <p className="text-[9px] sm:text-sm font-semibold uppercase tracking-[0.08em] text-indigo-600">
                     Philosophy
                   </p>
                   <p className="mt-1 sm:mt-2 text-[10px] sm:text-sm leading-relaxed text-gray-700">
@@ -106,7 +106,7 @@ export function AboutSection({ profile, education, experience }: AboutSectionPro
         <div className="space-y-4 lg:space-y-10">
           <div className="flex flex-col gap-2 lg:gap-4 sm:flex-row sm:items-end sm:justify-center text-left sm:text-center">
             <div>
-              <p className="text-xl sm:text-4xl font-bold uppercase tracking-[0.2em] text-indigo-600">
+              <p className="text-xl sm:text-4xl font-bold uppercase tracking-[0.05em] text-indigo-600">
                 Education & Experience
               </p>
               <h3 className="text-sm sm:text-base lg:text-lg mt-1 sm:mt-0 font-semibold text-gray-900">
@@ -121,7 +121,7 @@ export function AboutSection({ profile, education, experience }: AboutSectionPro
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <div className="h-1 w-8 rounded-full bg-gradient-to-r from-indigo-500 to-indigo-600"></div>
-                <h3 className="text-lg font-black uppercase tracking-wider text-indigo-700">Education Timeline</h3>
+                <h3 className="text-lg font-black uppercase tracking-normal text-indigo-700">Education Timeline</h3>
               </div>
               <div className="space-y-3">
                 {education.map((edu, index) => (
@@ -134,7 +134,7 @@ export function AboutSection({ profile, education, experience }: AboutSectionPro
                         <div className="h-3 w-3 rounded-full bg-indigo-500 ring-4 ring-indigo-100"></div>
                       </div>
                       <div className="flex-1 space-y-2">
-                        <p className="text-[10px] font-bold uppercase tracking-wider text-indigo-600">
+                        <p className="text-[10px] font-bold uppercase tracking-normal text-indigo-600">
                           {edu.year}
                         </p>
                         <h4 className="text-base font-bold text-gray-900 leading-tight">{edu.heading}</h4>
@@ -159,7 +159,7 @@ export function AboutSection({ profile, education, experience }: AboutSectionPro
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <div className="h-1 w-8 rounded-full bg-gradient-to-r from-pink-500 to-pink-600"></div>
-                <h3 className="text-lg font-black uppercase tracking-wider text-pink-700">Professional Milestones</h3>
+                <h3 className="text-lg font-black uppercase tracking-normal text-pink-700">Professional Milestones</h3>
               </div>
               <div className="space-y-3">
                 {experience.map((exp, index) => (
@@ -172,7 +172,7 @@ export function AboutSection({ profile, education, experience }: AboutSectionPro
                         <div className="h-3 w-3 rounded-full bg-pink-500 ring-4 ring-pink-100"></div>
                       </div>
                       <div className="flex-1 space-y-2">
-                        <p className="text-[10px] font-bold uppercase tracking-wider text-pink-600">
+                        <p className="text-[10px] font-bold uppercase tracking-normal text-pink-600">
                           {exp.period}
                         </p>
                         <h4 className="text-base font-bold text-gray-900 leading-tight">
@@ -191,10 +191,10 @@ export function AboutSection({ profile, education, experience }: AboutSectionPro
           {/* Desktop: Side by side layout */}
           <div className="hidden md:block space-y-3 lg:space-y-6">
             <div className="grid gap-2 sm:gap-3 lg:gap-4 grid-cols-1 sm:grid-cols-2 text-center">
-              <div className="inline-flex items-center justify-center gap-2 sm:gap-3 rounded-full border border-indigo-200 bg-indigo-50 px-3 sm:px-5 py-2 sm:py-2 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.35em] text-indigo-700">
+              <div className="inline-flex items-center justify-center gap-2 sm:gap-3 rounded-full border border-indigo-200 bg-indigo-50 px-3 sm:px-5 py-2 sm:py-2 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.08em] text-indigo-700">
                 <span>Education Timeline</span>
               </div>
-              <div className="flex flex-col items-center gap-1 sm:gap-2 rounded-2xl sm:rounded-3xl border border-pink-200 bg-pink-50 px-4 sm:px-6 py-3 sm:py-4 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.4em] text-pink-700">
+              <div className="flex flex-col items-center gap-1 sm:gap-2 rounded-2xl sm:rounded-3xl border border-pink-200 bg-pink-50 px-4 sm:px-6 py-3 sm:py-4 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.1em] text-pink-700">
                 <span>Professional Milestones</span>
               </div>
             </div>
@@ -211,7 +211,7 @@ export function AboutSection({ profile, education, experience }: AboutSectionPro
                     >
                       <span className="pointer-events-none absolute inset-0 rounded-2xl sm:rounded-3xl border border-gray-200 bg-gradient-to-br from-indigo-50/50 via-transparent to-purple-50/30 hidden lg:block" aria-hidden />
                       <div className="relative flex h-full flex-col gap-2 sm:gap-3">
-                        <p className="text-[9px] sm:text-[11px] font-semibold uppercase tracking-[0.4em] text-indigo-600">
+                        <p className="text-[9px] sm:text-[11px] font-semibold uppercase tracking-[0.1em] text-indigo-600">
                           {row.education.year}
                         </p>
                         <h4 className="text-base sm:text-xl font-semibold text-gray-900 leading-tight">{row.education.heading}</h4>
@@ -228,7 +228,7 @@ export function AboutSection({ profile, education, experience }: AboutSectionPro
                     >
                       <span className="pointer-events-none absolute inset-0 rounded-2xl sm:rounded-3xl border border-gray-200 bg-gradient-to-br from-pink-50/50 via-transparent to-indigo-50/30 hidden lg:block" aria-hidden />
                       <div className="relative flex h-full flex-col gap-2 sm:gap-3">
-                        <p className="text-[9px] sm:text-[11px] font-semibold uppercase tracking-[0.4em] text-indigo-600">
+                        <p className="text-[9px] sm:text-[11px] font-semibold uppercase tracking-[0.1em] text-indigo-600">
                           {row.experience.period}
                         </p>
                         <h4 className="text-base sm:text-xl font-semibold text-gray-900 leading-tight">

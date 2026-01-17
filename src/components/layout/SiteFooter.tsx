@@ -43,7 +43,7 @@ export function SiteFooter() {
           <div className="space-y-6">
             <div>
               <p className="text-3xl font-black text-white mb-2">{doctorProfile.name}</p>
-              <p className="text-sm font-bold text-indigo-400 uppercase tracking-widest">Orthopaedic Surgeon</p>
+              <p className="text-sm font-bold text-indigo-400 uppercase tracking-normal">Orthopaedic Surgeon</p>
             </div>
             <p className="text-sm leading-relaxed text-gray-400 max-w-md">
               {doctorProfile.intro}
@@ -73,7 +73,7 @@ export function SiteFooter() {
 
           {/* Quick Links */}
           <div className="space-y-6">
-            <h3 className="text-sm font-black text-white uppercase tracking-widest">Quick Links</h3>
+            <h3 className="text-sm font-black text-white uppercase tracking-normal">Quick Links</h3>
             <nav className="flex flex-col gap-3">
               {quickLinks.map((link) => (
                 <Link
@@ -90,7 +90,7 @@ export function SiteFooter() {
 
           {/* Contact */}
           <div className="space-y-6">
-            <h3 className="text-sm font-black text-white uppercase tracking-widest">Contact</h3>
+            <h3 className="text-sm font-black text-white uppercase tracking-normal">Contact</h3>
             <div className="space-y-4">
               <a
                 href={`tel:${doctorProfile.contact.phone}`}

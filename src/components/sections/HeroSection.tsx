@@ -72,10 +72,10 @@ export function HeroSection() {
           <div className="flex flex-col gap-8 lg:gap-10 lg:order-2">
             <div className="space-y-4 lg:space-y-6">
               <div className="inline-flex flex-wrap items-center gap-3">
-                <span className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50/50 px-4 py-1.5 text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-indigo-700 backdrop-blur-sm">
+                <span className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50/50 px-4 py-1.5 text-[10px] sm:text-xs font-bold uppercase tracking-[0.05em] text-indigo-700 backdrop-blur-sm">
                   Orthopaedic Surgeon
                 </span>
-                <span className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white/50 px-4 py-1.5 text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-gray-600 backdrop-blur-sm">
+                <span className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white/50 px-4 py-1.5 text-[10px] sm:text-xs font-bold uppercase tracking-[0.05em] text-gray-600 backdrop-blur-sm">
                   Bengaluru
                 </span>
               </div>
@@ -91,29 +91,29 @@ export function HeroSection() {
               <div className="flex flex-row items-center justify-between gap-4 pt-4 border-t border-gray-100">
                 <div>
                   <p className="text-2xl sm:text-3xl font-black text-gray-900">10+</p>
-                  <p className="text-[10px] font-bold uppercase tracking-wider text-gray-500">Years Exp.</p>
+                  <p className="text-[10px] font-bold uppercase tracking-normal text-gray-500">Years Exp.</p>
                 </div>
                 <div className="h-8 w-px bg-gray-200"></div>
                 <div>
                   <p className="text-2xl sm:text-3xl font-black text-gray-900">5k+</p>
-                  <p className="text-[10px] font-bold uppercase tracking-wider text-gray-500">Happy Patients</p>
+                  <p className="text-[10px] font-bold uppercase tracking-normal text-gray-500">Happy Patients</p>
                 </div>
                 <div className="h-8 w-px bg-gray-200"></div>
                 <div>
                   <p className="text-2xl sm:text-3xl font-black text-gray-900">100%</p>
-                  <p className="text-[10px] font-bold uppercase tracking-wider text-gray-500">Commitment</p>
+                  <p className="text-[10px] font-bold uppercase tracking-normal text-gray-500">Commitment</p>
                 </div>
               </div>
             </div>
 
             <div className="hidden lg:block space-y-4">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400">Signature Programmes</p>
+              <p className="text-xs font-bold uppercase tracking-[0.05em] text-gray-400">Signature Programmes</p>
               <div className="flex flex-wrap gap-2">
                 {servicesOffered.slice(0, 4).map((service, index) => (
                   <Link
                     key={service.slug}
                     href={`/treatments/${service.slug}`}
-                    className={`group inline-flex items-center gap-2 rounded-full border px-5 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 hover:-translate-y-0.5 ${
+                    className={`group inline-flex items-center gap-2 rounded-full border px-5 py-2.5 text-xs font-bold uppercase tracking-normal transition-all duration-300 hover:-translate-y-0.5 ${
                       index % 3 === 0
                         ? "bg-white border-indigo-100 text-indigo-600 hover:border-indigo-300 hover:shadow-lg hover:shadow-indigo-500/10"
                         : index % 3 === 1

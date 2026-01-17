@@ -87,7 +87,7 @@ export function ServicesSection() {
                 <div className="relative mt-3 sm:mt-8 pt-3 sm:pt-6 border-t-2 border-gray-200 group-hover:border-gray-300 transition-colors">
                   <div className="flex items-center justify-between gap-1 sm:gap-0">
                     <span
-                      className={`text-[9px] sm:text-sm font-black uppercase tracking-wider transition-colors ${
+                      className={`text-[9px] sm:text-sm font-black uppercase tracking-normal transition-colors ${
                         colorIndex === 0
                           ? "text-indigo-600"
                           : colorIndex === 1
@@ -120,7 +120,7 @@ export function ServicesSection() {
             <button
               type="button"
               onClick={() => setShowAll((prev) => !prev)}
-              className="px-10 py-4 rounded-full border-2 border-gray-300 text-gray-700 font-bold text-xs uppercase tracking-[0.4em] transition-all duration-300 hover:bg-gray-100 hover:border-indigo-400 hover:text-indigo-600 hover:scale-105"
+              className="px-10 py-4 rounded-full border-2 border-gray-300 text-gray-700 font-bold text-xs uppercase tracking-[0.1em] transition-all duration-300 hover:bg-gray-100 hover:border-indigo-400 hover:text-indigo-600 hover:scale-105"
             >
               {showAll ? "Show Less" : "Load More"}
             </button>

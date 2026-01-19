@@ -13,11 +13,15 @@ export function AboutSection({ profile, education, experience }: AboutSectionPro
   }));
 
   return (
-    <section id="about" className="relative overflow-hidden bg-white py-6 lg:py-8 text-gray-900">
-      <div className="absolute inset-0 pointer-events-none hidden lg:block">
-        <div className="absolute left-[-15%] top-[-10%] h-[520px] w-[520px] rounded-full bg-gradient-to-br from-indigo-100/40 via-purple-100/30 to-transparent blur-3xl" aria-hidden />
-        <div className="absolute right-[-20%] bottom-[-15%] h-[680px] w-[680px] rounded-full bg-gradient-to-tr from-pink-100/40 via-purple-100/30 to-transparent blur-3xl" aria-hidden />
+    <div className="relative min-h-screen overflow-hidden bg-white text-gray-900">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-30" aria-hidden />
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/50 via-white to-purple-50/30" aria-hidden />
+        <div className="absolute -top-40 left-1/2 w-[680px] h-[680px] -translate-x-1/2 bg-indigo-100/40 blur-3xl rounded-full" aria-hidden />
+        <div className="absolute bottom-[-10%] right-[10%] w-[520px] h-[520px] bg-purple-100/40 blur-3xl rounded-full" aria-hidden />
+        <div className="absolute top-[30%] left-[-10%] w-[420px] h-[420px] bg-pink-100/30 blur-[180px] rounded-full" aria-hidden />
       </div>
+    <section id="about" className="relative overflow-hidden bg-white py-6 lg:py-8 text-gray-900">
 
       <div className="relative z-10 mx-auto flex max-w-7xl flex-col gap-4 lg:gap-16 px-4 sm:px-6 lg:px-8">
         <div className="grid gap-4 lg:gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
@@ -248,6 +252,7 @@ export function AboutSection({ profile, education, experience }: AboutSectionPro
         </div>
       </div>
     </section>
+    </div>
   );
 }
 

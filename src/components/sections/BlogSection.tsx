@@ -8,6 +8,11 @@ export function BlogSection() {
       id="blogs"
       className="relative py-12 sm:py-24 lg:py-14 px-4 text-gray-900 overflow-hidden border-t border-gray-200"
     >
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute -top-40 left-1/2 w-[680px] h-[680px] -translate-x-1/2 bg-indigo-100/40 blur-3xl rounded-full" aria-hidden />
+        <div className="absolute bottom-[-10%] right-[10%] w-[520px] h-[520px] bg-purple-100/40 blur-3xl rounded-full" aria-hidden />
+        <div className="absolute top-[30%] left-[-10%] w-[420px] h-[420px] bg-pink-100/30 blur-[180px] rounded-full" aria-hidden />
+      </div>
       <div className="relative max-w-7xl mx-auto">
         <div className="mb-10 lg:mb-20 text-left sm:text-center">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-0 lg:mb-6 text-gray-900">

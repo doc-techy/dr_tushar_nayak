@@ -28,12 +28,17 @@ export function HeroSection() {
     <section id="hero" className="relative min-h-[90vh] overflow-x-hidden text-gray-900">
       <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pt-0 sm:pt-4 pb-24 lg:py-9">
         <div className="grid gap-8 lg:gap-16 lg:grid-cols-[0.85fr_1.25fr] items-start">
-          <aside className="lg:sticky lg:top-24 lg:order-1 w-screen lg:w-auto ml-[calc(50%-50vw)] mr-[calc(50%-50vw)] lg:ml-0 lg:mr-0">
+          <aside className="lg:sticky lg:top-2 lg:order-1 w-screen lg:w-auto ml-[calc(50%-50vw)] mr-[calc(50%-50vw)] lg:ml-0 lg:mr-0 relative">
+            <div className="pointer-events-none absolute inset-0 -z-10">
+              <div className="absolute -top-20 left-1/2 w-[480px] h-[480px] -translate-x-1/2 bg-indigo-100/40 blur-3xl rounded-full" aria-hidden />
+              <div className="absolute bottom-[-20%] right-[10%] w-[360px] h-[360px] bg-purple-100/40 blur-3xl rounded-full" aria-hidden />
+              <div className="absolute top-[20%] left-[-10%] w-[320px] h-[320px] bg-pink-100/30 blur-[180px] rounded-full" aria-hidden />
+            </div>
             <div className="group relative rounded-none sm:rounded-[2.75rem] bg-none sm:bg-[conic-gradient(from_140deg_at_70%_20%,rgba(165,180,252,0.45),rgba(244,114,182,0.4),rgba(129,140,248,0.5))] p-0 sm:p-[10px] shadow-none sm:shadow-[0_45px_140px_-70px_rgba(79,70,229,0.95)] transition duration-500 hover:shadow-none sm:hover:shadow-[0_70px_160px_-65px_rgba(192,132,252,0.8)]">
               <div className="rounded-none sm:rounded-[2.5rem] bg-transparent sm:bg-gray-950/40 p-0 sm:p-[3px] backdrop-blur-0 sm:backdrop-blur-xl">
                 <div className="relative overflow-hidden rounded-none sm:rounded-[2.3rem] border-0 sm:border sm:border-white/20 bg-transparent sm:bg-white/5">
                   <div className="absolute inset-0 pointer-events-none bg-[conic-gradient(from_180deg_at_50%_50%,rgba(99,102,241,0.35),transparent_60%)] opacity-0 transition-opacity duration-500 group-hover:opacity-0 sm:group-hover:opacity-70" aria-hidden />
-                  <div className="relative h-[420px] sm:h-[520px] md:h-[580px]">
+                  <div className="relative h-[420px] sm:h-[520px] md:h-[580px] lg:h-[680px]">
                     {sliderImages.map((image, index) => (
                       <div
                         key={image.src}
@@ -71,14 +76,14 @@ export function HeroSection() {
 
           <div className="flex flex-col gap-8 lg:gap-10 lg:order-2">
             <div className="space-y-4 lg:space-y-6">
-              <div className="inline-flex flex-wrap items-center gap-3">
+              {/* <div className="inline-flex flex-wrap items-center gap-3">
                 <span className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50/50 px-4 py-1.5 text-[10px] sm:text-xs font-bold uppercase tracking-[0.05em] text-indigo-700 backdrop-blur-sm">
                   Orthopaedic Surgeon
                 </span>
                 <span className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white/50 px-4 py-1.5 text-[10px] sm:text-xs font-bold uppercase tracking-[0.05em] text-gray-600 backdrop-blur-sm">
                   Bengaluru
                 </span>
-              </div>
+              </div> */}
 
               <h1 className="text-4xl sm:text-6xl lg:text-[4.5rem] font-black leading-[1.1] tracking-tight text-gray-900">
                 Dr. Tushar <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Nayak</span>
@@ -90,18 +95,20 @@ export function HeroSection() {
               
               <div className="flex flex-row items-center justify-between gap-4 pt-4 border-t border-gray-100">
                 <div>
+                <p className="text-[10px] font-bold uppercase tracking-normal text-gray-500">Years Exp.</p>
                   <p className="text-2xl sm:text-3xl font-black text-gray-900">10+</p>
-                  <p className="text-[10px] font-bold uppercase tracking-normal text-gray-500">Years Exp.</p>
                 </div>
                 <div className="h-8 w-px bg-gray-200"></div>
                 <div>
-                  <p className="text-2xl sm:text-3xl font-black text-gray-900">5k+</p>
-                  <p className="text-[10px] font-bold uppercase tracking-normal text-gray-500">Happy Patients</p>
+                <p className="text-[10px] font-bold uppercase tracking-normal text-gray-500">Available:</p>
+
+                  <p className="text-2xl sm:text-3xl font-black text-gray-900">Mon-Sat</p>
                 </div>
                 <div className="h-8 w-px bg-gray-200"></div>
                 <div>
-                  <p className="text-2xl sm:text-3xl font-black text-gray-900">100%</p>
-                  <p className="text-[10px] font-bold uppercase tracking-normal text-gray-500">Commitment</p>
+                <p className="text-[10px] font-bold uppercase tracking-normal text-gray-500">Timings</p>
+
+                  <p className="text-2xl sm:text-3xl font-black text-gray-900">9am to 5pm</p>
                 </div>
               </div>
             </div>
@@ -131,7 +138,7 @@ export function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
               <Link
                 href="/booking"
-                className="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-full bg-gray-900 px-8 py-4 text-sm font-bold uppercase tracking-[0.1em] text-white shadow-xl shadow-indigo-900/20 transition-all duration-300 hover:bg-gray-800 hover:shadow-2xl hover:shadow-indigo-900/30 hover:-translate-y-1"
+                className="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 px-8 py-4 text-sm font-bold uppercase tracking-[0.1em] text-white shadow-lg shadow-indigo-500/30 transition-all duration-300 hover:scale-105 hover:shadow-indigo-500/50"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   Book Consultation
@@ -140,9 +147,9 @@ export function HeroSection() {
               </Link>
               <Link
                 href="tel:8810605887"
-                className="group inline-flex items-center justify-center rounded-full border border-gray-200 bg-white px-8 py-4 text-sm font-bold uppercase tracking-[0.1em] text-gray-600 transition-all duration-300 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-900"
+                className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full border-2 border-indigo-600 bg-white px-8 py-4 text-sm font-bold uppercase tracking-[0.1em] text-indigo-600 shadow-md shadow-indigo-500/10 transition-all duration-300 hover:bg-gradient-to-r hover:from-indigo-600 hover:to-purple-600 hover:text-white hover:border-transparent hover:shadow-lg hover:shadow-indigo-500/30 hover:scale-105"
               >
-                Contact Us
+                <span className="relative z-10">Contact Us</span>
               </Link>
             </div>
           </div>

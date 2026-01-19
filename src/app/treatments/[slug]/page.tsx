@@ -540,25 +540,36 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
     : "4 / 3";
 
   return (
-    <section className="relative overflow-hidden bg-white text-gray-900">
-      <div className="absolute inset-0 pointer-events-none hidden lg:block">
-        <div className="absolute left-1/2 top-0 h-[720px] w-[960px] -translate-x-1/2 rounded-full bg-gradient-to-br from-indigo-100/40 via-purple-100/30 to-transparent blur-3xl" />
-        <div className="absolute bottom-[-280px] right-[-120px] h-[560px] w-[560px] rounded-full bg-gradient-to-t from-pink-100/40 via-purple-100/30 to-transparent blur-3xl" />
+    <div className="relative min-h-screen overflow-hidden bg-white text-gray-900">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-30" aria-hidden />
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/50 via-white to-purple-50/30" aria-hidden />
+        <div className="absolute -top-40 left-1/2 w-[680px] h-[680px] -translate-x-1/2 bg-indigo-100/40 blur-3xl rounded-full" aria-hidden />
+        <div className="absolute bottom-[-10%] right-[10%] w-[520px] h-[520px] bg-purple-100/40 blur-3xl rounded-full" aria-hidden />
+        <div className="absolute top-[30%] left-[-10%] w-[420px] h-[420px] bg-pink-100/30 blur-[180px] rounded-full" aria-hidden />
       </div>
+    <section className="relative overflow-hidden bg-white text-gray-900">
 
       <div className="relative z-10 mx-auto flex max-w-7xl flex-col gap-4 lg:gap-16 px-4 pb-12 lg:pb-28 pt-4 lg:pt-8 sm:px-6 lg:px-8">
 
         <div className="grid gap-4 lg:gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-          <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-gray-200 bg-white shadow-lg order-1 lg:order-2" style={{ aspectRatio: heroAspectRatio }}>
-            <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/50 via-purple-50/30 to-transparent hidden lg:block" aria-hidden />
-            <Image
-              src={heroImageSrc}
-              alt={service.heroAlt}
-              fill
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-cover object-center"
-              priority
-            />
+          <div className="relative order-1 lg:order-2">
+            <div className="pointer-events-none absolute inset-0 -z-10">
+              <div className="absolute -top-20 left-1/2 w-[480px] h-[480px] -translate-x-1/2 bg-indigo-100/40 blur-3xl rounded-full" aria-hidden />
+              <div className="absolute bottom-[-20%] right-[10%] w-[360px] h-[360px] bg-purple-100/40 blur-3xl rounded-full" aria-hidden />
+              <div className="absolute top-[20%] left-[-10%] w-[320px] h-[320px] bg-pink-100/30 blur-[180px] rounded-full" aria-hidden />
+            </div>
+            <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-gray-200 bg-white shadow-lg" style={{ aspectRatio: heroAspectRatio }}>
+              <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/50 via-purple-50/30 to-transparent hidden lg:block" aria-hidden />
+              <Image
+                src={heroImageSrc}
+                alt={service.heroAlt}
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover object-center"
+                priority
+              />
+            </div>
           </div>
 
           <div className="flex flex-col gap-2 lg:gap-8 lg:max-w-2xl order-2 lg:order-1">
@@ -734,6 +745,7 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
         </div>
       </div>
     </section>
+    </div>
   );
 }
 

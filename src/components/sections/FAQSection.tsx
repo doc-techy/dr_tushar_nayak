@@ -13,6 +13,11 @@ export function FAQSection() {
       id="faq"
       className="relative py-12 sm:py-24 lg:py-14 text-gray-900 overflow-hidden border-t border-gray-200"
     >
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute -top-40 left-1/2 w-[680px] h-[680px] -translate-x-1/2 bg-indigo-100/40 blur-3xl rounded-full" aria-hidden />
+        <div className="absolute bottom-[-10%] right-[10%] w-[520px] h-[520px] bg-purple-100/40 blur-3xl rounded-full" aria-hidden />
+        <div className="absolute top-[30%] left-[-10%] w-[420px] h-[420px] bg-pink-100/30 blur-[180px] rounded-full" aria-hidden />
+      </div>
       <div className="relative max-w-6xl mx-auto px-6 sm:px-10 lg:px-16">
         <div className="text-left sm:text-center mb-8 lg:mb-16">
 

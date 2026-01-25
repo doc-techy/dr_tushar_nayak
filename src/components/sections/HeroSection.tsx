@@ -128,20 +128,6 @@ export function HeroSection() {
                     <LuArrowUpRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </Link>
                 ))}
-                {/* <Link
-                  href="/booking"
-                  className="group inline-flex items-center gap-2 rounded-full border border-brand-navy/30 bg-white px-5 py-2.5 text-xs font-bold uppercase tracking-normal text-brand-navy transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-navy hover:shadow-lg hover:shadow-brand-navy/10"
-                >
-                  Book consultation
-                  <LuArrowUpRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </Link>
-                <Link
-                  href="tel:8810605887"
-                  className="group inline-flex items-center gap-2 rounded-full border border-brand-navy/30 bg-white px-5 py-2.5 text-xs font-bold uppercase tracking-normal text-brand-navy transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-navy hover:shadow-lg hover:shadow-brand-navy/10"
-                >
-                  Contact Us
-                  <LuArrowUpRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </Link> */}
               </div>
             </div>
 

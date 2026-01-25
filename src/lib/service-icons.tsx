@@ -8,6 +8,7 @@ import {
   LuHandHeart,
   LuScan,
   LuStretchHorizontal,
+  LuWaves,
 } from "react-icons/lu";
 
 export type ServiceIconKey =
@@ -18,7 +19,8 @@ export type ServiceIconKey =
   | "spinalSurgeries"
   | "sportsInjuries"
   | "arthritis"
-  | "traumaManagement";
+  | "traumaManagement"
+  | "physiotherapy";
 
 const iconMap: Record<ServiceIconKey, IconType> = {
   kneeReplacement: LuBone,
@@ -29,6 +31,7 @@ const iconMap: Record<ServiceIconKey, IconType> = {
   sportsInjuries: LuActivity,
   arthritis: LuHandHeart,
   traumaManagement: LuAmbulance,
+  physiotherapy: LuWaves,
 };
 
 export function renderServiceIcon(key: ServiceIconKey, className = "h-10 w-10 text-brand-teal") {

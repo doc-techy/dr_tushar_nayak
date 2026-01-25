@@ -237,8 +237,7 @@ export const servicesOffered: Service[] = [
     ],
     details:
       "The hip programme combines minimally invasive anterior/posterior approaches, dual mobility implants, and accelerated gait training exactly as outlined in the clinic’s treatment overview.",
-    heroImage:
-      "https://images.unsplash.com/photo-1580281780460-82d277b0e3c4?auto=format&fit=crop&w=1200&q=80",
+    heroImage: "/images/hip_joint_replacement.jpg",
     heroAlt: "Surgeon planning hip joint replacement on digital tablet",
     sections: [
       {
@@ -282,8 +281,7 @@ export const servicesOffered: Service[] = [
     ],
     details:
       "Sub-centimetre portals, ligament reconstructions, and staged rehab ladders reflect the knee arthroscopy workflow described by the clinic, helping athletes rejoin sport safely.",
-    heroImage:
-      "https://images.unsplash.com/photo-1504813184591-01572f98c85f?auto=format&fit=crop&w=1200&q=80",
+    heroImage: "/images/knee_arthroscopy.jpg",
     heroAlt: "Arthroscopic equipment prepared for knee surgery",
     sections: [
       {
@@ -322,8 +320,7 @@ export const servicesOffered: Service[] = [
     ],
     details:
       "Diagnostics, targeted injections, and physiotherapy blocks replicate the multi-step back pain pathway highlighted on the clinic resource, restoring function while preventing recurrence.",
-    heroImage:
-      "https://images.unsplash.com/photo-1584697964190-82009d40c81c?auto=format&fit=crop&w=1200&q=80",
+    heroImage: "/images/back_pain_management.jpg",
     heroAlt: "Patient receiving back therapy from physiotherapist",
     sections: [
       {
@@ -367,8 +364,7 @@ export const servicesOffered: Service[] = [
     ],
     details:
       "Microscopic decompression, navigation-guided fusion, and kyphoplasty align with the recommendations shared on the clinic’s spine surgery pages, balancing nerve safety with rapid mobilisation.",
-    heroImage:
-      "https://images.unsplash.com/photo-1550831107-1553da8c8464?auto=format&fit=crop&w=1200&q=80",
+    heroImage: "/images/spinal_surgeries.jpg",
     heroAlt: "Spine surgeon operating in modern theatre",
     sections: [
       {
@@ -407,8 +403,7 @@ export const servicesOffered: Service[] = [
     ],
     details:
       "Sports injury care covers acute management, functional testing, and prevention drills exactly as highlighted by the clinic’s programme overview, helping athletes return stronger.",
-    heroImage:
-      "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=1200&q=80",
+    heroImage: "/images/sports_injuries.jpg",
     heroAlt: "Athlete receiving knee support from sports therapist",
     sections: [
       {
@@ -425,6 +420,36 @@ export const servicesOffered: Service[] = [
         heading: "Progress monitoring",
         body:
           "Return-to-play is benchmarked against strength, agility, and confidence metrics, mirroring the performance ladders shared in the clinic content.",
+      },
+    ],
+  },
+  {
+    title: "State of the Art Physiotherapy",
+    slug: "physiotherapy",
+    iconKey: "physiotherapy",
+    description:
+      "Evidence-based rehabilitation programmes for post-surgical recovery, sports injuries, and chronic musculoskeletal conditions with personalised exercise and hands-on therapy.",
+    focus: "Individualised rehab · Faster recovery",
+    highlights: [
+      "Post-surgical and sports rehabilitation",
+      "Manual therapy and targeted exercise",
+      "Pain relief and functional restoration",
+    ],
+    details:
+      "Our physiotherapy programme combines manual therapy, therapeutic exercises, and modern modalities to support recovery after joint replacement, arthroscopy, spine surgery, and fractures, and to manage chronic pain and mobility issues.",
+    heroImage:
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80",
+    heroAlt: "Patient receiving physiotherapy treatment",
+    sections: [
+      {
+        heading: "Comprehensive rehabilitation",
+        body:
+          "Individualised programmes for post-operative recovery, sports injuries, and chronic conditions, combining hands-on therapy with progressive exercise.",
+      },
+      {
+        heading: "Who benefits?",
+        body:
+          "Ideal for patients after joint replacement, arthroscopy, or spine surgery; athletes returning from injury; and anyone with persistent pain or limited mobility.",
       },
     ],
   },
@@ -512,6 +537,16 @@ export const servicesOffered: Service[] = [
 
 export const getServiceBySlug = (slug: string) =>
   servicesOffered.find((service) => service.slug === slug);
+
+/** Slugs for the 6 featured banner services on the homepage (order preserved) */
+export const featuredServiceSlugs: string[] = [
+  "hip-joint-replacement",
+  "knee-arthroscopy",
+  "back-pain-management",
+  "spinal-surgeries",
+  "sports-injuries",
+  "physiotherapy",
+];
 
 export const testimonials: Testimonial[] = [
   {

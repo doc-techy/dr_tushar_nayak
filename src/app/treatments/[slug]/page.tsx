@@ -421,6 +421,32 @@ const treatmentContent: Record<string, CustomTreatmentContent> = {
       }
     ]
   },
+  physiotherapy: {
+    heroTitle: "State of the Art Physiotherapy",
+    heroTagline: "Evidence-based rehabilitation for post-surgical recovery, sports injuries, and chronic musculoskeletal conditions.",
+    sections: [
+      {
+        heading: "Comprehensive rehabilitation",
+        paragraphs: [
+          "Individualised programmes for post-operative recovery, sports injuries, and chronic conditions, combining hands-on manual therapy with progressive therapeutic exercise.",
+        ],
+      },
+      {
+        heading: "Who benefits?",
+        paragraphs: [
+          "Ideal for patients after joint replacement, arthroscopy, or spine surgery; athletes returning from injury; and anyone with persistent pain or limited mobility seeking pain relief and functional restoration.",
+        ],
+      },
+      {
+        heading: "Our approach",
+        list: [
+          "Post-surgical and sports rehabilitation",
+          "Manual therapy and targeted exercise",
+          "Pain relief and functional restoration",
+        ],
+      },
+    ],
+  },
   "trauma-management": {
     heroTitle: "Bone Fracture Treatment",
     heroTagline: "Accurate Diagnosis and Expert Care for All Types of Fractures",

@@ -3,8 +3,14 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { servicesOffered } from "@/data/site-content";
 import { LuArrowRight, LuArrowUpRight } from "react-icons/lu";
+
+const signatureProgrammes = [
+  { title: "Robotic knee and hip replacements", href: "/treatments/knee-replacement" },
+  { title: "Key hole knee and shoulder arthroscopy", href: "/treatments/knee-arthroscopy" },
+  { title: "Spine decompression surgery", href: "/treatments/spinal-surgeries" },
+  { title: "Fracture fixation surgery", href: "/treatments/trauma-management" },
+];
 
 const sliderImages = [
   { src: "/images/img1.avif", alt: "Dr. Tushar Nayak consulting a patient" },
@@ -26,19 +32,19 @@ export function HeroSection() {
 
   return (
     <section id="hero" className="relative min-h-[90vh] overflow-x-hidden text-gray-900">
-      <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pt-0 sm:pt-4 pb-24 lg:py-9">
-        <div className="grid gap-8 lg:gap-16 lg:grid-cols-[0.85fr_1.25fr] items-start">
+      <div className="relative w-full max-w-[1600px] mx-auto px-6 sm:px-10 lg:px-20 xl:px-24 pt-0 sm:pt-4 pb-24 lg:py-9">
+        <div className="grid gap-8 lg:gap-20 xl:gap-24 lg:grid-cols-[0.9fr_1.35fr] items-start">
           <aside className="lg:sticky lg:top-2 lg:order-1 w-screen lg:w-auto ml-[calc(50%-50vw)] mr-[calc(50%-50vw)] lg:ml-0 lg:mr-0 relative">
             <div className="pointer-events-none absolute inset-0 -z-10">
-              <div className="absolute -top-20 left-1/2 w-[480px] h-[480px] -translate-x-1/2 bg-indigo-100/40 blur-3xl rounded-full" aria-hidden />
-              <div className="absolute bottom-[-20%] right-[10%] w-[360px] h-[360px] bg-purple-100/40 blur-3xl rounded-full" aria-hidden />
-              <div className="absolute top-[20%] left-[-10%] w-[320px] h-[320px] bg-pink-100/30 blur-[180px] rounded-full" aria-hidden />
+              <div className="absolute -top-20 left-1/2 w-[480px] h-[480px] -translate-x-1/2 bg-teal-100/40 blur-3xl rounded-full" aria-hidden />
+              <div className="absolute bottom-[-20%] right-[10%] w-[360px] h-[360px] bg-teal-100/30 blur-3xl rounded-full" aria-hidden />
+              <div className="absolute top-[20%] left-[-10%] w-[320px] h-[320px] bg-brand-navy/10 blur-[180px] rounded-full" aria-hidden />
             </div>
-            <div className="group relative rounded-none sm:rounded-[2.75rem] bg-none sm:bg-[conic-gradient(from_140deg_at_70%_20%,rgba(165,180,252,0.45),rgba(244,114,182,0.4),rgba(129,140,248,0.5))] p-0 sm:p-[10px] shadow-none sm:shadow-[0_45px_140px_-70px_rgba(79,70,229,0.95)] transition duration-500 hover:shadow-none sm:hover:shadow-[0_70px_160px_-65px_rgba(192,132,252,0.8)]">
+            <div className="group relative rounded-none sm:rounded-[2.75rem] bg-none sm:bg-[conic-gradient(from_140deg_at_70%_20%,rgba(30,154,162,0.4),rgba(10,47,77,0.35))] p-0 sm:p-[10px] shadow-none sm:shadow-[0_45px_140px_-70px_rgba(30,154,162,0.4)] transition duration-500 hover:shadow-none sm:hover:shadow-[0_70px_160px_-65px_rgba(10,47,77,0.5)]">
               <div className="rounded-none sm:rounded-[2.5rem] bg-transparent sm:bg-gray-950/40 p-0 sm:p-[3px] backdrop-blur-0 sm:backdrop-blur-xl">
                 <div className="relative overflow-hidden rounded-none sm:rounded-[2.3rem] border-0 sm:border sm:border-white/20 bg-transparent sm:bg-white/5">
-                  <div className="absolute inset-0 pointer-events-none bg-[conic-gradient(from_180deg_at_50%_50%,rgba(99,102,241,0.35),transparent_60%)] opacity-0 transition-opacity duration-500 group-hover:opacity-0 sm:group-hover:opacity-70" aria-hidden />
-                  <div className="relative h-[420px] sm:h-[520px] md:h-[580px] lg:h-[680px]">
+                  <div className="absolute inset-0 pointer-events-none bg-[conic-gradient(from_180deg_at_50%_50%,rgba(30,154,162,0.3),transparent_60%)] opacity-0 transition-opacity duration-500 group-hover:opacity-0 sm:group-hover:opacity-70" aria-hidden />
+                  <div className="relative h-[380px] sm:h-[480px] md:h-[540px] lg:h-[620px]">
                     {sliderImages.map((image, index) => (
                       <div
                         key={image.src}
@@ -85,30 +91,26 @@ export function HeroSection() {
                 </span>
               </div> */}
 
-              <h1 className="text-4xl sm:text-6xl lg:text-[4.5rem] font-black leading-[1.1] tracking-tight text-gray-900">
-                Dr. Tushar <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Nayak</span>
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight text-gray-900">
+                Dr. Tushar <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-teal to-brand-navy">Nayak</span>
               </h1>
 
-              <p className="max-w-xl text-sm sm:text-lg leading-relaxed text-gray-600 font-medium">
-                With over 10 years of clinical excellence, Dr. Tushar Nayak stands among Bengaluru&apos;s most trusted orthopaedic specialists. Having served at leading hospitals across the city, he combines advanced surgical expertise with compassionate patient care. Committed to the highest standards of ethics and professionalism, Dr. Nayak leverages cutting-edge technology to deliver precise, evidence-based solutions for all orthopaedic concerns.
+              <p className="max-w-2xl text-sm sm:text-lg leading-relaxed text-gray-600 font-medium">
+                With over a decade of clinical excellence in Orthopaedics, Dr. Tushar Nayak is a highly trained Orthopaedic Surgeon, educated at AIIMS, Delhi, with international fellowships in Joint Replacement, Sports Medicine, and Arthroscopy. He combines deep clinical expertise with the latest robotic and minimally invasive technologies to deliver precise, safe, and faster-recovery treatments. Known for his compassionate and trustworthy approach, Dr. Nayak believes in listening carefully, explaining clearly, and guiding every patient with empathy—helping them return to an active, pain-free life with confidence.
               </p>
               
-              <div className="flex flex-row items-center justify-between gap-4 pt-4 border-t border-gray-100">
+              <div className="grid grid-cols-3 gap-2 sm:gap-4 pt-4 border-t border-gray-100">
                 <div>
-                <p className="text-[10px] font-bold uppercase tracking-normal text-gray-500">Years Exp.</p>
-                  <p className="text-2xl sm:text-3xl font-black text-gray-900">10+</p>
+                  <p className="text-[10px] font-bold uppercase tracking-normal text-gray-500">Years Exp.</p>
+                  <p className="text-2xl sm:text-3xl font-black text-gray-900">11+</p>
                 </div>
-                <div className="h-8 w-px bg-gray-200"></div>
-                <div>
-                <p className="text-[10px] font-bold uppercase tracking-normal text-gray-500">Available:</p>
-
-                  <p className="text-2xl sm:text-3xl font-black text-gray-900">Mon-Sat</p>
+                <div className="border-x border-gray-200 px-2 sm:px-4">
+                  <p className="text-[10px] font-bold uppercase tracking-normal text-gray-500">Mon–Sat</p>
+                  <p className="text-sm sm:text-base font-black text-gray-900">10am–9pm</p>
                 </div>
-                <div className="h-8 w-px bg-gray-200"></div>
                 <div>
-                <p className="text-[10px] font-bold uppercase tracking-normal text-gray-500">Timings</p>
-
-                  <p className="text-2xl sm:text-3xl font-black text-gray-900">9am to 5pm</p>
+                  <p className="text-[10px] font-bold uppercase tracking-normal text-gray-500">Sunday</p>
+                  <p className="text-sm sm:text-base font-black text-gray-900">9am–1pm</p>
                 </div>
               </div>
             </div>
@@ -116,29 +118,37 @@ export function HeroSection() {
             <div className="hidden lg:block space-y-4">
               <p className="text-xs font-bold uppercase tracking-[0.05em] text-gray-400">Signature Programmes</p>
               <div className="flex flex-wrap gap-2">
-                {servicesOffered.slice(0, 4).map((service, index) => (
+                {signatureProgrammes.map((item, index) => (
                   <Link
-                    key={service.slug}
-                    href={`/treatments/${service.slug}`}
-                    className={`group inline-flex items-center gap-2 rounded-full border px-5 py-2.5 text-xs font-bold uppercase tracking-normal transition-all duration-300 hover:-translate-y-0.5 ${
-                      index % 3 === 0
-                        ? "bg-white border-indigo-100 text-indigo-600 hover:border-indigo-300 hover:shadow-lg hover:shadow-indigo-500/10"
-                        : index % 3 === 1
-                        ? "bg-white border-purple-100 text-purple-600 hover:border-purple-300 hover:shadow-lg hover:shadow-purple-500/10"
-                        : "bg-white border-pink-100 text-pink-600 hover:border-pink-300 hover:shadow-lg hover:shadow-pink-500/10"
-                    }`}
+                    key={item.href}
+                    href={item.href}
+                    className="group inline-flex items-center gap-2 rounded-full border border-teal-100 bg-white px-5 py-2.5 text-xs font-bold uppercase tracking-normal text-brand-teal transition-all duration-300 hover:-translate-y-0.5 hover:border-teal-300 hover:shadow-lg hover:shadow-brand-teal/10"
                   >
-                    {service.title}
+                    {item.title}
                     <LuArrowUpRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </Link>
                 ))}
+                {/* <Link
+                  href="/booking"
+                  className="group inline-flex items-center gap-2 rounded-full border border-brand-navy/30 bg-white px-5 py-2.5 text-xs font-bold uppercase tracking-normal text-brand-navy transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-navy hover:shadow-lg hover:shadow-brand-navy/10"
+                >
+                  Book consultation
+                  <LuArrowUpRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </Link>
+                <Link
+                  href="tel:8810605887"
+                  className="group inline-flex items-center gap-2 rounded-full border border-brand-navy/30 bg-white px-5 py-2.5 text-xs font-bold uppercase tracking-normal text-brand-navy transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-navy hover:shadow-lg hover:shadow-brand-navy/10"
+                >
+                  Contact Us
+                  <LuArrowUpRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </Link> */}
               </div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
               <Link
                 href="/booking"
-                className="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 px-8 py-4 text-sm font-bold uppercase tracking-[0.1em] text-white shadow-lg shadow-indigo-500/30 transition-all duration-300 hover:scale-105 hover:shadow-indigo-500/50"
+                className="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-full bg-gradient-to-r from-brand-teal to-brand-navy px-8 py-4 text-sm font-bold uppercase tracking-[0.1em] text-white shadow-lg shadow-brand-teal/30 transition-all duration-300 hover:scale-105 hover:shadow-brand-teal/50"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   Book Consultation
@@ -147,7 +157,7 @@ export function HeroSection() {
               </Link>
               <Link
                 href="tel:8810605887"
-                className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full border-2 border-indigo-600 bg-white px-8 py-4 text-sm font-bold uppercase tracking-[0.1em] text-indigo-600 shadow-md shadow-indigo-500/10 transition-all duration-300 hover:bg-gradient-to-r hover:from-indigo-600 hover:to-purple-600 hover:text-white hover:border-transparent hover:shadow-lg hover:shadow-indigo-500/30 hover:scale-105"
+                className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full border-2 border-brand-teal bg-white px-8 py-4 text-sm font-bold uppercase tracking-[0.1em] text-brand-teal shadow-md shadow-brand-teal/10 transition-all duration-300 hover:bg-gradient-to-r hover:from-brand-teal hover:to-brand-navy hover:text-white hover:border-transparent hover:shadow-lg hover:shadow-brand-teal/30 hover:scale-105"
               >
                 <span className="relative z-10">Contact Us</span>
               </Link>

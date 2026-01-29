@@ -37,7 +37,8 @@ export function ServicesSection() {
             >
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-teal-50 to-transparent" />
 
-              <div className="relative aspect-[4/3] sm:aspect-[16/10] w-full overflow-hidden rounded-t-lg sm:rounded-t-xl md:rounded-t-2xl">
+              {/* Image - 40% height on mobile, larger on desktop */}
+              <div className="relative aspect-[16/9] sm:aspect-[16/10] w-full overflow-hidden rounded-t-lg sm:rounded-t-xl md:rounded-t-2xl">
                 <Image
                   src={service.heroImage}
                   alt={service.heroAlt}
@@ -55,10 +56,12 @@ export function ServicesSection() {
                   </h3>
                 </div>
 
-                <p className="text-gray-600 leading-relaxed line-clamp-2 text-[8px] sm:text-[10px] md:text-xs lg:text-sm hidden sm:block">
+                {/* Description - visible on all screens */}
+                <p className="text-gray-600 leading-relaxed line-clamp-2 text-[8px] sm:text-[10px] md:text-xs lg:text-sm">
                   {service.description}
                 </p>
 
+                {/* Highlights - visible on md+ */}
                 <ul className="space-y-0.5 sm:space-y-1 md:space-y-1.5 hidden md:block">
                   {service.highlights.slice(0, 2).map((highlight) => (
                     <li key={highlight} className="flex items-start gap-1 sm:gap-1.5 md:gap-2 text-[8px] sm:text-[10px] md:text-xs text-gray-700">

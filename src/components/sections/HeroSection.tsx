@@ -112,27 +112,26 @@ export function HeroSection() {
                 </div>
                 <div className="border-x border-gray-200 px-2 sm:px-3 md:px-4">
                   <p className="text-[9px] sm:text-[10px] md:text-xs font-bold uppercase tracking-wide text-gray-500">SPARSH</p>
-                  <p className="text-xs sm:text-sm md:text-base font-black text-gray-900">10am–5pm</p>
+                  <p className="text-[10px] sm:text-xs md:text-sm font-black text-gray-900">Mon-Sat 10am–5pm</p>
                 </div>
                 <div>
                   <p className="text-[9px] sm:text-[10px] md:text-xs font-bold uppercase tracking-wide text-gray-500">Nistha</p>
-                  <p className="text-xs sm:text-sm md:text-base font-black text-gray-900">6pm–9pm</p>
+                  <p className="text-[10px] sm:text-xs md:text-sm font-black text-gray-900">Mon-Sat, Sun 9am–1pm</p>
                 </div>
               </div>
             </div>
 
-            {/* Signature Programmes - visible on md+ screens */}
+            {/* Signature Programmes - visible on md+ screens, 2 per row */}
             <div className="hidden md:block space-y-3 lg:space-y-4">
               <p className="text-[10px] lg:text-xs font-bold uppercase tracking-widest text-gray-400">Signature Programmes</p>
-              <div className="flex flex-wrap gap-1.5 lg:gap-2">
+              <div className="grid grid-cols-2 gap-2 lg:gap-3">
                 {signatureProgrammes.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="group inline-flex items-center gap-1.5 lg:gap-2 rounded-full border border-teal-100 bg-white px-3 lg:px-4 xl:px-5 py-1.5 lg:py-2 text-[10px] lg:text-xs font-bold uppercase tracking-wide text-brand-teal transition-all duration-300 hover:-translate-y-0.5 hover:border-teal-300 hover:shadow-lg hover:shadow-brand-teal/10"
+                    className="group flex items-center justify-center text-center rounded-full border border-teal-100 bg-white px-4 lg:px-5 py-2.5 lg:py-3 text-[10px] lg:text-xs font-bold uppercase tracking-wide text-brand-teal transition-all duration-300 hover:-translate-y-0.5 hover:border-teal-300 hover:shadow-lg hover:shadow-brand-teal/10"
                   >
-                    <span className="line-clamp-1">{item.title}</span>
-                    <LuArrowUpRight className="h-2.5 w-2.5 lg:h-3 lg:w-3 flex-shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <span className="leading-tight">{item.title}</span>
                   </Link>
                 ))}
               </div>

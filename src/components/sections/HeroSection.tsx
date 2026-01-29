@@ -138,6 +138,22 @@ export function HeroSection() {
               </div>
             </div>
 
+            {/* Mobile-only Signature Programmes - 2 per row with full names, above CTA on mobile */}
+            <div className="md:hidden">
+              <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2">Signature Programmes</p>
+              <div className="grid grid-cols-2 gap-2">
+                {signatureProgrammes.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="flex items-center justify-center text-center rounded-lg border border-teal-100 bg-teal-50/50 px-2 py-2 text-[9px] font-semibold text-brand-teal leading-tight"
+                  >
+                    {item.title}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
             {/* CTA Buttons */}
             <div className="flex flex-col xs:flex-row sm:flex-row gap-3 sm:gap-4 pt-1 sm:pt-2">
               <Link
@@ -155,28 +171,6 @@ export function HeroSection() {
               >
                 <span className="relative z-10">Contact Us</span>
               </Link>
-            </div>
-
-            {/* Mobile-only simplified programmes */}
-            <div className="md:hidden pt-2">
-              <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2">Our Specialties</p>
-              <div className="flex flex-wrap gap-1.5">
-                {signatureProgrammes.slice(0, 3).map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="inline-flex items-center rounded-full border border-teal-100 bg-teal-50/50 px-2.5 py-1 text-[10px] font-semibold text-brand-teal"
-                  >
-                    {item.title.split(" ").slice(0, 2).join(" ")}
-                  </Link>
-                ))}
-                <Link
-                  href="/#services"
-                  className="inline-flex items-center rounded-full border border-gray-200 bg-gray-50 px-2.5 py-1 text-[10px] font-semibold text-gray-600"
-                >
-                  View all →
-                </Link>
-              </div>
             </div>
           </div>
         </div>

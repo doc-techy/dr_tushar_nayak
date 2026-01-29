@@ -6,13 +6,8 @@ export function BlogSection() {
   return (
     <section
       id="blogs"
-      className="relative py-10 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-8 text-gray-900 overflow-hidden border-t border-gray-200"
+      className="relative py-10 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-8 text-gray-900 overflow-hidden"
     >
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -top-40 left-1/2 w-[400px] sm:w-[550px] lg:w-[680px] h-[400px] sm:h-[550px] lg:h-[680px] -translate-x-1/2 bg-indigo-100/40 blur-3xl rounded-full" aria-hidden />
-        <div className="absolute bottom-[-10%] right-[10%] w-[300px] sm:w-[420px] lg:w-[520px] h-[300px] sm:h-[420px] lg:h-[520px] bg-purple-100/40 blur-3xl rounded-full" aria-hidden />
-        <div className="absolute top-[30%] left-[-10%] w-[250px] sm:w-[340px] lg:w-[420px] h-[250px] sm:h-[340px] lg:h-[420px] bg-pink-100/30 blur-[180px] rounded-full" aria-hidden />
-      </div>
       <div className="relative max-w-7xl mx-auto">
         <div className="mb-8 sm:mb-12 md:mb-16 lg:mb-20 text-left sm:text-center">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black leading-tight mb-2 sm:mb-4 lg:mb-6 text-gray-900">

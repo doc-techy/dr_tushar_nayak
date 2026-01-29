@@ -13,97 +13,20 @@ export function AboutSection({ profile, education, experience }: AboutSectionPro
   }));
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-white text-gray-900">
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-30" aria-hidden />
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/50 via-white to-purple-50/30" aria-hidden />
-        <div className="absolute -top-40 left-1/2 w-[680px] h-[680px] -translate-x-1/2 bg-indigo-100/40 blur-3xl rounded-full" aria-hidden />
-        <div className="absolute bottom-[-10%] right-[10%] w-[520px] h-[520px] bg-purple-100/40 blur-3xl rounded-full" aria-hidden />
-        <div className="absolute top-[30%] left-[-10%] w-[420px] h-[420px] bg-pink-100/30 blur-[180px] rounded-full" aria-hidden />
-      </div>
-    <section id="about" className="relative overflow-hidden bg-white py-6 lg:py-8 text-gray-900">
+    <section id="about" className="relative overflow-hidden py-10 sm:py-16 md:py-20 lg:py-24 text-gray-900">
 
       <div className="relative z-10 mx-auto flex max-w-7xl flex-col gap-4 lg:gap-16 px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-4 lg:gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-          <div className="space-y-3 lg:space-y-8">
-            <div className="inline-flex items-center gap-2 sm:gap-3 rounded-full border border-indigo-200 bg-indigo-50 px-3 sm:px-5 py-1.5 sm:py-2 text-xs sm:text-4xl font-bold uppercase text-indigo-700">
-              Meet Dr.Tushar Nayak
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="space-y-4 sm:space-y-5 lg:space-y-6">
+            <div className="inline-flex items-center gap-2 sm:gap-3 rounded-full border border-indigo-200 bg-indigo-50 px-4 sm:px-6 py-2 sm:py-2.5 text-xs sm:text-sm font-bold uppercase tracking-wide text-indigo-700">
+              Meet Dr. Tushar Nayak
             </div>
-            <h2 className="text-2xl sm:text-4xl lg:text-[2.75rem] font-black text-gray-900 mb-0 lg:mb-4 leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 leading-tight">
               Precision orthopaedics designed around your movement goals
             </h2>
-            <p className="max-w-2xl text-xs sm:text-sm lg:text-lg leading-relaxed text-gray-700">
+            <p className="max-w-3xl mx-auto text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed text-gray-600">
               {profile.intro} Patients receive detailed counselling, transparent milestones, and tailor-made rehabilitation plans designed around their lifestyle goals.
             </p>
-
-            {/* <div className="grid gap-6 rounded-3xl border border-white/10 bg-white/5 p-8 shadow-[0_35px_120px_-60px_rgba(99,102,241,0.85)] sm:grid-cols-3">
-              <div className="space-y-3">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.45em] text-indigo-200">
-                  Credentials
-                </p>
-                <p className="text-sm leading-relaxed text-gray-200">{profile.credentials}</p>
-              </div>
-              <div className="space-y-3">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.45em] text-indigo-200">
-                  Primary Clinic
-                </p>
-                <p className="text-sm leading-relaxed text-gray-200">{profile.primaryLocation}</p>
-              </div>
-              <div className="space-y-3">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.45em] text-indigo-200">
-                  Connect
-                </p>
-                <div className="flex flex-wrap gap-3">
-                  {profile.socials.map((social) => (
-                    <a
-                      key={social.label}
-                      href={social.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-indigo-100 transition hover:border-indigo-400/50 hover:bg-indigo-500/10"
-                    >
-                      {social.label}
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </div> */}
-          </div>
-
-          <div className="relative overflow-hidden rounded-2xl sm:rounded-[2.75rem] border border-gray-200 bg-white p-4 sm:p-10 shadow-lg">
-            <div className="absolute inset-0 rounded-2xl sm:rounded-[2.75rem] border border-gray-200 bg-gradient-to-br from-indigo-50/50 via-transparent to-purple-50/30 hidden lg:block" aria-hidden />
-            <div className="relative z-10 space-y-3 sm:space-y-6">
-              <div className="grid gap-3 sm:gap-4 grid-cols-2">
-                <div className="rounded-xl sm:rounded-2xl border border-gray-200 bg-gray-50 px-3 sm:px-5 py-3 sm:py-4">
-                  <p className="text-[9px] sm:text-sm font-semibold uppercase tracking-[0.08em] text-indigo-600">
-                    Years of Expertise
-                  </p>
-                  <p className="mt-1 sm:mt-2 text-xl sm:text-3xl font-bold text-gray-900">18+</p>
-                </div>
-                <div className="rounded-xl sm:rounded-2xl border border-gray-200 bg-gray-50 px-3 sm:px-5 py-3 sm:py-4">
-                  <p className="text-[9px] sm:text-sm font-semibold uppercase tracking-[0.08em] text-indigo-600">
-                    Surgeries Performed
-                  </p>
-                  <p className="mt-1 sm:mt-2 text-xl sm:text-3xl font-bold text-gray-900">12K+</p>
-                </div>
-                <div className="rounded-xl sm:rounded-2xl border border-gray-200 bg-gray-50 px-3 sm:px-5 py-3 sm:py-4 col-span-2">
-                  <p className="text-[9px] sm:text-sm font-semibold uppercase tracking-[0.08em] text-indigo-600">
-                    Fellowship Training
-                  </p>
-                  <p className="mt-1 sm:mt-2 text-[10px] sm:text-sm leading-relaxed text-gray-700">
-                    Advanced arthroplasty fellowship at EndoKlinik Hamburg specialising in minimally invasive joint replacement.
-                  </p>
-                </div>
-                <div className="rounded-xl sm:rounded-2xl border border-gray-200 bg-gray-50 px-3 sm:px-5 py-3 sm:py-4 col-span-2">
-                  <p className="text-[9px] sm:text-sm font-semibold uppercase tracking-[0.08em] text-indigo-600">
-                    Philosophy
-                  </p>
-                  <p className="mt-1 sm:mt-2 text-[10px] sm:text-sm leading-relaxed text-gray-700">
-                    Evidence-led protocols, precision implants, and personalised rehab to restore pain-free movement.
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -252,7 +175,6 @@ export function AboutSection({ profile, education, experience }: AboutSectionPro
         </div>
       </div>
     </section>
-    </div>
   );
 }
 

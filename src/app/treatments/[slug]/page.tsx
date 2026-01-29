@@ -566,15 +566,7 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
     : "4 / 3";
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-white text-gray-900">
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-30" aria-hidden />
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/50 via-white to-purple-50/30" aria-hidden />
-        <div className="absolute -top-40 left-1/2 w-[680px] h-[680px] -translate-x-1/2 bg-indigo-100/40 blur-3xl rounded-full" aria-hidden />
-        <div className="absolute bottom-[-10%] right-[10%] w-[520px] h-[520px] bg-purple-100/40 blur-3xl rounded-full" aria-hidden />
-        <div className="absolute top-[30%] left-[-10%] w-[420px] h-[420px] bg-pink-100/30 blur-[180px] rounded-full" aria-hidden />
-      </div>
-    <section className="relative overflow-hidden bg-white text-gray-900">
+    <section className="relative overflow-hidden text-gray-900">
 
       <div className="relative z-10 mx-auto flex max-w-7xl flex-col gap-4 lg:gap-16 px-4 pb-12 lg:pb-28 pt-4 lg:pt-8 sm:px-6 lg:px-8">
 
@@ -771,7 +763,6 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
         </div>
       </div>
     </section>
-    </div>
   );
 }
 

@@ -116,7 +116,8 @@ export function HeroSection() {
                 </div>
                 <div>
                   <p className="text-[9px] sm:text-[10px] md:text-xs font-bold uppercase tracking-wide text-gray-500">Nistha</p>
-                  <p className="text-[10px] sm:text-xs md:text-sm font-black text-gray-900">Mon-Sat, Sun 9am–1pm</p>
+                  <p className="text-[10px] sm:text-xs md:text-sm font-black text-gray-900 leading-tight">Mon-Sat 6pm–9pm</p>
+                  <p className="text-[10px] sm:text-xs md:text-sm font-black text-gray-900 leading-tight">Sun 9am–1pm</p>
                 </div>
               </div>
             </div>

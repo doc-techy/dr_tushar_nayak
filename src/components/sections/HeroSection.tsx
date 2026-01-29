@@ -32,11 +32,11 @@ export function HeroSection() {
 
   return (
     <section id="hero" className="relative overflow-hidden text-gray-900">
-      {/* Container with responsive padding */}
-      <div className="relative w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-24 py-6 sm:py-8 md:py-10 lg:py-12">
+      {/* Container with responsive padding - edge to edge on mobile, no top padding */}
+      <div className="relative w-full max-w-[1600px] mx-auto px-0 sm:px-6 md:px-10 lg:px-16 xl:px-24 pt-0 sm:pt-8 md:pt-10 lg:pt-12 pb-4 sm:pb-8 md:pb-10 lg:pb-12">
         
         {/* Grid: stacked on mobile, side-by-side on md+ */}
-        <div className="grid gap-6 sm:gap-8 md:gap-10 lg:gap-16 xl:gap-20 md:grid-cols-[1fr_1.2fr] lg:grid-cols-[0.85fr_1.15fr] xl:grid-cols-[0.9fr_1.1fr] items-center">
+        <div className="grid gap-4 sm:gap-8 md:gap-10 lg:gap-16 xl:gap-20 md:grid-cols-[1fr_1.2fr] lg:grid-cols-[0.85fr_1.15fr] xl:grid-cols-[0.9fr_1.1fr] items-center">
           
           {/* Image Section */}
           <aside className="md:order-1 w-full relative">
@@ -46,12 +46,12 @@ export function HeroSection() {
               <div className="absolute bottom-[-20%] right-[10%] w-[200px] sm:w-[280px] lg:w-[360px] h-[200px] sm:h-[280px] lg:h-[360px] bg-teal-100/30 blur-3xl rounded-full" aria-hidden />
             </div>
             
-            {/* Image container with responsive styling */}
-            <div className="group relative rounded-2xl sm:rounded-3xl md:rounded-[2rem] lg:rounded-[2.5rem] bg-[conic-gradient(from_140deg_at_70%_20%,rgba(30,154,162,0.4),rgba(10,47,77,0.35))] p-1.5 sm:p-2 md:p-2.5 lg:p-3 shadow-[0_20px_60px_-30px_rgba(30,154,162,0.3)] sm:shadow-[0_30px_80px_-40px_rgba(30,154,162,0.35)] lg:shadow-[0_45px_100px_-50px_rgba(30,154,162,0.4)] transition duration-500 hover:shadow-[0_50px_120px_-40px_rgba(10,47,77,0.5)]">
-              <div className="rounded-xl sm:rounded-2xl md:rounded-[1.75rem] lg:rounded-[2.25rem] bg-gray-950/40 p-0.5 sm:p-1 backdrop-blur-xl">
-                <div className="relative overflow-hidden rounded-lg sm:rounded-xl md:rounded-[1.5rem] lg:rounded-[2rem] border border-white/20 bg-white/5">
-                  {/* Responsive image heights */}
-                  <div className="relative h-[280px] sm:h-[350px] md:h-[400px] lg:h-[500px] xl:h-[560px]">
+            {/* Image container with responsive styling - edge to edge on mobile */}
+            <div className="group relative rounded-none sm:rounded-3xl md:rounded-[2rem] lg:rounded-[2.5rem] bg-[conic-gradient(from_140deg_at_70%_20%,rgba(30,154,162,0.4),rgba(10,47,77,0.35))] p-0 sm:p-2 md:p-2.5 lg:p-3 shadow-none sm:shadow-[0_30px_80px_-40px_rgba(30,154,162,0.35)] lg:shadow-[0_45px_100px_-50px_rgba(30,154,162,0.4)] transition duration-500 hover:shadow-[0_50px_120px_-40px_rgba(10,47,77,0.5)]">
+              <div className="rounded-none sm:rounded-2xl md:rounded-[1.75rem] lg:rounded-[2.25rem] bg-gray-950/40 p-0 sm:p-1 backdrop-blur-xl">
+                <div className="relative overflow-hidden rounded-none sm:rounded-xl md:rounded-[1.5rem] lg:rounded-[2rem] border-0 sm:border border-white/20 bg-white/5">
+                  {/* Responsive image heights - taller on mobile */}
+                  <div className="relative h-[360px] sm:h-[350px] md:h-[400px] lg:h-[500px] xl:h-[560px]">
                     {sliderImages.map((image, index) => (
                       <div
                         key={image.src}
@@ -88,8 +88,8 @@ export function HeroSection() {
             </div>
           </aside>
 
-          {/* Content Section */}
-          <div className="flex flex-col gap-5 sm:gap-6 md:gap-8 lg:gap-10 md:order-2">
+          {/* Content Section - add padding on mobile */}
+          <div className="flex flex-col gap-5 sm:gap-6 md:gap-8 lg:gap-10 md:order-2 px-4 sm:px-0">
             
             {/* Title and intro */}
             <div className="space-y-3 sm:space-y-4 lg:space-y-5">

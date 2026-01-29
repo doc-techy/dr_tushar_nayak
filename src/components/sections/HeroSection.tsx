@@ -31,20 +31,27 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section id="hero" className="relative min-h-[90vh] overflow-x-hidden text-gray-900">
-      <div className="relative w-full max-w-[1600px] mx-auto px-6 sm:px-10 lg:px-20 xl:px-24 pt-0 sm:pt-4 pb-24 lg:py-9">
-        <div className="grid gap-8 lg:gap-20 xl:gap-24 lg:grid-cols-[0.9fr_1.35fr] items-start">
-          <aside className="lg:sticky lg:top-2 lg:order-1 w-screen lg:w-auto ml-[calc(50%-50vw)] mr-[calc(50%-50vw)] lg:ml-0 lg:mr-0 relative">
-            <div className="pointer-events-none absolute inset-0 -z-10">
-              <div className="absolute -top-20 left-1/2 w-[480px] h-[480px] -translate-x-1/2 bg-teal-100/40 blur-3xl rounded-full" aria-hidden />
-              <div className="absolute bottom-[-20%] right-[10%] w-[360px] h-[360px] bg-teal-100/30 blur-3xl rounded-full" aria-hidden />
-              <div className="absolute top-[20%] left-[-10%] w-[320px] h-[320px] bg-brand-navy/10 blur-[180px] rounded-full" aria-hidden />
+    <section id="hero" className="relative overflow-hidden text-gray-900">
+      {/* Container with responsive padding */}
+      <div className="relative w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-24 py-6 sm:py-8 md:py-10 lg:py-12">
+        
+        {/* Grid: stacked on mobile, side-by-side on md+ */}
+        <div className="grid gap-6 sm:gap-8 md:gap-10 lg:gap-16 xl:gap-20 md:grid-cols-[1fr_1.2fr] lg:grid-cols-[0.85fr_1.15fr] xl:grid-cols-[0.9fr_1.1fr] items-center">
+          
+          {/* Image Section */}
+          <aside className="md:order-1 w-full relative">
+            {/* Background blurs - hidden on mobile for performance */}
+            <div className="pointer-events-none absolute inset-0 -z-10 hidden sm:block">
+              <div className="absolute -top-20 left-1/2 w-[300px] sm:w-[400px] lg:w-[480px] h-[300px] sm:h-[400px] lg:h-[480px] -translate-x-1/2 bg-teal-100/40 blur-3xl rounded-full" aria-hidden />
+              <div className="absolute bottom-[-20%] right-[10%] w-[200px] sm:w-[280px] lg:w-[360px] h-[200px] sm:h-[280px] lg:h-[360px] bg-teal-100/30 blur-3xl rounded-full" aria-hidden />
             </div>
-            <div className="group relative rounded-none sm:rounded-[2.75rem] bg-none sm:bg-[conic-gradient(from_140deg_at_70%_20%,rgba(30,154,162,0.4),rgba(10,47,77,0.35))] p-0 sm:p-[10px] shadow-none sm:shadow-[0_45px_140px_-70px_rgba(30,154,162,0.4)] transition duration-500 hover:shadow-none sm:hover:shadow-[0_70px_160px_-65px_rgba(10,47,77,0.5)]">
-              <div className="rounded-none sm:rounded-[2.5rem] bg-transparent sm:bg-gray-950/40 p-0 sm:p-[3px] backdrop-blur-0 sm:backdrop-blur-xl">
-                <div className="relative overflow-hidden rounded-none sm:rounded-[2.3rem] border-0 sm:border sm:border-white/20 bg-transparent sm:bg-white/5">
-                  <div className="absolute inset-0 pointer-events-none bg-[conic-gradient(from_180deg_at_50%_50%,rgba(30,154,162,0.3),transparent_60%)] opacity-0 transition-opacity duration-500 group-hover:opacity-0 sm:group-hover:opacity-70" aria-hidden />
-                  <div className="relative h-[380px] sm:h-[480px] md:h-[540px] lg:h-[620px]">
+            
+            {/* Image container with responsive styling */}
+            <div className="group relative rounded-2xl sm:rounded-3xl md:rounded-[2rem] lg:rounded-[2.5rem] bg-[conic-gradient(from_140deg_at_70%_20%,rgba(30,154,162,0.4),rgba(10,47,77,0.35))] p-1.5 sm:p-2 md:p-2.5 lg:p-3 shadow-[0_20px_60px_-30px_rgba(30,154,162,0.3)] sm:shadow-[0_30px_80px_-40px_rgba(30,154,162,0.35)] lg:shadow-[0_45px_100px_-50px_rgba(30,154,162,0.4)] transition duration-500 hover:shadow-[0_50px_120px_-40px_rgba(10,47,77,0.5)]">
+              <div className="rounded-xl sm:rounded-2xl md:rounded-[1.75rem] lg:rounded-[2.25rem] bg-gray-950/40 p-0.5 sm:p-1 backdrop-blur-xl">
+                <div className="relative overflow-hidden rounded-lg sm:rounded-xl md:rounded-[1.5rem] lg:rounded-[2rem] border border-white/20 bg-white/5">
+                  {/* Responsive image heights */}
+                  <div className="relative h-[280px] sm:h-[350px] md:h-[400px] lg:h-[500px] xl:h-[560px]">
                     {sliderImages.map((image, index) => (
                       <div
                         key={image.src}
@@ -56,21 +63,22 @@ export function HeroSection() {
                           alt={image.alt}
                           fill
                           priority={index === 0}
-                          sizes="(min-width: 1024px) 32rem, 100vw"
+                          sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 45vw, 40vw"
                           className="object-cover"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-black/10 to-transparent sm:from-gray-950/40 sm:via-gray-950/10" aria-hidden />
+                        <div className="absolute inset-0 bg-gradient-to-t from-gray-950/50 via-gray-950/20 to-transparent" aria-hidden />
                       </div>
                     ))}
                   </div>
 
-                  <div className="absolute inset-x-0 bottom-6 flex justify-center gap-2">
+                  {/* Slide indicators */}
+                  <div className="absolute inset-x-0 bottom-4 sm:bottom-5 lg:bottom-6 flex justify-center gap-1.5 sm:gap-2">
                     {sliderImages.map((_, index) => (
                       <button
                         key={index}
                         type="button"
                         onClick={() => setActiveSlide(index)}
-                        className={`h-2 rounded-full transition-all ${index === activeSlide ? "w-6 bg-white" : "w-2 bg-white/40 hover:bg-white/60"}`}
+                        className={`h-1.5 sm:h-2 rounded-full transition-all ${index === activeSlide ? "w-5 sm:w-6 bg-white" : "w-1.5 sm:w-2 bg-white/40 hover:bg-white/60"}`}
                         aria-label={`View slide ${index + 1}`}
                       />
                     ))}
@@ -80,87 +88,95 @@ export function HeroSection() {
             </div>
           </aside>
 
-          <div className="flex flex-col gap-8 lg:gap-10 lg:order-2">
-            <div className="space-y-4 lg:space-y-6">
-              {/* <div className="inline-flex flex-wrap items-center gap-3">
-                <span className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50/50 px-4 py-1.5 text-[10px] sm:text-xs font-bold uppercase tracking-[0.05em] text-indigo-700 backdrop-blur-sm">
-                  Orthopaedic Surgeon
+          {/* Content Section */}
+          <div className="flex flex-col gap-5 sm:gap-6 md:gap-8 lg:gap-10 md:order-2">
+            
+            {/* Title and intro */}
+            <div className="space-y-3 sm:space-y-4 lg:space-y-5">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black leading-[1.1] tracking-tight text-gray-900">
+                Dr. Tushar{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-teal to-brand-navy">
+                  Nayak
                 </span>
-                <span className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white/50 px-4 py-1.5 text-[10px] sm:text-xs font-bold uppercase tracking-[0.05em] text-gray-600 backdrop-blur-sm">
-                  Bengaluru
-                </span>
-              </div> */}
-
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight text-gray-900">
-                Dr. Tushar <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-teal to-brand-navy">Nayak</span>
               </h1>
 
-              <p className="max-w-2xl text-sm sm:text-lg leading-relaxed text-gray-600 font-medium">
-                With over a decade of clinical excellence in Orthopaedics, Dr. Tushar Nayak is a highly trained Orthopaedic Surgeon, educated at AIIMS, Delhi, with international fellowships in Joint Replacement, Sports Medicine, and Arthroscopy. He combines deep clinical expertise with the latest robotic and minimally invasive technologies to deliver precise, safe, and faster-recovery treatments. Known for his compassionate and trustworthy approach, Dr. Nayak believes in listening carefully, explaining clearly, and guiding every patient with empathy—helping them return to an active, pain-free life with confidence.
+              <p className="text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed text-gray-600 font-medium max-w-xl lg:max-w-2xl">
+                With over a decade of clinical excellence in Orthopaedics, Dr. Tushar Nayak is a highly trained Orthopaedic Surgeon, educated at AIIMS, Delhi, with international fellowships in Joint Replacement, Sports Medicine, and Arthroscopy. He combines deep clinical expertise with the latest robotic and minimally invasive technologies to deliver precise, safe, and faster-recovery treatments.
               </p>
               
-              <div className="grid grid-cols-3 gap-2 sm:gap-4 pt-4 border-t border-gray-100">
+              {/* Stats row */}
+              <div className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-4 pt-3 sm:pt-4 border-t border-gray-200">
                 <div>
-                  <p className="text-[10px] font-bold uppercase tracking-normal text-gray-500">Years Exp.</p>
-                  <p className="text-2xl sm:text-3xl font-black text-gray-900">11+</p>
+                  <p className="text-[9px] sm:text-[10px] md:text-xs font-bold uppercase tracking-wide text-gray-500">Years Exp.</p>
+                  <p className="text-xl sm:text-2xl md:text-3xl font-black text-gray-900">11+</p>
                 </div>
-                <div className="border-x border-gray-200 px-2 sm:px-4">
-                  <p className="text-[10px] font-bold uppercase tracking-normal text-gray-500">Mon–Sat</p>
-                  <p className="text-sm sm:text-base font-black text-gray-900">10am–9pm</p>
+                <div className="border-x border-gray-200 px-2 sm:px-3 md:px-4">
+                  <p className="text-[9px] sm:text-[10px] md:text-xs font-bold uppercase tracking-wide text-gray-500">Mon–Sat</p>
+                  <p className="text-xs sm:text-sm md:text-base font-black text-gray-900">10am–9pm</p>
                 </div>
                 <div>
-                  <p className="text-[10px] font-bold uppercase tracking-normal text-gray-500">Sunday</p>
-                  <p className="text-sm sm:text-base font-black text-gray-900">9am–1pm</p>
+                  <p className="text-[9px] sm:text-[10px] md:text-xs font-bold uppercase tracking-wide text-gray-500">Sunday</p>
+                  <p className="text-xs sm:text-sm md:text-base font-black text-gray-900">9am–1pm</p>
                 </div>
               </div>
             </div>
 
-            <div className="hidden lg:block space-y-4">
-              <p className="text-xs font-bold uppercase tracking-[0.05em] text-gray-400">Signature Programmes</p>
-              <div className="flex flex-wrap gap-2">
-                {signatureProgrammes.map((item, index) => (
+            {/* Signature Programmes - visible on md+ screens */}
+            <div className="hidden md:block space-y-3 lg:space-y-4">
+              <p className="text-[10px] lg:text-xs font-bold uppercase tracking-widest text-gray-400">Signature Programmes</p>
+              <div className="flex flex-wrap gap-1.5 lg:gap-2">
+                {signatureProgrammes.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="group inline-flex items-center gap-2 rounded-full border border-teal-100 bg-white px-5 py-2.5 text-xs font-bold uppercase tracking-normal text-brand-teal transition-all duration-300 hover:-translate-y-0.5 hover:border-teal-300 hover:shadow-lg hover:shadow-brand-teal/10"
+                    className="group inline-flex items-center gap-1.5 lg:gap-2 rounded-full border border-teal-100 bg-white px-3 lg:px-4 xl:px-5 py-1.5 lg:py-2 text-[10px] lg:text-xs font-bold uppercase tracking-wide text-brand-teal transition-all duration-300 hover:-translate-y-0.5 hover:border-teal-300 hover:shadow-lg hover:shadow-brand-teal/10"
                   >
-                    {item.title}
-                    <LuArrowUpRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <span className="line-clamp-1">{item.title}</span>
+                    <LuArrowUpRight className="h-2.5 w-2.5 lg:h-3 lg:w-3 flex-shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </Link>
                 ))}
-                <Link
-                  href="/booking"
-                  className="group inline-flex items-center gap-2 rounded-full border border-brand-navy/30 bg-white px-5 py-2.5 text-xs font-bold uppercase tracking-normal text-brand-navy transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-navy hover:shadow-lg hover:shadow-brand-navy/10"
-                >
-                  Book consultation
-                  <LuArrowUpRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </Link>
-                <Link
-                  href="tel:8810605887"
-                  className="group inline-flex items-center gap-2 rounded-full border border-brand-navy/30 bg-white px-5 py-2.5 text-xs font-bold uppercase tracking-normal text-brand-navy transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-navy hover:shadow-lg hover:shadow-brand-navy/10"
-                >
-                  Contact Us
-                  <LuArrowUpRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </Link>
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-2">
+            {/* CTA Buttons */}
+            <div className="flex flex-col xs:flex-row sm:flex-row gap-3 sm:gap-4 pt-1 sm:pt-2">
               <Link
                 href="/booking"
-                className="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-full bg-gradient-to-r from-brand-teal to-brand-navy px-8 py-4 text-sm font-bold uppercase tracking-[0.1em] text-white shadow-lg shadow-brand-teal/30 transition-all duration-300 hover:scale-105 hover:shadow-brand-teal/50"
+                className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 overflow-hidden rounded-full bg-gradient-to-r from-brand-teal to-brand-navy px-5 sm:px-6 md:px-7 lg:px-8 py-3 sm:py-3.5 lg:py-4 text-xs sm:text-sm font-bold uppercase tracking-wider text-white shadow-lg shadow-brand-teal/30 transition-all duration-300 hover:scale-105 hover:shadow-brand-teal/50"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   Book Consultation
-                  <LuArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  <LuArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4 transition-transform group-hover:translate-x-1" />
                 </span>
               </Link>
               <Link
                 href="tel:8810605887"
-                className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full border-2 border-brand-teal bg-white px-8 py-4 text-sm font-bold uppercase tracking-[0.1em] text-brand-teal shadow-md shadow-brand-teal/10 transition-all duration-300 hover:bg-gradient-to-r hover:from-brand-teal hover:to-brand-navy hover:text-white hover:border-transparent hover:shadow-lg hover:shadow-brand-teal/30 hover:scale-105"
+                className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full border-2 border-brand-teal bg-white px-5 sm:px-6 md:px-7 lg:px-8 py-3 sm:py-3.5 lg:py-4 text-xs sm:text-sm font-bold uppercase tracking-wider text-brand-teal shadow-md shadow-brand-teal/10 transition-all duration-300 hover:bg-gradient-to-r hover:from-brand-teal hover:to-brand-navy hover:text-white hover:border-transparent hover:shadow-lg hover:shadow-brand-teal/30 hover:scale-105"
               >
                 <span className="relative z-10">Contact Us</span>
               </Link>
+            </div>
+
+            {/* Mobile-only simplified programmes */}
+            <div className="md:hidden pt-2">
+              <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2">Our Specialties</p>
+              <div className="flex flex-wrap gap-1.5">
+                {signatureProgrammes.slice(0, 3).map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="inline-flex items-center rounded-full border border-teal-100 bg-teal-50/50 px-2.5 py-1 text-[10px] font-semibold text-brand-teal"
+                  >
+                    {item.title.split(" ").slice(0, 2).join(" ")}
+                  </Link>
+                ))}
+                <Link
+                  href="/#services"
+                  className="inline-flex items-center rounded-full border border-gray-200 bg-gray-50 px-2.5 py-1 text-[10px] font-semibold text-gray-600"
+                >
+                  View all →
+                </Link>
+              </div>
             </div>
           </div>
         </div>

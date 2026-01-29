@@ -11,28 +11,25 @@ export function FAQSection() {
   return (
     <section
       id="faq"
-      className="relative py-12 sm:py-24 lg:py-14 text-gray-900 overflow-hidden border-t border-gray-200"
+      className="relative py-10 sm:py-16 md:py-20 lg:py-24 text-gray-900 overflow-hidden border-t border-gray-200"
     >
       <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -top-40 left-1/2 w-[680px] h-[680px] -translate-x-1/2 bg-indigo-100/40 blur-3xl rounded-full" aria-hidden />
-        <div className="absolute bottom-[-10%] right-[10%] w-[520px] h-[520px] bg-purple-100/40 blur-3xl rounded-full" aria-hidden />
-        <div className="absolute top-[30%] left-[-10%] w-[420px] h-[420px] bg-pink-100/30 blur-[180px] rounded-full" aria-hidden />
+        <div className="absolute -top-40 left-1/2 w-[400px] sm:w-[550px] lg:w-[680px] h-[400px] sm:h-[550px] lg:h-[680px] -translate-x-1/2 bg-indigo-100/40 blur-3xl rounded-full" aria-hidden />
+        <div className="absolute bottom-[-10%] right-[10%] w-[300px] sm:w-[420px] lg:w-[520px] h-[300px] sm:h-[420px] lg:h-[520px] bg-purple-100/40 blur-3xl rounded-full" aria-hidden />
+        <div className="absolute top-[30%] left-[-10%] w-[250px] sm:w-[340px] lg:w-[420px] h-[250px] sm:h-[340px] lg:h-[420px] bg-pink-100/30 blur-[180px] rounded-full" aria-hidden />
       </div>
-      <div className="relative max-w-6xl mx-auto px-6 sm:px-10 lg:px-16">
-        <div className="text-left sm:text-center mb-8 lg:mb-16">
-
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 mb-0 lg:mb-5">
-            Frequently Asked
-            <span className="ml-2 text-gray-900">
-              Questions
-            </span>
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 md:px-10 lg:px-16">
+        <div className="text-left sm:text-center mb-6 sm:mb-10 md:mb-12 lg:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-gray-900 mb-2 sm:mb-3 lg:mb-5">
+            Frequently Asked{" "}
+            <span className="text-gray-900">Questions</span>
           </h2>
-          <p className="max-w-3xl mx-auto text-sm sm:text-lg text-gray-600 leading-relaxed">
+          <p className="max-w-3xl mx-auto text-xs sm:text-sm md:text-base lg:text-lg text-gray-600 leading-relaxed">
             Explore enhanced recovery timelines, appointment logistics, and specialty care details. Every answer is aligned with Dr. Nayak&apos;s current protocols so you can plan confidently.
           </p>
         </div>
 
-        <div className="grid gap-4 lg:gap-6 lg:grid-cols-[1.2fr_1fr]">
+        <div className="grid gap-4 md:gap-5 lg:gap-6 lg:grid-cols-[1.2fr_1fr]">
           <div className="space-y-2 sm:space-y-3 lg:space-y-4">
             {faqs.map((faq, index) => (
               <details
@@ -40,45 +37,45 @@ export function FAQSection() {
                 ref={(el) => {
                   if (el) summaryRef.current[index] = el;
                 }}
-                className="group rounded-2xl sm:rounded-3xl border border-gray-200 bg-white shadow-md transition-all duration-300 open:bg-gray-50 open:border-indigo-400"
+                className="group rounded-xl sm:rounded-2xl md:rounded-3xl border border-gray-200 bg-white shadow-sm sm:shadow-md transition-all duration-300 open:bg-gray-50 open:border-indigo-400"
               >
-                <summary className="flex items-center justify-between gap-2 sm:gap-4 cursor-pointer px-4 sm:px-6 lg:px-8 py-4 sm:py-5 text-left text-gray-900 text-sm sm:text-base lg:text-lg font-semibold">
+                <summary className="flex items-center justify-between gap-2 sm:gap-3 md:gap-4 cursor-pointer px-3 sm:px-5 md:px-6 lg:px-8 py-3 sm:py-4 md:py-5 text-left text-gray-900 text-xs sm:text-sm md:text-base lg:text-lg font-semibold">
                   <span>{faq.question}</span>
-                  <span className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-gray-300 bg-gray-100 transition-transform group-open:rotate-180 flex-shrink-0">
-                    <LuChevronDown className="h-5 w-5 sm:h-6 sm:w-6 text-indigo-600" />
+                  <span className="flex h-7 w-7 sm:h-9 sm:w-9 md:h-10 md:w-10 lg:h-12 lg:w-12 items-center justify-center rounded-full border border-gray-300 bg-gray-100 transition-transform group-open:rotate-180 flex-shrink-0">
+                    <LuChevronDown className="h-3.5 w-3.5 sm:h-4 sm:w-4 md:h-5 md:w-5 lg:h-6 lg:w-6 text-indigo-600" />
                   </span>
                 </summary>
-                <div className="px-4 sm:px-6 lg:px-8 pb-5 sm:pb-6 pt-3 sm:pt-3 border-t border-gray-200 text-xs sm:text-sm lg:text-base text-gray-700 leading-6 sm:leading-7">
+                <div className="px-3 sm:px-5 md:px-6 lg:px-8 pb-3 sm:pb-4 md:pb-5 lg:pb-6 pt-2 sm:pt-3 border-t border-gray-200 text-[10px] sm:text-xs md:text-sm lg:text-base text-gray-700 leading-5 sm:leading-6 md:leading-7">
                   {faq.answer}
                 </div>
               </details>
             ))}
           </div>
 
-          <aside className="rounded-2xl sm:rounded-3xl border border-gray-200 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 p-4 sm:p-6 lg:p-8 space-y-3 sm:space-y-4 lg:space-y-6 flex flex-col justify-between">
-            <div className="space-y-2 sm:space-y-3 lg:space-y-4">
-              <h3 className="text-base sm:text-xl font-bold text-gray-900">Still have a question?</h3>
-              <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">
+          <aside className="rounded-xl sm:rounded-2xl md:rounded-3xl border border-gray-200 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 p-3 sm:p-5 md:p-6 lg:p-8 space-y-3 sm:space-y-4 lg:space-y-6 flex flex-col justify-between">
+            <div className="space-y-1.5 sm:space-y-2 md:space-y-3 lg:space-y-4">
+              <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-gray-900">Still have a question?</h3>
+              <p className="text-[10px] sm:text-xs md:text-sm text-gray-700 leading-relaxed">
                 Send us your reports on WhatsApp or request a callback. The care team responds within 24 hours with a tailored plan.
               </p>
             </div>
-            <div className="space-y-2 sm:space-y-3 lg:space-y-4 text-xs sm:text-sm text-gray-700">
+            <div className="space-y-2 sm:space-y-3 lg:space-y-4 text-[10px] sm:text-xs md:text-sm text-gray-700">
               <div>
-                <p className="uppercase text-[10px] sm:text-xs tracking-[0.35em] text-indigo-600">Phone</p>
-                <p className="text-sm sm:text-base font-semibold text-gray-900">+91 88106 05887</p>
+                <p className="uppercase text-[9px] sm:text-[10px] md:text-xs tracking-widest text-indigo-600">Phone</p>
+                <p className="text-xs sm:text-sm md:text-base font-semibold text-gray-900">+91 88106 05887</p>
               </div>
               <div>
-                <p className="uppercase text-[10px] sm:text-xs tracking-[0.35em] text-indigo-600">Email</p>
-                <p className="text-sm sm:text-base font-semibold text-gray-900 break-all">orthopaedicsurgeontushar@gmail.com</p>
+                <p className="uppercase text-[9px] sm:text-[10px] md:text-xs tracking-widest text-indigo-600">Email</p>
+                <p className="text-xs sm:text-sm md:text-base font-semibold text-gray-900 break-all">orthopaedicsurgeontushar@gmail.com</p>
               </div>
               <div>
-                <p className="uppercase text-[10px] sm:text-xs tracking-[0.35em] text-indigo-600">Clinic Hours</p>
-                <p className="text-sm sm:text-base font-semibold text-gray-900">Mon – Sat · 10:30 AM – 9:00 PM</p>
+                <p className="uppercase text-[9px] sm:text-[10px] md:text-xs tracking-widest text-indigo-600">Clinic Hours</p>
+                <p className="text-xs sm:text-sm md:text-base font-semibold text-gray-900">Mon – Sat · 10:30 AM – 9:00 PM</p>
               </div>
             </div>
             <a
               href="/booking"
-              className="inline-flex items-center justify-center px-5 sm:px-6 py-3 sm:py-4 rounded-full bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white text-[10px] sm:text-xs font-bold uppercase tracking-[0.35em] hover:scale-105 transition-transform"
+              className="inline-flex items-center justify-center px-4 sm:px-5 md:px-6 py-2.5 sm:py-3 md:py-4 rounded-full bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white text-[9px] sm:text-[10px] md:text-xs font-bold uppercase tracking-widest hover:scale-105 transition-transform"
             >
               Book an Appointment
             </a>

@@ -17,6 +17,7 @@ type FormState = {
   fullName: string;
   email: string;
   phone: string;
+  consultationType: string;
   preferredDate: string;
   timeSlot: string;
   notes: string;
@@ -26,10 +27,17 @@ const defaultState: FormState = {
   fullName: "",
   email: "",
   phone: "",
+  consultationType: "",
   preferredDate: "",
   timeSlot: "",
   notes: "",
 };
+
+const consultationTypes = [
+  { id: "online", label: "Online Consultation" },
+  { id: "first-visit", label: "First Visit" },
+  { id: "follow-up", label: "Follow Up" },
+];
 
 export default function NisthaBookingPage() {
   const [formState, setFormState] = useState<FormState>(defaultState);
@@ -45,6 +53,12 @@ export default function NisthaBookingPage() {
     event.preventDefault();
     setErrorMessage(null);
 
+    if (!formState.consultationType) {
+      setErrorMessage("Please select a consultation type.");
+      setStatus("error");
+      return;
+    }
+
     if (!formState.preferredDate || !formState.timeSlot) {
       setErrorMessage("Please select a preferred date and time slot.");
       setStatus("error");
@@ -53,13 +67,14 @@ export default function NisthaBookingPage() {
 
     setStatus("loading");
     try {
+      const consultationLabel = consultationTypes.find(t => t.id === formState.consultationType)?.label || formState.consultationType;
       await createAppointment({
         name: formState.fullName.trim(),
         email: formState.email.trim() || undefined,
         phone: formState.phone.trim(),
         date: formState.preferredDate,
         time: formState.timeSlot,
-        message: `[Nistha Healthcare] ${formState.notes.trim()}` || "[Nistha Healthcare]",
+        message: `[Nistha Healthcare] [${consultationLabel}] ${formState.notes.trim()}`.trim(),
       });
       setStatus("success");
       setFormState(defaultState);
@@ -78,9 +93,7 @@ export default function NisthaBookingPage() {
 
       <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-10 lg:py-20 space-y-8 lg:space-y-16">
         <header className="text-left sm:text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-teal-200 bg-teal-50 px-4 py-2 text-xs font-bold uppercase tracking-wide text-brand-teal mb-4">
-            Nistha Healthcare
-          </div>
+          
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-0 lg:mb-5">
             Book a Consultation with {doctorProfile.name}
           </h1>
@@ -156,6 +169,35 @@ export default function NisthaBookingPage() {
                       value={formState.email}
                       onChange={onChange("email")}
                     />
+                  </div>
+                </div>
+
+                {/* Consultation Type Selection */}
+                <div className="space-y-3">
+                  <label className="text-xs font-bold uppercase tracking-[0.08em] text-brand-teal">
+                    Consultation Type*
+                  </label>
+                  <div className="grid grid-cols-3 gap-2 sm:gap-3">
+                    {consultationTypes.map((type) => (
+                      <label
+                        key={type.id}
+                        className={`flex items-center justify-center cursor-pointer rounded-xl border-2 px-3 py-3 text-center transition-all duration-200 ${
+                          formState.consultationType === type.id
+                            ? "border-brand-teal bg-teal-50 text-brand-teal"
+                            : "border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50"
+                        }`}
+                      >
+                        <input
+                          type="radio"
+                          name="consultationType"
+                          value={type.id}
+                          checked={formState.consultationType === type.id}
+                          onChange={onChange("consultationType")}
+                          className="sr-only"
+                        />
+                        <span className="text-[10px] sm:text-xs font-semibold leading-tight">{type.label}</span>
+                      </label>
+                    ))}
                   </div>
                 </div>
 

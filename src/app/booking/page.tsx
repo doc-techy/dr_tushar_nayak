@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LuMapPin, LuClock, LuPhone, LuExternalLink } from "react-icons/lu";
+import { LuMapPin, LuClock, LuPhone, LuExternalLink, LuInfo } from "react-icons/lu";
 
 const locations = [
   {
@@ -138,6 +138,42 @@ export default function BookingLocationsPage() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Important Information */}
+        <div className="mt-8 sm:mt-12 bg-teal-50/50 border border-teal-100 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8">
+          <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-brand-teal/10 flex items-center justify-center">
+              <LuInfo className="w-4 h-4 sm:w-5 sm:h-5 text-brand-teal" />
+            </div>
+            <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900">Important Information</h3>
+          </div>
+          <ul className="space-y-2.5 sm:space-y-3">
+            <li className="flex items-start gap-2.5 sm:gap-3">
+              <span className="mt-1.5 h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-brand-teal flex-shrink-0" />
+              <span className="text-xs sm:text-sm md:text-base text-gray-700 leading-relaxed">
+                Please arrive 15 minutes before your scheduled appointment time
+              </span>
+            </li>
+            <li className="flex items-start gap-2.5 sm:gap-3">
+              <span className="mt-1.5 h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-brand-teal flex-shrink-0" />
+              <span className="text-xs sm:text-sm md:text-base text-gray-700 leading-relaxed">
+                Bring a valid ID and any relevant medical reports
+              </span>
+            </li>
+            <li className="flex items-start gap-2.5 sm:gap-3">
+              <span className="mt-1.5 h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-brand-teal flex-shrink-0" />
+              <span className="text-xs sm:text-sm md:text-base text-gray-700 leading-relaxed">
+                Cancellations must be made at least 24 hours in advance
+              </span>
+            </li>
+            <li className="flex items-start gap-2.5 sm:gap-3">
+              <span className="mt-1.5 h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-brand-teal flex-shrink-0" />
+              <span className="text-xs sm:text-sm md:text-base text-gray-700 leading-relaxed">
+                Emergency cases will be given priority
+              </span>
+            </li>
+          </ul>
         </div>
 
         {/* Help Text */}

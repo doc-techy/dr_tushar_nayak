@@ -1,285 +1,155 @@
-"use client";
+import Link from "next/link";
+import { LuMapPin, LuClock, LuPhone, LuExternalLink } from "react-icons/lu";
 
-import { useState } from "react";
-import { createAppointment } from "@/lib/admin-api";
-import { doctorProfile, mapEmbed } from "@/data/site-content";
-
-const timeSlots = [
-  "09:00 AM",
-  "10:30 AM",
-  "12:00 PM",
-  "02:30 PM",
-  "04:00 PM",
-  "06:00 PM",
+const locations = [
+  {
+    id: 1,
+    name: "SPARSH Hospital",
+    address: "Infantry Road, Bengaluru - 560001",
+    mapLink: "https://maps.google.com/?q=SPARSH+Hospital+Infantry+Road+Bengaluru",
+    timing: "Mon - Sat: 10:00 AM - 5:00 PM",
+    phone: "+91 88106 05887",
+    buttonText: "Book Appointment",
+    buttonLink: "https://sparsh.com/book", // External link to SPARSH
+    isExternal: true,
+  },
+  {
+    id: 2,
+    name: "Nishna Healthcare",
+    address: "HSR Layout, Bengaluru - 560102",
+    mapLink: "https://maps.google.com/?q=HSR+Layout+Bengaluru",
+    timing: "Mon - Sat: 6:00 PM - 9:00 PM",
+    phone: "+91 88106 05887",
+    buttonText: "Book Appointment",
+    buttonLink: "/booking/nishna",
+    isExternal: false,
+  },
 ];
 
-type FormState = {
-  fullName: string;
-  email: string;
-  phone: string;
-  preferredDate: string;
-  timeSlot: string;
-  notes: string;
-};
-
-const defaultState: FormState = {
-  fullName: "",
-  email: "",
-  phone: "",
-  preferredDate: "",
-  timeSlot: "",
-  notes: "",
-};
-
-export default function BookingPage() {
-  const [formState, setFormState] = useState<FormState>(defaultState);
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
-
-  const onChange = (field: keyof FormState) =>
-    (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-      setFormState((prev) => ({ ...prev, [field]: event.target.value }));
-    };
-
-  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setErrorMessage(null);
-
-    if (!formState.preferredDate || !formState.timeSlot) {
-      setErrorMessage("Please select a preferred date and time slot.");
-      setStatus("error");
-      return;
-    }
-
-    setStatus("loading");
-    try {
-      await createAppointment({
-        name: formState.fullName.trim(),
-        email: formState.email.trim() || undefined,
-        phone: formState.phone.trim(),
-        date: formState.preferredDate,
-        time: formState.timeSlot,
-        message: formState.notes.trim() || undefined,
-      });
-      setStatus("success");
-      setFormState(defaultState);
-    } catch (error) {
-      setStatus("error");
-      setErrorMessage(
-        error instanceof Error
-          ? error.message
-          : "We couldn’t submit the booking right now. Please try again in a moment.",
-      );
-    }
-  };
-
+export default function BookingLocationsPage() {
   return (
     <section className="relative min-h-screen text-gray-900 overflow-hidden">
-
-      <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-10 lg:py-20 space-y-8 lg:space-y-16">
-        <header className="text-left sm:text-center">
-
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 mb-0 lg:mb-5">
-            Book a Consultation with {doctorProfile.name}
+      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 md:px-8 py-10 sm:py-16 md:py-20 lg:py-24">
+        {/* Header */}
+        <div className="mb-8 sm:mb-12 md:mb-16 text-center">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight mb-3 sm:mb-4 text-gray-900">
+            Choose Your Preferred{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-teal to-brand-navy">Location</span>
           </h1>
-          <p className="max-w-3xl mx-auto text-[10px] sm:text-lg text-gray-700 leading-relaxed">
-            Share a few details and the care concierge will confirm your slot within 24 hours. Emergency queries? Call {doctorProfile.contact.phone} directly.
+          <p className="max-w-2xl mx-auto text-xs sm:text-sm md:text-base lg:text-lg text-gray-600 leading-relaxed">
+            Dr. Tushar Nayak is available at these healthcare facilities in Bengaluru
           </p>
-        </header>
+        </div>
 
-        <div className="grid gap-6 lg:gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="rounded-[32px] border border-gray-200 bg-white p-6 lg:p-8 sm:p-10 shadow-lg">
-            <div className="space-y-2 mb-6 lg:mb-8">
-              <p className="text-xs font-bold uppercase tracking-[0.08em] text-brand-teal">Booking details</p>
-              <p className="text-sm text-gray-600">
-                Fields marked with * are required. Preferred date and programme help us tailor preparation before your visit.
-              </p>
-            </div>
-
-            {status === "success" ? (
-              <div className="rounded-3xl border border-teal-300 bg-teal-50 px-6 py-8 text-brand-navy">
-                <h2 className="text-xl font-semibold text-brand-navy">Thank you! 🗓️</h2>
-                <p className="mt-3 text-sm text-brand-navy/80">
-                  We&apos;ve recorded your request. The care concierge will call/text you shortly to confirm the appointment.
-                </p>
-                <p className="mt-4 text-sm text-brand-navy/70">
-                  Need urgent support? Reach the clinic at {doctorProfile.contact.phone} or chat on WhatsApp anytime.
-                </p>
-              </div>
-            ) : (
-              <form onSubmit={onSubmit} className="space-y-6">
-                {status === "error" && errorMessage ? (
-                  <div className="rounded-2xl border border-red-300 bg-red-50 px-4 py-3 text-sm text-red-800">
-                    {errorMessage}
-                  </div>
-                ) : null}
-
-                <div className="space-y-2">
-                  <label htmlFor="fullName" className="text-xs font-bold uppercase tracking-[0.08em] text-brand-teal">
-                    Full name*
-                  </label>
-                  <input
-                    id="fullName"
-                    name="fullName"
-                    className="w-full rounded-2xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-500 focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/30"
-                    value={formState.fullName}
-                    onChange={onChange("fullName")}
-                    required
-                  />
-                </div>
-
-                <div className="grid gap-6 sm:grid-cols-2">
-                  <div className="space-y-2">
-                    <label htmlFor="phone" className="text-xs font-bold uppercase tracking-[0.08em] text-brand-teal">
-                      Phone number*
-                    </label>
-                    <input
-                      id="phone"
-                      name="phone"
-                      className="w-full rounded-2xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/30"
-                      value={formState.phone}
-                      onChange={onChange("phone")}
-                      required
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="email" className="text-xs font-bold uppercase tracking-[0.08em] text-brand-teal">
-                      Email
-                    </label>
-                    <input
-                      id="email"
-                      name="email"
-                      type="email"
-                      className="w-full rounded-2xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/30"
-                      value={formState.email}
-                      onChange={onChange("email")}
-                    />
-                  </div>
-                </div>
-
-                <div className="grid gap-6 sm:grid-cols-2">
-                  <div className="space-y-2">
-                    <label htmlFor="preferredDate" className="text-xs font-bold uppercase tracking-[0.08em] text-brand-teal">
-                      Preferred date
-                    </label>
-                    <input
-                      id="preferredDate"
-                      name="preferredDate"
-                      type="date"
-                      className="w-full rounded-2xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/30"
-                      value={formState.preferredDate}
-                      onChange={onChange("preferredDate")}
-                      required
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="timeSlot" className="text-xs font-bold uppercase tracking-[0.08em] text-brand-teal">
-                      Preferred time slot
-                    </label>
-                    <select
-                      id="timeSlot"
-                      name="timeSlot"
-                      className="w-full rounded-2xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/30"
-                      value={formState.timeSlot}
-                      onChange={onChange("timeSlot")}
-                      required
-                    >
-                      <option value="" className="text-gray-900">Select a time slot</option>
-                      {timeSlots.map((slot) => (
-                        <option key={slot} value={slot} className="text-gray-900">
-                          {slot}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <label htmlFor="notes" className="text-xs font-bold uppercase tracking-[0.08em] text-brand-teal">
-                    Notes (symptoms, insurance, imaging)
-                  </label>
-                  <textarea
-                    id="notes"
-                    name="notes"
-                    rows={4}
-                    className="w-full rounded-2xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/30"
-                    value={formState.notes}
-                    onChange={onChange("notes")}
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={status === "loading"}
-                  className="w-full rounded-full bg-gradient-to-r from-brand-teal to-brand-navy px-6 py-3 text-sm font-bold uppercase tracking-[0.08em] text-white shadow-lg shadow-brand-teal/30 transition hover:scale-105"
-                >
-                  {status === "loading" ? "Submitting..." : "Submit booking request"}
-                </button>
-              </form>
-            )}
-          </div>
-
-          <aside className="rounded-[32px] border border-gray-200 bg-white p-8 sm:p-10 space-y-8 shadow-lg">
-            <div className="space-y-3">
-              <p className="text-xs font-bold uppercase tracking-[0.08em] text-brand-teal">Clinic details</p>
-              <h2 className="text-2xl font-bold text-gray-900">Orthocare Clinic</h2>
-              <p className="text-sm text-gray-700 leading-relaxed">{doctorProfile.intro}</p>
-            </div>
-
-            <div className="space-y-4 text-sm text-gray-700">
-              <div>
-                <p className="text-xs uppercase tracking-[0.08em] text-brand-teal">Call</p>
-                <p className="text-lg font-semibold text-gray-900">{doctorProfile.contact.phone}</p>
-              </div>
-              <div>
-                <p className="text-xs uppercase tracking-[0.08em] text-brand-teal">Email</p>
-                <p className="text-lg font-semibold text-gray-900">{doctorProfile.contact.email}</p>
-              </div>
-              <div>
-                <p className="text-xs uppercase tracking-[0.08em] text-brand-teal">Visit</p>
-                <p className="text-sm leading-relaxed">{doctorProfile.primaryLocation}</p>
-              </div>
-            </div>
-
-            <a
-              href={mapEmbed.iframeSrc.replace("&output=embed", "")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-full rounded-full border border-gray-300 px-6 py-3 text-xs font-bold uppercase tracking-[0.08em] text-gray-700 hover:bg-gray-100"
+        {/* Location Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
+          {locations.map((location) => (
+            <div
+              key={location.id}
+              className="relative bg-white rounded-2xl sm:rounded-3xl border border-gray-200 p-5 sm:p-6 md:p-8 shadow-lg hover:shadow-xl hover:border-brand-teal/40 transition-all duration-300"
             >
-              Get directions
+              {/* Location Icon */}
+              <div className="flex justify-center mb-4 sm:mb-6">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-brand-teal to-brand-navy flex items-center justify-center shadow-lg shadow-brand-teal/30">
+                  <LuMapPin className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-white" />
+                </div>
+              </div>
+
+              {/* Hospital Name */}
+              <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 text-center mb-4 sm:mb-6">
+                {location.name}
+              </h2>
+
+              {/* Details */}
+              <div className="space-y-3 sm:space-y-4">
+                {/* Address */}
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 mt-0.5">
+                    <LuMapPin className="w-4 h-4 sm:w-5 sm:h-5 text-brand-teal" />
+                  </div>
+                  <div>
+                    <p className="text-xs sm:text-sm font-semibold text-gray-900">Address</p>
+                    <p className="text-[10px] sm:text-xs md:text-sm text-gray-600 leading-relaxed">
+                      {location.address}
+                    </p>
+                    <a
+                      href={location.mapLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-[10px] sm:text-xs text-brand-teal font-semibold hover:text-brand-navy transition-colors mt-1"
+                    >
+                      <LuExternalLink className="w-3 h-3" />
+                      Get Directions
+                    </a>
+                  </div>
+                </div>
+
+                {/* Timing */}
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 mt-0.5">
+                    <LuClock className="w-4 h-4 sm:w-5 sm:h-5 text-brand-teal" />
+                  </div>
+                  <div>
+                    <p className="text-xs sm:text-sm font-semibold text-gray-900">Available At</p>
+                    <p className="text-[10px] sm:text-xs md:text-sm text-gray-600">
+                      {location.timing}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Phone */}
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 mt-0.5">
+                    <LuPhone className="w-4 h-4 sm:w-5 sm:h-5 text-brand-teal" />
+                  </div>
+                  <div>
+                    <p className="text-xs sm:text-sm font-semibold text-gray-900">Phone</p>
+                    <a
+                      href={`tel:${location.phone.replace(/\s/g, "")}`}
+                      className="text-[10px] sm:text-xs md:text-sm text-gray-600 hover:text-brand-teal transition-colors"
+                    >
+                      {location.phone}
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* CTA Button */}
+              <div className="mt-5 sm:mt-6 md:mt-8">
+                {location.isExternal ? (
+                  <a
+                    href={location.buttonLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-brand-teal to-brand-navy px-5 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-bold uppercase tracking-wider text-white shadow-lg shadow-brand-teal/30 transition-all duration-300 hover:scale-105 hover:shadow-brand-teal/50"
+                  >
+                    <LuMapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                    {location.buttonText}
+                  </a>
+                ) : (
+                  <Link
+                    href={location.buttonLink}
+                    className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-brand-teal to-brand-navy px-5 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-bold uppercase tracking-wider text-white shadow-lg shadow-brand-teal/30 transition-all duration-300 hover:scale-105 hover:shadow-brand-teal/50"
+                  >
+                    <LuMapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                    {location.buttonText}
+                  </Link>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Help Text */}
+        <div className="mt-8 sm:mt-12 text-center">
+          <p className="text-xs sm:text-sm text-gray-500">
+            Need help choosing? Call us at{" "}
+            <a href="tel:+918810605887" className="text-brand-teal font-semibold hover:text-brand-navy">
+              +91 88106 05887
             </a>
-
-            <div className="overflow-hidden rounded-3xl border border-gray-200">
-              <iframe
-                title={mapEmbed.title}
-                src={mapEmbed.iframeSrc}
-                width="100%"
-                height="220"
-                loading="lazy"
-                allowFullScreen
-                className="w-full"
-              />
-            </div>
-
-            <div className="rounded-2xl border border-gray-200 bg-gray-50 p-5 text-sm text-gray-700 space-y-3">
-              <p className="font-semibold text-gray-900">Need to talk first?</p>
-              <p>
-                Message us on WhatsApp for insurance clarifications, pre-operative queries, or to reschedule. We respond within 24 hours.
-              </p>
-              <a
-                href={doctorProfile.contact.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.08em] text-brand-teal hover:text-brand-navy"
-              >
-                Chat on WhatsApp
-              </a>
-            </div>
-          </aside>
+          </p>
         </div>
       </div>
     </section>
   );
 }
-

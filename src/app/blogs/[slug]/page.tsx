@@ -50,7 +50,7 @@ export default async function BlogArticlePage({ params }: BlogArticlePageParams)
           <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black leading-tight max-w-4xl text-gray-900">
             {article.title}
           </h1>
-          <p className="mt-4 text-sm font-semibold text-indigo-600 uppercase tracking-normal">
+          <p className="mt-4 text-sm font-semibold text-brand-teal uppercase tracking-normal">
             {article.readingTime}
           </p>
         </div>
@@ -62,7 +62,7 @@ export default async function BlogArticlePage({ params }: BlogArticlePageParams)
             if (block.type === "heading") {
               return (
                 <div key={`${article.slug}-heading-${index}`} className="space-y-2 pt-4 lg:pt-6">
-                  <span className="block h-1 w-14 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-full" />
+                  <span className="block h-1 w-14 bg-gradient-to-r from-brand-teal to-brand-navy rounded-full" />
                   <h2 className="text-3xl font-bold text-gray-900">
                     {block.text}
                   </h2>
@@ -108,7 +108,7 @@ export default async function BlogArticlePage({ params }: BlogArticlePageParams)
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 rounded-full border border-gray-300 text-xs font-semibold uppercase tracking-normal text-gray-700 hover:bg-gray-100 hover:border-indigo-400 transition"
+                className="px-4 py-2 rounded-full border border-gray-300 text-xs font-semibold uppercase tracking-normal text-gray-700 hover:bg-gray-100 hover:border-brand-teal transition"
               >
                 {social.label}
               </a>

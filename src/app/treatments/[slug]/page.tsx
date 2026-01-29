@@ -573,12 +573,12 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
         <div className="grid gap-4 lg:gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div className="relative order-1 lg:order-2">
             <div className="pointer-events-none absolute inset-0 -z-10">
-              <div className="absolute -top-20 left-1/2 w-[480px] h-[480px] -translate-x-1/2 bg-indigo-100/40 blur-3xl rounded-full" aria-hidden />
-              <div className="absolute bottom-[-20%] right-[10%] w-[360px] h-[360px] bg-purple-100/40 blur-3xl rounded-full" aria-hidden />
-              <div className="absolute top-[20%] left-[-10%] w-[320px] h-[320px] bg-pink-100/30 blur-[180px] rounded-full" aria-hidden />
+              <div className="absolute -top-20 left-1/2 w-[480px] h-[480px] -translate-x-1/2 bg-teal-100/40 blur-3xl rounded-full" aria-hidden />
+              <div className="absolute bottom-[-20%] right-[10%] w-[360px] h-[360px] bg-teal-100/30 blur-3xl rounded-full" aria-hidden />
+              <div className="absolute top-[20%] left-[-10%] w-[320px] h-[320px] bg-brand-navy/10 blur-[180px] rounded-full" aria-hidden />
             </div>
             <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-gray-200 bg-white shadow-lg" style={{ aspectRatio: heroAspectRatio }}>
-              <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/50 via-purple-50/30 to-transparent hidden lg:block" aria-hidden />
+              <div className="absolute inset-0 bg-gradient-to-br from-teal-50/50 via-brand-navy/5 to-transparent hidden lg:block" aria-hidden />
               <Image
                 src={heroImageSrc}
                 alt={service.heroAlt}
@@ -625,12 +625,12 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
                 {content.sections.map((section) => (
                   <section
                     key={section.heading}
-                    className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-gray-200 bg-white p-3 sm:p-4 lg:p-6 shadow-md transition hover:border-indigo-400 hover:bg-gray-50"
+                    className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-gray-200 bg-white p-3 sm:p-4 lg:p-6 shadow-md transition hover:border-brand-teal hover:bg-gray-50"
                   >
-                    <span className="pointer-events-none absolute inset-0 rounded-2xl sm:rounded-3xl border border-gray-200 bg-gradient-to-br from-indigo-50/50 via-transparent to-pink-50/30 hidden lg:block" aria-hidden />
+                    <span className="pointer-events-none absolute inset-0 rounded-2xl sm:rounded-3xl border border-gray-200 bg-gradient-to-br from-teal-50/50 via-transparent to-brand-navy/5 hidden lg:block" aria-hidden />
                     <div className="relative space-y-2 sm:space-y-3 lg:space-y-4">
                       <div className="flex items-start gap-2 sm:gap-3">
-                        <span className="mt-1 h-2 w-2 sm:h-2.5 sm:w-2.5 flex-shrink-0 rounded-full bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500" aria-hidden />
+                        <span className="mt-1 h-2 w-2 sm:h-2.5 sm:w-2.5 flex-shrink-0 rounded-full bg-gradient-to-br from-brand-teal to-brand-navy" aria-hidden />
                         <h3 className="text-sm sm:text-lg font-semibold text-gray-900 leading-tight">{section.heading}</h3>
                       </div>
 
@@ -648,9 +648,9 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
                           {section.list.map((item, index) => (
                             <li
                               key={`${section.heading}-list-${index}`}
-                              className="flex items-start gap-2 sm:gap-3 rounded-xl sm:rounded-2xl border border-gray-200 bg-indigo-50/50 px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm text-gray-700"
+                              className="flex items-start gap-2 sm:gap-3 rounded-xl sm:rounded-2xl border border-gray-200 bg-teal-50/50 px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm text-gray-700"
                             >
-                              <span className="mt-1 h-1.5 w-1.5 sm:h-2 sm:w-2 flex-shrink-0 rounded-full bg-indigo-500" aria-hidden />
+                              <span className="mt-1 h-1.5 w-1.5 sm:h-2 sm:w-2 flex-shrink-0 rounded-full bg-brand-teal" aria-hidden />
                               <span>{item}</span>
                             </li>
                           ))}
@@ -662,14 +662,14 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
                           key={`${section.heading}-${group.label}`}
                           className="space-y-2 rounded-xl sm:rounded-2xl border border-gray-200 bg-gray-50 p-3 sm:p-4"
                         >
-                          <p className="text-xs sm:text-sm font-semibold text-indigo-700">{group.label}</p>
+                          <p className="text-xs sm:text-sm font-semibold text-brand-teal">{group.label}</p>
                           <ul className="space-y-1.5 sm:space-y-2">
                             {group.items.map((item, index) => (
                               <li
                                 key={`${section.heading}-${group.label}-item-${index}`}
                                 className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-700"
                               >
-                                <span className="mt-1 h-1 w-1 sm:h-1.5 sm:w-1.5 flex-shrink-0 rounded-full bg-purple-500" aria-hidden />
+                                <span className="mt-1 h-1 w-1 sm:h-1.5 sm:w-1.5 flex-shrink-0 rounded-full bg-brand-navy" aria-hidden />
                                 <span>{item}</span>
                               </li>
                             ))}
@@ -695,7 +695,7 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
               <p className="text-sm sm:text-lg leading-relaxed text-gray-700">{service.details}</p>
 
               <div className="space-y-3 sm:space-y-6">
-                <h2 className="text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] text-indigo-600">
+                <h2 className="text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] text-brand-teal">
                   Programme highlights
                 </h2>
                 <ul className="grid gap-3 sm:gap-4 text-xs sm:text-sm text-gray-700 sm:grid-cols-2">
@@ -704,7 +704,7 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
                       key={item}
                       className="flex items-start gap-2 sm:gap-3 rounded-xl border border-gray-200 bg-gray-50 p-3 sm:p-4"
                     >
-                      <span className="mt-1 h-1.5 w-1.5 sm:h-2 sm:w-2 flex-shrink-0 rounded-full bg-indigo-500" aria-hidden />
+                      <span className="mt-1 h-1.5 w-1.5 sm:h-2 sm:w-2 flex-shrink-0 rounded-full bg-brand-teal" aria-hidden />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -717,10 +717,10 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
                     key={section.heading}
                     className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-gray-200 bg-white p-4 sm:p-6 shadow-md"
                   >
-                    <span className="pointer-events-none absolute inset-0 rounded-2xl sm:rounded-3xl border border-gray-200 bg-gradient-to-br from-indigo-50/50 via-transparent to-purple-50/30 hidden lg:block" aria-hidden />
+                    <span className="pointer-events-none absolute inset-0 rounded-2xl sm:rounded-3xl border border-gray-200 bg-gradient-to-br from-teal-50/50 via-transparent to-brand-navy/5 hidden lg:block" aria-hidden />
                     <div className="relative space-y-3 sm:space-y-4">
                       <div className="flex items-start gap-2 sm:gap-3">
-                        <span className="mt-1 h-2 w-2 sm:h-2.5 sm:w-2.5 flex-shrink-0 rounded-full bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500" aria-hidden />
+                        <span className="mt-1 h-2 w-2 sm:h-2.5 sm:w-2.5 flex-shrink-0 rounded-full bg-gradient-to-br from-brand-teal to-brand-navy" aria-hidden />
                         <h3 className="text-sm sm:text-lg font-semibold text-gray-900 leading-tight">{section.heading}</h3>
                       </div>
                       <p className="rounded-xl sm:rounded-2xl border border-gray-200 bg-gray-50 px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm leading-relaxed text-gray-700">
@@ -731,9 +731,9 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
                           {section.points.map((point) => (
                             <li
                               key={point}
-                              className="flex items-start gap-2 sm:gap-3 rounded-xl sm:rounded-2xl border border-gray-200 bg-indigo-50/50 px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm text-gray-700"
+                              className="flex items-start gap-2 sm:gap-3 rounded-xl sm:rounded-2xl border border-gray-200 bg-teal-50/50 px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm text-gray-700"
                             >
-                              <span className="mt-1 h-1.5 w-1.5 sm:h-2 sm:w-2 flex-shrink-0 rounded-full bg-indigo-500" aria-hidden />
+                              <span className="mt-1 h-1.5 w-1.5 sm:h-2 sm:w-2 flex-shrink-0 rounded-full bg-brand-teal" aria-hidden />
                               <span>{point}</span>
                             </li>
                           ))}
@@ -747,7 +747,7 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
           )}
         </article>
 
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6 rounded-2xl sm:rounded-3xl border border-indigo-300 bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 p-4 sm:p-8">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6 rounded-2xl sm:rounded-3xl border border-teal-300 bg-gradient-to-r from-teal-50 via-teal-50/50 to-brand-navy/5 p-4 sm:p-8">
           <div>
             <h2 className="text-lg sm:text-2xl font-semibold text-gray-900">Need a personalised opinion?</h2>
             <p className="mt-2 max-w-2xl text-xs sm:text-sm text-gray-700">
@@ -756,7 +756,7 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
           </div>
           <Link
             href="/booking"
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-indigo-600 px-5 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] text-white transition hover:-translate-y-0.5 hover:bg-indigo-700 w-full sm:w-auto"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-brand-teal to-brand-navy px-5 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] text-white transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-brand-teal/30 w-full sm:w-auto"
           >
             Book Appointment
           </Link>

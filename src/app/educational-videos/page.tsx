@@ -118,14 +118,14 @@ export default function EducationalVideosPage() {
                   return (
                     <article
                       key={video.id}
-                      className="group relative overflow-hidden rounded-2xl bg-white border-2 border-gray-200 shadow-md hover:bg-gray-50 hover:border-indigo-400 transition-all duration-500"
+                      className="group relative overflow-hidden rounded-2xl bg-white border-2 border-gray-200 shadow-md hover:bg-gray-50 hover:border-brand-teal transition-all duration-500"
                     >
                       <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
                         colorIndex === 0 
-                          ? "bg-gradient-to-br from-indigo-50 to-transparent"
+                          ? "bg-gradient-to-br from-teal-50 to-transparent"
                           : colorIndex === 1
-                          ? "bg-gradient-to-br from-purple-50 to-transparent"
-                          : "bg-gradient-to-br from-pink-50 to-transparent"
+                          ? "bg-gradient-to-br from-teal-50 to-transparent"
+                          : "bg-gradient-to-br from-teal-50 to-transparent"
                       }`} />
                       
                       <div className="relative aspect-video overflow-hidden bg-gray-100">
@@ -139,10 +139,10 @@ export default function EducationalVideosPage() {
                         <div className="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/50 transition-colors">
                           <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 ${
                             colorIndex === 0 
-                              ? "bg-indigo-600" 
+                              ? "bg-brand-teal" 
                               : colorIndex === 1
-                              ? "bg-purple-600"
-                              : "bg-pink-600"
+                              ? "bg-brand-navy"
+                              : "bg-brand-navy"
                           }`}>
                             <LuPlay className="h-3 w-3 text-white ml-0.5" />
                           </div>
@@ -150,10 +150,10 @@ export default function EducationalVideosPage() {
                         <div className="absolute bottom-1.5 right-1.5">
                           <div className={`inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full bg-black/70 backdrop-blur-sm ${
                             colorIndex === 0 
-                              ? "text-indigo-100" 
+                              ? "text-teal-100" 
                               : colorIndex === 1
-                              ? "text-purple-100"
-                              : "text-pink-100"
+                              ? "text-teal-100"
+                              : "text-teal-100"
                           }`}>
                             <LuClock className="h-2 w-2" />
                             <span className="text-[7px] font-bold">{video.duration}</span>
@@ -164,9 +164,9 @@ export default function EducationalVideosPage() {
                       <div className="relative p-3">
                         <div className="relative flex-1 space-y-1.5 mb-2">
                           <h3 className={`text-[10px] font-black leading-tight transition-colors duration-300 line-clamp-2 ${
-                            colorIndex === 0 ? "text-gray-900 group-hover:text-indigo-600" 
-                            : colorIndex === 1 ? "text-gray-900 group-hover:text-purple-600"
-                            : "text-gray-900 group-hover:text-pink-600"
+                            colorIndex === 0 ? "text-gray-900 group-hover:text-brand-teal" 
+                            : colorIndex === 1 ? "text-gray-900 group-hover:text-brand-teal"
+                            : "text-gray-900 group-hover:text-brand-teal"
                           }`}>
                             {video.title}
                           </h3>
@@ -181,18 +181,18 @@ export default function EducationalVideosPage() {
                             }}
                           >
                             <span className={`text-[7px] font-black uppercase tracking-normal transition-colors ${
-                              colorIndex === 0 ? "text-indigo-600" 
-                              : colorIndex === 1 ? "text-purple-600"
-                              : "text-pink-600"
+                              colorIndex === 0 ? "text-brand-teal" 
+                              : colorIndex === 1 ? "text-brand-teal"
+                              : "text-brand-teal"
                             }`}>
                               Watch
                             </span>
                             <div className={`w-4 h-4 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 flex-shrink-0 ${
                               colorIndex === 0 
-                                ? "bg-indigo-100 group-hover:bg-indigo-600" 
+                                ? "bg-teal-100 group-hover:bg-brand-teal" 
                                 : colorIndex === 1
-                                ? "bg-purple-100 group-hover:bg-purple-600"
-                                : "bg-pink-100 group-hover:bg-pink-600"
+                                ? "bg-teal-100 group-hover:bg-brand-navy"
+                                : "bg-teal-100 group-hover:bg-brand-navy"
                             }`}>
                               <LuPlay className="h-2 w-2 text-gray-600 group-hover:text-white transition-colors" />
                             </div>
@@ -211,14 +211,14 @@ export default function EducationalVideosPage() {
                   return (
                     <article
                       key={video.id}
-                      className="group relative overflow-hidden rounded-2xl sm:rounded-3xl bg-white border-2 border-gray-200 shadow-md hover:bg-gray-50 hover:border-indigo-400 transition-all duration-500 hover:-translate-y-4 hover:shadow-xl hover:shadow-indigo-500/20"
+                      className="group relative overflow-hidden rounded-2xl sm:rounded-3xl bg-white border-2 border-gray-200 shadow-md hover:bg-gray-50 hover:border-brand-teal transition-all duration-500 hover:-translate-y-4 hover:shadow-xl hover:shadow-brand-teal/20"
                     >
                       <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
                         colorIndex === 0 
-                          ? "bg-gradient-to-br from-indigo-50 to-transparent"
+                          ? "bg-gradient-to-br from-teal-50 to-transparent"
                           : colorIndex === 1
-                          ? "bg-gradient-to-br from-purple-50 to-transparent"
-                          : "bg-gradient-to-br from-pink-50 to-transparent"
+                          ? "bg-gradient-to-br from-teal-50 to-transparent"
+                          : "bg-gradient-to-br from-teal-50 to-transparent"
                       }`} />
                       
                       <div className="relative aspect-video lg:aspect-[21/10] overflow-hidden bg-gray-100">
@@ -232,10 +232,10 @@ export default function EducationalVideosPage() {
                         <div className="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/50 transition-colors">
                           <div className={`w-12 h-12 sm:w-14 lg:w-12 lg:h-12 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 ${
                             colorIndex === 0 
-                              ? "bg-indigo-600" 
+                              ? "bg-brand-teal" 
                               : colorIndex === 1
-                              ? "bg-purple-600"
-                              : "bg-pink-600"
+                              ? "bg-brand-navy"
+                              : "bg-brand-navy"
                           }`}>
                             <LuPlay className="h-5 w-5 sm:h-6 lg:h-5 lg:w-5 text-white ml-1" />
                           </div>
@@ -243,10 +243,10 @@ export default function EducationalVideosPage() {
                         <div className="absolute bottom-2 right-2 sm:bottom-3 sm:right-3 lg:bottom-2 lg:right-2">
                           <div className={`inline-flex items-center gap-1 sm:gap-2 lg:gap-1 px-2 sm:px-3 lg:px-2 py-1 sm:py-1.5 lg:py-1 rounded-full bg-black/70 backdrop-blur-sm ${
                             colorIndex === 0 
-                              ? "text-indigo-100" 
+                              ? "text-teal-100" 
                               : colorIndex === 1
-                              ? "text-purple-100"
-                              : "text-pink-100"
+                              ? "text-teal-100"
+                              : "text-teal-100"
                           }`}>
                             <LuClock className="h-2.5 w-2.5 sm:h-3 lg:h-2.5 lg:w-2.5" />
                             <span className="text-[8px] sm:text-xs lg:text-[8px] font-bold">{video.duration}</span>
@@ -257,9 +257,9 @@ export default function EducationalVideosPage() {
                       <div className="relative p-3 sm:p-8 lg:p-4">
                         <div className="relative flex-1 space-y-2 sm:space-y-4 lg:space-y-2 mb-3 sm:mb-8 lg:mb-4">
                           <h3 className={`text-sm sm:text-2xl lg:text-lg font-black leading-tight transition-colors duration-300 ${
-                            colorIndex === 0 ? "text-gray-900 group-hover:text-indigo-600" 
-                            : colorIndex === 1 ? "text-gray-900 group-hover:text-purple-600"
-                            : "text-gray-900 group-hover:text-pink-600"
+                            colorIndex === 0 ? "text-gray-900 group-hover:text-brand-teal" 
+                            : colorIndex === 1 ? "text-gray-900 group-hover:text-brand-teal"
+                            : "text-gray-900 group-hover:text-brand-teal"
                           }`}>
                             {video.title}
                           </h3>
@@ -274,18 +274,18 @@ export default function EducationalVideosPage() {
                             }}
                           >
                             <span className={`text-[9px] sm:text-sm lg:text-xs font-black uppercase tracking-normal transition-colors ${
-                              colorIndex === 0 ? "text-indigo-600" 
-                              : colorIndex === 1 ? "text-purple-600"
-                              : "text-pink-600"
+                              colorIndex === 0 ? "text-brand-teal" 
+                              : colorIndex === 1 ? "text-brand-teal"
+                              : "text-brand-teal"
                             }`}>
                               Watch Video
                             </span>
                             <div className={`w-6 h-6 sm:w-12 sm:h-12 lg:w-8 lg:h-8 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 flex-shrink-0 ${
                               colorIndex === 0 
-                                ? "bg-indigo-100 group-hover:bg-gradient-to-r group-hover:from-indigo-600 group-hover:to-indigo-700" 
+                                ? "bg-teal-100 group-hover:bg-gradient-to-r group-hover:from-brand-teal group-hover:to-brand-navy" 
                                 : colorIndex === 1
-                                ? "bg-purple-100 group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-purple-700"
-                                : "bg-pink-100 group-hover:bg-gradient-to-r group-hover:from-pink-600 group-hover:to-pink-700"
+                                ? "bg-teal-100 group-hover:bg-gradient-to-r group-hover:from-brand-teal group-hover:to-brand-navy"
+                                : "bg-teal-100 group-hover:bg-gradient-to-r group-hover:from-brand-teal group-hover:to-brand-navy"
                             }`}>
                               <LuPlay className="h-3 w-3 sm:h-6 sm:w-6 lg:h-4 lg:w-4 text-gray-600 group-hover:text-white transition-colors group-hover:translate-x-0.5" />
                             </div>
@@ -304,7 +304,7 @@ export default function EducationalVideosPage() {
                 <button
                   type="button"
                   onClick={() => setShowAllMobile((prev) => !prev)}
-                  className="px-10 py-4 rounded-full border-2 border-gray-300 text-gray-700 font-bold text-xs uppercase tracking-[0.1em] transition-all duration-300 hover:bg-gray-100 hover:border-indigo-400 hover:text-indigo-600 hover:scale-105"
+                  className="px-10 py-4 rounded-full border-2 border-gray-300 text-gray-700 font-bold text-xs uppercase tracking-[0.1em] transition-all duration-300 hover:bg-gray-100 hover:border-brand-teal hover:text-brand-teal hover:scale-105"
                 >
                   {showAllMobile ? "Show Less" : "Load More"}
                 </button>

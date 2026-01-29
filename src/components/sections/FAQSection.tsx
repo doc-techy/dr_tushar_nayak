@@ -32,12 +32,12 @@ export function FAQSection() {
                 ref={(el) => {
                   if (el) summaryRef.current[index] = el;
                 }}
-                className="group rounded-xl sm:rounded-2xl md:rounded-3xl border border-gray-200 bg-white shadow-sm sm:shadow-md transition-all duration-300 open:bg-gray-50 open:border-indigo-400"
+                className="group rounded-xl sm:rounded-2xl md:rounded-3xl border border-gray-200 bg-white shadow-sm sm:shadow-md transition-all duration-300 open:bg-gray-50 open:border-brand-teal"
               >
                 <summary className="flex items-center justify-between gap-2 sm:gap-3 md:gap-4 cursor-pointer px-3 sm:px-5 md:px-6 lg:px-8 py-3 sm:py-4 md:py-5 text-left text-gray-900 text-xs sm:text-sm md:text-base lg:text-lg font-semibold">
                   <span>{faq.question}</span>
                   <span className="flex h-7 w-7 sm:h-9 sm:w-9 md:h-10 md:w-10 lg:h-12 lg:w-12 items-center justify-center rounded-full border border-gray-300 bg-gray-100 transition-transform group-open:rotate-180 flex-shrink-0">
-                    <LuChevronDown className="h-3.5 w-3.5 sm:h-4 sm:w-4 md:h-5 md:w-5 lg:h-6 lg:w-6 text-indigo-600" />
+                    <LuChevronDown className="h-3.5 w-3.5 sm:h-4 sm:w-4 md:h-5 md:w-5 lg:h-6 lg:w-6 text-brand-teal" />
                   </span>
                 </summary>
                 <div className="px-3 sm:px-5 md:px-6 lg:px-8 pb-3 sm:pb-4 md:pb-5 lg:pb-6 pt-2 sm:pt-3 border-t border-gray-200 text-[10px] sm:text-xs md:text-sm lg:text-base text-gray-700 leading-5 sm:leading-6 md:leading-7">
@@ -47,7 +47,7 @@ export function FAQSection() {
             ))}
           </div>
 
-          <aside className="rounded-xl sm:rounded-2xl md:rounded-3xl border border-gray-200 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 p-3 sm:p-5 md:p-6 lg:p-8 space-y-3 sm:space-y-4 lg:space-y-6 flex flex-col justify-between">
+          <aside className="rounded-xl sm:rounded-2xl md:rounded-3xl border border-gray-200 bg-gradient-to-br from-teal-50 via-teal-50/50 to-brand-navy/5 p-3 sm:p-5 md:p-6 lg:p-8 space-y-3 sm:space-y-4 lg:space-y-6 flex flex-col justify-between">
             <div className="space-y-1.5 sm:space-y-2 md:space-y-3 lg:space-y-4">
               <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-gray-900">Still have a question?</h3>
               <p className="text-[10px] sm:text-xs md:text-sm text-gray-700 leading-relaxed">
@@ -56,21 +56,21 @@ export function FAQSection() {
             </div>
             <div className="space-y-2 sm:space-y-3 lg:space-y-4 text-[10px] sm:text-xs md:text-sm text-gray-700">
               <div>
-                <p className="uppercase text-[9px] sm:text-[10px] md:text-xs tracking-widest text-indigo-600">Phone</p>
+                <p className="uppercase text-[9px] sm:text-[10px] md:text-xs tracking-widest text-brand-teal">Phone</p>
                 <p className="text-xs sm:text-sm md:text-base font-semibold text-gray-900">+91 88106 05887</p>
               </div>
               <div>
-                <p className="uppercase text-[9px] sm:text-[10px] md:text-xs tracking-widest text-indigo-600">Email</p>
+                <p className="uppercase text-[9px] sm:text-[10px] md:text-xs tracking-widest text-brand-teal">Email</p>
                 <p className="text-xs sm:text-sm md:text-base font-semibold text-gray-900 break-all">orthopaedicsurgeontushar@gmail.com</p>
               </div>
               <div>
-                <p className="uppercase text-[9px] sm:text-[10px] md:text-xs tracking-widest text-indigo-600">Clinic Hours</p>
+                <p className="uppercase text-[9px] sm:text-[10px] md:text-xs tracking-widest text-brand-teal">Clinic Hours</p>
                 <p className="text-xs sm:text-sm md:text-base font-semibold text-gray-900">Mon – Sat · 10:30 AM – 9:00 PM</p>
               </div>
             </div>
             <a
               href="/booking"
-              className="inline-flex items-center justify-center px-4 sm:px-5 md:px-6 py-2.5 sm:py-3 md:py-4 rounded-full bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white text-[9px] sm:text-[10px] md:text-xs font-bold uppercase tracking-widest hover:scale-105 transition-transform"
+              className="inline-flex items-center justify-center px-4 sm:px-5 md:px-6 py-2.5 sm:py-3 md:py-4 rounded-full bg-gradient-to-r from-brand-teal to-brand-navy text-white text-[9px] sm:text-[10px] md:text-xs font-bold uppercase tracking-widest hover:scale-105 transition-transform shadow-lg shadow-brand-teal/30"
             >
               Book an Appointment
             </a>

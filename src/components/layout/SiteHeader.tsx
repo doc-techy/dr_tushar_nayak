@@ -24,7 +24,7 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`sticky top-0 z-40 transition before:content-[''] before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-gradient-to-r before:from-indigo-600 before:via-purple-600 before:to-pink-600 before:opacity-80 after:content-[''] after:absolute after:inset-x-0 after:bottom-0 after:h-1 after:bg-gradient-to-r after:from-indigo-600 after:via-purple-600 after:to-pink-600 after:opacity-80 ${
+      className={`sticky top-0 z-40 transition before:content-[''] before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-gradient-to-r before:from-brand-teal before:to-brand-navy before:opacity-80 after:content-[''] after:absolute after:inset-x-0 after:bottom-0 after:h-1 after:bg-gradient-to-r after:from-brand-teal after:to-brand-navy after:opacity-80 ${
         scrolled
           ? "bg-gray-950/95 shadow-2xl backdrop-blur-xl"
           : "bg-gray-950/80 backdrop-blur"
@@ -48,14 +48,14 @@ export function SiteHeader() {
             <Link 
               key={link.href} 
               href={link.href} 
-              className="transition hover:text-indigo-400"
+              className="transition hover:text-brand-teal"
             >
               {link.label}
             </Link>
           ))}
           <Link
             href="/booking"
-            className="px-4 lg:px-6 py-2 lg:py-3 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-xs lg:text-sm font-bold shadow-lg shadow-indigo-500/30 transition hover:scale-105 hover:shadow-indigo-500/50"
+            className="px-4 lg:px-6 py-2 lg:py-3 rounded-full bg-gradient-to-r from-brand-teal to-brand-navy text-white text-xs lg:text-sm font-bold shadow-lg shadow-brand-teal/30 transition hover:scale-105 hover:shadow-brand-teal/50"
           >
             Book now
           </Link>
@@ -69,9 +69,9 @@ export function SiteHeader() {
         >
           <span className="sr-only">Toggle navigation</span>
           <div className="flex h-8 w-8 sm:h-10 sm:w-10 flex-col justify-center gap-1 sm:gap-1.5 rounded-full border border-white/20 bg-white/10 px-1.5 sm:px-2">
-            <span className="h-0.5 w-full bg-indigo-400" />
-            <span className="h-0.5 w-full bg-purple-400" />
-            <span className="h-0.5 w-full bg-pink-400" />
+            <span className="h-0.5 w-full bg-brand-teal" />
+            <span className="h-0.5 w-full bg-brand-teal/70" />
+            <span className="h-0.5 w-full bg-brand-navy" />
           </div>
         </button>
       </div>
@@ -91,7 +91,7 @@ export function SiteHeader() {
             ))}
             <Link
               href="/booking"
-              className="rounded-lg sm:rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 px-4 sm:px-6 py-2.5 sm:py-3 text-center text-sm sm:text-base text-white font-bold transition hover:scale-105"
+              className="rounded-lg sm:rounded-xl bg-gradient-to-r from-brand-teal to-brand-navy px-4 sm:px-6 py-2.5 sm:py-3 text-center text-sm sm:text-base text-white font-bold transition hover:scale-105"
               onClick={() => setMobileOpen(false)}
             >
               Book now

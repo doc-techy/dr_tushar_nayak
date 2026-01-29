@@ -18,9 +18,7 @@ export function AboutSection({ profile, education, experience }: AboutSectionPro
       <div className="relative z-10 mx-auto flex max-w-7xl flex-col gap-4 lg:gap-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <div className="space-y-4 sm:space-y-5 lg:space-y-6">
-            <div className="inline-flex items-center gap-2 sm:gap-3 rounded-full border border-teal-200 bg-teal-50 px-4 sm:px-6 py-2 sm:py-2.5 text-xs sm:text-sm font-bold uppercase tracking-wide text-brand-teal">
-              Meet Dr. Tushar Nayak
-            </div>
+
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 leading-tight">
               Precision orthopaedics designed around your movement goals
             </h2>

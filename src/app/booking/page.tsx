@@ -4,24 +4,24 @@ import { LuMapPin, LuClock, LuPhone, LuExternalLink } from "react-icons/lu";
 const locations = [
   {
     id: 1,
-    name: "SPARSH Hospital",
-    address: "Infantry Road, Bengaluru - 560001",
-    mapLink: "https://maps.google.com/?q=SPARSH+Hospital+Infantry+Road+Bengaluru",
+    name: "SPARSH Hospital, Hennur Road",
+    address: "HBR Layout, Hennur Road, Bengaluru - 560043",
+    mapLink: "https://maps.google.com/?q=SPARSH+Hospital+Hennur+Road+Bengaluru",
     timing: "Mon - Sat: 10:00 AM - 5:00 PM",
-    phone: "+91 88106 05887",
+    phone: "080 61 222 000",
     buttonText: "Book Appointment",
-    buttonLink: "https://sparsh.com/book", // External link to SPARSH
+    buttonLink: "https://www.sparshhospital.com/doctors/dr-tushar-nayak/",
     isExternal: true,
   },
   {
     id: 2,
-    name: "Nishna Healthcare",
+    name: "Nistha Healthcare",
     address: "HSR Layout, Bengaluru - 560102",
     mapLink: "https://maps.google.com/?q=HSR+Layout+Bengaluru",
     timing: "Mon - Sat: 6:00 PM - 9:00 PM",
     phone: "+91 88106 05887",
     buttonText: "Book Appointment",
-    buttonLink: "/booking/nishna",
+    buttonLink: "/booking/nistha",
     isExternal: false,
   },
 ];

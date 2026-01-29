@@ -111,12 +111,12 @@ export function HeroSection() {
                   <p className="text-xl sm:text-2xl md:text-3xl font-black text-gray-900">11+</p>
                 </div>
                 <div className="border-x border-gray-200 px-2 sm:px-3 md:px-4">
-                  <p className="text-[9px] sm:text-[10px] md:text-xs font-bold uppercase tracking-wide text-gray-500">Mon–Sat</p>
-                  <p className="text-xs sm:text-sm md:text-base font-black text-gray-900">10am–9pm</p>
+                  <p className="text-[9px] sm:text-[10px] md:text-xs font-bold uppercase tracking-wide text-gray-500">SPARSH</p>
+                  <p className="text-xs sm:text-sm md:text-base font-black text-gray-900">10am–5pm</p>
                 </div>
                 <div>
-                  <p className="text-[9px] sm:text-[10px] md:text-xs font-bold uppercase tracking-wide text-gray-500">Sunday</p>
-                  <p className="text-xs sm:text-sm md:text-base font-black text-gray-900">9am–1pm</p>
+                  <p className="text-[9px] sm:text-[10px] md:text-xs font-bold uppercase tracking-wide text-gray-500">Nistha</p>
+                  <p className="text-xs sm:text-sm md:text-base font-black text-gray-900">6pm–9pm</p>
                 </div>
               </div>
             </div>

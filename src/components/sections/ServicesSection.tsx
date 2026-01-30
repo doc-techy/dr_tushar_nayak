@@ -14,10 +14,10 @@ export function ServicesSection() {
   return (
     <section
       id="services"
-      className="relative py-10 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-8 text-gray-900 overflow-hidden"
+      className="relative pt-3 sm:pt-5  md:pt-6 lg:pt-7 pb-5 sm:pb-16 md:pb-20 lg:pb-24 px-4 sm:px-6 md:px-8 text-gray-900 overflow-hidden"
     >
       <div className="relative max-w-7xl mx-auto">
-        <div className="mb-8 sm:mb-12 md:mb-16 lg:mb-20 text-left sm:text-center">
+        <div className="mb-8 sm:mb-12 md:mb-16 lg:mb-10 text-left sm:text-center">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black leading-tight mb-2 sm:mb-4 lg:mb-6 text-gray-900">
             State of the art,{" "}
             <span className="text-gray-900">orthopaedic care</span>
@@ -28,7 +28,7 @@ export function ServicesSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 md:gap-3 lg:gap-5 lg:max-w-5xl lg:mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 md:gap-3 lg:gap-6 lg:max-w-6xl lg:mx-auto">
           {featuredServices.map((service) => (
             <Link
               key={service.title}
@@ -51,7 +51,7 @@ export function ServicesSection() {
 
               <div className="relative space-y-1 sm:space-y-1.5 md:space-y-1.5 lg:space-y-1.5 p-2 sm:p-3 md:p-3 lg:p-4">
                 <div className="space-y-0.5">
-                  <h3 className="text-[10px] sm:text-xs md:text-xs lg:text-sm font-bold sm:font-black leading-tight text-gray-900 transition-colors duration-300 group-hover:text-brand-teal line-clamp-2">
+                  <h3 className="text-xs sm:text-sm md:text-sm lg:text-base font-black leading-tight text-gray-900 transition-colors duration-300 group-hover:text-brand-teal line-clamp-2">
                     {service.title}
                   </h3>
                 </div>

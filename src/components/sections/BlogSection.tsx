@@ -6,10 +6,10 @@ export function BlogSection() {
   return (
     <section
       id="blogs"
-      className="relative py-10 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-8 text-gray-900 overflow-hidden"
+      className="relative pb-5 sm:pb-16 md:pb-20 lg:pb-24 px-4 sm:px-6 md:px-8 text-gray-900 overflow-hidden"
     >
       <div className="relative max-w-7xl mx-auto">
-        <div className="mb-8 sm:mb-12 md:mb-16 lg:mb-20 text-left sm:text-center">
+        <div className="mb-4 sm:mb-8 md:mb-8 lg:mb-5 text-left sm:text-center">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black leading-tight mb-2 sm:mb-4 lg:mb-6 text-gray-900">
             Educational{" "}
             <span className="text-gray-900">Blogs & Articles</span>

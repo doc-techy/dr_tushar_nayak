@@ -11,10 +11,10 @@ export function FAQSection() {
   return (
     <section
       id="faq"
-      className="relative py-10 sm:py-16 md:py-20 lg:py-24 text-gray-900 overflow-hidden"
+      className="relative pb-5 sm:pb-16 md:pb-20 lg:pb-24 text-gray-900 overflow-hidden"
     >
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 md:px-10 lg:px-16">
-        <div className="text-left sm:text-center mb-6 sm:mb-10 md:mb-12 lg:mb-16">
+        <div className="text-left sm:text-center mb-6 sm:mb-10 md:mb-12 lg:mb-10">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-gray-900 mb-2 sm:mb-3 lg:mb-5">
             Frequently Asked{" "}
             <span className="text-gray-900">Questions</span>

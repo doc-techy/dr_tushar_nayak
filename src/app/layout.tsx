@@ -20,12 +20,12 @@ const geistMono = localFont({
 const siteUrl = "https://drtusharnayak.com";
 
 export const metadata: Metadata = {
-  title: `${doctorProfile.name} | Orthopaedic Surgeon in Ahmedabad`,
+  title: `${doctorProfile.name} | Orthopaedic Surgeon in Bangalore`,
   description:
-    "Evidence-led orthopaedic care by Dr. Tushar Nayak — robotic joint replacement, sports injury rehabilitation, and joint preservation programs in Ahmedabad.",
+    "Evidence-led orthopaedic care by Dr. Tushar Nayak — robotic joint replacement, sports injury rehabilitation, and joint preservation programs in Bangalore.",
   metadataBase: new URL(siteUrl),
   openGraph: {
-    title: `${doctorProfile.name} | Orthopaedic Surgeon in Ahmedabad`,
+    title: `${doctorProfile.name} | Orthopaedic Surgeon in Bangalore`,
     description:
       "Robotic knee and hip replacement, sports injury clinic, and personalised rehabilitation backed by global fellowships.",
     url: siteUrl,
@@ -38,16 +38,17 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${doctorProfile.name} | Orthopaedic Surgeon`,
+    title: `${doctorProfile.name} | Orthopaedic Surgeon in Bangalore`,
     description:
       "Precision orthopaedics, minimally invasive surgery, and holistic post-operative rehabilitation by Dr. Tushar Nayak.",
   },
   keywords: [
     "Dr Tushar Nayak",
-    "orthopaedic surgeon Ahmedabad",
+    "orthopaedic surgeon Bangalore",
     "robotic knee replacement",
     "hip replacement specialist",
     "sports injury doctor",
+    "orthopaedic surgeon Bengaluru",
   ],
 };
 

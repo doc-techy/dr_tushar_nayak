@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { LuArrowRight, LuArrowUpRight } from "react-icons/lu";
+import { LuArrowRight, LuArrowUpRight, LuPlay, LuX } from "react-icons/lu";
 
 const signatureProgrammes = [
   { title: "Robotic knee and hip replacements", href: "/treatments/knee-replacement" },
@@ -19,8 +19,12 @@ const sliderImages = [
   { src: "/images/img4.avif", alt: "Dr. Tushar Nayak reviewing scans" },
 ];
 
+// Replace with your actual introduction video URL (YouTube, Vimeo, or direct video file)
+const introVideoUrl = "https://www.youtube.com/embed/YOUR_VIDEO_ID";
+
 export function HeroSection() {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [showVideo, setShowVideo] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -29,6 +33,18 @@ export function HeroSection() {
 
     return () => clearInterval(interval);
   }, []);
+
+  // Disable body scroll when video modal is open
+  useEffect(() => {
+    if (showVideo) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [showVideo]);
 
   return (
     <section id="hero" className="relative overflow-hidden text-gray-900">
@@ -107,30 +123,30 @@ export function HeroSection() {
               {/* Stats row */}
               <div className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-4 pt-3 sm:pt-4 border-t border-gray-200">
                 <div>
-                  <p className="text-[9px] sm:text-[10px] md:text-xs font-bold uppercase tracking-wide text-gray-500">Years Exp.</p>
+                  <p className="text-[9px] sm:text-[10px] md:text-xs font-bold uppercase tracking-wide text-gray-500">Years of Experience</p>
                   <p className="text-xl sm:text-2xl md:text-3xl font-black text-gray-900">11+</p>
                 </div>
                 <div className="border-x border-gray-200 px-2 sm:px-3 md:px-4">
-                  <p className="text-[9px] sm:text-[10px] md:text-xs font-bold uppercase tracking-wide text-gray-500">SPARSH</p>
-                  <p className="text-[10px] sm:text-xs md:text-sm font-black text-gray-900">Mon-Sat 10am–5pm</p>
+                  <p className="text-[9px] sm:text-[10px] md:text-xs font-bold uppercase tracking-wide text-gray-500">Sparsh Hospital, Hennur</p>
+                  <p className="text-[10px] sm:text-xs md:text-sm font-medium text-gray-900">Mon–Sat: 10 AM – 5 PM</p>
                 </div>
                 <div>
-                  <p className="text-[9px] sm:text-[10px] md:text-xs font-bold uppercase tracking-wide text-gray-500">Nistha</p>
-                  <p className="text-[10px] sm:text-xs md:text-sm font-black text-gray-900 leading-tight">Mon-Sat 6pm–9pm</p>
-                  <p className="text-[10px] sm:text-xs md:text-sm font-black text-gray-900 leading-tight">Sun 9am–1pm</p>
+                  <p className="text-[9px] sm:text-[10px] md:text-xs font-bold uppercase tracking-wide text-gray-500">Nishtha Healthcare</p>
+                  <p className="text-[10px] sm:text-xs md:text-sm font-medium text-gray-900 leading-tight">Mon–Sat: 6 PM – 9 PM</p>
+                  <p className="text-[10px] sm:text-xs md:text-sm font-medium text-gray-900 leading-tight">Sun: 9 AM – 1 PM</p>
                 </div>
               </div>
             </div>
 
             {/* Signature Programmes - visible on md+ screens, 2 per row */}
-            <div className="hidden md:block space-y-3 lg:space-y-4">
-              <p className="text-[10px] lg:text-xs font-bold uppercase tracking-widest text-gray-400">Signature Programmes</p>
-              <div className="grid grid-cols-2 gap-2 lg:gap-3">
+            <div className="hidden md:block space-y-2.5 lg:space-y-3">
+              <p className="text-[10px] lg:text-xs font-bold uppercase tracking-widest text-brand-teal">Signature Programmes</p>
+              <div className="grid grid-cols-2 gap-2 lg:gap-2.5">
                 {signatureProgrammes.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="group flex items-center justify-center text-center rounded-full border border-teal-100 bg-white px-4 lg:px-5 py-2.5 lg:py-3 text-[10px] lg:text-xs font-bold uppercase tracking-wide text-brand-teal transition-all duration-300 hover:-translate-y-0.5 hover:border-teal-300 hover:shadow-lg hover:shadow-brand-teal/10"
+                    className="group flex items-center justify-center text-center rounded-full border border-teal-200 bg-gradient-to-r from-teal-50 to-white px-4 lg:px-5 py-2 lg:py-2.5 text-[9px] lg:text-[10px] font-bold uppercase tracking-wide text-brand-navy transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-teal hover:from-brand-teal hover:to-brand-navy hover:text-white hover:shadow-md hover:shadow-brand-teal/30"
                   >
                     <span className="leading-tight">{item.title}</span>
                   </Link>
@@ -140,13 +156,13 @@ export function HeroSection() {
 
             {/* Mobile-only Signature Programmes - 2 per row with full names, above CTA on mobile */}
             <div className="md:hidden">
-              <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2">Signature Programmes</p>
+              <p className="text-[10px] font-bold uppercase tracking-widest text-brand-teal mb-2">Signature Programmes</p>
               <div className="grid grid-cols-2 gap-2">
                 {signatureProgrammes.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="flex items-center justify-center text-center rounded-lg border border-teal-100 bg-teal-50/50 px-2 py-2 text-[9px] font-semibold text-brand-teal leading-tight"
+                    className="flex items-center justify-center text-center rounded-lg border border-teal-200 bg-gradient-to-r from-teal-50 to-white px-2 py-2 text-[9px] font-bold text-brand-navy leading-tight"
                   >
                     {item.title}
                   </Link>
@@ -156,6 +172,13 @@ export function HeroSection() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col xs:flex-row sm:flex-row gap-3 sm:gap-4 pt-1 sm:pt-2">
+              <button
+                onClick={() => setShowVideo(true)}
+                className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full border-2 border-brand-teal bg-white px-5 sm:px-6 md:px-7 lg:px-8 py-3 sm:py-3.5 lg:py-4 text-xs sm:text-sm font-bold uppercase tracking-wider text-brand-teal shadow-md shadow-brand-teal/10 transition-all duration-300 hover:bg-gradient-to-r hover:from-brand-teal hover:to-brand-navy hover:text-white hover:border-transparent hover:shadow-lg hover:shadow-brand-teal/30 hover:scale-105"
+              >
+                <LuPlay className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                <span className="relative z-10">Watch Introduction</span>
+              </button>
               <Link
                 href="/booking"
                 className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 overflow-hidden rounded-full bg-gradient-to-r from-brand-teal to-brand-navy px-5 sm:px-6 md:px-7 lg:px-8 py-3 sm:py-3.5 lg:py-4 text-xs sm:text-sm font-bold uppercase tracking-wider text-white shadow-lg shadow-brand-teal/30 transition-all duration-300 hover:scale-105 hover:shadow-brand-teal/50"
@@ -165,16 +188,41 @@ export function HeroSection() {
                   <LuArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4 transition-transform group-hover:translate-x-1" />
                 </span>
               </Link>
-              <Link
-                href="tel:8810605887"
-                className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full border-2 border-brand-teal bg-white px-5 sm:px-6 md:px-7 lg:px-8 py-3 sm:py-3.5 lg:py-4 text-xs sm:text-sm font-bold uppercase tracking-wider text-brand-teal shadow-md shadow-brand-teal/10 transition-all duration-300 hover:bg-gradient-to-r hover:from-brand-teal hover:to-brand-navy hover:text-white hover:border-transparent hover:shadow-lg hover:shadow-brand-teal/30 hover:scale-105"
-              >
-                <span className="relative z-10">Contact Us</span>
-              </Link>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Video Modal */}
+      {showVideo && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+          onClick={() => setShowVideo(false)}
+        >
+          <div 
+            className="relative w-full max-w-4xl aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close button */}
+            <button
+              onClick={() => setShowVideo(false)}
+              className="absolute -top-12 right-0 sm:top-4 sm:right-4 z-10 flex items-center justify-center w-10 h-10 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
+              aria-label="Close video"
+            >
+              <LuX className="w-6 h-6" />
+            </button>
+            
+            {/* Video iframe - Replace with your actual video */}
+            <iframe
+              src={introVideoUrl}
+              title="Introduction to Dr. Tushar Nayak"
+              className="w-full h-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }

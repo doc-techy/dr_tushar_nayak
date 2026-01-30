@@ -7,7 +7,7 @@ const navLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Services", href: "/#services" },
-  { label: "Blogs", href: "/#blogs" },
+  { label: "Publications", href: "/publications" },
   { label: "Videos", href: "/educational-videos" },
 ];
 
@@ -36,9 +36,9 @@ export function SiteHeader() {
           className="flex items-center gap-2 sm:gap-3 transition hover:opacity-80"
         >
           <span className="leading-tight">
-            <span className="text-lg sm:text-xl md:text-2xl font-black tracking-tight text-white">ORTHOCARE</span>
+            <span className="text-lg sm:text-xl md:text-2xl font-black tracking-tight text-white">Dr. Tushar Nayak</span>
             <span className="block text-[10px] sm:text-xs font-bold uppercase tracking-normal text-gray-400">
-              Dr. Tushar Nayak
+              Orthopaedic Surgeon
             </span>
           </span>
         </Link>

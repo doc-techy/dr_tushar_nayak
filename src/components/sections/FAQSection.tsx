@@ -65,8 +65,8 @@ export function FAQSection() {
               </div>
               <div>
                 <p className="uppercase text-[9px] sm:text-[10px] md:text-xs tracking-widest text-brand-teal">Clinic Hours</p>
-                <p className="text-xs sm:text-sm md:text-base font-semibold text-gray-900">SPARSH: 10 AM – 5 PM</p>
-                <p className="text-xs sm:text-sm md:text-base font-semibold text-gray-900">Nistha: 6 PM – 9 PM</p>
+                <p className="text-xs sm:text-sm md:text-base font-semibold text-gray-900">Sparsh Hospital, Hennur: 10 AM – 5 PM</p>
+                <p className="text-xs sm:text-sm md:text-base font-semibold text-gray-900">Nishtha Healthcare: 6 PM – 9 PM</p>
               </div>
             </div>
             <a

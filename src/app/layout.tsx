@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${doctorProfile.name} | Orthopaedic Surgeon`,
     description:
-      "Precision orthopaedics, minimally invasive surgery, and holistic post-operative rehabilitation at Apex Orthocare Hospital.",
+      "Precision orthopaedics, minimally invasive surgery, and holistic post-operative rehabilitation by Dr. Tushar Nayak.",
   },
   keywords: [
     "Dr Tushar Nayak",

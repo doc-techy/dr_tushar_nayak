@@ -4,10 +4,10 @@ import { LuMapPin, LuClock, LuPhone, LuExternalLink, LuInfo } from "react-icons/
 const locations = [
   {
     id: 1,
-    name: "SPARSH Hospital, Hennur Road",
+    name: "Sparsh Hospital, Hennur",
     address: "HBR Layout, Hennur Road, Bengaluru - 560043",
     mapLink: "https://maps.google.com/?q=SPARSH+Hospital+Hennur+Road+Bengaluru",
-    timing: "Mon - Sat: 10:00 AM - 5:00 PM",
+    timing: "Monday to Saturday – 10 AM to 5 PM",
     phone: "080 61 222 000",
     buttonText: "Book Appointment",
     buttonLink: "https://www.sparshhospital.com/doctors/dr-tushar-nayak/",
@@ -15,13 +15,13 @@ const locations = [
   },
   {
     id: 2,
-    name: "Nistha Healthcare",
+    name: "Nishtha Healthcare",
     address: "HSR Layout, Bengaluru - 560102",
-    mapLink: "https://maps.google.com/?q=HSR+Layout+Bengaluru",
-    timing: "Mon - Sat: 6:00 PM - 9:00 PM",
+    mapLink: "https://share.google/z8UvmJ8eEgoLHTkyT",
+    timing: "Monday to Saturday – 6 PM to 9 PM",
     phone: "+91 88106 05887",
     buttonText: "Book Appointment",
-    buttonLink: "/booking/nistha",
+    buttonLink: "/booking/nishtha",
     isExternal: false,
   },
 ];

@@ -140,7 +140,7 @@ export const educationTimeline: EducationHighlight[] = [
 
 export const experienceHighlights: ExperienceHighlight[] = [
   {
-    institution: "Apex Orthocare Hospital",
+    institution: "Sparsh Hospital, Hennur",
     role: "Director & Lead Orthopaedic Surgeon",
     period: "2016 – Present",
     summary:
@@ -424,7 +424,7 @@ export const servicesOffered: Service[] = [
     ],
   },
   {
-    title: "State of the Art Physiotherapy",
+    title: "State-of-the-Art Physiotherapy",
     slug: "physiotherapy",
     iconKey: "physiotherapy",
     description:
@@ -438,8 +438,8 @@ export const servicesOffered: Service[] = [
     details:
       "Our physiotherapy programme combines manual therapy, therapeutic exercises, and modern modalities to support recovery after joint replacement, arthroscopy, spine surgery, and fractures, and to manage chronic pain and mobility issues.",
     heroImage:
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80",
-    heroAlt: "Patient receiving physiotherapy treatment",
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1200&q=80",
+    heroAlt: "Physiotherapist helping patient with rehabilitation exercises",
     sections: [
       {
         heading: "Comprehensive rehabilitation",

@@ -44,7 +44,7 @@ export function AdminTopbar() {
         </div>
 
         <div className="hidden lg:block">
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-gray-400">Orthocare Intelligence</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-gray-400">Admin Dashboard</p>
           <h1 className="text-xl font-bold text-white">Clinic Operations Command Centre</h1>
         </div>
 

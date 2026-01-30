@@ -39,7 +39,7 @@ const consultationTypes = [
   { id: "follow-up", label: "Follow Up" },
 ];
 
-export default function NisthaBookingPage() {
+export default function NishthaBookingPage() {
   const [formState, setFormState] = useState<FormState>(defaultState);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -74,7 +74,7 @@ export default function NisthaBookingPage() {
         phone: formState.phone.trim(),
         date: formState.preferredDate,
         time: formState.timeSlot,
-        message: `[Nistha Healthcare] [${consultationLabel}] ${formState.notes.trim()}`.trim(),
+        message: `[Nishtha Healthcare] [${consultationLabel}] ${formState.notes.trim()}`.trim(),
       });
       setStatus("success");
       setFormState(defaultState);
@@ -115,7 +115,7 @@ export default function NisthaBookingPage() {
               <div className="rounded-3xl border border-teal-300 bg-teal-50 px-6 py-8 text-brand-navy">
                 <h2 className="text-xl font-semibold text-brand-navy">Thank you! 🗓️</h2>
                 <p className="mt-3 text-sm text-brand-navy/80">
-                  We&apos;ve recorded your request for Nistha Healthcare. The care concierge will call/text you shortly to confirm the appointment.
+                  We&apos;ve recorded your request for Nishtha Healthcare. The care concierge will call/text you shortly to confirm the appointment.
                 </p>
                 <p className="mt-4 text-sm text-brand-navy/70">
                   Need urgent support? Reach the clinic at {doctorProfile.contact.phone} or chat on WhatsApp anytime.
@@ -266,7 +266,7 @@ export default function NisthaBookingPage() {
           <aside className="rounded-[32px] border border-gray-200 bg-white p-8 sm:p-10 space-y-8 shadow-lg">
             <div className="space-y-3">
               <p className="text-xs font-bold uppercase tracking-[0.08em] text-brand-teal">Clinic details</p>
-              <h2 className="text-2xl font-bold text-gray-900">Nistha Healthcare</h2>
+              <h2 className="text-2xl font-bold text-gray-900">Nishtha Healthcare</h2>
               <p className="text-sm text-gray-700 leading-relaxed">
                 Evening consultations with Dr. Tushar Nayak for orthopaedic care, joint assessments, and follow-up appointments.
               </p>
@@ -292,7 +292,7 @@ export default function NisthaBookingPage() {
             </div>
 
             <a
-              href="https://maps.google.com/?q=HSR+Layout+Bengaluru"
+              href="https://share.google/z8UvmJ8eEgoLHTkyT"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center w-full rounded-full border border-gray-300 px-6 py-3 text-xs font-bold uppercase tracking-[0.08em] text-gray-700 hover:bg-gray-100"
@@ -302,7 +302,7 @@ export default function NisthaBookingPage() {
 
             <div className="overflow-hidden rounded-3xl border border-gray-200">
               <iframe
-                title="Nistha Healthcare Location"
+                title="Nishtha Healthcare Location"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9699999999997!2d77.6400000!3d12.9100000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU0JzM2LjAiTiA3N8KwMzgnMjQuMCJF!5e0!3m2!1sen!2sin!4v1600000000000!5m2!1sen!2sin&output=embed"
                 width="100%"
                 height="220"

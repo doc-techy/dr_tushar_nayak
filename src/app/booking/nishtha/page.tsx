@@ -266,7 +266,7 @@ export default function NishthaBookingPage() {
           <aside className="rounded-[32px] border border-gray-200 bg-white p-8 sm:p-10 space-y-8 shadow-lg">
             <div className="space-y-3">
               <p className="text-xs font-bold uppercase tracking-[0.08em] text-brand-teal">Clinic details</p>
-              <h2 className="text-2xl font-bold text-gray-900">Nishtha Healthcare</h2>
+              <h2 className="text-2xl font-bold text-gray-900">Nishtha Healthcare & Diagnostic Center</h2>
               <p className="text-sm text-gray-700 leading-relaxed">
                 Evening consultations with Dr. Tushar Nayak for orthopaedic care, joint assessments, and follow-up appointments.
               </p>
@@ -287,12 +287,12 @@ export default function NishthaBookingPage() {
               </div>
               <div>
                 <p className="text-xs uppercase tracking-[0.08em] text-brand-teal">Address</p>
-                <p className="text-sm leading-relaxed">HSR Layout, Bengaluru - 560102</p>
+                <p className="text-sm leading-relaxed">Ground Floor, Tarun Tower, 9, Kaggadasapura Main Rd, Kondappa Layout, C V Raman Nagar, Bengaluru - 560093</p>
               </div>
             </div>
 
             <a
-              href="https://share.google/z8UvmJ8eEgoLHTkyT"
+              href="https://share.google/MnvUf9SOj45ZyFNrR"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center w-full rounded-full border border-gray-300 px-6 py-3 text-xs font-bold uppercase tracking-[0.08em] text-gray-700 hover:bg-gray-100"
@@ -302,8 +302,8 @@ export default function NishthaBookingPage() {
 
             <div className="overflow-hidden rounded-3xl border border-gray-200">
               <iframe
-                title="Nishtha Healthcare Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9699999999997!2d77.6400000!3d12.9100000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU0JzM2LjAiTiA3N8KwMzgnMjQuMCJF!5e0!3m2!1sen!2sin!4v1600000000000!5m2!1sen!2sin&output=embed"
+                title="Nishtha Healthcare & Diagnostic Center Location"
+                src="https://www.google.com/maps?q=Nishtha+Healthcare+Tarun+Tower+Kaggadasapura+Main+Rd+Bengaluru&output=embed"
                 width="100%"
                 height="220"
                 loading="lazy"

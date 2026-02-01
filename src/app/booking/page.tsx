@@ -5,8 +5,8 @@ const locations = [
   {
     id: 1,
     name: "Sparsh Hospital, Hennur",
-    address: "HBR Layout, Hennur Road, Bengaluru - 560043",
-    mapLink: "https://maps.google.com/?q=SPARSH+Hospital+Hennur+Road+Bengaluru",
+    address: "DivyaSree Avance, Hennur Bagalur Main Rd, Chikkanna Layout, HBR Layout, Geddalahalli, Bengaluru - 560043",
+    mapLink: "https://share.google/8cdAfOpQTfDXonnGh",
     timing: "Monday to Saturday – 10 AM to 5 PM",
     phone: "080 61 222 000",
     buttonText: "Book Appointment",
@@ -15,9 +15,9 @@ const locations = [
   },
   {
     id: 2,
-    name: "Nishtha Healthcare",
-    address: "HSR Layout, Bengaluru - 560102",
-    mapLink: "https://share.google/z8UvmJ8eEgoLHTkyT",
+    name: "Nishtha Healthcare & Diagnostic Center",
+    address: "Ground Floor, Tarun Tower, 9, Kaggadasapura Main Rd, Kondappa Layout, C V Raman Nagar, Bengaluru - 560093",
+    mapLink: "https://share.google/MnvUf9SOj45ZyFNrR",
     timing: "Monday to Saturday – 6 PM to 9 PM",
     phone: "+91 88106 05887",
     buttonText: "Book Appointment",

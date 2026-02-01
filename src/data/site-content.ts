@@ -853,10 +853,10 @@ export const faqs: FAQItem[] = [
 ];
 
 export const mapEmbed = {
-  title: "Tarun Tower Clinic",
+  title: "Nishtha Healthcare & Diagnostic Center",
   address:
     "Ground Floor, Tarun Tower, 9, Kaggadasapura Main Rd, Kondappa Layout, C V Raman Nagar, Bengaluru, Karnataka 560093",
   iframeSrc:
-    "https://www.google.com/maps?q=Ground+Floor,+Tarun+Tower,+9,+Kaggadasapura+Main+Rd,+Kondappa+Layout,+C+V+Raman+Nagar,+Bengaluru,+Karnataka+560093&output=embed",
+    "https://www.google.com/maps?q=Nishtha+Healthcare+Tarun+Tower+Kaggadasapura+Main+Rd+Bengaluru&output=embed",
 };
 

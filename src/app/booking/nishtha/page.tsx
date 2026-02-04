@@ -103,7 +103,7 @@ export default function NishthaBookingPage() {
         </header>
 
         <div className="grid gap-6 lg:gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="rounded-[32px] border border-gray-200 bg-white p-6 lg:p-8 sm:p-10 shadow-lg">
+          <div className="rounded-[32px] border border-teal-100/80 bg-teal-50/80 backdrop-blur-sm p-6 lg:p-8 sm:p-10 shadow-lg">
             <div className="space-y-2 mb-6 lg:mb-8">
               <p className="text-xs font-bold uppercase tracking-[0.08em] text-brand-teal">Booking details</p>
               <p className="text-sm text-gray-600">
@@ -263,7 +263,7 @@ export default function NishthaBookingPage() {
             )}
           </div>
 
-          <aside className="rounded-[32px] border border-gray-200 bg-white p-8 sm:p-10 space-y-8 shadow-lg">
+          <aside className="rounded-[32px] border border-teal-100/80 bg-teal-50/80 backdrop-blur-sm p-8 sm:p-10 space-y-8 shadow-lg">
             <div className="space-y-3">
               <p className="text-xs font-bold uppercase tracking-[0.08em] text-brand-teal">Clinic details</p>
               <h2 className="text-2xl font-bold text-gray-900">Nishtha Healthcare & Diagnostic Center</h2>
@@ -312,7 +312,7 @@ export default function NishthaBookingPage() {
               />
             </div>
 
-            <div className="rounded-2xl border border-gray-200 bg-gray-50 p-5 text-sm text-gray-700 space-y-3">
+            <div className="rounded-2xl border border-teal-100/80 bg-teal-50/70 p-5 text-sm text-gray-700 space-y-3">
               <p className="font-semibold text-gray-900">Need to talk first?</p>
               <p>
                 Message us on WhatsApp for insurance clarifications, pre-operative queries, or to reschedule. We respond within 24 hours.

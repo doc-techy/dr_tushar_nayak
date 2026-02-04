@@ -43,7 +43,7 @@ export function ContactSection() {
         </div>
 
         <div className="space-y-5">
-          <div className="overflow-hidden rounded-[2.5rem] border border-brand-aqua/60 bg-white/90 shadow-[0_25px_60px_-30px_rgba(14,57,90,0.45)]">
+          <div className="overflow-hidden rounded-[2.5rem] border border-brand-aqua/60 bg-teal-50/90 backdrop-blur-sm shadow-[0_25px_60px_-30px_rgba(14,57,90,0.45)]">
             <iframe
               title={mapEmbed.title}
               src={mapEmbed.iframeSrc}

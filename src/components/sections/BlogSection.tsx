@@ -26,7 +26,7 @@ export function BlogSection() {
             return (
               <article
                 key={post.slug}
-                className="group relative overflow-hidden rounded-xl sm:rounded-2xl md:rounded-3xl bg-white border border-gray-200 sm:border-2 p-3 sm:p-5 md:p-6 lg:p-8 shadow-sm sm:shadow-md hover:bg-gray-50 hover:border-brand-teal transition-all duration-500 hover:-translate-y-2 sm:hover:-translate-y-3 lg:hover:-translate-y-4 hover:shadow-lg sm:hover:shadow-xl hover:shadow-brand-teal/20"
+                className="group relative overflow-hidden rounded-xl sm:rounded-2xl md:rounded-3xl bg-teal-50/80 backdrop-blur-sm border border-teal-100/80 sm:border-2 p-3 sm:p-5 md:p-6 lg:p-8 shadow-sm sm:shadow-md hover:bg-teal-50/90 hover:border-brand-teal transition-all duration-500 hover:-translate-y-2 sm:hover:-translate-y-3 lg:hover:-translate-y-4 hover:shadow-lg sm:hover:shadow-xl hover:shadow-brand-teal/20"
               >
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-teal-50 to-transparent" />
                 

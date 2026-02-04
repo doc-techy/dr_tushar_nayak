@@ -577,7 +577,7 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
               <div className="absolute bottom-[-20%] right-[10%] w-[360px] h-[360px] bg-teal-100/30 blur-3xl rounded-full" aria-hidden />
               <div className="absolute top-[20%] left-[-10%] w-[320px] h-[320px] bg-brand-navy/10 blur-[180px] rounded-full" aria-hidden />
             </div>
-            <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-gray-200 bg-white shadow-lg" style={{ aspectRatio: heroAspectRatio }}>
+            <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-teal-100/80 bg-teal-50/80 shadow-lg" style={{ aspectRatio: heroAspectRatio }}>
               <div className="absolute inset-0 bg-gradient-to-br from-teal-50/50 via-brand-navy/5 to-transparent hidden lg:block" aria-hidden />
               <Image
                 src={heroImageSrc}
@@ -608,7 +608,7 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
           </div>
         </div>
 
-        <article className="space-y-4 lg:space-y-12 rounded-2xl sm:rounded-[30px] border border-gray-200 bg-white p-4 sm:p-6 lg:p-10 shadow-lg">
+        <article className="space-y-4 lg:space-y-12 rounded-2xl sm:rounded-[30px] border border-teal-100/80 bg-teal-50/80 backdrop-blur-sm p-4 sm:p-6 lg:p-10 shadow-lg">
           {content ? (
             <div className="space-y-4 lg:space-y-12">
               {content.introParagraphs?.length ? (
@@ -625,7 +625,7 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
                 {content.sections.map((section) => (
                   <section
                     key={section.heading}
-                    className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-gray-200 bg-white p-3 sm:p-4 lg:p-6 shadow-md transition hover:border-brand-teal hover:bg-gray-50"
+                    className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-teal-100/80 bg-teal-50/80 backdrop-blur-sm p-3 sm:p-4 lg:p-6 shadow-md transition hover:border-brand-teal hover:bg-teal-50/90"
                   >
                     <span className="pointer-events-none absolute inset-0 rounded-2xl sm:rounded-3xl border border-gray-200 bg-gradient-to-br from-teal-50/50 via-transparent to-brand-navy/5 hidden lg:block" aria-hidden />
                     <div className="relative space-y-2 sm:space-y-3 lg:space-y-4">
@@ -715,7 +715,7 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
                 {service.sections.map((section) => (
                   <section
                     key={section.heading}
-                    className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-gray-200 bg-white p-4 sm:p-6 shadow-md"
+                    className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-teal-100/80 bg-teal-50/80 backdrop-blur-sm p-4 sm:p-6 shadow-md"
                   >
                     <span className="pointer-events-none absolute inset-0 rounded-2xl sm:rounded-3xl border border-gray-200 bg-gradient-to-br from-teal-50/50 via-transparent to-brand-navy/5 hidden lg:block" aria-hidden />
                     <div className="relative space-y-3 sm:space-y-4">

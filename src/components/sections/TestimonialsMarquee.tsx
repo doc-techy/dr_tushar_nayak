@@ -54,7 +54,7 @@ export function TestimonialsMarquee() {
           {duplicated.map((testimonial, index) => (
             <article
               key={`${testimonial.name}-${index}`}
-              className="flex-shrink-0 w-[calc((100vw-1.5rem)/3)] sm:w-[20rem] lg:w-[22rem] rounded-[20px] sm:rounded-[26px] border border-gray-200 bg-white px-3 py-4 sm:px-6 sm:py-7 shadow-[0_30px_70px_-50px_rgba(15,23,42,0.15)]"
+              className="flex-shrink-0 w-[calc((100vw-1.5rem)/3)] sm:w-[20rem] lg:w-[22rem] rounded-[20px] sm:rounded-[26px] border border-teal-100/80 bg-teal-50/80 backdrop-blur-sm px-3 py-4 sm:px-6 sm:py-7 shadow-[0_30px_70px_-50px_rgba(15,23,42,0.15)]"
             >
               <div className="flex items-center justify-between text-brand-teal mb-3 sm:mb-5">
                 <LuQuote className="h-4 w-4 sm:h-6 sm:w-6" />

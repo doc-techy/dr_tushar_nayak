@@ -132,7 +132,7 @@ export function AboutSection({ profile, education, experience }: AboutSectionPro
                 >
                   {row.education ? (
                     <article
-                      className="group relative flex h-full flex-col overflow-hidden rounded-2xl sm:rounded-3xl border border-gray-200 bg-white p-4 sm:p-6 shadow-md transition hover:border-brand-teal hover:bg-gray-50"
+                      className="group relative flex h-full flex-col overflow-hidden rounded-2xl sm:rounded-3xl border border-teal-100/80 bg-teal-50/80 backdrop-blur-sm p-4 sm:p-6 shadow-md transition hover:border-brand-teal hover:bg-teal-50/90"
                     >
                       <span className="pointer-events-none absolute inset-0 rounded-2xl sm:rounded-3xl border border-gray-200 bg-gradient-to-br from-teal-50/50 via-transparent to-brand-navy/5 hidden lg:block" aria-hidden />
                       <div className="relative flex h-full flex-col gap-2 sm:gap-3">
@@ -149,7 +149,7 @@ export function AboutSection({ profile, education, experience }: AboutSectionPro
 
                   {row.experience ? (
                     <article
-                      className="group relative flex h-full flex-col overflow-hidden rounded-2xl sm:rounded-3xl border border-gray-200 bg-white p-4 sm:p-6 shadow-md transition hover:border-brand-navy hover:bg-gray-50"
+                      className="group relative flex h-full flex-col overflow-hidden rounded-2xl sm:rounded-3xl border border-teal-100/80 bg-teal-50/80 backdrop-blur-sm p-4 sm:p-6 shadow-md transition hover:border-brand-navy hover:bg-teal-50/90"
                     >
                       <span className="pointer-events-none absolute inset-0 rounded-2xl sm:rounded-3xl border border-gray-200 bg-gradient-to-br from-brand-navy/5 via-transparent to-teal-50/30 hidden lg:block" aria-hidden />
                       <div className="relative flex h-full flex-col gap-2 sm:gap-3">

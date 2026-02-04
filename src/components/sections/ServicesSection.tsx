@@ -33,7 +33,7 @@ export function ServicesSection() {
             <Link
               key={service.title}
               href={`/treatments/${service.slug}`}
-              className="group relative overflow-hidden rounded-lg sm:rounded-xl md:rounded-xl lg:rounded-xl bg-white border border-gray-200 sm:border-2 lg:border shadow-sm sm:shadow-md lg:shadow-sm hover:bg-gray-50 hover:border-brand-teal/60 transition-all duration-500 hover:-translate-y-1 sm:hover:-translate-y-2 lg:hover:-translate-y-1.5 hover:shadow-lg sm:hover:shadow-xl lg:hover:shadow-lg hover:shadow-brand-teal/20"
+              className="group relative overflow-hidden rounded-lg sm:rounded-xl md:rounded-xl lg:rounded-xl bg-teal-50/80 backdrop-blur-sm border border-teal-100/80 sm:border-2 lg:border shadow-sm sm:shadow-md lg:shadow-sm hover:bg-teal-50/90 hover:border-brand-teal/60 transition-all duration-500 hover:-translate-y-1 sm:hover:-translate-y-2 lg:hover:-translate-y-1.5 hover:shadow-lg sm:hover:shadow-xl lg:hover:shadow-lg hover:shadow-brand-teal/20"
             >
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-teal-50 to-transparent" />
 

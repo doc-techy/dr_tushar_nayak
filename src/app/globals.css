@@ -28,7 +28,7 @@ main {
 }
 
 .card {
-  @apply rounded-[2.25rem] border border-white/60 bg-white/80 p-8 shadow-[0_20px_60px_-25px_rgba(15,46,77,0.3)] backdrop-blur-xl transition duration-300;
+  @apply rounded-[2.25rem] border border-teal-100/80 bg-teal-50/80 p-8 shadow-[0_20px_60px_-25px_rgba(15,46,77,0.3)] backdrop-blur-xl transition duration-300;
 }
 
 .card:hover {

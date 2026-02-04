@@ -28,7 +28,7 @@ const locations = [
 
 export default function BookingLocationsPage() {
   return (
-    <section className="relative min-h-screen text-gray-900 overflow-hidden">
+    <section className="relative min-h-screen text-gray-900 overflow-hidden bg-transparent">
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 md:px-8 py-10 sm:py-16 md:py-20 lg:py-24">
         {/* Header */}
         <div className="mb-8 sm:mb-12 md:mb-16 text-center">
@@ -46,7 +46,7 @@ export default function BookingLocationsPage() {
           {locations.map((location) => (
             <div
               key={location.id}
-              className="relative bg-white rounded-2xl sm:rounded-3xl border border-gray-200 p-5 sm:p-6 md:p-8 shadow-lg hover:shadow-xl hover:border-brand-teal/40 transition-all duration-300"
+              className="relative bg-teal-50/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl border border-teal-100/80 p-5 sm:p-6 md:p-8 shadow-lg hover:shadow-xl hover:border-brand-teal/40 transition-all duration-300"
             >
               {/* Location Icon */}
               <div className="flex justify-center mb-4 sm:mb-6">
@@ -141,7 +141,7 @@ export default function BookingLocationsPage() {
         </div>
 
         {/* Important Information */}
-        <div className="mt-8 sm:mt-12 bg-teal-50/50 border border-teal-100 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8">
+        <div className="mt-8 sm:mt-12 bg-teal-50/70 border border-teal-100 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8">
           <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
             <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-brand-teal/10 flex items-center justify-center">
               <LuInfo className="w-4 h-4 sm:w-5 sm:h-5 text-brand-teal" />

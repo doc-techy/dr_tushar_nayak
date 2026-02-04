@@ -121,7 +121,7 @@ export default function PublicationsPage() {
         </div>
 
         {/* ResearchGate Profile Card */}
-        <div className="bg-white rounded-2xl sm:rounded-3xl border border-gray-200 p-5 sm:p-6 md:p-8 shadow-lg mb-8 sm:mb-12">
+        <div className="bg-teal-50/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl border border-teal-100/80 p-5 sm:p-6 md:p-8 shadow-lg mb-8 sm:mb-12">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6">
             <div>
               <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">ResearchGate Profile</h2>
@@ -156,7 +156,7 @@ export default function PublicationsPage() {
           {publications.map((pub, index) => (
             <article
               key={index}
-              className="bg-white rounded-2xl border border-gray-200 p-5 sm:p-6 shadow-md hover:shadow-lg hover:border-brand-teal/40 transition-all duration-300 flex flex-col"
+              className="bg-teal-50/80 backdrop-blur-sm rounded-2xl border border-teal-100/80 p-5 sm:p-6 shadow-md hover:shadow-lg hover:border-brand-teal/40 transition-all duration-300 flex flex-col"
             >
               <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-3 leading-snug line-clamp-3">
                 {pub.title}
@@ -197,7 +197,7 @@ export default function PublicationsPage() {
         </div>
 
         {/* Note */}
-        <div className="mt-10 sm:mt-14 bg-gradient-to-br from-teal-50 to-white rounded-2xl border border-teal-100 p-5 sm:p-6 md:p-8 text-center">
+        <div className="mt-10 sm:mt-14 bg-teal-50/80 backdrop-blur-sm rounded-2xl border border-teal-100 p-5 sm:p-6 md:p-8 text-center">
           <div className="flex justify-center mb-4">
             <div className="w-12 h-12 rounded-full bg-brand-teal/10 flex items-center justify-center">
               <LuQuote className="w-6 h-6 text-brand-teal" />

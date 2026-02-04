@@ -118,7 +118,7 @@ export default function EducationalVideosPage() {
                   return (
                     <article
                       key={video.id}
-                      className="group relative overflow-hidden rounded-2xl bg-white border-2 border-gray-200 shadow-md hover:bg-gray-50 hover:border-brand-teal transition-all duration-500"
+                      className="group relative overflow-hidden rounded-2xl bg-teal-50/80 backdrop-blur-sm border-2 border-teal-100/80 shadow-md hover:bg-teal-50/90 hover:border-brand-teal transition-all duration-500"
                     >
                       <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
                         colorIndex === 0 
@@ -211,7 +211,7 @@ export default function EducationalVideosPage() {
                   return (
                     <article
                       key={video.id}
-                      className="group relative overflow-hidden rounded-2xl sm:rounded-3xl bg-white border-2 border-gray-200 shadow-md hover:bg-gray-50 hover:border-brand-teal transition-all duration-500 hover:-translate-y-4 hover:shadow-xl hover:shadow-brand-teal/20"
+                      className="group relative overflow-hidden rounded-2xl sm:rounded-3xl bg-teal-50/80 backdrop-blur-sm border-2 border-teal-100/80 shadow-md hover:bg-teal-50/90 hover:border-brand-teal transition-all duration-500 hover:-translate-y-4 hover:shadow-xl hover:shadow-brand-teal/20"
                     >
                       <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
                         colorIndex === 0 

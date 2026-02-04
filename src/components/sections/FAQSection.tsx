@@ -32,7 +32,7 @@ export function FAQSection() {
                 ref={(el) => {
                   if (el) summaryRef.current[index] = el;
                 }}
-                className="group rounded-xl sm:rounded-2xl md:rounded-3xl border border-gray-200 bg-white shadow-sm sm:shadow-md transition-all duration-300 open:bg-gray-50 open:border-brand-teal"
+                className="group rounded-xl sm:rounded-2xl md:rounded-3xl border border-teal-100/80 bg-teal-50/80 backdrop-blur-sm shadow-sm sm:shadow-md transition-all duration-300 open:bg-teal-50/90 open:border-brand-teal"
               >
                 <summary className="flex items-center justify-between gap-2 sm:gap-3 md:gap-4 cursor-pointer px-3 sm:px-5 md:px-6 lg:px-8 py-3 sm:py-4 md:py-5 text-left text-gray-900 text-xs sm:text-sm md:text-base lg:text-lg font-semibold">
                   <span>{faq.question}</span>
@@ -47,7 +47,7 @@ export function FAQSection() {
             ))}
           </div>
 
-          <aside className="rounded-xl sm:rounded-2xl md:rounded-3xl border border-gray-200 bg-gradient-to-br from-teal-50 via-teal-50/50 to-brand-navy/5 p-3 sm:p-5 md:p-6 lg:p-8 space-y-3 sm:space-y-4 lg:space-y-6 flex flex-col justify-between">
+          <aside className="rounded-xl sm:rounded-2xl md:rounded-3xl border border-teal-100/80 bg-teal-50/80 backdrop-blur-sm p-3 sm:p-5 md:p-6 lg:p-8 space-y-3 sm:space-y-4 lg:space-y-6 flex flex-col justify-between">
             <div className="space-y-1.5 sm:space-y-2 md:space-y-3 lg:space-y-4">
               <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-gray-900">Still have a question?</h3>
               <p className="text-[10px] sm:text-xs md:text-sm text-gray-700 leading-relaxed">

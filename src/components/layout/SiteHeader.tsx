@@ -36,13 +36,13 @@ export function SiteHeader() {
         >
           <span className="leading-tight">
             <span className="text-lg sm:text-xl md:text-2xl font-black tracking-tight text-white">Dr. Tushar Nayak</span>
-            <span className="block text-[10px] sm:text-xs font-bold uppercase tracking-normal text-gray-400">
+            <span className="block text-[10px] sm:text-xs font-bold uppercase tracking-normal text-white">
               Orthopaedic Surgeon
             </span>
           </span>
         </Link>
         
-        <nav className="hidden items-center gap-4 lg:gap-6 xl:gap-8 text-xs lg:text-sm font-semibold text-gray-300 md:flex">
+        <nav className="hidden items-center gap-4 lg:gap-6 xl:gap-8 text-xs lg:text-sm font-semibold text-white md:flex">
           {navLinks.map((link) => (
             <Link 
               key={link.href} 
@@ -82,7 +82,7 @@ export function SiteHeader() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="rounded-lg sm:rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-gray-300 font-semibold transition hover:bg-white/10 hover:text-white"
+                className="rounded-lg sm:rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-white font-semibold transition hover:bg-white/10 hover:text-white"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}

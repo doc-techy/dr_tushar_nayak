@@ -44,7 +44,7 @@ export function SiteFooter() {
               <p className="text-xl sm:text-2xl md:text-3xl font-black text-white mb-1 sm:mb-2">{doctorProfile.name}</p>
               <p className="text-xs sm:text-sm font-bold text-brand-teal uppercase tracking-normal">Orthopaedic Surgeon</p>
             </div>
-            <p className="text-xs sm:text-sm leading-relaxed text-gray-400 max-w-md">
+            <p className="text-xs sm:text-sm leading-relaxed text-white max-w-md">
               {doctorProfile.intro}
             </p>
             
@@ -78,7 +78,7 @@ export function SiteFooter() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-xs sm:text-sm text-gray-400 hover:text-brand-teal transition flex items-center gap-2 group"
+                  className="text-xs sm:text-sm text-white hover:text-brand-teal transition flex items-center gap-2 group"
                 >
                   <LuArrowRight className="h-3 w-3 sm:h-4 sm:w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                   {link.label}
@@ -93,7 +93,7 @@ export function SiteFooter() {
             <div className="space-y-3 sm:space-y-4">
               <a
                 href={`tel:${doctorProfile.contact.phone}`}
-                className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-400 hover:text-brand-teal transition group"
+                className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-white hover:text-brand-teal transition group"
               >
                 <LuPhone className="h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0 mt-0.5 text-brand-teal" />
                 <span>{doctorProfile.contact.phone}</span>
@@ -101,7 +101,7 @@ export function SiteFooter() {
               
               <a
                 href={`mailto:${doctorProfile.contact.email}`}
-                className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-400 hover:text-brand-teal transition group"
+                className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-white hover:text-brand-teal transition group"
               >
                 <LuMail className="h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0 mt-0.5 text-brand-teal" />
                 <span className="break-all">{doctorProfile.contact.email}</span>
@@ -111,7 +111,7 @@ export function SiteFooter() {
                 href="https://share.google/GymCgRnl41JuRMxLz"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-400 hover:text-brand-teal transition group"
+                className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-white hover:text-brand-teal transition group"
               >
                 <LuMap className="h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0 mt-0.5 text-brand-teal" />
                 <span>{doctorProfile.primaryLocation}</span>
@@ -123,7 +123,7 @@ export function SiteFooter() {
         {/* Bottom Section */}
         <div className="pt-4 sm:pt-6 md:pt-8 border-t border-white/10">
           <div className="flex items-center justify-center">
-            <p className="text-[10px] sm:text-xs md:text-sm text-gray-500 text-center">
+            <p className="text-[10px] sm:text-xs md:text-sm text-white/80 text-center">
               © {new Date().getFullYear()} {doctorProfile.name}. All rights reserved.
             </p>
           </div>

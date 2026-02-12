@@ -65,7 +65,7 @@ export function TestimonialsMarquee() {
                 </div>
               </div>
 
-              <p className="text-[10px] sm:text-xs lg:text-sm text-gray-300 leading-relaxed mb-3 sm:mb-6 line-clamp-4 sm:line-clamp-none">
+              <p className="text-[10px] sm:text-xs lg:text-sm text-white leading-relaxed mb-3 sm:mb-6 line-clamp-4 sm:line-clamp-none">
                 &quot;{testimonial.quote}&quot;
               </p>
 

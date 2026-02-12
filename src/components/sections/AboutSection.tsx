@@ -22,7 +22,7 @@ export function AboutSection({ profile, education, experience }: AboutSectionPro
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight">
               Precision orthopaedics designed around your movement goals
             </h2>
-            <p className="max-w-3xl mx-auto text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed text-gray-400">
+            <p className="max-w-3xl mx-auto text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed text-white">
               {profile.intro} Patients receive detailed counselling, transparent milestones, and tailor-made rehabilitation plans designed around their lifestyle goals.
             </p>
           </div>
@@ -34,7 +34,7 @@ export function AboutSection({ profile, education, experience }: AboutSectionPro
               <p className="text-xl sm:text-4xl font-bold uppercase tracking-[0.05em] text-brand-teal">
                 Education & Experience
               </p>
-              <h3 className="text-sm sm:text-base lg:text-lg mt-1 sm:mt-0 font-semibold text-gray-300">
+              <h3 className="text-sm sm:text-base lg:text-lg mt-1 sm:mt-0 font-semibold text-white">
                 A journey shaped by advanced training and complex caseloads
               </h3>
             </div>
@@ -63,7 +63,7 @@ export function AboutSection({ profile, education, experience }: AboutSectionPro
                           {edu.year}
                         </p>
                         <h4 className="text-base font-bold text-white leading-tight">{edu.heading}</h4>
-                        <p className="text-xs leading-relaxed text-gray-400">{edu.details}</p>
+                        <p className="text-xs leading-relaxed text-white">{edu.details}</p>
                       </div>
                     </div>
                   </article>
@@ -75,7 +75,7 @@ export function AboutSection({ profile, education, experience }: AboutSectionPro
             <div className="flex items-center gap-4 py-2">
               <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
               <div className="h-8 w-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
-                <span className="text-xs font-bold text-gray-400">&</span>
+                <span className="text-xs font-bold text-white">&</span>
               </div>
               <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
             </div>
@@ -104,7 +104,7 @@ export function AboutSection({ profile, education, experience }: AboutSectionPro
                           {exp.role}
                           <span className="block text-xs font-normal text-brand-teal mt-0.5">{exp.institution}</span>
                         </h4>
-                        <p className="text-xs leading-relaxed text-gray-400">{exp.summary}</p>
+                        <p className="text-xs leading-relaxed text-white">{exp.summary}</p>
                       </div>
                     </div>
                   </article>
@@ -140,7 +140,7 @@ export function AboutSection({ profile, education, experience }: AboutSectionPro
                           {row.education.year}
                         </p>
                         <h4 className="text-base sm:text-xl font-semibold text-white leading-tight">{row.education.heading}</h4>
-                        <p className="text-[10px] sm:text-sm leading-relaxed text-gray-400">{row.education.details}</p>
+                        <p className="text-[10px] sm:text-sm leading-relaxed text-white">{row.education.details}</p>
                       </div>
                     </article>
                   ) : (
@@ -160,7 +160,7 @@ export function AboutSection({ profile, education, experience }: AboutSectionPro
                           {row.experience.role}
                           <span className="block text-xs sm:text-sm font-normal text-brand-teal mt-0.5">{row.experience.institution}</span>
                         </h4>
-                        <p className="text-[10px] sm:text-sm leading-relaxed text-gray-400">{row.experience.summary}</p>
+                        <p className="text-[10px] sm:text-sm leading-relaxed text-white">{row.experience.summary}</p>
                       </div>
                     </article>
                   ) : (

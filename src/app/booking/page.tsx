@@ -36,7 +36,7 @@ export default function BookingLocationsPage() {
             Choose Your Preferred{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-teal to-cyan-400">Location</span>
           </h1>
-          <p className="max-w-2xl mx-auto text-xs sm:text-sm md:text-base lg:text-lg text-gray-400 leading-relaxed">
+          <p className="max-w-2xl mx-auto text-xs sm:text-sm md:text-base lg:text-lg text-white leading-relaxed">
             Dr. Tushar Nayak is available at these healthcare facilities in Bengaluru
           </p>
         </div>
@@ -69,7 +69,7 @@ export default function BookingLocationsPage() {
                   </div>
                   <div>
                     <p className="text-xs sm:text-sm font-semibold text-white">Address</p>
-                    <p className="text-[10px] sm:text-xs md:text-sm text-gray-400 leading-relaxed">
+                    <p className="text-[10px] sm:text-xs md:text-sm text-white leading-relaxed">
                       {location.address}
                     </p>
                     <a
@@ -91,7 +91,7 @@ export default function BookingLocationsPage() {
                   </div>
                   <div>
                     <p className="text-xs sm:text-sm font-semibold text-white">Available At</p>
-                    <p className="text-[10px] sm:text-xs md:text-sm text-gray-400">
+                    <p className="text-[10px] sm:text-xs md:text-sm text-white">
                       {location.timing}
                     </p>
                   </div>
@@ -106,7 +106,7 @@ export default function BookingLocationsPage() {
                     <p className="text-xs sm:text-sm font-semibold text-white">Phone</p>
                     <a
                       href={`tel:${location.phone.replace(/\s/g, "")}`}
-                      className="text-[10px] sm:text-xs md:text-sm text-gray-400 hover:text-brand-teal transition-colors"
+                      className="text-[10px] sm:text-xs md:text-sm text-white hover:text-brand-teal transition-colors"
                     >
                       {location.phone}
                     </a>
@@ -151,25 +151,25 @@ export default function BookingLocationsPage() {
           <ul className="space-y-2.5 sm:space-y-3">
             <li className="flex items-start gap-2.5 sm:gap-3">
               <span className="mt-1.5 h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-brand-teal flex-shrink-0" />
-              <span className="text-xs sm:text-sm md:text-base text-gray-400 leading-relaxed">
+              <span className="text-xs sm:text-sm md:text-base text-white leading-relaxed">
                 Please arrive 15 minutes before your scheduled appointment time
               </span>
             </li>
             <li className="flex items-start gap-2.5 sm:gap-3">
               <span className="mt-1.5 h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-brand-teal flex-shrink-0" />
-              <span className="text-xs sm:text-sm md:text-base text-gray-400 leading-relaxed">
+              <span className="text-xs sm:text-sm md:text-base text-white leading-relaxed">
                 Bring a valid ID and any relevant medical reports
               </span>
             </li>
             <li className="flex items-start gap-2.5 sm:gap-3">
               <span className="mt-1.5 h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-brand-teal flex-shrink-0" />
-              <span className="text-xs sm:text-sm md:text-base text-gray-400 leading-relaxed">
+              <span className="text-xs sm:text-sm md:text-base text-white leading-relaxed">
                 Cancellations must be made at least 24 hours in advance
               </span>
             </li>
             <li className="flex items-start gap-2.5 sm:gap-3">
               <span className="mt-1.5 h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-brand-teal flex-shrink-0" />
-              <span className="text-xs sm:text-sm md:text-base text-gray-400 leading-relaxed">
+              <span className="text-xs sm:text-sm md:text-base text-white leading-relaxed">
                 Emergency cases will be given priority
               </span>
             </li>
@@ -178,7 +178,7 @@ export default function BookingLocationsPage() {
 
         {/* Help Text */}
         <div className="mt-8 sm:mt-12 text-center">
-          <p className="text-xs sm:text-sm text-gray-500">
+          <p className="text-xs sm:text-sm text-white/80">
             Need help choosing? Call us at{" "}
             <a href="tel:+918810605887" className="text-brand-teal font-semibold hover:text-cyan-400">
               +91 88106 05887

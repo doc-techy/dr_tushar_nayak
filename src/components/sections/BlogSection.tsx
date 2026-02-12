@@ -14,7 +14,7 @@ export function BlogSection() {
             Educational{" "}
             <span className="text-white">Blogs & Articles</span>
           </h2>
-          <p className="max-w-3xl mx-auto text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-gray-400 leading-relaxed font-light">
+          <p className="max-w-3xl mx-auto text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-white leading-relaxed font-light">
             Bite-sized explainer articles spotlighting the latest in robotic joint replacement, sports
             rehab protocols, and long-term pain management strategies.
           </p>
@@ -41,7 +41,7 @@ export function BlogSection() {
                   <h3 className="text-xs sm:text-sm md:text-base lg:text-xl xl:text-2xl font-bold sm:font-black leading-tight transition-colors duration-300 line-clamp-2 text-white group-hover:text-brand-teal">
                     {post.title}
                   </h3>
-                  <p className="text-gray-400 leading-relaxed line-clamp-2 sm:line-clamp-3 text-[10px] sm:text-xs md:text-sm">
+                  <p className="text-white leading-relaxed line-clamp-2 sm:line-clamp-3 text-[10px] sm:text-xs md:text-sm">
                     {post.excerpt}
                   </p>
                 </div>
@@ -55,7 +55,7 @@ export function BlogSection() {
                       Read Article
                     </span>
                     <div className="w-5 h-5 sm:w-7 sm:h-7 md:w-9 md:h-9 lg:w-12 lg:h-12 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 flex-shrink-0 bg-white/10 group-hover:bg-gradient-to-r group-hover:from-brand-teal group-hover:to-brand-navy">
-                      <LuArrowRight className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-4 md:w-4 lg:h-6 lg:w-6 text-gray-400 group-hover:text-white transition-colors group-hover:translate-x-0.5" />
+                      <LuArrowRight className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-4 md:w-4 lg:h-6 lg:w-6 text-white group-hover:text-white transition-colors group-hover:translate-x-0.5" />
                     </div>
                   </Link>
                 </div>

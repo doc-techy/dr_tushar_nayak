@@ -104,7 +104,7 @@ export default function EducationalVideosPage() {
                   Videos
                 </span>
               </h1>
-              <p className="max-w-3xl mx-auto text-sm sm:text-xl lg:text-base text-gray-400 leading-relaxed font-light">
+              <p className="max-w-3xl mx-auto text-sm sm:text-xl lg:text-base text-white leading-relaxed font-light">
                 Watch expert-led educational videos covering orthopedic treatments, surgical procedures, rehabilitation, and patient care.
               </p>
             </div>
@@ -194,7 +194,7 @@ export default function EducationalVideosPage() {
                                 ? "bg-brand-teal/10 group-hover:bg-brand-navy"
                                 : "bg-brand-teal/10 group-hover:bg-brand-navy"
                             }`}>
-                              <LuPlay className="h-2 w-2 text-gray-400 group-hover:text-white transition-colors" />
+                              <LuPlay className="h-2 w-2 text-white group-hover:text-white transition-colors" />
                             </div>
                           </button>
                         </div>
@@ -287,7 +287,7 @@ export default function EducationalVideosPage() {
                                 ? "bg-brand-teal/10 group-hover:bg-gradient-to-r group-hover:from-brand-teal group-hover:to-brand-navy"
                                 : "bg-brand-teal/10 group-hover:bg-gradient-to-r group-hover:from-brand-teal group-hover:to-brand-navy"
                             }`}>
-                              <LuPlay className="h-3 w-3 sm:h-6 sm:w-6 lg:h-4 lg:w-4 text-gray-400 group-hover:text-white transition-colors group-hover:translate-x-0.5" />
+                              <LuPlay className="h-3 w-3 sm:h-6 sm:w-6 lg:h-4 lg:w-4 text-white group-hover:text-white transition-colors group-hover:translate-x-0.5" />
                             </div>
                           </button>
                         </div>
@@ -304,7 +304,7 @@ export default function EducationalVideosPage() {
                 <button
                   type="button"
                   onClick={() => setShowAllMobile((prev) => !prev)}
-                  className="px-10 py-4 rounded-full border-2 border-white/10 text-gray-400 font-bold text-xs uppercase tracking-[0.1em] transition-all duration-300 hover:bg-white/10 hover:border-brand-teal hover:text-brand-teal hover:scale-105"
+                  className="px-10 py-4 rounded-full border-2 border-white/10 text-white font-bold text-xs uppercase tracking-[0.1em] transition-all duration-300 hover:bg-white/10 hover:border-brand-teal hover:text-brand-teal hover:scale-105"
                 >
                   {showAllMobile ? "Show Less" : "Load More"}
                 </button>

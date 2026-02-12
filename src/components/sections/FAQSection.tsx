@@ -19,7 +19,7 @@ export function FAQSection() {
             Frequently Asked{" "}
             <span className="text-white">Questions</span>
           </h2>
-          <p className="max-w-3xl mx-auto text-xs sm:text-sm md:text-base lg:text-lg text-gray-400 leading-relaxed">
+          <p className="max-w-3xl mx-auto text-xs sm:text-sm md:text-base lg:text-lg text-white leading-relaxed">
             Explore enhanced recovery timelines, appointment logistics, and specialty care details. Every answer is aligned with Dr. Nayak&apos;s current protocols so you can plan confidently.
           </p>
         </div>
@@ -40,7 +40,7 @@ export function FAQSection() {
                     <LuChevronDown className="h-3.5 w-3.5 sm:h-4 sm:w-4 md:h-5 md:w-5 lg:h-6 lg:w-6 text-brand-teal" />
                   </span>
                 </summary>
-                <div className="px-3 sm:px-5 md:px-6 lg:px-8 pb-3 sm:pb-4 md:pb-5 lg:pb-6 pt-2 sm:pt-3 border-t border-white/10 text-[10px] sm:text-xs md:text-sm lg:text-base text-gray-400 leading-5 sm:leading-6 md:leading-7">
+                <div className="px-3 sm:px-5 md:px-6 lg:px-8 pb-3 sm:pb-4 md:pb-5 lg:pb-6 pt-2 sm:pt-3 border-t border-white/10 text-[10px] sm:text-xs md:text-sm lg:text-base text-white leading-5 sm:leading-6 md:leading-7">
                   {faq.answer}
                 </div>
               </details>
@@ -50,11 +50,11 @@ export function FAQSection() {
           <aside className="rounded-xl sm:rounded-2xl md:rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-3 sm:p-5 md:p-6 lg:p-8 space-y-3 sm:space-y-4 lg:space-y-6 flex flex-col justify-between">
             <div className="space-y-1.5 sm:space-y-2 md:space-y-3 lg:space-y-4">
               <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-white">Still have a question?</h3>
-              <p className="text-[10px] sm:text-xs md:text-sm text-gray-400 leading-relaxed">
+              <p className="text-[10px] sm:text-xs md:text-sm text-white leading-relaxed">
                 Send us your reports on WhatsApp or request a callback. The care team responds within 24 hours with a tailored plan.
               </p>
             </div>
-            <div className="space-y-2 sm:space-y-3 lg:space-y-4 text-[10px] sm:text-xs md:text-sm text-gray-400">
+            <div className="space-y-2 sm:space-y-3 lg:space-y-4 text-[10px] sm:text-xs md:text-sm text-white">
               <div>
                 <p className="uppercase text-[9px] sm:text-[10px] md:text-xs tracking-widest text-brand-teal">Phone</p>
                 <p className="text-xs sm:text-sm md:text-base font-semibold text-white">+91 88106 05887</p>

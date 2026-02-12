@@ -602,7 +602,7 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
               </div>
             </div>
 
-            <p className="max-w-2xl text-xs sm:text-sm lg:text-lg leading-relaxed text-gray-400">
+            <p className="max-w-2xl text-xs sm:text-sm lg:text-lg leading-relaxed text-white">
               {heroDescription}
             </p>
           </div>
@@ -612,7 +612,7 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
           {content ? (
             <div className="space-y-4 lg:space-y-12">
               {content.introParagraphs?.length ? (
-                <div className="space-y-2 sm:space-y-3 lg:space-y-4 text-sm sm:text-lg leading-relaxed text-gray-400">
+                <div className="space-y-2 sm:space-y-3 lg:space-y-4 text-sm sm:text-lg leading-relaxed text-white">
                   {content.introParagraphs.map((paragraph, index) => (
                     <p key={`intro-${index}`} className="rounded-xl sm:rounded-2xl bg-white/10 px-4 sm:px-6 py-3 sm:py-4 shadow-sm text-xs sm:text-base">
                       {paragraph}
@@ -637,7 +637,7 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
                       {section.paragraphs?.map((paragraph, index) => (
                         <p
                           key={`${section.heading}-paragraph-${index}`}
-                          className="rounded-xl sm:rounded-2xl border border-white/10 bg-white/10 px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm leading-relaxed text-gray-400"
+                          className="rounded-xl sm:rounded-2xl border border-white/10 bg-white/10 px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm leading-relaxed text-white"
                         >
                           {paragraph}
                         </p>
@@ -648,7 +648,7 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
                           {section.list.map((item, index) => (
                             <li
                               key={`${section.heading}-list-${index}`}
-                              className="flex items-start gap-2 sm:gap-3 rounded-xl sm:rounded-2xl border border-white/10 bg-white/5 px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm text-gray-400"
+                              className="flex items-start gap-2 sm:gap-3 rounded-xl sm:rounded-2xl border border-white/10 bg-white/5 px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm text-white"
                             >
                               <span className="mt-1 h-1.5 w-1.5 sm:h-2 sm:w-2 flex-shrink-0 rounded-full bg-brand-teal" aria-hidden />
                               <span>{item}</span>
@@ -667,9 +667,9 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
                             {group.items.map((item, index) => (
                               <li
                                 key={`${section.heading}-${group.label}-item-${index}`}
-                                className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-400"
+                                className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-white"
                               >
-                                <span className="mt-1 h-1 w-1 sm:h-1.5 sm:w-1.5 flex-shrink-0 rounded-full bg-brand-navy" aria-hidden />
+                                <span className="mt-1 h-1 w-1 sm:h-1.5 sm:w-1.5 flex-shrink-0 rounded-full bg-brand-teal" aria-hidden />
                                 <span>{item}</span>
                               </li>
                             ))}
@@ -680,7 +680,7 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
                       {section.closingParagraphs?.map((paragraph, index) => (
                         <p
                           key={`${section.heading}-closing-${index}`}
-                          className="rounded-xl sm:rounded-2xl border border-white/10 bg-white/10 px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm leading-relaxed text-gray-400"
+                          className="rounded-xl sm:rounded-2xl border border-white/10 bg-white/10 px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm leading-relaxed text-white"
                         >
                           {paragraph}
                         </p>
@@ -692,13 +692,13 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
             </div>
           ) : (
             <div className="space-y-6 sm:space-y-12">
-              <p className="text-sm sm:text-lg leading-relaxed text-gray-400">{service.details}</p>
+              <p className="text-sm sm:text-lg leading-relaxed text-white">{service.details}</p>
 
               <div className="space-y-3 sm:space-y-6">
                 <h2 className="text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] text-brand-teal">
                   Programme highlights
                 </h2>
-                <ul className="grid gap-3 sm:gap-4 text-xs sm:text-sm text-gray-400 sm:grid-cols-2">
+                <ul className="grid gap-3 sm:gap-4 text-xs sm:text-sm text-white sm:grid-cols-2">
                   {service.highlights.map((item) => (
                     <li
                       key={item}
@@ -723,7 +723,7 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
                         <span className="mt-1 h-2 w-2 sm:h-2.5 sm:w-2.5 flex-shrink-0 rounded-full bg-gradient-to-br from-brand-teal to-brand-navy" aria-hidden />
                         <h3 className="text-sm sm:text-lg font-semibold text-white leading-tight">{section.heading}</h3>
                       </div>
-                      <p className="rounded-xl sm:rounded-2xl border border-white/10 bg-white/10 px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm leading-relaxed text-gray-400">
+                      <p className="rounded-xl sm:rounded-2xl border border-white/10 bg-white/10 px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm leading-relaxed text-white">
                         {section.body}
                       </p>
                       {section.points ? (
@@ -731,7 +731,7 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
                           {section.points.map((point) => (
                             <li
                               key={point}
-                              className="flex items-start gap-2 sm:gap-3 rounded-xl sm:rounded-2xl border border-white/10 bg-white/5 px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm text-gray-400"
+                              className="flex items-start gap-2 sm:gap-3 rounded-xl sm:rounded-2xl border border-white/10 bg-white/5 px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm text-white"
                             >
                               <span className="mt-1 h-1.5 w-1.5 sm:h-2 sm:w-2 flex-shrink-0 rounded-full bg-brand-teal" aria-hidden />
                               <span>{point}</span>
@@ -750,7 +750,7 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6 rounded-2xl sm:rounded-3xl border border-white/10 bg-gradient-to-r from-white/5 via-white/5 to-brand-navy/5 p-4 sm:p-8">
           <div>
             <h2 className="text-lg sm:text-2xl font-semibold text-white">Need a personalised opinion?</h2>
-            <p className="mt-2 max-w-2xl text-xs sm:text-sm text-gray-400">
+            <p className="mt-2 max-w-2xl text-xs sm:text-sm text-white">
               Book a consultation to discuss implant choices, recovery timelines, and rehabilitation plans tailored to your goals.
             </p>
           </div>

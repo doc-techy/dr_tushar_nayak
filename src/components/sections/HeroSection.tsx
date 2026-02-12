@@ -116,26 +116,26 @@ export function HeroSection() {
                 </span>
               </h1>
 
-              <p className="text-[9px] sm:text-[10px] md:text-xs lg:text-sm text-gray-300 font-bold leading-loose">
+              <p className="text-[9px] sm:text-[10px] md:text-xs lg:text-sm text-white font-bold leading-loose">
                 <span className="whitespace-nowrap">MS Ortho (AIIMS, Delhi), DNB, MNAMS | Fellow – Joint Replacement &amp; Arthroscopy&nbsp;(Innsbruck)</span><br />Advanced Shoulder Surgery (Brisbane)
               </p>
 
-              <p className="text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed text-gray-400 font-medium max-w-xl lg:max-w-2xl">
+              <p className="text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed text-white font-medium max-w-xl lg:max-w-2xl">
                 With over a decade of clinical excellence in Orthopaedics, Dr. Tushar Nayak is a highly trained Orthopaedic Surgeon, educated at AIIMS, Delhi, with international fellowships in Joint Replacement, Sports Medicine, and Arthroscopy. He combines deep clinical expertise with the latest robotic and minimally invasive technologies to deliver precise, safe, and faster-recovery treatments.
               </p>
               
               {/* Stats row */}
               <div className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-4 pt-3 sm:pt-4 border-t border-white/10">
                 <div>
-                  <p className="text-[9px] sm:text-[10px] md:text-xs font-bold uppercase tracking-wide text-gray-500">Years of Experience</p>
+                  <p className="text-[9px] sm:text-[10px] md:text-xs font-bold uppercase tracking-wide text-white/80">Years of Experience</p>
                   <p className="text-xl sm:text-2xl md:text-3xl font-black text-white">11+</p>
                 </div>
                 <div className="border-x border-white/10 px-2 sm:px-3 md:px-4">
-                  <p className="text-[9px] sm:text-[10px] md:text-xs font-bold uppercase tracking-wide text-gray-500">Sparsh Hospital, Hennur</p>
+                  <p className="text-[9px] sm:text-[10px] md:text-xs font-bold uppercase tracking-wide text-white/80">Sparsh Hospital, Hennur</p>
                   <p className="text-[10px] sm:text-xs md:text-sm font-bold text-white">Mon–Sat: 10 AM – 5 PM</p>
                 </div>
                 <div>
-                  <p className="text-[9px] sm:text-[10px] md:text-xs font-bold uppercase tracking-wide text-gray-500">Nishtha Healthcare</p>
+                  <p className="text-[9px] sm:text-[10px] md:text-xs font-bold uppercase tracking-wide text-white/80">Nishtha Healthcare</p>
                   <p className="text-[10px] sm:text-xs md:text-sm font-bold text-white leading-tight">Mon–Sat: 6 PM – 9 PM</p>
                   <p className="text-[10px] sm:text-xs md:text-sm font-bold text-white leading-tight">Sun: 9 AM – 1 PM</p>
                 </div>
@@ -150,7 +150,7 @@ export function HeroSection() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="group flex items-center justify-center text-center rounded-full border border-white/15 bg-white/5 px-4 lg:px-5 py-2 lg:py-2.5 text-[9px] lg:text-[10px] font-bold uppercase tracking-wide text-gray-300 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-teal hover:bg-brand-teal hover:text-white hover:shadow-md hover:shadow-brand-teal/30"
+                    className="group flex items-center justify-center text-center rounded-full border border-white/15 bg-white/5 px-4 lg:px-5 py-2 lg:py-2.5 text-[9px] lg:text-[10px] font-bold uppercase tracking-wide text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-teal hover:bg-brand-teal hover:text-white hover:shadow-md hover:shadow-brand-teal/30"
                   >
                     <span className="leading-tight">{item.title}</span>
                   </Link>
@@ -166,7 +166,7 @@ export function HeroSection() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="flex items-center justify-center text-center rounded-lg border border-white/15 bg-white/5 px-2 py-2 text-[9px] font-bold text-gray-300 leading-tight"
+                    className="flex items-center justify-center text-center rounded-lg border border-white/15 bg-white/5 px-2 py-2 text-[9px] font-bold text-white leading-tight"
                   >
                     {item.title}
                   </Link>

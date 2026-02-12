@@ -115,7 +115,7 @@ export default function PublicationsPage() {
             Research{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-teal to-cyan-400">Publications</span>
           </h1>
-          <p className="max-w-2xl mx-auto text-xs sm:text-sm md:text-base lg:text-lg text-gray-400 leading-relaxed">
+          <p className="max-w-2xl mx-auto text-xs sm:text-sm md:text-base lg:text-lg text-white leading-relaxed">
             Dr. Tushar Nayak&apos;s contributions to orthopaedic research and medical literature
           </p>
         </div>
@@ -125,15 +125,15 @@ export default function PublicationsPage() {
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6">
             <div>
               <h2 className="text-xl sm:text-2xl font-bold text-white mb-2">ResearchGate Profile</h2>
-              <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-sm sm:text-base text-gray-400">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-sm sm:text-base text-white">
                 <span className="flex items-center gap-1">
                   <span className="font-semibold text-white">{researchGateProfile.stats.publications}</span> publications
                 </span>
-                <span className="text-gray-600">•</span>
+                <span className="text-white/60">•</span>
                 <span className="flex items-center gap-1">
                   <span className="font-semibold text-white">{researchGateProfile.stats.reads}</span> reads
                 </span>
-                <span className="text-gray-600">•</span>
+                <span className="text-white/60">•</span>
                 <span className="flex items-center gap-1">
                   <span className="font-semibold text-white">{researchGateProfile.stats.citations}</span> citations
                 </span>
@@ -162,18 +162,18 @@ export default function PublicationsPage() {
                 {pub.title}
               </h3>
               
-              <p className="text-xs sm:text-sm text-gray-500 mb-3">
+              <p className="text-xs sm:text-sm text-white/80 mb-3">
                 {pub.authors}
               </p>
               
-              <p className="text-xs sm:text-sm text-gray-400 leading-relaxed mb-4 line-clamp-3 flex-grow">
+              <p className="text-xs sm:text-sm text-white leading-relaxed mb-4 line-clamp-3 flex-grow">
                 {pub.description}
               </p>
               
               <div className="border-t border-white/10 pt-4 mt-auto">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-xs text-gray-500">{pub.journal}</p>
+                    <p className="text-xs text-white/80">{pub.journal}</p>
                     <div className="flex items-center gap-2 mt-1">
                       <span className="text-sm font-semibold text-white">{pub.year}</span>
                       <span className="inline-flex items-center rounded-full bg-brand-teal/10 px-2 py-0.5 text-[10px] font-medium text-brand-teal">
@@ -203,7 +203,7 @@ export default function PublicationsPage() {
               <LuQuote className="w-6 h-6 text-brand-teal" />
             </div>
           </div>
-          <p className="text-sm sm:text-base text-gray-400 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-white leading-relaxed max-w-2xl mx-auto">
             For the complete list of publications, collaborations, and ongoing research projects, please visit the ResearchGate profile or contact Dr. Tushar Nayak directly.
           </p>
           <a

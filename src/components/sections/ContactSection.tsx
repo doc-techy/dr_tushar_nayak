@@ -10,14 +10,14 @@ export function ContactSection() {
           <h2 className="text-3xl font-semibold text-white sm:text-4xl">
             Schedule your consultation
           </h2>
-          <p className="text-gray-400">
+          <p className="text-white">
             Use the online booking portal or message the care concierge on WhatsApp for priority
             slots. Tele-consultations are available for international patients.
           </p>
           <div className="card space-y-6 border-white/10">
             <div>
               <h3 className="text-lg font-semibold text-white">Call</h3>
-              <p className="text-gray-400">{doctorProfile.contact.phone}</p>
+              <p className="text-white">{doctorProfile.contact.phone}</p>
             </div>
             <div>
               <h3 className="text-lg font-semibold text-white">Email</h3>
@@ -54,7 +54,7 @@ export function ContactSection() {
               className="min-h-[320px] w-full"
             />
           </div>
-          <div className="rounded-3xl bg-white/5 border border-white/10 p-6 text-gray-300">
+          <div className="rounded-3xl bg-white/5 border border-white/10 p-6 text-white">
             <p className="text-sm font-semibold uppercase tracking-wide text-brand-teal">
               Clinic address
             </p>

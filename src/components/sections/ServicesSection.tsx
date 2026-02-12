@@ -22,7 +22,7 @@ export function ServicesSection() {
             State of the art,{" "}
             <span className="text-white">orthopaedic care</span>
           </h2>
-          <p className="max-w-3xl mx-auto text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-gray-400 leading-relaxed font-light">
+          <p className="max-w-3xl mx-auto text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-white leading-relaxed font-light">
             From prevention and diagnostics to surgical excellence and rehab, choose a program designed
             around your activity goals and recovery speed.
           </p>
@@ -57,14 +57,14 @@ export function ServicesSection() {
                 </div>
 
                 {/* Description - visible on all screens */}
-                <p className="text-gray-400 leading-relaxed line-clamp-2 text-[8px] sm:text-[10px] md:text-[10px] lg:text-xs">
+                <p className="text-white leading-relaxed line-clamp-2 text-[8px] sm:text-[10px] md:text-[10px] lg:text-xs">
                   {service.description}
                 </p>
 
                 {/* Highlights - visible on md+ */}
                 <ul className="space-y-0.5 sm:space-y-1 md:space-y-1 lg:space-y-1 hidden md:block">
                   {service.highlights.slice(0, 2).map((highlight) => (
-                    <li key={highlight} className="flex items-start gap-1 sm:gap-1.5 md:gap-1.5 lg:gap-1.5 text-[8px] sm:text-[10px] md:text-[10px] lg:text-[11px] text-gray-400">
+                    <li key={highlight} className="flex items-start gap-1 sm:gap-1.5 md:gap-1.5 lg:gap-1.5 text-[8px] sm:text-[10px] md:text-[10px] lg:text-[11px] text-white">
                       <span className="mt-1 h-1 w-1 sm:h-1.5 sm:w-1.5 lg:h-1 lg:w-1 rounded-full flex-shrink-0 bg-brand-teal" />
                       <span className="line-clamp-1">{highlight}</span>
                     </li>

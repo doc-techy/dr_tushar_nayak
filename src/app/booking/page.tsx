@@ -28,15 +28,15 @@ const locations = [
 
 export default function BookingLocationsPage() {
   return (
-    <section className="relative min-h-screen text-gray-900 overflow-hidden bg-transparent">
+    <section className="relative min-h-screen text-white overflow-hidden bg-transparent">
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 md:px-8 py-10 sm:py-16 md:py-20 lg:py-24">
         {/* Header */}
         <div className="mb-8 sm:mb-12 md:mb-16 text-center">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight mb-3 sm:mb-4 text-gray-900">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight mb-3 sm:mb-4 text-white">
             Choose Your Preferred{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-teal to-brand-navy">Location</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-teal to-cyan-400">Location</span>
           </h1>
-          <p className="max-w-2xl mx-auto text-xs sm:text-sm md:text-base lg:text-lg text-gray-600 leading-relaxed">
+          <p className="max-w-2xl mx-auto text-xs sm:text-sm md:text-base lg:text-lg text-gray-400 leading-relaxed">
             Dr. Tushar Nayak is available at these healthcare facilities in Bengaluru
           </p>
         </div>
@@ -46,7 +46,7 @@ export default function BookingLocationsPage() {
           {locations.map((location) => (
             <div
               key={location.id}
-              className="relative bg-teal-50/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl border border-teal-100/80 p-5 sm:p-6 md:p-8 shadow-lg hover:shadow-xl hover:border-brand-teal/40 transition-all duration-300"
+              className="relative bg-white/5 backdrop-blur-sm rounded-2xl sm:rounded-3xl border border-white/10 p-5 sm:p-6 md:p-8 shadow-lg hover:shadow-xl hover:border-brand-teal/40 transition-all duration-300"
             >
               {/* Location Icon */}
               <div className="flex justify-center mb-4 sm:mb-6">
@@ -56,7 +56,7 @@ export default function BookingLocationsPage() {
               </div>
 
               {/* Hospital Name */}
-              <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 text-center mb-4 sm:mb-6">
+              <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-white text-center mb-4 sm:mb-6">
                 {location.name}
               </h2>
 
@@ -68,15 +68,15 @@ export default function BookingLocationsPage() {
                     <LuMapPin className="w-4 h-4 sm:w-5 sm:h-5 text-brand-teal" />
                   </div>
                   <div>
-                    <p className="text-xs sm:text-sm font-semibold text-gray-900">Address</p>
-                    <p className="text-[10px] sm:text-xs md:text-sm text-gray-600 leading-relaxed">
+                    <p className="text-xs sm:text-sm font-semibold text-white">Address</p>
+                    <p className="text-[10px] sm:text-xs md:text-sm text-gray-400 leading-relaxed">
                       {location.address}
                     </p>
                     <a
                       href={location.mapLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-[10px] sm:text-xs text-brand-teal font-semibold hover:text-brand-navy transition-colors mt-1"
+                      className="inline-flex items-center gap-1 text-[10px] sm:text-xs text-brand-teal font-semibold hover:text-cyan-400 transition-colors mt-1"
                     >
                       <LuExternalLink className="w-3 h-3" />
                       Get Directions
@@ -90,8 +90,8 @@ export default function BookingLocationsPage() {
                     <LuClock className="w-4 h-4 sm:w-5 sm:h-5 text-brand-teal" />
                   </div>
                   <div>
-                    <p className="text-xs sm:text-sm font-semibold text-gray-900">Available At</p>
-                    <p className="text-[10px] sm:text-xs md:text-sm text-gray-600">
+                    <p className="text-xs sm:text-sm font-semibold text-white">Available At</p>
+                    <p className="text-[10px] sm:text-xs md:text-sm text-gray-400">
                       {location.timing}
                     </p>
                   </div>
@@ -103,10 +103,10 @@ export default function BookingLocationsPage() {
                     <LuPhone className="w-4 h-4 sm:w-5 sm:h-5 text-brand-teal" />
                   </div>
                   <div>
-                    <p className="text-xs sm:text-sm font-semibold text-gray-900">Phone</p>
+                    <p className="text-xs sm:text-sm font-semibold text-white">Phone</p>
                     <a
                       href={`tel:${location.phone.replace(/\s/g, "")}`}
-                      className="text-[10px] sm:text-xs md:text-sm text-gray-600 hover:text-brand-teal transition-colors"
+                      className="text-[10px] sm:text-xs md:text-sm text-gray-400 hover:text-brand-teal transition-colors"
                     >
                       {location.phone}
                     </a>
@@ -141,35 +141,35 @@ export default function BookingLocationsPage() {
         </div>
 
         {/* Important Information */}
-        <div className="mt-8 sm:mt-12 bg-teal-50/70 border border-teal-100 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8">
+        <div className="mt-8 sm:mt-12 bg-white/5 border border-white/10 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8">
           <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
             <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-brand-teal/10 flex items-center justify-center">
               <LuInfo className="w-4 h-4 sm:w-5 sm:h-5 text-brand-teal" />
             </div>
-            <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900">Important Information</h3>
+            <h3 className="text-base sm:text-lg md:text-xl font-bold text-white">Important Information</h3>
           </div>
           <ul className="space-y-2.5 sm:space-y-3">
             <li className="flex items-start gap-2.5 sm:gap-3">
               <span className="mt-1.5 h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-brand-teal flex-shrink-0" />
-              <span className="text-xs sm:text-sm md:text-base text-gray-700 leading-relaxed">
+              <span className="text-xs sm:text-sm md:text-base text-gray-400 leading-relaxed">
                 Please arrive 15 minutes before your scheduled appointment time
               </span>
             </li>
             <li className="flex items-start gap-2.5 sm:gap-3">
               <span className="mt-1.5 h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-brand-teal flex-shrink-0" />
-              <span className="text-xs sm:text-sm md:text-base text-gray-700 leading-relaxed">
+              <span className="text-xs sm:text-sm md:text-base text-gray-400 leading-relaxed">
                 Bring a valid ID and any relevant medical reports
               </span>
             </li>
             <li className="flex items-start gap-2.5 sm:gap-3">
               <span className="mt-1.5 h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-brand-teal flex-shrink-0" />
-              <span className="text-xs sm:text-sm md:text-base text-gray-700 leading-relaxed">
+              <span className="text-xs sm:text-sm md:text-base text-gray-400 leading-relaxed">
                 Cancellations must be made at least 24 hours in advance
               </span>
             </li>
             <li className="flex items-start gap-2.5 sm:gap-3">
               <span className="mt-1.5 h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-brand-teal flex-shrink-0" />
-              <span className="text-xs sm:text-sm md:text-base text-gray-700 leading-relaxed">
+              <span className="text-xs sm:text-sm md:text-base text-gray-400 leading-relaxed">
                 Emergency cases will be given priority
               </span>
             </li>
@@ -180,7 +180,7 @@ export default function BookingLocationsPage() {
         <div className="mt-8 sm:mt-12 text-center">
           <p className="text-xs sm:text-sm text-gray-500">
             Need help choosing? Call us at{" "}
-            <a href="tel:+918810605887" className="text-brand-teal font-semibold hover:text-brand-navy">
+            <a href="tel:+918810605887" className="text-brand-teal font-semibold hover:text-cyan-400">
               +91 88106 05887
             </a>
           </p>

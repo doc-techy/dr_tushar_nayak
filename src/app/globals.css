@@ -8,7 +8,7 @@
 }
 
 body {
-  @apply text-gray-900 font-sans antialiased;
+  @apply text-white font-sans antialiased;
 }
 
 main {
@@ -24,19 +24,19 @@ main {
 }
 
 .badge {
-  @apply inline-flex items-center gap-2 rounded-full border border-brand-teal/40 bg-brand-mint/70 px-4 py-1 text-xs font-medium uppercase tracking-[0.3em] text-brand-navy shadow-sm;
+  @apply inline-flex items-center gap-2 rounded-full border border-brand-teal/40 bg-brand-teal/10 px-4 py-1 text-xs font-medium uppercase tracking-[0.3em] text-brand-teal shadow-sm;
 }
 
 .card {
-  @apply rounded-[2.25rem] border border-teal-100/80 bg-teal-50/80 p-8 shadow-[0_20px_60px_-25px_rgba(15,46,77,0.3)] backdrop-blur-xl transition duration-300;
+  @apply rounded-[2.25rem] border border-white/10 bg-white/5 p-8 shadow-[0_20px_60px_-25px_rgba(0,0,0,0.3)] backdrop-blur-xl transition duration-300;
 }
 
 .card:hover {
-  @apply border-brand-aqua/70 shadow-[0_25px_70px_-20px_rgba(20,84,105,0.35)];
+  @apply border-brand-teal/40 shadow-[0_25px_70px_-20px_rgba(30,154,162,0.2)];
 }
 
 .link-pill {
-  @apply inline-flex items-center gap-2 rounded-full border border-brand-navy/15 bg-white px-4 py-2 text-sm font-medium text-brand-navy transition hover:-translate-y-0.5 hover:border-brand-teal/40 hover:bg-brand-mint/70;
+  @apply inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:border-brand-teal/40 hover:bg-white/15;
 }
 
 .grid-backdrop::after {
@@ -45,7 +45,7 @@ main {
   inset: 10% 5% auto;
   height: 70%;
   border-radius: 3rem;
-  background: linear-gradient(135deg, rgba(196, 233, 255, 0.45), rgba(214, 247, 239, 0.1));
+  background: linear-gradient(135deg, rgba(30, 154, 162, 0.08), rgba(10, 47, 77, 0.05));
   filter: blur(0);
   z-index: -1;
 }

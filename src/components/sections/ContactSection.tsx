@@ -7,26 +7,26 @@ export function ContactSection() {
       <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-start">
         <div className="space-y-7">
           <span className="badge">Visit the clinic</span>
-          <h2 className="text-3xl font-semibold text-brand-navy sm:text-4xl">
+          <h2 className="text-3xl font-semibold text-white sm:text-4xl">
             Schedule your consultation
           </h2>
-          <p className="text-brand-charcoal/70">
+          <p className="text-gray-400">
             Use the online booking portal or message the care concierge on WhatsApp for priority
             slots. Tele-consultations are available for international patients.
           </p>
-          <div className="card space-y-6 border-brand-aqua/60">
+          <div className="card space-y-6 border-white/10">
             <div>
-              <h3 className="text-lg font-semibold text-brand-navy">Call</h3>
-              <p className="text-brand-charcoal/75">{doctorProfile.contact.phone}</p>
+              <h3 className="text-lg font-semibold text-white">Call</h3>
+              <p className="text-gray-400">{doctorProfile.contact.phone}</p>
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-brand-navy">Email</h3>
+              <h3 className="text-lg font-semibold text-white">Email</h3>
               <a className="link-pill" href={`mailto:${doctorProfile.contact.email}`}>
                 {doctorProfile.contact.email}
               </a>
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-brand-navy">WhatsApp</h3>
+              <h3 className="text-lg font-semibold text-white">WhatsApp</h3>
               <a
                 className="link-pill"
                 href={doctorProfile.contact.whatsapp}
@@ -43,7 +43,7 @@ export function ContactSection() {
         </div>
 
         <div className="space-y-5">
-          <div className="overflow-hidden rounded-[2.5rem] border border-brand-aqua/60 bg-teal-50/90 backdrop-blur-sm shadow-[0_25px_60px_-30px_rgba(14,57,90,0.45)]">
+          <div className="overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/5 backdrop-blur-sm shadow-[0_25px_60px_-30px_rgba(0,0,0,0.45)]">
             <iframe
               title={mapEmbed.title}
               src={mapEmbed.iframeSrc}
@@ -54,7 +54,7 @@ export function ContactSection() {
               className="min-h-[320px] w-full"
             />
           </div>
-          <div className="rounded-3xl bg-brand-mint/70 p-6 text-brand-charcoal/80">
+          <div className="rounded-3xl bg-white/5 border border-white/10 p-6 text-gray-300">
             <p className="text-sm font-semibold uppercase tracking-wide text-brand-teal">
               Clinic address
             </p>
@@ -65,4 +65,3 @@ export function ContactSection() {
     </section>
   );
 }
-

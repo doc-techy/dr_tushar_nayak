@@ -95,16 +95,16 @@ export default function EducationalVideosPage() {
   const allVideos = educationalVideos;
 
   return (
-    <section className="relative py-12 sm:py-24 lg:py-12 px-4 text-gray-900 overflow-hidden">
+    <section className="relative py-12 sm:py-24 lg:py-12 px-4 text-white overflow-hidden">
           <div className="relative max-w-7xl mx-auto">
             <div className="mb-10 lg:mb-12 text-left sm:text-center">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-0 lg:mb-4 text-gray-900">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-0 lg:mb-4 text-white">
                 Educational
-                <span className="ml-2 text-gray-900">
+                <span className="ml-2 text-white">
                   Videos
                 </span>
               </h1>
-              <p className="max-w-3xl mx-auto text-sm sm:text-xl lg:text-base text-gray-600 leading-relaxed font-light">
+              <p className="max-w-3xl mx-auto text-sm sm:text-xl lg:text-base text-gray-400 leading-relaxed font-light">
                 Watch expert-led educational videos covering orthopedic treatments, surgical procedures, rehabilitation, and patient care.
               </p>
             </div>
@@ -118,17 +118,17 @@ export default function EducationalVideosPage() {
                   return (
                     <article
                       key={video.id}
-                      className="group relative overflow-hidden rounded-2xl bg-teal-50/80 backdrop-blur-sm border-2 border-teal-100/80 shadow-md hover:bg-teal-50/90 hover:border-brand-teal transition-all duration-500"
+                      className="group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-sm border-2 border-white/10 shadow-md hover:bg-white/10 hover:border-brand-teal transition-all duration-500"
                     >
                       <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
                         colorIndex === 0 
-                          ? "bg-gradient-to-br from-teal-50 to-transparent"
+                          ? "bg-gradient-to-br from-brand-teal/10 to-transparent"
                           : colorIndex === 1
-                          ? "bg-gradient-to-br from-teal-50 to-transparent"
-                          : "bg-gradient-to-br from-teal-50 to-transparent"
+                          ? "bg-gradient-to-br from-brand-teal/10 to-transparent"
+                          : "bg-gradient-to-br from-brand-teal/10 to-transparent"
                       }`} />
                       
-                      <div className="relative aspect-video overflow-hidden bg-gray-100">
+                      <div className="relative aspect-video overflow-hidden bg-white/5">
                         <Image
                           src={video.thumbnail}
                           alt={video.title}
@@ -164,15 +164,15 @@ export default function EducationalVideosPage() {
                       <div className="relative p-3">
                         <div className="relative flex-1 space-y-1.5 mb-2">
                           <h3 className={`text-[10px] font-black leading-tight transition-colors duration-300 line-clamp-2 ${
-                            colorIndex === 0 ? "text-gray-900 group-hover:text-brand-teal" 
-                            : colorIndex === 1 ? "text-gray-900 group-hover:text-brand-teal"
-                            : "text-gray-900 group-hover:text-brand-teal"
+                            colorIndex === 0 ? "text-white group-hover:text-brand-teal" 
+                            : colorIndex === 1 ? "text-white group-hover:text-brand-teal"
+                            : "text-white group-hover:text-brand-teal"
                           }`}>
                             {video.title}
                           </h3>
                         </div>
 
-                        <div className="relative pt-2 border-t border-gray-200 group-hover:border-gray-300 transition-colors">
+                        <div className="relative pt-2 border-t border-white/10 group-hover:border-white/20 transition-colors">
                           <button
                             type="button"
                             className="flex items-center justify-between gap-1 w-full"
@@ -189,12 +189,12 @@ export default function EducationalVideosPage() {
                             </span>
                             <div className={`w-4 h-4 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 flex-shrink-0 ${
                               colorIndex === 0 
-                                ? "bg-teal-100 group-hover:bg-brand-teal" 
+                                ? "bg-brand-teal/10 group-hover:bg-brand-teal" 
                                 : colorIndex === 1
-                                ? "bg-teal-100 group-hover:bg-brand-navy"
-                                : "bg-teal-100 group-hover:bg-brand-navy"
+                                ? "bg-brand-teal/10 group-hover:bg-brand-navy"
+                                : "bg-brand-teal/10 group-hover:bg-brand-navy"
                             }`}>
-                              <LuPlay className="h-2 w-2 text-gray-600 group-hover:text-white transition-colors" />
+                              <LuPlay className="h-2 w-2 text-gray-400 group-hover:text-white transition-colors" />
                             </div>
                           </button>
                         </div>
@@ -211,17 +211,17 @@ export default function EducationalVideosPage() {
                   return (
                     <article
                       key={video.id}
-                      className="group relative overflow-hidden rounded-2xl sm:rounded-3xl bg-teal-50/80 backdrop-blur-sm border-2 border-teal-100/80 shadow-md hover:bg-teal-50/90 hover:border-brand-teal transition-all duration-500 hover:-translate-y-4 hover:shadow-xl hover:shadow-brand-teal/20"
+                      className="group relative overflow-hidden rounded-2xl sm:rounded-3xl bg-white/5 backdrop-blur-sm border-2 border-white/10 shadow-md hover:bg-white/10 hover:border-brand-teal transition-all duration-500 hover:-translate-y-4 hover:shadow-xl hover:shadow-brand-teal/20"
                     >
                       <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
                         colorIndex === 0 
-                          ? "bg-gradient-to-br from-teal-50 to-transparent"
+                          ? "bg-gradient-to-br from-brand-teal/10 to-transparent"
                           : colorIndex === 1
-                          ? "bg-gradient-to-br from-teal-50 to-transparent"
-                          : "bg-gradient-to-br from-teal-50 to-transparent"
+                          ? "bg-gradient-to-br from-brand-teal/10 to-transparent"
+                          : "bg-gradient-to-br from-brand-teal/10 to-transparent"
                       }`} />
                       
-                      <div className="relative aspect-video lg:aspect-[21/10] overflow-hidden bg-gray-100">
+                      <div className="relative aspect-video lg:aspect-[21/10] overflow-hidden bg-white/5">
                         <Image
                           src={video.thumbnail}
                           alt={video.title}
@@ -257,15 +257,15 @@ export default function EducationalVideosPage() {
                       <div className="relative p-3 sm:p-8 lg:p-4">
                         <div className="relative flex-1 space-y-2 sm:space-y-4 lg:space-y-2 mb-3 sm:mb-8 lg:mb-4">
                           <h3 className={`text-sm sm:text-2xl lg:text-lg font-black leading-tight transition-colors duration-300 ${
-                            colorIndex === 0 ? "text-gray-900 group-hover:text-brand-teal" 
-                            : colorIndex === 1 ? "text-gray-900 group-hover:text-brand-teal"
-                            : "text-gray-900 group-hover:text-brand-teal"
+                            colorIndex === 0 ? "text-white group-hover:text-brand-teal" 
+                            : colorIndex === 1 ? "text-white group-hover:text-brand-teal"
+                            : "text-white group-hover:text-brand-teal"
                           }`}>
                             {video.title}
                           </h3>
                         </div>
 
-                        <div className="relative pt-3 sm:pt-6 lg:pt-3 border-t-2 border-gray-200 group-hover:border-gray-300 transition-colors lg:hidden">
+                        <div className="relative pt-3 sm:pt-6 lg:pt-3 border-t-2 border-white/10 group-hover:border-white/20 transition-colors lg:hidden">
                           <button
                             type="button"
                             className="flex items-center justify-between gap-1 sm:gap-0 w-full"
@@ -282,12 +282,12 @@ export default function EducationalVideosPage() {
                             </span>
                             <div className={`w-6 h-6 sm:w-12 sm:h-12 lg:w-8 lg:h-8 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 flex-shrink-0 ${
                               colorIndex === 0 
-                                ? "bg-teal-100 group-hover:bg-gradient-to-r group-hover:from-brand-teal group-hover:to-brand-navy" 
+                                ? "bg-brand-teal/10 group-hover:bg-gradient-to-r group-hover:from-brand-teal group-hover:to-brand-navy" 
                                 : colorIndex === 1
-                                ? "bg-teal-100 group-hover:bg-gradient-to-r group-hover:from-brand-teal group-hover:to-brand-navy"
-                                : "bg-teal-100 group-hover:bg-gradient-to-r group-hover:from-brand-teal group-hover:to-brand-navy"
+                                ? "bg-brand-teal/10 group-hover:bg-gradient-to-r group-hover:from-brand-teal group-hover:to-brand-navy"
+                                : "bg-brand-teal/10 group-hover:bg-gradient-to-r group-hover:from-brand-teal group-hover:to-brand-navy"
                             }`}>
-                              <LuPlay className="h-3 w-3 sm:h-6 sm:w-6 lg:h-4 lg:w-4 text-gray-600 group-hover:text-white transition-colors group-hover:translate-x-0.5" />
+                              <LuPlay className="h-3 w-3 sm:h-6 sm:w-6 lg:h-4 lg:w-4 text-gray-400 group-hover:text-white transition-colors group-hover:translate-x-0.5" />
                             </div>
                           </button>
                         </div>
@@ -304,7 +304,7 @@ export default function EducationalVideosPage() {
                 <button
                   type="button"
                   onClick={() => setShowAllMobile((prev) => !prev)}
-                  className="px-10 py-4 rounded-full border-2 border-gray-300 text-gray-700 font-bold text-xs uppercase tracking-[0.1em] transition-all duration-300 hover:bg-gray-100 hover:border-brand-teal hover:text-brand-teal hover:scale-105"
+                  className="px-10 py-4 rounded-full border-2 border-white/10 text-gray-400 font-bold text-xs uppercase tracking-[0.1em] transition-all duration-300 hover:bg-white/10 hover:border-brand-teal hover:text-brand-teal hover:scale-105"
                 >
                   {showAllMobile ? "Show Less" : "Load More"}
                 </button>
@@ -314,4 +314,3 @@ export default function EducationalVideosPage() {
     </section>
   );
 }
-

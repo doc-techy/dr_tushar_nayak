@@ -36,12 +36,12 @@ export function TestimonialsMarquee() {
   return (
     <section className="relative w-screen -mx-[calc(50vw-50%)]">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 mb-6 lg:mb-12 text-center">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-gray-900">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-white">
           Patient
-          <span className="ml-2 text-gray-900">
+          <span className="ml-2 text-white">
             Testimonials
           </span>
-          <span className="ml-2 text-gray-900">and Reviews</span>
+          <span className="ml-2 text-white">and Reviews</span>
         </h2>
       </div>
 
@@ -54,7 +54,7 @@ export function TestimonialsMarquee() {
           {duplicated.map((testimonial, index) => (
             <article
               key={`${testimonial.name}-${index}`}
-              className="flex-shrink-0 w-[calc((100vw-1.5rem)/3)] sm:w-[20rem] lg:w-[22rem] rounded-[20px] sm:rounded-[26px] border border-teal-100/80 bg-teal-50/80 backdrop-blur-sm px-3 py-4 sm:px-6 sm:py-7 shadow-[0_30px_70px_-50px_rgba(15,23,42,0.15)]"
+              className="flex-shrink-0 w-[calc((100vw-1.5rem)/3)] sm:w-[20rem] lg:w-[22rem] rounded-[20px] sm:rounded-[26px] border border-white/10 bg-white/5 backdrop-blur-sm px-3 py-4 sm:px-6 sm:py-7 shadow-[0_30px_70px_-50px_rgba(0,0,0,0.3)]"
             >
               <div className="flex items-center justify-between text-brand-teal mb-3 sm:mb-5">
                 <LuQuote className="h-4 w-4 sm:h-6 sm:w-6" />
@@ -65,13 +65,12 @@ export function TestimonialsMarquee() {
                 </div>
               </div>
 
-              <p className="text-[10px] sm:text-xs lg:text-sm text-gray-700 leading-relaxed mb-3 sm:mb-6 line-clamp-4 sm:line-clamp-none">
+              <p className="text-[10px] sm:text-xs lg:text-sm text-gray-300 leading-relaxed mb-3 sm:mb-6 line-clamp-4 sm:line-clamp-none">
                 &quot;{testimonial.quote}&quot;
               </p>
 
-              <div className="pt-2 sm:pt-4 border-t border-gray-200">
-                <p className="text-[10px] sm:text-sm font-semibold text-gray-900">{testimonial.name}</p>
-                {/* <p className="text-[9px] sm:text-xs uppercase tracking-widest text-gray-600">{testimonial.role}</p> */}
+              <div className="pt-2 sm:pt-4 border-t border-white/10">
+                <p className="text-[10px] sm:text-sm font-semibold text-white">{testimonial.name}</p>
               </div>
             </article>
           ))}

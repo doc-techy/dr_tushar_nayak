@@ -89,42 +89,42 @@ export default function NishthaBookingPage() {
   };
 
   return (
-    <section className="relative min-h-screen text-gray-900 overflow-hidden">
+    <section className="relative min-h-screen text-white overflow-hidden">
 
       <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-10 lg:py-20 space-y-8 lg:space-y-16">
         <header className="text-left sm:text-center">
           
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-0 lg:mb-5">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-0 lg:mb-5">
             Book a Consultation with {doctorProfile.name}
           </h1>
-          <p className="max-w-3xl mx-auto text-[10px] sm:text-lg text-gray-700 leading-relaxed">
+          <p className="max-w-3xl mx-auto text-[10px] sm:text-lg text-gray-400 leading-relaxed">
             Share a few details and the care concierge will confirm your slot within 24 hours. Emergency queries? Call {doctorProfile.contact.phone} directly.
           </p>
         </header>
 
         <div className="grid gap-6 lg:gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="rounded-[32px] border border-teal-100/80 bg-teal-50/80 backdrop-blur-sm p-6 lg:p-8 sm:p-10 shadow-lg">
+          <div className="rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-sm p-6 lg:p-8 sm:p-10 shadow-lg">
             <div className="space-y-2 mb-6 lg:mb-8">
               <p className="text-xs font-bold uppercase tracking-[0.08em] text-brand-teal">Booking details</p>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-gray-400">
                 Fields marked with * are required. Preferred date and programme help us tailor preparation before your visit.
               </p>
             </div>
 
             {status === "success" ? (
-              <div className="rounded-3xl border border-teal-300 bg-teal-50 px-6 py-8 text-brand-navy">
-                <h2 className="text-xl font-semibold text-brand-navy">Thank you! 🗓️</h2>
-                <p className="mt-3 text-sm text-brand-navy/80">
+              <div className="rounded-3xl border border-brand-teal/30 bg-brand-teal/10 px-6 py-8 text-white">
+                <h2 className="text-xl font-semibold text-white">Thank you! 🗓️</h2>
+                <p className="mt-3 text-sm text-gray-300">
                   We&apos;ve recorded your request for Nishtha Healthcare. The care concierge will call/text you shortly to confirm the appointment.
                 </p>
-                <p className="mt-4 text-sm text-brand-navy/70">
+                <p className="mt-4 text-sm text-gray-400">
                   Need urgent support? Reach the clinic at {doctorProfile.contact.phone} or chat on WhatsApp anytime.
                 </p>
               </div>
             ) : (
               <form onSubmit={onSubmit} className="space-y-6">
                 {status === "error" && errorMessage ? (
-                  <div className="rounded-2xl border border-red-300 bg-red-50 px-4 py-3 text-sm text-red-800">
+                  <div className="rounded-2xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-300">
                     {errorMessage}
                   </div>
                 ) : null}
@@ -136,7 +136,7 @@ export default function NishthaBookingPage() {
                   <input
                     id="fullName"
                     name="fullName"
-                    className="w-full rounded-2xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-500 focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/30"
+                    className="w-full rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white placeholder-gray-500 focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/30"
                     value={formState.fullName}
                     onChange={onChange("fullName")}
                     required
@@ -151,7 +151,7 @@ export default function NishthaBookingPage() {
                     <input
                       id="phone"
                       name="phone"
-                      className="w-full rounded-2xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/30"
+                      className="w-full rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/30"
                       value={formState.phone}
                       onChange={onChange("phone")}
                       required
@@ -165,7 +165,7 @@ export default function NishthaBookingPage() {
                       id="email"
                       name="email"
                       type="email"
-                      className="w-full rounded-2xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/30"
+                      className="w-full rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/30"
                       value={formState.email}
                       onChange={onChange("email")}
                     />
@@ -183,8 +183,8 @@ export default function NishthaBookingPage() {
                         key={type.id}
                         className={`flex items-center justify-center cursor-pointer rounded-xl border-2 px-3 py-3 text-center transition-all duration-200 ${
                           formState.consultationType === type.id
-                            ? "border-brand-teal bg-teal-50 text-brand-teal"
-                            : "border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50"
+                            ? "border-brand-teal bg-brand-teal/10 text-brand-teal"
+                            : "border-white/15 bg-white/5 text-gray-400 hover:border-white/25 hover:bg-white/10"
                         }`}
                       >
                         <input
@@ -210,7 +210,7 @@ export default function NishthaBookingPage() {
                       id="preferredDate"
                       name="preferredDate"
                       type="date"
-                      className="w-full rounded-2xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/30"
+                      className="w-full rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/30"
                       value={formState.preferredDate}
                       onChange={onChange("preferredDate")}
                       required
@@ -223,14 +223,14 @@ export default function NishthaBookingPage() {
                     <select
                       id="timeSlot"
                       name="timeSlot"
-                      className="w-full rounded-2xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/30"
+                      className="w-full rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/30"
                       value={formState.timeSlot}
                       onChange={onChange("timeSlot")}
                       required
                     >
-                      <option value="" className="text-gray-900">Select a time slot</option>
+                      <option value="" className="bg-[#0a1628] text-white">Select a time slot</option>
                       {timeSlots.map((slot) => (
-                        <option key={slot} value={slot} className="text-gray-900">
+                        <option key={slot} value={slot} className="bg-[#0a1628] text-white">
                           {slot}
                         </option>
                       ))}
@@ -246,7 +246,7 @@ export default function NishthaBookingPage() {
                     id="notes"
                     name="notes"
                     rows={4}
-                    className="w-full rounded-2xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/30"
+                    className="w-full rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/30"
                     value={formState.notes}
                     onChange={onChange("notes")}
                   />
@@ -263,27 +263,27 @@ export default function NishthaBookingPage() {
             )}
           </div>
 
-          <aside className="rounded-[32px] border border-teal-100/80 bg-teal-50/80 backdrop-blur-sm p-8 sm:p-10 space-y-8 shadow-lg">
+          <aside className="rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-sm p-8 sm:p-10 space-y-8 shadow-lg">
             <div className="space-y-3">
               <p className="text-xs font-bold uppercase tracking-[0.08em] text-brand-teal">Clinic details</p>
-              <h2 className="text-2xl font-bold text-gray-900">Nishtha Healthcare & Diagnostic Center</h2>
-              <p className="text-sm text-gray-700 leading-relaxed">
+              <h2 className="text-2xl font-bold text-white">Nishtha Healthcare & Diagnostic Center</h2>
+              <p className="text-sm text-gray-400 leading-relaxed">
                 Evening consultations with Dr. Tushar Nayak for orthopaedic care, joint assessments, and follow-up appointments.
               </p>
             </div>
 
-            <div className="space-y-4 text-sm text-gray-700">
+            <div className="space-y-4 text-sm text-gray-400">
               <div>
                 <p className="text-xs uppercase tracking-[0.08em] text-brand-teal">Timing</p>
-                <p className="text-lg font-semibold text-gray-900">Mon - Sat: 6:00 PM - 9:00 PM</p>
+                <p className="text-lg font-semibold text-white">Mon - Sat: 6:00 PM - 9:00 PM</p>
               </div>
               <div>
                 <p className="text-xs uppercase tracking-[0.08em] text-brand-teal">Call</p>
-                <p className="text-lg font-semibold text-gray-900">{doctorProfile.contact.phone}</p>
+                <p className="text-lg font-semibold text-white">{doctorProfile.contact.phone}</p>
               </div>
               <div>
                 <p className="text-xs uppercase tracking-[0.08em] text-brand-teal">Email</p>
-                <p className="text-lg font-semibold text-gray-900">{doctorProfile.contact.email}</p>
+                <p className="text-lg font-semibold text-white">{doctorProfile.contact.email}</p>
               </div>
               <div>
                 <p className="text-xs uppercase tracking-[0.08em] text-brand-teal">Address</p>
@@ -295,12 +295,12 @@ export default function NishthaBookingPage() {
               href="https://share.google/MnvUf9SOj45ZyFNrR"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-full rounded-full border border-gray-300 px-6 py-3 text-xs font-bold uppercase tracking-[0.08em] text-gray-700 hover:bg-gray-100"
+              className="inline-flex items-center justify-center w-full rounded-full border border-white/15 px-6 py-3 text-xs font-bold uppercase tracking-[0.08em] text-gray-300 hover:bg-white/10"
             >
               Get directions
             </a>
 
-            <div className="overflow-hidden rounded-3xl border border-gray-200">
+            <div className="overflow-hidden rounded-3xl border border-white/10">
               <iframe
                 title="Nishtha Healthcare & Diagnostic Center Location"
                 src="https://www.google.com/maps?q=Nishtha+Healthcare+Tarun+Tower+Kaggadasapura+Main+Rd+Bengaluru&output=embed"
@@ -312,8 +312,8 @@ export default function NishthaBookingPage() {
               />
             </div>
 
-            <div className="rounded-2xl border border-teal-100/80 bg-teal-50/70 p-5 text-sm text-gray-700 space-y-3">
-              <p className="font-semibold text-gray-900">Need to talk first?</p>
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-5 text-sm text-gray-400 space-y-3">
+              <p className="font-semibold text-white">Need to talk first?</p>
               <p>
                 Message us on WhatsApp for insurance clarifications, pre-operative queries, or to reschedule. We respond within 24 hours.
               </p>
@@ -321,7 +321,7 @@ export default function NishthaBookingPage() {
                 href={doctorProfile.contact.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.08em] text-brand-teal hover:text-brand-navy"
+                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.08em] text-brand-teal hover:text-cyan-400"
               >
                 Chat on WhatsApp
               </a>

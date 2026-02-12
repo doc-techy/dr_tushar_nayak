@@ -59,13 +59,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased text-gray-900 overflow-x-hidden`}>
-        {/* Global background - same color throughout all pages */}
-        <div className="pointer-events-none fixed inset-0 z-0 bg-teal-50/95">
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000004_1px,transparent_1px),linear-gradient(to_bottom,#00000004_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-40" aria-hidden />
-          <div className="absolute -top-40 left-1/2 w-[680px] h-[680px] -translate-x-1/2 bg-teal-100/30 blur-3xl rounded-full" aria-hidden />
-          <div className="absolute bottom-[-10%] right-[10%] w-[520px] h-[520px] bg-teal-100/25 blur-3xl rounded-full" aria-hidden />
-          <div className="absolute top-[30%] left-[-10%] w-[420px] h-[420px] bg-brand-navy/5 blur-[180px] rounded-full" aria-hidden />
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased text-white overflow-x-hidden`}>
+        {/* Global background - dark blue throughout all pages */}
+        <div className="pointer-events-none fixed inset-0 z-0 bg-[#0a1628]">
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-30" aria-hidden />
+          <div className="absolute -top-40 left-1/2 w-[680px] h-[680px] -translate-x-1/2 bg-brand-teal/8 blur-3xl rounded-full" aria-hidden />
+          <div className="absolute bottom-[-10%] right-[10%] w-[520px] h-[520px] bg-brand-teal/6 blur-3xl rounded-full" aria-hidden />
+          <div className="absolute top-[30%] left-[-10%] w-[420px] h-[420px] bg-brand-navy/30 blur-[180px] rounded-full" aria-hidden />
         </div>
         
         <SiteHeader />

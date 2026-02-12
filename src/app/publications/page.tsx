@@ -106,36 +106,36 @@ const publications = [
 
 export default function PublicationsPage() {
   return (
-    <section className="relative min-h-screen text-gray-900 overflow-hidden">
+    <section className="relative min-h-screen text-white overflow-hidden">
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 md:px-8 pt-6 sm:pt-8 md:pt-10 lg:pt-12 pb-10 sm:pb-16 md:pb-20 lg:pb-24">
         {/* Header */}
         <div className="mb-10 sm:mb-14 text-center">
 
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight mb-3 sm:mb-4 text-gray-900">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight mb-3 sm:mb-4 text-white">
             Research{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-teal to-brand-navy">Publications</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-teal to-cyan-400">Publications</span>
           </h1>
-          <p className="max-w-2xl mx-auto text-xs sm:text-sm md:text-base lg:text-lg text-gray-600 leading-relaxed">
+          <p className="max-w-2xl mx-auto text-xs sm:text-sm md:text-base lg:text-lg text-gray-400 leading-relaxed">
             Dr. Tushar Nayak&apos;s contributions to orthopaedic research and medical literature
           </p>
         </div>
 
         {/* ResearchGate Profile Card */}
-        <div className="bg-teal-50/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl border border-teal-100/80 p-5 sm:p-6 md:p-8 shadow-lg mb-8 sm:mb-12">
+        <div className="bg-white/5 backdrop-blur-sm rounded-2xl sm:rounded-3xl border border-white/10 p-5 sm:p-6 md:p-8 shadow-lg mb-8 sm:mb-12">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6">
             <div>
-              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">ResearchGate Profile</h2>
-              <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-sm sm:text-base text-gray-600">
+              <h2 className="text-xl sm:text-2xl font-bold text-white mb-2">ResearchGate Profile</h2>
+              <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-sm sm:text-base text-gray-400">
                 <span className="flex items-center gap-1">
-                  <span className="font-semibold text-gray-900">{researchGateProfile.stats.publications}</span> publications
+                  <span className="font-semibold text-white">{researchGateProfile.stats.publications}</span> publications
                 </span>
-                <span className="text-gray-300">•</span>
+                <span className="text-gray-600">•</span>
                 <span className="flex items-center gap-1">
-                  <span className="font-semibold text-gray-900">{researchGateProfile.stats.reads}</span> reads
+                  <span className="font-semibold text-white">{researchGateProfile.stats.reads}</span> reads
                 </span>
-                <span className="text-gray-300">•</span>
+                <span className="text-gray-600">•</span>
                 <span className="flex items-center gap-1">
-                  <span className="font-semibold text-gray-900">{researchGateProfile.stats.citations}</span> citations
+                  <span className="font-semibold text-white">{researchGateProfile.stats.citations}</span> citations
                 </span>
               </div>
             </div>
@@ -156,9 +156,9 @@ export default function PublicationsPage() {
           {publications.map((pub, index) => (
             <article
               key={index}
-              className="bg-teal-50/80 backdrop-blur-sm rounded-2xl border border-teal-100/80 p-5 sm:p-6 shadow-md hover:shadow-lg hover:border-brand-teal/40 transition-all duration-300 flex flex-col"
+              className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-5 sm:p-6 shadow-md hover:shadow-lg hover:border-brand-teal/40 transition-all duration-300 flex flex-col"
             >
-              <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-3 leading-snug line-clamp-3">
+              <h3 className="text-base sm:text-lg font-bold text-white mb-3 leading-snug line-clamp-3">
                 {pub.title}
               </h3>
               
@@ -166,17 +166,17 @@ export default function PublicationsPage() {
                 {pub.authors}
               </p>
               
-              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4 line-clamp-3 flex-grow">
+              <p className="text-xs sm:text-sm text-gray-400 leading-relaxed mb-4 line-clamp-3 flex-grow">
                 {pub.description}
               </p>
               
-              <div className="border-t border-gray-100 pt-4 mt-auto">
+              <div className="border-t border-white/10 pt-4 mt-auto">
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-xs text-gray-500">{pub.journal}</p>
                     <div className="flex items-center gap-2 mt-1">
-                      <span className="text-sm font-semibold text-gray-900">{pub.year}</span>
-                      <span className="inline-flex items-center rounded-full bg-teal-50 px-2 py-0.5 text-[10px] font-medium text-brand-teal">
+                      <span className="text-sm font-semibold text-white">{pub.year}</span>
+                      <span className="inline-flex items-center rounded-full bg-brand-teal/10 px-2 py-0.5 text-[10px] font-medium text-brand-teal">
                         {pub.citations}
                       </span>
                     </div>
@@ -185,7 +185,7 @@ export default function PublicationsPage() {
                     href={pub.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-sm font-semibold text-brand-teal hover:text-brand-navy transition-colors"
+                    className="inline-flex items-center gap-1 text-sm font-semibold text-brand-teal hover:text-cyan-400 transition-colors"
                   >
                     Read Paper
                     <LuExternalLink className="w-3.5 h-3.5" />
@@ -197,18 +197,18 @@ export default function PublicationsPage() {
         </div>
 
         {/* Note */}
-        <div className="mt-10 sm:mt-14 bg-teal-50/80 backdrop-blur-sm rounded-2xl border border-teal-100 p-5 sm:p-6 md:p-8 text-center">
+        <div className="mt-10 sm:mt-14 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-5 sm:p-6 md:p-8 text-center">
           <div className="flex justify-center mb-4">
             <div className="w-12 h-12 rounded-full bg-brand-teal/10 flex items-center justify-center">
               <LuQuote className="w-6 h-6 text-brand-teal" />
             </div>
           </div>
-          <p className="text-sm sm:text-base text-gray-700 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-gray-400 leading-relaxed max-w-2xl mx-auto">
             For the complete list of publications, collaborations, and ongoing research projects, please visit the ResearchGate profile or contact Dr. Tushar Nayak directly.
           </p>
           <a
             href="mailto:orthopaedicsurgeontushar@gmail.com"
-            className="inline-flex items-center gap-2 mt-4 text-sm font-semibold text-brand-teal hover:text-brand-navy transition-colors"
+            className="inline-flex items-center gap-2 mt-4 text-sm font-semibold text-brand-teal hover:text-cyan-400 transition-colors"
           >
             orthopaedicsurgeontushar@gmail.com
             <LuExternalLink className="w-3.5 h-3.5" />

@@ -34,7 +34,7 @@ const socialIconMap: Record<string, { icon: JSX.Element; bg: string }> = {
 
 export function SiteFooter() {
   return (
-    <footer className="relative bg-gray-950 text-white border-t-2 border-white/10 transition before:content-[''] before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-gradient-to-r before:from-brand-teal before:to-brand-navy before:opacity-80 after:content-[''] after:absolute after:inset-x-0 after:bottom-0 after:h-1 after:bg-gradient-to-r after:from-brand-teal after:to-brand-navy after:opacity-80">
+    <footer className="relative bg-gray-950 text-white border-t-2 border-white/10 transition before:content-[''] before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-gradient-to-r before:from-teal-400 before:via-emerald-300 before:to-cyan-400 after:content-[''] after:absolute after:inset-x-0 after:bottom-0 after:h-1 after:bg-gradient-to-r after:from-teal-400 after:via-emerald-300 after:to-cyan-400">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-12 md:py-16 space-y-8 sm:space-y-12 md:space-y-16">
         {/* Top Section */}
         <div className="grid gap-8 sm:gap-10 md:gap-12 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr]">

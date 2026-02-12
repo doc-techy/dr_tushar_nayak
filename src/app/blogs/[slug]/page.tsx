@@ -35,7 +35,7 @@ export default async function BlogArticlePage({ params }: BlogArticlePageParams)
   }
 
   return (
-    <article className="relative min-h-screen text-gray-900 pb-24">
+    <article className="relative min-h-screen text-white pb-24">
       <div className="relative w-screen -mx-[calc(50vw-50%)] h-[320px] sm:h-[420px] lg:h-[500px] overflow-hidden">
         <Image
           src={article.heroImage}
@@ -44,10 +44,10 @@ export default async function BlogArticlePage({ params }: BlogArticlePageParams)
           priority
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-white via-white/70 to-white/10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628] via-[#0a1628]/70 to-transparent" />
         <div className="relative h-full flex flex-col justify-end px-6 sm:px-10 lg:px-14 pb-10 sm:pb-14">
 
-          <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black leading-tight max-w-4xl text-gray-900">
+          <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black leading-tight max-w-4xl text-white">
             {article.title}
           </h1>
           <p className="mt-4 text-sm font-semibold text-brand-teal uppercase tracking-normal">
@@ -63,7 +63,7 @@ export default async function BlogArticlePage({ params }: BlogArticlePageParams)
               return (
                 <div key={`${article.slug}-heading-${index}`} className="space-y-2 pt-4 lg:pt-6">
                   <span className="block h-1 w-14 bg-gradient-to-r from-brand-teal to-brand-navy rounded-full" />
-                  <h2 className="text-3xl font-bold text-gray-900">
+                  <h2 className="text-3xl font-bold text-white">
                     {block.text}
                   </h2>
                 </div>
@@ -74,7 +74,7 @@ export default async function BlogArticlePage({ params }: BlogArticlePageParams)
               return (
                 <ul
                   key={`${article.slug}-list-${index}`}
-                  className="space-y-3 pl-5 list-disc text-gray-700 text-sm sm:text-base"
+                  className="space-y-3 pl-5 list-disc text-white text-sm sm:text-base"
                 >
                   {block.items.map((item) => (
                     <li key={item} className="leading-relaxed">{item}</li>
@@ -86,7 +86,7 @@ export default async function BlogArticlePage({ params }: BlogArticlePageParams)
             return (
               <p
                 key={`${article.slug}-paragraph-${index}`}
-                className="text-base sm:text-lg text-gray-700 leading-8"
+                className="text-base sm:text-lg text-white leading-8"
               >
                 {block.text}
               </p>

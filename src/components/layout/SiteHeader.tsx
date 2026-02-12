@@ -23,7 +23,7 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`sticky top-0 z-40 transition before:content-[''] before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-gradient-to-r before:from-brand-teal before:to-brand-navy before:opacity-80 after:content-[''] after:absolute after:inset-x-0 after:bottom-0 after:h-1 after:bg-gradient-to-r after:from-brand-teal after:to-brand-navy after:opacity-80 ${
+      className={`sticky top-0 z-40 transition before:content-[''] before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-gradient-to-r before:from-teal-400 before:via-emerald-300 before:to-cyan-400 after:content-[''] after:absolute after:inset-x-0 after:bottom-0 after:h-1 after:bg-gradient-to-r after:from-teal-400 after:via-emerald-300 after:to-cyan-400 ${
         scrolled
           ? "bg-gray-950/95 shadow-2xl backdrop-blur-xl"
           : "bg-gray-950/80 backdrop-blur"

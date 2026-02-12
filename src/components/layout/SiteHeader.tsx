@@ -23,10 +23,8 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`sticky top-0 z-40 transition before:content-[''] before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-gradient-to-r before:from-teal-400 before:via-emerald-300 before:to-cyan-400 after:content-[''] after:absolute after:inset-x-0 after:bottom-0 after:h-1 after:bg-gradient-to-r after:from-teal-400 after:via-emerald-300 after:to-cyan-400 ${
-        scrolled
-          ? "bg-gray-950/95 shadow-2xl backdrop-blur-xl"
-          : "bg-gray-950/80 backdrop-blur"
+      className={`sticky top-0 z-40 transition-all duration-500 bg-gradient-to-r from-brand-teal/20 to-cyan-400/15 backdrop-blur-xl border-b border-brand-teal/20 before:content-[''] before:absolute before:inset-x-0 before:top-0 before:h-1 before:z-10 before:bg-gradient-to-r before:from-teal-400 before:via-emerald-300 before:to-cyan-400 after:content-[''] after:absolute after:inset-x-0 after:bottom-0 after:h-1 after:z-10 after:bg-gradient-to-r after:from-teal-400 after:via-emerald-300 after:to-cyan-400 ${
+        scrolled ? "shadow-lg shadow-brand-teal/10" : ""
       }`}
     >
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 sm:px-6 md:px-8 lg:px-12 py-3 sm:py-4 md:py-5">
@@ -76,7 +74,7 @@ export function SiteHeader() {
       </div>
       
       {mobileOpen ? (
-        <div className="absolute top-full left-0 right-0 border-t border-white/10 bg-gray-950 px-4 sm:px-6 py-3 sm:py-4 md:hidden shadow-2xl">
+        <div className="absolute top-full left-0 right-0 border-t border-brand-teal/20 bg-gradient-to-r from-brand-teal/20 to-cyan-400/15 backdrop-blur-xl px-4 sm:px-6 py-3 sm:py-4 md:hidden shadow-lg shadow-brand-teal/10">
           <nav className="flex flex-col gap-2 sm:gap-3">
             {navLinks.map((link) => (
               <Link

@@ -97,7 +97,7 @@ export const doctorProfile: DoctorProfile = {
   },
   socials: [
     { label: "LinkedIn", url: "https://www.linkedin.com/in/drtusharnayak" },
-    { label: "Instagram", url: "https://www.instagram.com/drtusharnayak" },
+    { label: "Instagram", url: "https://www.instagram.com/orthodr_tusharnayak?igsh=ZnlqbW4zMHRoNGRt&utm_source=qr" },
     { label: "YouTube", url: "https://www.youtube.com/@DrTusharNayak" },
   ],
 };

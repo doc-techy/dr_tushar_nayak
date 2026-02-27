@@ -5,7 +5,7 @@ const locations = [
   {
     id: 1,
     name: "Sparsh Hospital, Hennur",
-    address: "DivyaSree Avance, Hennur Bagalur Main Rd, Chikkanna Layout, HBR Layout, Geddalahalli, Bengaluru - 560043",
+    address: "DivyaSree Avance, Hennur Bagalur Main Rd, Chikkanna Layout, HBR Layout, Geddalahalli, Bengaluru     560043",
     mapLink: "https://share.google/8cdAfOpQTfDXonnGh",
     timing: "Monday to Saturday – 10 AM to 5 PM",
     phone: "080 61 222 000",
@@ -15,14 +15,14 @@ const locations = [
   },
   {
     id: 2,
-    name: "Nishtha Healthcare & Diagnostic Center",
-    address: "Ground Floor, Tarun Tower, 9, Kaggadasapura Main Rd, Kondappa Layout, C V Raman Nagar, Bengaluru - 560093",
+    name: "Nishtha Healthcare",
+    address: "Ground Floor, Tarun Tower, 9, Kaggadasapura Main Rd, Kondappa Layout, C V Raman Nagar, Bengaluru   560093",
     mapLink: "https://share.google/MnvUf9SOj45ZyFNrR",
     timing: "Monday to Saturday – 6 PM to 9 PM",
     phone: "+91 88106 05887",
-    buttonText: "Book Appointment",
-    buttonLink: "/booking/nishtha",
-    isExternal: false,
+    buttonText: "Call Now",
+    buttonLink: "tel:+918810605887",
+    isExternal: true,
   },
 ];
 
@@ -123,7 +123,11 @@ export default function BookingLocationsPage() {
                     rel="noopener noreferrer"
                     className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-brand-teal to-brand-navy px-5 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-bold uppercase tracking-wider text-white shadow-lg shadow-brand-teal/30 transition-all duration-300 hover:scale-105 hover:shadow-brand-teal/50"
                   >
-                    <LuMapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                    {location.buttonLink.startsWith("tel:") ? (
+                      <LuPhone className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                    ) : (
+                      <LuMapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                    )}
                     {location.buttonText}
                   </a>
                 ) : (
@@ -131,7 +135,11 @@ export default function BookingLocationsPage() {
                     href={location.buttonLink}
                     className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-brand-teal to-brand-navy px-5 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-bold uppercase tracking-wider text-white shadow-lg shadow-brand-teal/30 transition-all duration-300 hover:scale-105 hover:shadow-brand-teal/50"
                   >
-                    <LuMapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                    {location.buttonLink.startsWith("tel:") ? (
+                      <LuPhone className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                    ) : (
+                      <LuMapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                    )}
                     {location.buttonText}
                   </Link>
                 )}

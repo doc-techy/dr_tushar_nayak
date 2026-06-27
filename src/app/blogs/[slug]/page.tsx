@@ -44,12 +44,17 @@ export default async function BlogArticlePage({ params }: BlogArticlePageParams)
           priority
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628] via-[#0a1628]/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628] via-[#0a1628]/45 to-[#0a1628]/10" />
         <div className="relative h-full flex flex-col justify-end px-6 sm:px-10 lg:px-14 pb-10 sm:pb-14">
 
           <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black leading-tight max-w-4xl text-white">
             {article.title}
           </h1>
+          {article.author ? (
+            <p className="mt-4 text-sm sm:text-base text-white/80 max-w-3xl leading-relaxed">
+              By {article.author}
+            </p>
+          ) : null}
           <p className="mt-4 text-sm font-semibold text-brand-teal uppercase tracking-normal">
             {article.readingTime}
           </p>

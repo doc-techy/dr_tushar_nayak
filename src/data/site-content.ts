@@ -62,6 +62,7 @@ export type BlogArticle = {
   heroAlt: string;
   excerpt: string;
   readingTime: string;
+  author?: string;
   content: BlogContentBlock[];
 };
 
@@ -576,6 +577,278 @@ export const testimonials: Testimonial[] = [
 ];
 
 export const blogArticles: BlogArticle[] = [
+  {
+    slug: "ankle-fractures-football-world-cup",
+    title: "Ankle Fractures in Football: A World Cup Injury That Can End Careers — Early Treatment Makes All the Difference",
+    heroImage: "/images/ankle-fractures-football-world-cup-hero.png",
+    heroAlt: "Brazil football player injured on ankle during World Cup match at stadium",
+    excerpt:
+      "Ankle fractures are among the most serious football injuries. Learn warning signs, diagnosis, treatment, and when athletes can return to sport.",
+    readingTime: "12 min read",
+    author: "Dr. Tushar Nayak, Consultant Orthopaedic Surgeon, Sparsh Hospital, Bengaluru",
+    content: [
+      {
+        type: "paragraph",
+        text:
+          "Every FIFA World Cup showcases extraordinary athleticism, unforgettable goals, and remarkable moments of resilience. Yet behind every match lies the constant risk of injury. Among the most serious football injuries is an ankle fracture—a condition that can keep athletes away from the game for months and, if not treated correctly, may have long-term consequences on mobility and performance.",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Football places tremendous stress on the ankle joint. Rapid changes in direction, high-speed tackles, awkward landings, and twisting movements make ankle fractures and ligament injuries common among both professional players and recreational athletes. What may initially appear to be a simple ankle sprain can sometimes conceal a significant fracture that requires immediate medical attention.",
+      },
+      {
+        type: "heading",
+        text: "Understanding Ankle Fractures",
+      },
+      {
+        type: "paragraph",
+        text:
+          "The ankle is a complex weight-bearing joint formed by the tibia, fibula, and talus. It provides both stability and flexibility, allowing athletes to sprint, pivot, jump, and kick with precision. When excessive force exceeds the strength of the bones or supporting ligaments, fractures can occur.",
+      },
+      {
+        type: "paragraph",
+        text: "Depending on the injury mechanism, fractures may involve:",
+      },
+      {
+        type: "list",
+        items: [
+          "Lateral malleolus (outer ankle)",
+          "Medial malleolus (inner ankle)",
+          "Both sides of the ankle (bimalleolar fractures)",
+          "Syndesmotic injuries (high ankle injuries), which are particularly significant in football players",
+        ],
+      },
+      {
+        type: "paragraph",
+        text:
+          "High ankle injuries often require specialised evaluation because they can significantly affect stability and delay return to sport.",
+      },
+      {
+        type: "heading",
+        text: "Why Football Players Are at Higher Risk",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Football combines speed, contact, and sudden rotational movements, placing exceptional demands on the ankle. Common mechanisms include:",
+      },
+      {
+        type: "list",
+        items: [
+          "Sliding tackles while the foot is planted",
+          "Landing awkwardly after headers",
+          "Sudden cutting or pivoting during sprinting",
+          "Direct impact from another player's body or boot",
+        ],
+      },
+      {
+        type: "paragraph",
+        text:
+          "These injuries range from minor avulsion fractures to unstable fractures requiring ankle fracture surgery. Even small degrees of instability can reduce acceleration, agility, balance, and shooting power—making accurate treatment essential for athletes at every level.",
+      },
+      {
+        type: "heading",
+        text: "Symptoms You Should Never Ignore",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Many patients mistake an ankle fracture for a severe sprain and delay treatment. Early diagnosis is critical because delayed management may result in worsening displacement, chronic pain, and arthritis. Warning signs include:",
+      },
+      {
+        type: "list",
+        items: [
+          "Severe pain immediately after injury",
+          "Rapid swelling",
+          "Difficulty or inability to bear weight",
+          "Bruising",
+          "Visible deformity",
+          "Instability while standing",
+          "Pain directly over the bone",
+        ],
+      },
+      {
+        type: "paragraph",
+        text:
+          "If you are unable to walk four steps after an ankle injury, a fracture should always be ruled out.",
+      },
+      {
+        type: "heading",
+        text: "Diagnosis: Looking Beyond the X-ray",
+      },
+      {
+        type: "paragraph",
+        text:
+          "At Sparsh Hospital, every ankle injury undergoes a detailed clinical assessment. Evaluation includes:",
+      },
+      {
+        type: "list",
+        items: [
+          "Swelling and deformity",
+          "Bone tenderness",
+          "Ligament stability",
+          "Neurovascular examination",
+          "Ability to bear weight",
+        ],
+      },
+      {
+        type: "paragraph",
+        text:
+          "While X-rays identify most fractures, advanced imaging often provides additional information. CT scans help define complex fracture patterns, while MRI scans assess ligament injuries, cartilage damage, and syndesmotic injuries—especially important for athletes aiming to return safely to sports.",
+      },
+      {
+        type: "heading",
+        text: "Treatment of Ankle Fractures",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Treatment depends on fracture stability, displacement, joint alignment, and the patient's activity level.",
+      },
+      {
+        type: "heading",
+        text: "Conservative Treatment",
+      },
+      {
+        type: "paragraph",
+        text: "Stable, non-displaced fractures may heal without surgery. Treatment includes:",
+      },
+      {
+        type: "list",
+        items: [
+          "Immobilisation with a splint or cast",
+          "Ice and elevation",
+          "Pain management",
+          "Gradual weight-bearing",
+          "Structured physiotherapy",
+        ],
+      },
+      {
+        type: "paragraph",
+        text:
+          "Bone healing usually occurs within 6–8 weeks, although returning to sports takes longer.",
+      },
+      {
+        type: "heading",
+        text: "Surgical Treatment",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Unstable ankle fractures frequently require surgery, particularly in athletes and active individuals. Surgical options include:",
+      },
+      {
+        type: "list",
+        items: [
+          "Fibular plate fixation",
+          "Medial malleolus screw fixation",
+          "Syndesmotic screw or suture-button fixation",
+          "Minimally invasive fracture fixation in selected patients",
+        ],
+      },
+      {
+        type: "paragraph",
+        text:
+          "The objective is to restore normal anatomy, joint stability, and ankle function while allowing safe rehabilitation. As an orthopaedic trauma surgeon, my focus extends beyond bone healing. The ultimate goal is restoring strength, confidence, mobility, and long-term function.",
+      },
+      {
+        type: "heading",
+        text: "Rehabilitation: The Most Important Phase",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Successful surgery is only the first step. Comprehensive rehabilitation plays an equally important role in recovery. Rehabilitation focuses on:",
+      },
+      {
+        type: "list",
+        items: [
+          "Restoring ankle movement",
+          "Muscle strengthening",
+          "Balance training",
+          "Proprioception",
+          "Functional and sport-specific exercises",
+        ],
+      },
+      {
+        type: "paragraph",
+        text:
+          "For football players, rehabilitation also includes agility drills, explosive power training, and neuromuscular conditioning before returning to competition. Returning too early significantly increases the risk of re-injury.",
+      },
+      {
+        type: "heading",
+        text: "Possible Complications of Delayed Treatment",
+      },
+      {
+        type: "paragraph",
+        text: "Untreated or poorly managed ankle fractures can lead to:",
+      },
+      {
+        type: "list",
+        items: [
+          "Chronic ankle pain",
+          "Persistent swelling",
+          "Malunion",
+          "Ankle instability",
+          "Early osteoarthritis",
+          "Reduced athletic performance",
+        ],
+      },
+      {
+        type: "paragraph",
+        text:
+          "Even young athletes may develop premature ankle arthritis if joint alignment is not restored accurately.",
+      },
+      {
+        type: "heading",
+        text: "Can Football Players Return to Sport?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Yes. Most athletes return successfully following timely diagnosis, appropriate ankle fracture treatment, and dedicated rehabilitation. Recovery depends on:",
+      },
+      {
+        type: "list",
+        items: [
+          "Fracture severity",
+          "Ligament involvement",
+          "Surgical stability",
+          "Commitment to rehabilitation",
+        ],
+      },
+      {
+        type: "paragraph",
+        text:
+          "Simple fractures often allow return to sport within 2–3 months, while complex injuries may require 4–6 months or longer. Recovery should always be guided by function rather than fixed timelines.",
+      },
+      {
+        type: "heading",
+        text: "Final Thoughts from Dr. Tushar Nayak",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Whether you are a professional footballer, a weekend athlete, or someone recovering from an accident, an ankle fracture should never be ignored. Early diagnosis, appropriate treatment, and a structured rehabilitation programme can make the difference between a complete recovery and long-term pain, stiffness, or instability.",
+      },
+      {
+        type: "paragraph",
+        text:
+          "At Sparsh Hospital, we provide comprehensive care for ankle fractures, sports injuries, orthopaedic trauma, arthroscopic procedures, and advanced knee and hip replacement surgery. With modern imaging, evidence-based treatment, and personalised rehabilitation, our focus is on restoring mobility, relieving pain, and helping patients safely return to work, sports, and their daily activities.",
+      },
+      {
+        type: "paragraph",
+        text:
+          "If you experience persistent ankle pain, swelling, or difficulty walking after an injury, seek medical evaluation without delay. Timely intervention significantly improves outcomes and reduces the risk of long-term complications.",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Dr. Tushar Nayak is an orthopaedic surgeon trained at the All India Institute of Medical Sciences (AIIMS) with international exposure in sports medicine and joint replacement. He also holds a Diploma in FIFA Sports Medicine, bringing specialised expertise in the management of sports injuries and athletic rehabilitation. His practice includes ankle fracture treatment, ligament and tendon injuries, arthroscopic surgery, complex orthopaedic trauma, and knee and hip replacement surgery. By combining evidence-based medicine with advanced surgical techniques, he is committed to helping patients regain function, restore mobility, and return confidently to an active lifestyle.",
+      },
+    ],
+  },
   {
     slug: "experiencing-hand-pain-tech-might-be-held-guilty",
     title: "Experiencing Hand Pain? - Tech Might Be Held Guilty!",

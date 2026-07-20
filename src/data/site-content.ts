@@ -578,6 +578,473 @@ export const testimonials: Testimonial[] = [
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "tailbone-pain-coccydynia",
+    title: "Tailbone Pain (Coccydynia): Causes, Symptoms, Treatment, and When to See a Specialist",
+    heroImage: "/images/tailbone-pain-coccydynia-hero.jpg",
+    heroAlt: "Person experiencing discomfort in the lower back and tailbone area while sitting",
+    excerpt:
+      "Learn what causes coccydynia, how it is diagnosed, and the best treatment options—from cushions and physiotherapy to when surgery is considered.",
+    readingTime: "11 min read",
+    author: "Dr. Tushar Nayak | Robotic Knee Replacement Surgeon | Joint Replacement & Orthopaedic Specialist",
+    content: [
+      {
+        type: "heading",
+        text: "Tailbone Pain: Understanding the Cause and Finding the Right Treatment",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Tailbone pain, medically known as coccydynia, is a common condition that can significantly affect daily life. Simple activities such as sitting, driving, getting up from a chair, or even sleeping may become uncomfortable. Although tailbone pain is often associated with falls or injuries, many people develop pain without any obvious trauma.",
+      },
+      {
+        type: "paragraph",
+        text:
+          "As an experienced robotic knee replacement surgeon and orthopaedic specialist, Dr. Tushar Nayak believes that accurate diagnosis is the first step toward effective treatment. While robotic technology has transformed joint replacement surgery, comprehensive orthopaedic care also includes evaluating and treating conditions affecting the spine, pelvis, joints, and musculoskeletal system.",
+      },
+      {
+        type: "paragraph",
+        text:
+          "This guide explains the causes, symptoms, diagnosis, treatment options, and preventive measures for tailbone pain.",
+      },
+      {
+        type: "heading",
+        text: "What Is Tailbone Pain?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "The tailbone, or coccyx, is the small triangular bone located at the very bottom of the spine. It consists of three to five fused vertebrae and serves as an attachment point for muscles, tendons, and ligaments.",
+      },
+      {
+        type: "paragraph",
+        text:
+          "When the coccyx becomes inflamed, bruised, or injured, it can cause persistent pain known as coccydynia. The pain is usually felt directly over the tailbone and may worsen during:",
+      },
+      {
+        type: "list",
+        items: [
+          "Sitting for long periods",
+          "Standing up from a seated position",
+          "Driving",
+          "Leaning backward",
+          "Cycling",
+          "Bowel movements",
+          "Sexual intercourse in some individuals",
+        ],
+      },
+      {
+        type: "heading",
+        text: "Common Causes of Tailbone Pain",
+      },
+      {
+        type: "paragraph",
+        text: "Several factors can contribute to tailbone pain.",
+      },
+      {
+        type: "heading",
+        text: "1. Falls and Direct Injury",
+      },
+      {
+        type: "paragraph",
+        text:
+          "A backward fall onto a hard surface is one of the most common causes. The impact may bruise, dislocate, or fracture the coccyx.",
+      },
+      {
+        type: "heading",
+        text: "2. Childbirth",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Women may develop tailbone pain after difficult or prolonged vaginal delivery due to pressure placed on the coccyx.",
+      },
+      {
+        type: "heading",
+        text: "3. Prolonged Sitting",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Office workers, drivers, students, and people with sedentary lifestyles may experience chronic irritation from sitting for extended periods.",
+      },
+      {
+        type: "heading",
+        text: "4. Obesity or Rapid Weight Loss",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Extra body weight increases pressure on the coccyx, while significant weight loss reduces natural cushioning around the bone.",
+      },
+      {
+        type: "heading",
+        text: "5. Degenerative Changes",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Age-related arthritis and degeneration can affect the joints surrounding the coccyx.",
+      },
+      {
+        type: "heading",
+        text: "6. Repetitive Stress",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Activities like cycling, rowing, horse riding, or prolonged driving can repeatedly stress the tailbone.",
+      },
+      {
+        type: "heading",
+        text: "7. Rare Causes",
+      },
+      {
+        type: "paragraph",
+        text: "Occasionally, tailbone pain may result from:",
+      },
+      {
+        type: "list",
+        items: [
+          "Infection",
+          "Bone tumors",
+          "Pilonidal cyst",
+          "Nerve irritation",
+          "Referred pain from the lower spine",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "Proper evaluation is important to identify these less common causes.",
+      },
+      {
+        type: "heading",
+        text: "Symptoms of Tailbone Pain",
+      },
+      {
+        type: "paragraph",
+        text: "Patients commonly report:",
+      },
+      {
+        type: "list",
+        items: [
+          "Sharp pain over the tailbone",
+          "Pain while sitting",
+          "Tenderness when touching the area",
+          "Difficulty getting up from a chair",
+          "Pain during bowel movements",
+          "Pain after prolonged driving",
+          "Aching pain in the lower buttock region",
+          "Increased discomfort while leaning backward",
+        ],
+      },
+      {
+        type: "paragraph",
+        text:
+          "The severity varies from mild discomfort to persistent pain that interferes with work and daily activities.",
+      },
+      {
+        type: "heading",
+        text: "How Is Tailbone Pain Diagnosed?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Diagnosis begins with a detailed medical history and physical examination. Your orthopaedic specialist may ask:",
+      },
+      {
+        type: "list",
+        items: [
+          "When did the pain begin?",
+          "Was there any injury?",
+          "Is the pain worse while sitting?",
+          "Does walking improve the symptoms?",
+          "Is there numbness or radiating leg pain?",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "Investigations may include:",
+      },
+      {
+        type: "list",
+        items: [
+          "Digital X-rays",
+          "Dynamic sitting and standing X-rays",
+          "MRI scan",
+          "CT scan when fractures are suspected",
+          "Blood tests if infection is suspected",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "A proper diagnosis helps determine the most effective treatment plan.",
+      },
+      {
+        type: "heading",
+        text: "Treatment Options for Tailbone Pain",
+      },
+      {
+        type: "paragraph",
+        text: "Fortunately, most patients improve without surgery.",
+      },
+      {
+        type: "heading",
+        text: "Activity Modification",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Avoid prolonged sitting whenever possible. Take frequent standing breaks every 30–45 minutes.",
+      },
+      {
+        type: "heading",
+        text: "Special Cushions",
+      },
+      {
+        type: "paragraph",
+        text:
+          "A coccyx cushion or wedge cushion reduces pressure on the tailbone while sitting.",
+      },
+      {
+        type: "heading",
+        text: "Ice Therapy",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Applying ice packs during the first few days after injury helps reduce swelling and pain.",
+      },
+      {
+        type: "heading",
+        text: "Heat Therapy",
+      },
+      {
+        type: "paragraph",
+        text:
+          "For chronic pain, warm compresses or heating pads may relax surrounding muscles.",
+      },
+      {
+        type: "heading",
+        text: "Medications",
+      },
+      {
+        type: "paragraph",
+        text: "Your doctor may recommend:",
+      },
+      {
+        type: "list",
+        items: [
+          "Anti-inflammatory medicines",
+          "Pain relievers",
+          "Muscle relaxants when indicated",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "Medication should always be taken under medical supervision.",
+      },
+      {
+        type: "heading",
+        text: "Physiotherapy",
+      },
+      {
+        type: "paragraph",
+        text: "A structured rehabilitation program may include:",
+      },
+      {
+        type: "list",
+        items: [
+          "Stretching exercises",
+          "Pelvic floor muscle relaxation",
+          "Core strengthening",
+          "Posture correction",
+          "Manual therapy",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "Physiotherapy often provides significant long-term relief.",
+      },
+      {
+        type: "heading",
+        text: "Injections",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Persistent pain may improve with image-guided steroid or local anesthetic injections around the coccyx.",
+      },
+      {
+        type: "heading",
+        text: "When Is Surgery Needed?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Surgery for tailbone pain is uncommon. Removal of the coccyx (coccygectomy) is considered only when:",
+      },
+      {
+        type: "list",
+        items: [
+          "Pain lasts more than 6–12 months",
+          "Conservative treatment has failed",
+          "Imaging confirms significant coccyx pathology",
+          "Symptoms severely affect quality of life",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "Most patients recover successfully without surgery.",
+      },
+      {
+        type: "heading",
+        text: "Can Tailbone Pain Be Prevented?",
+      },
+      {
+        type: "paragraph",
+        text: "Simple lifestyle changes can reduce the risk.",
+      },
+      {
+        type: "list",
+        items: [
+          "Maintain healthy body weight.",
+          "Avoid prolonged sitting.",
+          "Use ergonomic seating.",
+          "Exercise regularly.",
+          "Strengthen core muscles.",
+          "Use proper posture.",
+          "Wear protective gear during sports.",
+          "Treat falls promptly.",
+        ],
+      },
+      {
+        type: "heading",
+        text: "Is Tailbone Pain Related to Knee Problems?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Many patients ask whether knee arthritis causes tailbone pain. In most cases, the answer is no.",
+      },
+      {
+        type: "paragraph",
+        text:
+          "However, severe knee arthritis may alter walking patterns, posture, and sitting habits, placing additional stress on the pelvis and lower back. Similarly, pain from the hips or lower spine may sometimes be mistaken for tailbone pain.",
+      },
+      {
+        type: "paragraph",
+        text:
+          "An experienced orthopaedic evaluation helps determine the true source of pain.",
+      },
+      {
+        type: "heading",
+        text: "Why Early Orthopaedic Consultation Matters",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Ignoring persistent tailbone pain can lead to chronic discomfort, reduced mobility, poor posture, and decreased quality of life. Early diagnosis allows appropriate treatment before symptoms become long-standing.",
+      },
+      {
+        type: "paragraph",
+        text:
+          "If your pain persists for several weeks or interferes with normal activities, consult an orthopaedic specialist for a thorough evaluation.",
+      },
+      {
+        type: "heading",
+        text: "Why Choose Dr. Tushar Nayak?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Dr. Tushar Nayak is committed to providing comprehensive orthopaedic care with a patient-centered approach. While recognized for expertise in robotic knee replacement surgery, he also evaluates a wide range of musculoskeletal conditions, helping patients receive an accurate diagnosis and personalized treatment plan.",
+      },
+      {
+        type: "paragraph",
+        text: "Patients choose Dr. Tushar Nayak for:",
+      },
+      {
+        type: "list",
+        items: [
+          "Comprehensive orthopaedic assessment",
+          "Evidence-based treatment recommendations",
+          "Expertise in robotic knee replacement",
+          "Modern diagnostic techniques",
+          "Personalized rehabilitation guidance",
+          "Focus on restoring mobility and improving quality of life",
+        ],
+      },
+      {
+        type: "paragraph",
+        text:
+          "Whether your symptoms involve the knee, hip, spine, or tailbone, timely evaluation can help identify the underlying cause and guide appropriate care.",
+      },
+      {
+        type: "heading",
+        text: "Frequently Asked Questions (FAQs)",
+      },
+      {
+        type: "heading",
+        text: "Is tailbone pain serious?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Most cases are not serious and improve with conservative treatment. However, persistent or severe pain should be evaluated by an orthopaedic specialist.",
+      },
+      {
+        type: "heading",
+        text: "How long does tailbone pain last?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Minor injuries may improve within a few weeks, while chronic cases can take several months depending on the underlying cause.",
+      },
+      {
+        type: "heading",
+        text: "Can sitting worsen tailbone pain?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Yes. Sitting, especially on hard surfaces or for prolonged periods, commonly aggravates symptoms.",
+      },
+      {
+        type: "heading",
+        text: "Does walking help tailbone pain?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Many patients feel better while walking because it reduces pressure on the coccyx.",
+      },
+      {
+        type: "heading",
+        text: "Can physiotherapy cure tailbone pain?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Physiotherapy is highly effective for many patients by improving posture, flexibility, and muscle support around the pelvis and lower back.",
+      },
+      {
+        type: "heading",
+        text: "Book Your Consultation",
+      },
+      {
+        type: "paragraph",
+        text:
+          "If you are experiencing persistent tailbone pain, difficulty sitting, or discomfort that affects your daily routine, seek a professional evaluation. Early diagnosis and appropriate treatment can help relieve pain and restore your quality of life.",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Consult Dr. Tushar Nayak for expert orthopaedic care, advanced diagnostics, and personalized treatment plans tailored to your needs.",
+      },
+    ],
+  },
+  {
     slug: "ankle-fractures-football-world-cup",
     title: "Ankle Fractures in Football: A World Cup Injury That Can End Careers — Early Treatment Makes All the Difference",
     heroImage: "/images/ankle-fractures-football-world-cup-hero.png",

@@ -1,4 +1,5 @@
 import type { ServiceIconKey } from "@/lib/service-icons";
+import { kneeSportsFaqBlogs } from "@/data/knee-sports-faq-blogs";
 
 export type FAQItem = {
   question: string;
@@ -577,6 +578,7 @@ export const testimonials: Testimonial[] = [
 ];
 
 export const blogArticles: BlogArticle[] = [
+  ...kneeSportsFaqBlogs,
   {
     slug: "tailbone-pain-coccydynia",
     title: "Tailbone Pain (Coccydynia): Causes, Symptoms, Treatment, and When to See a Specialist",

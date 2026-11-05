@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { doctorProfile } from "@/data/site-content";
+import { doctorProfile, servicesOffered } from "@/data/site-content";
 import {
   LuPhone,
   LuMail,
@@ -14,6 +14,7 @@ const quickLinks = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/#services" },
   { label: "Publications", href: "/publications" },
+  { label: "Educational videos", href: "/educational-videos" },
   { label: "Booking", href: "/booking" },
 ];
 
@@ -37,12 +38,12 @@ export function SiteFooter() {
     <footer className="relative bg-gray-950 text-white border-t-2 border-white/10 transition before:content-[''] before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-gradient-to-r before:from-teal-400 before:via-emerald-300 before:to-cyan-400 after:content-[''] after:absolute after:inset-x-0 after:bottom-0 after:h-1 after:bg-gradient-to-r after:from-teal-400 after:via-emerald-300 after:to-cyan-400">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-12 md:py-16 space-y-8 sm:space-y-12 md:space-y-16">
         {/* Top Section */}
-        <div className="grid gap-8 sm:gap-10 md:gap-12 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr]">
+        <div className="grid gap-8 sm:gap-10 md:gap-12 sm:grid-cols-2 lg:grid-cols-4">
           {/* About */}
           <div className="space-y-4 sm:space-y-5 md:space-y-6 sm:col-span-2 lg:col-span-1">
             <div>
               <p className="text-xl sm:text-2xl md:text-3xl font-black text-white mb-1 sm:mb-2">{doctorProfile.name}</p>
-              <p className="text-xs sm:text-sm font-bold text-brand-teal uppercase tracking-normal">Orthopaedic Surgeon</p>
+              <p className="text-xs sm:text-sm font-bold text-brand-teal uppercase tracking-normal">Orthopaedic Surgeon in Bangalore</p>
             </div>
             <p className="text-xs sm:text-sm leading-relaxed text-white max-w-md">
               {doctorProfile.intro}
@@ -82,6 +83,21 @@ export function SiteFooter() {
                 >
                   <LuArrowRight className="h-3 w-3 sm:h-4 sm:w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                   {link.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+
+          <div className="space-y-3 sm:space-y-4 md:space-y-6">
+            <h3 className="text-xs sm:text-sm font-black text-white uppercase tracking-normal">Treatments</h3>
+            <nav className="flex flex-col gap-2 sm:gap-3" aria-label="Treatments">
+              {servicesOffered.map((service) => (
+                <Link
+                  key={service.slug}
+                  href={`/treatments/${service.slug}`}
+                  className="text-xs sm:text-sm text-white hover:text-brand-teal transition"
+                >
+                  {service.title}
                 </Link>
               ))}
             </nav>

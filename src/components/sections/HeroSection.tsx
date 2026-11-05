@@ -110,9 +110,14 @@ export function HeroSection() {
             {/* Title and intro */}
             <div className="space-y-3 sm:space-y-4 lg:space-y-5">
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black leading-[1.1] tracking-tight text-white">
-                Dr. Tushar{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-teal to-cyan-400">
-                  Nayak
+                <span className="block">
+                  Dr. Tushar{" "}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-teal to-cyan-400">
+                    Nayak
+                  </span>
+                </span>
+                <span className="mt-2 block text-base font-bold tracking-normal text-white/90 sm:text-lg md:text-xl lg:text-2xl">
+                  Orthopaedic Surgeon in Bangalore
                 </span>
               </h1>
 

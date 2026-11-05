@@ -1,5 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { LuMapPin, LuClock, LuPhone, LuExternalLink, LuInfo } from "react-icons/lu";
+import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Book an Orthopaedic Appointment in Bangalore",
+  description:
+    "Book Dr. Tushar Nayak in Bangalore. Sparsh Hospital, Hennur, Monday to Saturday 10 AM–5 PM. Nishtha Healthcare, CV Raman Nagar, evenings and Sunday morning.",
+  path: "/booking",
+});
 
 const locations = [
   {
@@ -30,6 +40,12 @@ export default function BookingLocationsPage() {
   return (
     <section className="relative min-h-screen text-white overflow-hidden bg-transparent">
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 md:px-8 py-10 sm:py-16 md:py-20 lg:py-24">
+        <Breadcrumbs
+          items={[
+            { name: "Home", path: "/" },
+            { name: "Book an appointment", path: "/booking" },
+          ]}
+        />
         {/* Header */}
         <div className="mb-8 sm:mb-12 md:mb-16 text-center">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight mb-3 sm:mb-4 text-white">
@@ -113,6 +129,15 @@ export default function BookingLocationsPage() {
                   </div>
                 </div>
               </div>
+
+              {location.id === 2 ? (
+                <Link
+                  href="/booking/nishtha"
+                  className="mt-4 inline-flex text-xs font-bold text-brand-teal transition hover:text-cyan-400 sm:text-sm"
+                >
+                  Book online at Nishtha Healthcare
+                </Link>
+              ) : null}
 
               {/* CTA Button */}
               <div className="mt-5 sm:mt-6 md:mt-8">

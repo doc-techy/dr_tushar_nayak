@@ -542,12 +542,15 @@ export const getServiceBySlug = (slug: string) =>
 
 /** Slugs for the 6 featured banner services on the homepage (order preserved) */
 export const featuredServiceSlugs: string[] = [
+  "knee-replacement",
   "hip-joint-replacement",
   "knee-arthroscopy",
   "back-pain-management",
   "spinal-surgeries",
   "sports-injuries",
   "physiotherapy",
+  "arthritis",
+  "trauma-management",
 ];
 
 export const testimonials: Testimonial[] = [

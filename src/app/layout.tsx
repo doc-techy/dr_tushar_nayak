@@ -4,7 +4,10 @@ import "./globals.css";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { FloatingWhatsAppButton } from "@/components/FloatingWhatsAppButton";
+import { GoogleAnalytics } from "@/components/seo/GoogleAnalytics";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { doctorProfile } from "@/data/site-content";
+import { siteGraph, SITE_NAME, SITE_URL, verificationToken } from "@/lib/seo";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -17,39 +20,73 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-const siteUrl = "https://drtusharnayak.com";
+const homeTitle = `${SITE_NAME} | Orthopaedic Surgeon in Bangalore`;
+const homeDescription =
+  "Orthopaedic surgeon in Bangalore for knee and hip replacement, arthroscopy, sports injuries, and spine care. Book Dr. Tushar Nayak.";
+
+const googleVerification = verificationToken(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION);
+const bingVerification = verificationToken(process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION);
 
 export const metadata: Metadata = {
-  title: `${doctorProfile.name} | Orthopaedic Surgeon in Bangalore`,
-  description:
-    "Evidence-led orthopaedic care by Dr. Tushar Nayak — robotic joint replacement, sports injury rehabilitation, and joint preservation programs in Bangalore.",
-  metadataBase: new URL(siteUrl),
+  title: {
+    default: homeTitle,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: homeDescription,
+  metadataBase: new URL(SITE_URL),
+  applicationName: SITE_NAME,
+  authors: [{ name: doctorProfile.name, url: SITE_URL }],
+  creator: doctorProfile.name,
+  publisher: doctorProfile.name,
+  category: "health",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
-    title: `${doctorProfile.name} | Orthopaedic Surgeon in Bangalore`,
-    description:
-      "Robotic knee and hip replacement, sports injury clinic, and personalised rehabilitation backed by global fellowships.",
-    url: siteUrl,
-    siteName: doctorProfile.name,
+    title: homeTitle,
+    description: homeDescription,
+    url: SITE_URL,
+    siteName: SITE_NAME,
     locale: "en_IN",
     type: "website",
+    images: [
+      {
+        url: "/images/img1.avif",
+        alt: "Dr. Tushar Nayak, orthopaedic surgeon in Bangalore",
+      },
+    ],
   },
   alternates: {
-    canonical: siteUrl,
+    canonical: "/",
   },
   twitter: {
     card: "summary_large_image",
-    title: `${doctorProfile.name} | Orthopaedic Surgeon in Bangalore`,
-    description:
-      "Precision orthopaedics, minimally invasive surgery, and holistic post-operative rehabilitation by Dr. Tushar Nayak.",
+    title: homeTitle,
+    description: homeDescription,
+    images: ["/images/img1.avif"],
   },
   keywords: [
     "Dr Tushar Nayak",
     "orthopaedic surgeon Bangalore",
-    "robotic knee replacement",
-    "hip replacement specialist",
-    "sports injury doctor",
-    "orthopaedic surgeon Bengaluru",
+    "orthopedic doctor Bengaluru",
+    "knee replacement surgeon Bangalore",
+    "hip replacement Bangalore",
+    "sports injury doctor Bangalore",
+    "arthroscopy Bangalore",
+    "spine surgeon Bangalore",
   ],
+  verification: {
+    ...(googleVerification ? { google: googleVerification } : {}),
+    ...(bingVerification ? { other: { "msvalidate.01": bingVerification } } : {}),
+  },
 };
 
 export default function RootLayout({
@@ -58,8 +95,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en-IN">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased text-white overflow-x-hidden`}>
+        <JsonLd data={siteGraph()} />
+        <GoogleAnalytics />
         {/* Global background - dark blue throughout all pages */}
         <div className="pointer-events-none fixed inset-0 z-0 bg-[#0a1628]">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-30" aria-hidden />

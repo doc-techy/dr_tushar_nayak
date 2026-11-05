@@ -23,7 +23,7 @@ export function ServicesSection() {
             <span className="text-white">orthopaedic care</span>
           </h2>
           <p className="max-w-3xl mx-auto text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-white leading-relaxed font-light">
-            From prevention and diagnostics to surgical excellence and rehab, choose a program designed
+            From prevention and diagnostics to surgical excellence and rehab in Bangalore, choose a program designed
             around your activity goals and recovery speed.
           </p>
         </div>

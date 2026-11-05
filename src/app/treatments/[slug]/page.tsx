@@ -3,7 +3,10 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import type { StaticImageData } from "next/image";
 import { notFound } from "next/navigation";
+import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { getServiceBySlug } from "@/data/site-content";
+import { pageMetadata, treatmentSchema, treatmentSeo } from "@/lib/seo";
 
 import kneeReplacementImage from "@/public/images/knee-replacement.jpg";
 import hipJointReplacementImage from "@/public/images/hip_joint_replacement.jpg";
@@ -536,16 +539,16 @@ export async function generateMetadata({ params }: TreatmentPageProps): Promise<
   }
 
   const content = treatmentContent[service.slug] ?? null;
-  const pageTitle = content?.heroTitle ?? service.title;
-  const description = content?.heroTagline ?? service.description;
+  const seo = treatmentSeo[service.slug];
+  const pageTitle = seo?.title ?? `${content?.heroTitle ?? service.title} in Bangalore`;
+  const description = seo?.description ?? content?.heroTagline ?? service.description;
 
-  return {
-    title: `${pageTitle} | Dr. Tushar Nayak`,
+  return pageMetadata({
+    title: pageTitle,
     description,
-    alternates: {
-      canonical: `/treatments/${service.slug}`,
-    },
-  };
+    path: `/treatments/${service.slug}`,
+    images: [service.heroImage],
+  });
 }
 
 export default async function TreatmentPage({ params }: TreatmentPageProps) {
@@ -565,10 +568,26 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
     ? `${heroImageData.width} / ${heroImageData.height}`
     : "4 / 3";
 
+  const path = `/treatments/${service.slug}`;
+
   return (
     <section className="relative overflow-hidden text-white">
+      <JsonLd
+        data={treatmentSchema({
+          name: pageTitle,
+          description: heroDescription,
+          path,
+          slug: service.slug,
+        })}
+      />
 
       <div className="relative z-10 mx-auto flex max-w-7xl flex-col gap-4 lg:gap-16 px-4 pb-12 lg:pb-28 pt-4 lg:pt-8 sm:px-6 lg:px-8">
+        <Breadcrumbs
+          items={[
+            { name: "Home", path: "/" },
+            { name: service.title, path },
+          ]}
+        />
 
         <div className="grid gap-4 lg:gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div className="relative order-1 lg:order-2">

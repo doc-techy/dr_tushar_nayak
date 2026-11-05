@@ -1,3 +1,12 @@
+import type { Metadata } from "next";
+import { NOINDEX_ROBOTS } from "@/lib/seo";
+
+export const metadata: Metadata = {
+  title: { absolute: "Invoice" },
+  robots: NOINDEX_ROBOTS,
+  alternates: { canonical: "/invoice" },
+};
+
 export default function InvoiceLayout({ children }: { children: React.ReactNode }) {
   return (
     <>

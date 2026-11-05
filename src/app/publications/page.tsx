@@ -1,5 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { LuExternalLink, LuFileText, LuBookOpen, LuQuote } from "react-icons/lu";
+import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Orthopaedic Research and Publications",
+  description:
+    "Peer-reviewed orthopaedic research by Dr. Tushar Nayak, including knee arthroplasty, trauma, acetabular fractures, and sports medicine.",
+  path: "/publications",
+});
 
 const researchGateProfile = {
   url: "https://www.researchgate.net/profile/Tushar-Nayak-2",
@@ -108,6 +118,12 @@ export default function PublicationsPage() {
   return (
     <section className="relative min-h-screen text-white overflow-hidden">
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 md:px-8 pt-6 sm:pt-8 md:pt-10 lg:pt-12 pb-10 sm:pb-16 md:pb-20 lg:pb-24">
+        <Breadcrumbs
+          items={[
+            { name: "Home", path: "/" },
+            { name: "Publications", path: "/publications" },
+          ]}
+        />
         {/* Header */}
         <div className="mb-10 sm:mb-14 text-center">
 

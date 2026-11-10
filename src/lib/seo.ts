@@ -50,6 +50,21 @@ export function gaMeasurementId(value: string | undefined) {
   return match ? match[0].toUpperCase() : undefined;
 }
 
+export function gtmContainerId(value: string | undefined) {
+  if (!value) return undefined;
+  const match = value.match(/GTM-[A-Z0-9]+/i);
+  return match ? match[0].toUpperCase() : undefined;
+}
+
+export const GA_MEASUREMENT_ID =
+  gaMeasurementId(process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID) ?? "G-71JNM4RK4D";
+
+export const GTM_ID = gtmContainerId(process.env.NEXT_PUBLIC_GTM_ID) ?? "GTM-MS9BX9ZD";
+
+export const GOOGLE_SITE_VERIFICATION =
+  verificationToken(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION) ??
+  "7RI4v5hCddFQwPSZJ1v6nvUdmJ3bXKwfnIL3GOAu67o";
+
 export function verificationToken(value: string | undefined) {
   if (!value) return undefined;
   const trimmed = value.trim();

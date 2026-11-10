@@ -7,7 +7,7 @@ import { FloatingWhatsAppButton } from "@/components/FloatingWhatsAppButton";
 import { GoogleAnalytics } from "@/components/seo/GoogleAnalytics";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { doctorProfile } from "@/data/site-content";
-import { siteGraph, SITE_NAME, SITE_URL, verificationToken } from "@/lib/seo";
+import { GOOGLE_SITE_VERIFICATION, siteGraph, SITE_NAME, SITE_URL, verificationToken } from "@/lib/seo";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -24,7 +24,7 @@ const homeTitle = `${SITE_NAME} | Orthopaedic Surgeon in Bangalore`;
 const homeDescription =
   "Orthopaedic surgeon in Bangalore for knee and hip replacement, arthroscopy, sports injuries, and spine care. Book Dr. Tushar Nayak.";
 
-const googleVerification = verificationToken(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION);
+const googleVerification = GOOGLE_SITE_VERIFICATION;
 const bingVerification = verificationToken(process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION);
 
 export const metadata: Metadata = {

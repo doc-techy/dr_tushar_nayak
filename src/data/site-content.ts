@@ -49,6 +49,7 @@ export type BlogPost = {
   slug: string;
   excerpt: string;
   readingTime: string;
+  isNew?: boolean;
 };
 
 export type BlogContentBlock =
@@ -64,6 +65,7 @@ export type BlogArticle = {
   excerpt: string;
   readingTime: string;
   author?: string;
+  isNew?: boolean;
   content: BlogContentBlock[];
 };
 
@@ -179,9 +181,8 @@ export const servicesOffered: Service[] = [
     ],
     details:
       "A Total Knee Replacement (TKR) replaces the worn or damaged parts of the knee with artificial metal and high-density plastic components. The prosthesis may be cemented in place with special bone cement or feature porous surfaces that allow bone to grow in for a snug fit—mirroring the clinic’s detailed treatment description.",
-    heroImage:
-      "https://images.unsplash.com/photo-1580281658629-67e00f68f643?auto=format&fit=crop&w=1200&q=80",
-    heroAlt: "Orthopaedic surgeon reviewing knee replacement implant with patient",
+    heroImage: "/images/knee-replacement.jpg",
+    heroAlt: "Total knee replacement procedure and implant care",
     sections: [
       {
         heading: "Precisely aligned implants",
@@ -582,6 +583,213 @@ export const testimonials: Testimonial[] = [
 
 export const blogArticles: BlogArticle[] = [
   ...kneeSportsFaqBlogs,
+  {
+    slug: "knee-cracking-sound-causes-concerns-care",
+    title: "Knee Cracking Sound: Why Your Knees Pop and When to Worry",
+    heroImage: "/images/knee-cracking-sound-hero.png",
+    heroAlt: "Knee with cracking sound, illustrating knee crepitus and joint health",
+    excerpt:
+      "Discover the reasons behind knee cracking sounds, when it might be a concern, and effective ways to maintain healthy joints. Learn to distinguish between harmless crepitus and signs of a more serious knee condition.",
+    readingTime: "9 min read",
+    isNew: true,
+    author: "Dr. Tushar Nayak | Robotic Knee Replacement Surgeon | Joint Replacement & Orthopaedic Specialist",
+    content: [
+      {
+        type: "paragraph",
+        text:
+          "A sharp crack as you stand up from the floor, a soft pop on the stairs, a gritty grinding sensation during a squat — a knee cracking sound is one of the most common joint complaints in the world, and also one of the most misunderstood.",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Most of the time the noise is nothing more than gas or soft tissue shifting inside the joint. But because the knee carries your body weight every day, the same sound can occasionally point to cartilage wear or a ligament injury. This guide explains what crepitus knee actually means, why your knee popping sound happens, and when it deserves a doctor's visit.",
+      },
+      {
+        type: "heading",
+        text: "What Is Crepitus Knee and What Causes the Knee Cracking Sound?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "The medical term for that crackling, clicking, or grating feeling and sound inside your joint is called crepitus. In the knee, crepitus is very common, and most of the time it isn't related to disease or injury – many people are just aware of it for years.",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Clinicians generally categorize crepitus into physiological (without disease or injury) or pathological (with disease or injury) based on whether it's tied to painful, swollen, or unstable joints.",
+      },
+      {
+        type: "heading",
+        text: "Gas Bubbles Collapsing in Synovial Fluid (Cavitation)",
+      },
+      {
+        type: "paragraph",
+        text:
+          "The knee is a synovial joint containing fluid that lubricates and cushions its surfaces. Carbon dioxide and nitrogen dissolved in this fluid can form tiny bubbles when the pressure inside the joint shifts during bending or straightening. When these bubbles collapse, a single sharp crack is heard—this is the same cavitation effect responsible for the sound of knuckle cracking.",
+      },
+      {
+        type: "heading",
+        text: "Tendons and Ligaments Gliding Over Bone",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Tendons and ligaments run tightly across bony landmarks around the knee. As the joint flexes, these soft tissues can flick or snap over a bony bump, producing a repetitive click rather than one clean crack. This mechanical type is usually painless and often repeatable every single time you move the leg.",
+      },
+      {
+        type: "heading",
+        text: "Cartilage Wear and Patellofemoral Tracking",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Finally, aging joint cartilage loses its slick, shiny appearance and gets roughened by wear and tear or early osteoarthritis. It's more of a grating, grinding sensation when the joint surfaces don't move as quietly as they used to—when you're climbing stairs, doing squats, after sitting for a while, or pushing through activity. This type is usually stiff or achy as well.",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Understanding whether you're dealing with one of these three mechanisms is the first step, and it helps explain why the same noise can be no concern for one person and a warning sign for another.",
+      },
+      {
+        type: "heading",
+        text: "Why Does My Knee Click When I Bend and Straighten It?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Flexion and extension are exactly the movements that change pressure within the capsule—which is why most people notice popping in these positions. The kneecap position and tension throughout the muscular fascial structure shift at every degree of motion.",
+      },
+      {
+        type: "list",
+        items: [
+          "Inside the joint capsule – As the knee flexes, synovial fluid is compressed and dissolved gases come out of solution. The collapse of those bubbles creates a click at a consistent angle of movement.",
+          "Kneecap tracking – The patella moves within a groove on the femur. If the quadriceps muscles are weak or the alignment is slightly off, the kneecap may shift sideways and then click back into place.",
+          "Tight soft tissue snapping – When the iliotibial band, hamstring, or tendon are tight, they can flick across the joint line when extended. This is often painless but can become sore if the tissue is inflamed.",
+        ],
+      },
+      {
+        type: "paragraph",
+        text:
+          "Knowing the pattern of clicking — whether it happens at the same angle, or at any angle — allows the clinician to focus on potential causes very quickly.",
+      },
+      {
+        type: "heading",
+        text: "Knee Popping Sound With Pain or Swelling: When to Worry",
+      },
+      {
+        type: "paragraph",
+        text:
+          "It's not so much the noise that signifies damage, but the clinical picture when a knee popping sound is accompanied by persistent pain, swelling, locking, or a catching feeling that the knee is going to give way.",
+      },
+      {
+        type: "list",
+        items: [
+          "Pain that lingers or gets worse – Pain that continues after a few minutes is more likely an irritated joint surface or inflamed tissue, rather than a simple gas bubble.",
+          "Swelling hours after injury – Rapid swelling often means fluid or blood in the joint and calls for prompt evaluation.",
+          "Locking, catching, or giving way – If your knee suddenly locks or feels as if it is going to give way, this is a mechanical red flag and needs assessment.",
+        ],
+      },
+      {
+        type: "heading",
+        text: "Does a Meniscus Tear Make a Crunching Sound?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Yes, it can. Meniscal tears commonly cause a clicking, catching, or crunching sensation, mainly when twisting, deep-squatting, or pivoting on a flexed knee. This can be connected to joint-line pain, swelling, and loss of motion, and the diagnosis is made through the physical exam followed by magnetic resonance imaging (MRI).",
+      },
+      {
+        type: "heading",
+        text: "Does a Torn ACL Make a Popping Sound?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "An anterior cruciate ligament tear typically causes an audible pop at the time of injury, often occurring during pivoting movements or landing from a jump. This is usually followed by rapid swelling and a feeling of instability. This single injury-related pop is distinctly different from the everyday, repetitive crepitus mentioned earlier, and it always needs medical assessment.",
+      },
+      {
+        type: "heading",
+        text: "Is It Good to Pop Knees If It Needs?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Many people crack their knees deliberately because it delivers a brief feeling of release.",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Chronic, painless popping of a joint has not been proven to lead to arthritis, so an occasional voluntary pop isn't hazardous. What isn't smart is forcefully eliciting a pop from a painful or swollen knee, or continuing to do so despite locking or instability—those symptoms should be assessed rather than ignored.",
+      },
+      {
+        type: "heading",
+        text: "How to Reduce Knee Cracking: Strength, Weight and Daily Care",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Most benign knee popping needs no treatment, but mechanical knee popping usually settles as the muscles supporting the joint strengthen and loading is managed correctly.",
+      },
+      {
+        type: "list",
+        items: [
+          "Increase quads and glutes – Straight-leg raises, wall sits and step-ups develop the muscles that guide how your kneecap moves as you walk. Begin with minimal resistance and gradually increase over a few weeks.",
+          "Get warm and keep moving – Five-minute warm-up sessions and short movement breaks during the day minimize stiffness-driven crepitus. The first few steps after a long period of sitting tend to be loud.",
+          "Manage body weight and footwear – Every additional kilogram adds to the load on the patellofemoral joint. Supportive cushioned shoes and a gentle weight loss program help ease repetitive stress.",
+        ],
+      },
+      {
+        type: "heading",
+        text: "Quick Glance: Final Checklist for Knee Crepitus",
+      },
+      {
+        type: "list",
+        items: [
+          "Normal cavitation usually causes painless clicking in a normal knee.",
+          "Pain beneath the kneecap that gets worse going upstairs indicates cartilage issues involving the kneecap and thigh.",
+          "Quick swelling after a twist needs a same-week medical assessment.",
+          "Never ignore locking, catching, or giving way.",
+          "Most mechanical sounds improve with strength work, weight management and warm-ups.",
+        ],
+      },
+      {
+        type: "paragraph",
+        text:
+          "Knee cracking is usually just your joint working. But it's worth getting checked out if you have pain or the knee feels unstable. Early evaluation of the pattern of crepitus and maintaining the musculature around the knee means that, most of the time, the noise stays in the background and is not a clinical concern. Knowledge and early support of a painful knee go a long way—so talk to Dr. Tushar Nayak today if you feel your knees have any problems.",
+      },
+      {
+        type: "heading",
+        text: "FAQ",
+      },
+      {
+        type: "heading",
+        text: "Can knee cracking cause arthritis?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Normal, pain-free cracking has not been proven to cause arthritis on its own. Arthritis is linked to cartilage degeneration, age, overweight and injury, not the noise of gas bubbles bursting.",
+      },
+      {
+        type: "heading",
+        text: "Should I worry if my knee cracks but does not hurt?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "No—usually this is normal physiological crepitus and doesn't require treatment other than keeping the knee mobile.",
+      },
+      {
+        type: "heading",
+        text: "Do knee braces help with the crepitus knee?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Braces are not a treatment for crepitus, but they can provide support and assurance during activity in certain situations. A clinician or physiotherapist should be consulted to help select a brace and guide strengthening.",
+      },
+    ],
+  },
   {
     slug: "tailbone-pain-coccydynia",
     title: "Tailbone Pain (Coccydynia): Causes, Symptoms, Treatment, and When to See a Specialist",
@@ -1565,12 +1773,15 @@ export const blogArticles: BlogArticle[] = [
   },
 ];
 
-export const blogSpotlight: BlogPost[] = blogArticles.map(({ title, slug, excerpt, readingTime }) => ({
-  title,
-  slug,
-  excerpt,
-  readingTime,
-}));
+export const blogSpotlight: BlogPost[] = blogArticles
+  .filter((article) => !article.slug.startsWith("faq-"))
+  .map(({ title, slug, excerpt, readingTime, isNew }) => ({
+    title,
+    slug,
+    excerpt,
+    readingTime,
+    isNew,
+  }));
 
 export const getBlogBySlug = (slug: string) => blogArticles.find((article) => article.slug === slug);
 

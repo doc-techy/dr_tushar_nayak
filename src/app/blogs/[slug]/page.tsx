@@ -53,6 +53,7 @@ export default async function BlogArticlePage({ params }: BlogArticlePageParams)
   const faqs = articleFaqs(article.content);
   const crumbs = [
     { name: "Home", path: "/" },
+    { name: "Blogs", path: "/blogs" },
     { name: article.title, path },
   ];
 

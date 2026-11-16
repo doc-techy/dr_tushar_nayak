@@ -13,6 +13,7 @@ import {
 const quickLinks = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/#services" },
+  { label: "Blogs", href: "/blogs" },
   { label: "Publications", href: "/publications" },
   { label: "Educational videos", href: "/educational-videos" },
   { label: "Booking", href: "/booking" },

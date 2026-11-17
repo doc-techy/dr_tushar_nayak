@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { LuArrowRight } from "react-icons/lu";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
-import { blogArticles } from "@/data/site-content";
+import { blogSpotlight } from "@/data/site-content";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
@@ -37,7 +37,7 @@ export default function BlogsPage() {
         </div>
 
         <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6 lg:gap-8">
-          {blogArticles.map((post) => (
+          {blogSpotlight.map((post) => (
             <article
               key={post.slug}
               className="group relative overflow-hidden rounded-xl sm:rounded-2xl md:rounded-3xl bg-white/5 backdrop-blur-sm border border-white/10 sm:border-2 p-3 sm:p-5 md:p-6 lg:p-8 shadow-sm sm:shadow-md hover:bg-white/10 hover:border-brand-teal/40 transition-all duration-500 hover:-translate-y-2 sm:hover:-translate-y-3 lg:hover:-translate-y-4 hover:shadow-lg sm:hover:shadow-xl hover:shadow-brand-teal/20"

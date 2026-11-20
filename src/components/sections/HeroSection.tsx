@@ -13,10 +13,10 @@ const signatureProgrammes = [
 ];
 
 const sliderImages = [
-  { src: "/images/img1.avif", alt: "Dr. Tushar Nayak consulting a patient" },
-  { src: "/images/img2.avif", alt: "Dr. Tushar Nayak performing a procedure" },
-  { src: "/images/img3.png", alt: "Dr. Tushar Nayak addressing a medical team" },
-  { src: "/images/img4.avif", alt: "Dr. Tushar Nayak reviewing scans" },
+  { src: "/images/hero/hero-1.jpg", alt: "Dr. Tushar Nayak consulting a patient" },
+  { src: "/images/hero/hero-2.jpg", alt: "Dr. Tushar Nayak performing a procedure" },
+  { src: "/images/hero/hero-3.jpg", alt: "Dr. Tushar Nayak addressing a medical team" },
+  { src: "/images/hero/hero-4.jpg", alt: "Dr. Tushar Nayak reviewing scans" },
 ];
 
 // Replace with your actual introduction video URL (YouTube, Vimeo, or direct video file)
@@ -52,7 +52,7 @@ export function HeroSection() {
       <div className="relative w-full max-w-[1600px] mx-auto px-0 sm:px-6 md:px-10 lg:px-16 xl:px-24 pt-0 sm:pt-8 md:pt-10 lg:pt-12 pb-4 sm:pb-8 md:pb-10 lg:pb-12">
         
         {/* Grid: stacked on mobile, side-by-side on md+ */}
-        <div className="grid gap-4 sm:gap-8 md:gap-10 lg:gap-16 xl:gap-20 md:grid-cols-[1fr_1.2fr] lg:grid-cols-[0.85fr_1.15fr] xl:grid-cols-[0.9fr_1.1fr] items-center">
+        <div className="grid gap-4 sm:gap-8 md:gap-8 lg:gap-12 xl:gap-16 md:grid-cols-[1.05fr_1fr] lg:grid-cols-[1fr_1.05fr] items-start">
           
           {/* Image Section */}
           <aside className="md:order-1 w-full relative">
@@ -67,7 +67,7 @@ export function HeroSection() {
               <div className="rounded-none sm:rounded-2xl md:rounded-[1.75rem] lg:rounded-[2.25rem] bg-gray-950/40 p-0 sm:p-1 backdrop-blur-xl">
                 <div className="relative overflow-hidden rounded-none sm:rounded-xl md:rounded-[1.5rem] lg:rounded-[2rem] border-0 sm:border border-white/20 bg-white/5">
                   {/* Responsive image heights - taller on mobile */}
-                  <div className="relative h-[360px] sm:h-[350px] md:h-[400px] lg:h-[500px] xl:h-[560px]">
+                  <div className="relative aspect-[9/10] w-full">
                     {sliderImages.map((image, index) => (
                       <div
                         key={image.src}
@@ -80,7 +80,7 @@ export function HeroSection() {
                           fill
                           priority={index === 0}
                           sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 45vw, 40vw"
-                          className="object-cover"
+                          className="object-cover object-center"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-gray-950/50 via-gray-950/20 to-transparent" aria-hidden />
                       </div>

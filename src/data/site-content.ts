@@ -584,6 +584,204 @@ export const testimonials: Testimonial[] = [
 export const blogArticles: BlogArticle[] = [
   ...kneeSportsFaqBlogs,
   {
+    slug: "back-pain-radiating-to-legs-causes-symptoms-treatments",
+    title: "Back Pain Radiating to Legs: Causes, Symptoms and Treatment",
+    heroImage: "/images/back_pain_management.jpg",
+    heroAlt: "A conceptual image of a person experiencing back pain radiating down the legs",
+    excerpt:
+      "Discover why back pain radiates to the legs, explore its causes, identify symptoms, and learn effective treatments. Get expert advice on managing and alleviating pain for improved well-being.",
+    readingTime: "6 min read",
+    isNew: true,
+    author: "Dr. Tushar Nayak | Robotic Knee Replacement Surgeon | Joint Replacement & Orthopaedic Specialist",
+    content: [
+      {
+        type: "paragraph",
+        text:
+          "Back pain is a frequent issue, but when the pain extends into the leg, it presents differently. This pain might feel like a dull ache, a burning sensation along a line, or a shock-like feeling. This guide outlines possible causes, warning signs, relief methods, and posture adjustments. It is intended for informational purposes and does not substitute professional medical advice.",
+      },
+      {
+        type: "heading",
+        text: "What Does Back Pain Radiating to the Legs Mean?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "If back pain spreads into the legs, it probably involves a nerve in the spine that's swollen or compressed. Doctors term this type of pain radicular pain. Sciatica is a typical condition, but not all leg pain that stems from the low back is classified as sciatica.",
+      },
+      {
+        type: "heading",
+        text: "What symptoms can accompany lower back ache radiating to legs?",
+      },
+      {
+        type: "list",
+        items: [
+          "Numbness, tingling. You may notice numbness or tingling in the leg if a nerve is irritated. It might feel like pins and needles or a numb sensation.",
+          "Shooting or burning pain. The pain may be in a line down the leg and not just in one place. The pain may be aggravated by sitting, coughing, or bending.",
+          "Weakness or heaviness. You may get tired or feel the leg give way. If the weakness is ongoing, it needs checking by a clinician.",
+          "Hip and buttock pain. Lower back pain that radiates down both legs and hips can be a sign of nerve, joint, or muscle problems.",
+        ],
+      },
+      {
+        type: "heading",
+        text: "Does back pain radiating to the left leg or back pain radiating to the right leg mean something different?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Side by itself does not indicate a cause. If you have back pain radiating to the left leg or back pain radiating to the right leg, you may have a disc, sacroiliac joint, or piriformis problem. The physician looks at pattern, reflexes, and strength.",
+      },
+      {
+        type: "heading",
+        text: "What could be causing severe pain in my lower back that radiates down both legs?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Bilateral radiation is seen with a central disc herniation, spinal stenosis, or sacroiliac joint dysfunction. If there is saddle numbness, bladder or bowel changes, or sudden weakness in the leg, seek urgent medical attention. Do not wait for it to settle.",
+      },
+      {
+        type: "heading",
+        text: "What could be causing pain in my lower left back?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Pain on your left side can be caused by a lumbar disc, sacroiliac joint, piriformis muscle, or lumbar strain. Location is not the only answer you need to determine the cause of your pain. Physical examination and imaging help identify the real cause.",
+      },
+      {
+        type: "heading",
+        text: "Common Causes of Back Pain Radiating to the Legs",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Multiple structures can refer pain into the leg. The pattern of symptoms matters more than any single complaint. These are many of the common diagnoses:",
+      },
+      {
+        type: "list",
+        items: [
+          "Herniated disc. A lumbar disc protrusion or rupture can impinge or inflame a nerve root, where the nerve exits the spinal canal. The pain in the leg usually radiates along the course of that nerve. A common source of sciatica.",
+          "Degenerative disc disease or annular tear. Wear and tear or a tear of the disc can result in inflammation. The pain may travel down the leg without a large disc prolapse.",
+          "Spinal stenosis and bone outgrowth. Narrowing in the spine can put pressure on nerves. Symptoms tend to be worse with walking and better when sitting.",
+          "Sacroiliac joint dysfunction. The joint can cause pain in the buttock and leg, and can be confused with sciatica.",
+          "Piriformis syndrome. The piriformis muscle can irritate the sciatic nerve. You may feel pain deep in the buttock that radiates down the leg.",
+        ],
+      },
+      {
+        type: "heading",
+        text: "How can I relieve sciatic nerve pain?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Most people improve with conservative treatment, but red flags need urgent attention. A treatment plan, which Dr. Tushar Nayak can coordinate with qualified specialists, is safer than unguided stretching. Treatment varies based on the cause and severity of the problem.",
+      },
+      {
+        type: "heading",
+        text: "What conservative treatments are used?",
+      },
+      {
+        type: "list",
+        items: [
+          "Graded exercise. Gentle movement and specific strengthening can reduce nerve irritation. Avoid sudden aggressive stretches.",
+          "Manual therapy and physiotherapy. The therapist can assess posture, movement, and nerve tension, then guide the next steps safely.",
+          "Medications. A doctor might suggest NSAIDs or muscle relaxants for a limited time. Do not take medications on your own for an extended period.",
+        ],
+      },
+      {
+        type: "heading",
+        text: "When should you seek urgent care?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "See a doctor immediately if you experience saddle numbness, loss of bladder or bowel function, bilateral leg weakness, fever, or pain after significant trauma. These are warning signs, not everyday sciatica.",
+      },
+      {
+        type: "heading",
+        text: "What is the best sitting position for lower back pain?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "There is no single perfect posture. A supported neutral spine, with regular movement, is preferable to sitting still. You sit better when your chair is adjusted to you.",
+      },
+      {
+        type: "heading",
+        text: "How should you set up your chair?",
+      },
+      {
+        type: "list",
+        items: [
+          "Foot support. Keep feet flat. Use a footrest if necessary.",
+          "Maintain hips and knees at nearly 90 degrees. Do not slouch.",
+          "Provide lumbar support. A small cushion can help.",
+          "Lift the screen so the top sits near eye level.",
+          "Pause. Sit, stretch, and move around every 30 to 45 minutes.",
+        ],
+      },
+      {
+        type: "heading",
+        text: "Quick Checklist for Back Pain Radiating to Legs",
+      },
+      {
+        type: "list",
+        items: [
+          "Note whether pain is on one side or both sides.",
+          "Watch for numbness, weakness, or bladder changes.",
+          "Do not stay in bed for too long.",
+          "Try gentle movement and heat.",
+          "Get reviewed if pain lasts more than two weeks or becomes worse.",
+        ],
+      },
+      {
+        type: "paragraph",
+        text:
+          "Most radiating leg pain is not an emergency, but it still needs a clear plan. Dr. Tushar Nayak can guide you from self-management to a clinical assessment and support for recovery. Early assessment can avoid guesswork and worry.",
+      },
+      {
+        type: "heading",
+        text: "FAQs",
+      },
+      {
+        type: "heading",
+        text: "Is back pain radiating down both legs and hips always sciatica?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "No. It can also arise from a sacroiliac joint or spinal stenosis, and it can originate from central pressure on a disc. Bilateral symptoms warrant a clinical examination.",
+      },
+      {
+        type: "heading",
+        text: "Can a herniated disc heal without surgery?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Most cases settle with conservative management, time, and physiotherapy. Surgery is considered in severe or persistent cases.",
+      },
+      {
+        type: "heading",
+        text: "Which tests are used for radiating leg pain?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "The clinician usually starts with a physical examination. MRI may be ordered for severe or prolonged symptoms, or when nerve root compression is suspected.",
+      },
+      {
+        type: "heading",
+        text: "Can poor posture cause leg pain?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Positioning can cause back and hip pain, but leg pain with numbness or weakness is more likely to be a nerve problem. Get it checked.",
+      },
+    ],
+  },
+  {
     slug: "knee-cracking-sound-causes-concerns-care",
     title: "Knee Cracking Sound: Why Your Knees Pop and When to Worry",
     heroImage: "/images/knee-cracking-sound-hero.png",
@@ -591,7 +789,6 @@ export const blogArticles: BlogArticle[] = [
     excerpt:
       "Discover the reasons behind knee cracking sounds, when it might be a concern, and effective ways to maintain healthy joints. Learn to distinguish between harmless crepitus and signs of a more serious knee condition.",
     readingTime: "9 min read",
-    isNew: true,
     author: "Dr. Tushar Nayak | Robotic Knee Replacement Surgeon | Joint Replacement & Orthopaedic Specialist",
     content: [
       {

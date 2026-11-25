@@ -584,6 +584,218 @@ export const testimonials: Testimonial[] = [
 export const blogArticles: BlogArticle[] = [
   ...kneeSportsFaqBlogs,
   {
+    slug: "sciatica-vs-slipped-disc-differences",
+    title: "Sciatica vs Slipped Disc: What Is the Real Difference?",
+    heroImage: "/images/spinal_surgeries.jpg",
+    heroAlt: "Comparison between sciatica and slipped disc illustration",
+    excerpt:
+      "Discover the key differences between sciatica and a slipped disc. Understand their causes, symptoms, and when to seek urgent care.",
+    readingTime: "7 min read",
+    isNew: true,
+    author: "Dr. Tushar Nayak | Robotic Knee Replacement Surgeon | Joint Replacement & Orthopaedic Specialist",
+    content: [
+      {
+        type: "paragraph",
+        text:
+          "Sciatica and a slipped disc are often talked about as if they were the same problem. They are related, but they are not the same diagnosis. This guide explains the difference, how the two can occur together, and when symptoms need urgent care. It is intended for informational purposes and does not substitute professional medical advice.",
+      },
+      {
+        type: "heading",
+        text: "What Is the Difference Between Sciatica and a Slipped Disc?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "A slipped disc involves a physical change in the structure of the spine, but sciatica refers to a pattern of symptoms brought on by nerve irritation. The disc problem may be the origin of the sciatica, but sciatica is the leg pain that results from irritation of the sciatic nerve. That is why not every slipped disc causes leg pain, and not every bout of sciatica starts with a slipped disc.",
+      },
+      {
+        type: "heading",
+        text: "What Is a Slipped Disc?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "A slipped disc does not actually mean the disc has slipped. It refers to an intervertebral disc with a tear in the tougher outer ring, which lets the soft inner gel push out. Lumbar disc problems often give symptoms in the leg, but cervical disc problems may give symptoms in the shoulder or arm.",
+      },
+      {
+        type: "heading",
+        text: "What Is Sciatica?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Pain along the course of the sciatic nerve may begin in the lower back or buttock and radiate into the leg or foot. Sciatic pain is often sharp, electric, and burning. It typically occurs on one side of the body and can intensify with coughing, sneezing, or sitting.",
+      },
+      {
+        type: "heading",
+        text: "Sciatica vs Herniated Disc: What Is the Difference Between Disc Hernia and Sciatica?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "People sometimes use slipped disc, herniated disc, and disc prolapse for the same structural problem: inner disc material pushing through the outer ring. This becomes sciatica when it irritates a nearby nerve root. One is the structure, and the other is the nerve symptom.",
+      },
+      {
+        type: "heading",
+        text: "Key Differences at a Glance",
+      },
+      {
+        type: "list",
+        items: [
+          "Nature. A slipped disc is a structural change in the disc. Sciatica is a nerve-related symptom.",
+          "Main pain. A slipped disc may cause local back or neck pain, and sometimes no pain. Sciatica is radiating leg or arm pain along a nerve.",
+          "Common cause. Disc material can press on or inflame a nerve. Sciatica often comes from a slipped disc, but also from stenosis, bone spurs, or piriformis syndrome.",
+          "Diagnosis. A slipped disc is assessed with a clinical exam, plus MRI if needed. Sciatica is recognised from the pain pattern, with imaging only if needed.",
+          "Care. A slipped disc is usually managed with conservative care, physiotherapy, and selected procedures when required. Sciatica is treated by addressing the underlying cause, controlling pain, and rehabilitating.",
+        ],
+      },
+      {
+        type: "heading",
+        text: "How Are They Related?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "A slipped disc and sciatica can occur together, but they are not the same diagnosis. The disc is the structure. Sciatica is the nerve pain that may or may not come from the disc. That is why the pain pattern, reflexes, sensation, and strength are assessed before relying on an MRI report.",
+      },
+      {
+        type: "heading",
+        text: "Not All Slipped Discs Cause Sciatica",
+      },
+      {
+        type: "paragraph",
+        text:
+          "A disc herniation can cause local back pain, or it may cause no pain at all. Sciatica develops when disc material impinges on or inflames a nerve root. A disc bulge seen on MRI may not be the cause of leg pain.",
+      },
+      {
+        type: "heading",
+        text: "Not All Sciatica Comes From a Slipped Disc",
+      },
+      {
+        type: "paragraph",
+        text:
+          "A narrowed spinal canal, bone spurs, or a muscle such as the piriformis can irritate the sciatic nerve even when the disc has not herniated. Making that distinction matters, because the treatment follows the true source of the nerve pain.",
+      },
+      {
+        type: "heading",
+        text: "Symptoms and Self-Check",
+      },
+      {
+        type: "heading",
+        text: "What Are the Symptoms of an L5-S1 Disc Bulge?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "L5-S1 is the lower lumbar level involved most often. Irritation of the L5 nerve root may make it difficult to lift the ankle or big toe, with numbness on the outer side of the lower leg and the top of the foot. Irritation of the S1 nerve root may reduce the ankle reflex, weaken the calf, cause numbness on the outer foot and sole, and send pain down the back of the thigh and calf.",
+      },
+      {
+        type: "heading",
+        text: "How Can I Test Myself for a Herniated Disc?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Self-tests can suggest nerve irritation, but they do not make the diagnosis. A straight leg raise, or Lasègue's test, may reproduce pain in the leg below the knee. A slump test, or sitting root test, can suggest nerve-root sensitivity. Saddle numbness, bladder or bowel changes, or increasing weakness in both legs, including foot drop, need urgent medical attention.",
+      },
+      {
+        type: "heading",
+        text: "When to Seek Urgent Care",
+      },
+      {
+        type: "heading",
+        text: "Do I Need to Go to A&E for a Slipped Disc?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Most slipped discs are not an emergency and are treated conservatively. In India, go to the nearest emergency department for cauda equina symptoms: saddle anaesthesia, difficulty passing urine or loss of bladder control, loss of bowel control, sciatica in both legs, or a sudden loss of power in both legs.",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Seek immediate review after major trauma, if back pain comes with fever, unexplained weight loss, or symptoms that are getting worse quickly.",
+      },
+      {
+        type: "heading",
+        text: "Is a Slipped Disc in the Back Painful?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Not necessarily. A slipped disc hurts when it causes inflammation or compresses a nerve. Some people have an abnormal scan and no pain at all. Pain may stay in the back, or it may radiate down the leg.",
+      },
+      {
+        type: "heading",
+        text: "Final Checklist: Sciatica vs Slipped Disc",
+      },
+      {
+        type: "list",
+        items: [
+          "A slipped disc is a disc problem. Sciatica is a possible nerve symptom.",
+          "Pain shooting past the knee suggests sciatica. Pain that stays in the back is more often mechanical.",
+          "Not every disc change leads to sciatica.",
+          "A slipped disc is not the only cause of sciatica.",
+          "Saddle numbness, a change in bladder control, or foot drop needs emergency care.",
+        ],
+      },
+      {
+        type: "paragraph",
+        text:
+          "Confusing a slipped disc with sciatica is common. One is a possible cause. The other is a symptom.",
+      },
+      {
+        type: "heading",
+        text: "FAQ",
+      },
+      {
+        type: "heading",
+        text: "Is sciatica always caused by a slipped disc?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "No. A slipped disc can cause it, but spinal stenosis, bone spurs, and piriformis syndrome can also irritate the sciatic nerve.",
+      },
+      {
+        type: "heading",
+        text: "Are sciatica and disc prolapse the same?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "No. Disc prolapse is a structural disc problem. Sciatica is pain down the leg that can follow a disc prolapse.",
+      },
+      {
+        type: "heading",
+        text: "Sciatica and disc bulge — what is the difference?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "A disc bulge is an imaging finding. Sciatica is a symptom pattern. A bulge can be present without causing pain.",
+      },
+      {
+        type: "heading",
+        text: "Slipped disc or simple back pain — how to tell the difference?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Simple back pain is generally local. Sciatic pain typically travels past the knee, is often on one side, and may be worse with coughing or sitting. Ongoing or severe pain needs a medical review.",
+      },
+      {
+        type: "heading",
+        text: "What is the difference between sciatica and a herniated disc?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "A herniated disc is a structural problem that can press on a nerve. Sciatica is the pain that follows when that nerve is irritated. The two words are sometimes used as if they mean the same thing, but they do not.",
+      },
+    ],
+  },
+  {
     slug: "back-pain-radiating-to-legs-causes-symptoms-treatments",
     title: "Back Pain Radiating to Legs: Causes, Symptoms and Treatment",
     heroImage: "/images/back_pain_management.jpg",
@@ -591,7 +803,6 @@ export const blogArticles: BlogArticle[] = [
     excerpt:
       "Discover why back pain radiates to the legs, explore its causes, identify symptoms, and learn effective treatments. Get expert advice on managing and alleviating pain for improved well-being.",
     readingTime: "6 min read",
-    isNew: true,
     author: "Dr. Tushar Nayak | Robotic Knee Replacement Surgeon | Joint Replacement & Orthopaedic Specialist",
     content: [
       {

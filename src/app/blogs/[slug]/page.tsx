@@ -74,7 +74,7 @@ export default async function BlogArticlePage({ params }: BlogArticlePageParams)
           alt={article.heroAlt}
           fill
           priority
-          className="object-cover"
+          className={article.heroFit === "contain" ? "object-contain" : "object-cover"}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628] via-[#0a1628]/45 to-[#0a1628]/10" />
         <div className="relative h-full flex flex-col justify-end px-6 sm:px-10 lg:px-14 pb-10 sm:pb-14">

@@ -66,6 +66,7 @@ export type BlogArticle = {
   readingTime: string;
   author?: string;
   isNew?: boolean;
+  heroFit?: "cover" | "contain";
   content: BlogContentBlock[];
 };
 
@@ -586,8 +587,9 @@ export const blogArticles: BlogArticle[] = [
   {
     slug: "sciatica-vs-slipped-disc-differences",
     title: "Sciatica vs Slipped Disc: What Is the Real Difference?",
-    heroImage: "/images/spinal_surgeries.jpg",
+    heroImage: "/images/sciatica-vs-slipped-disc.jpg",
     heroAlt: "Comparison between sciatica and slipped disc illustration",
+    heroFit: "contain",
     excerpt:
       "Discover the key differences between sciatica and a slipped disc. Understand their causes, symptoms, and when to seek urgent care.",
     readingTime: "7 min read",

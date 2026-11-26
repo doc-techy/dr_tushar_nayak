@@ -585,6 +585,202 @@ export const testimonials: Testimonial[] = [
 export const blogArticles: BlogArticle[] = [
   ...kneeSportsFaqBlogs,
   {
+    slug: "understanding-back-pain-after-sitting-causes-relief",
+    title: "Back Pain After Sitting: Causes and Relief",
+    heroImage: "/images/back-pain-after-sitting.png",
+    heroAlt: "Conceptual image of back pain relief after prolonged sitting",
+    heroFit: "contain",
+    excerpt:
+      "Explore common causes of back pain after sitting and effective relief strategies. Learn how proper posture, movement breaks, and ergonomic solutions can help alleviate discomfort.",
+    readingTime: "6 min read",
+    isNew: true,
+    author: "Dr. Tushar Nayak | Robotic Knee Replacement Surgeon | Joint Replacement & Orthopaedic Specialist",
+    content: [
+      {
+        type: "paragraph",
+        text:
+          "If prolonged sitting leaves you with an aching back, this guide explains why that happens and what you can do about it. Sitting for long periods increases pressure on the spinal discs and overworks the muscles that support the back. A slouched or hunched posture raises that pressure further. This article is for information only and does not replace a clinical assessment.",
+      },
+      {
+        type: "heading",
+        text: "What Causes Back Pain After Sitting?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Back pain after sitting is often related to how the spine is loaded. Disc pressure rises when you stay seated for a long time, especially in a poor position. That extra load is a common reason for pain in the back while sitting.",
+      },
+      {
+        type: "heading",
+        text: "How Does Poor Posture Strain Your Spine?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Slouching, slumping, or leaning forward changes the natural curve of the spine. The disc spaces take more pressure, and the lower back starts to ache. Sitting badly for too long also tires the supporting muscles, so they feel stiff and sore.",
+      },
+      {
+        type: "heading",
+        text: "Can Non-Postural Factors Cause Back Pain?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Not every episode of back pain comes from the chair. Lifting in an awkward way, a recent injury, infection, or carrying a heavy load such as a backpack can also start or worsen pain. Keep those factors in mind if the pain persists or gets worse.",
+      },
+      {
+        type: "heading",
+        text: "What Are the Worst Sitting Positions for Lower Back Pain?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Some ways of sitting load the lower back more than others. Poor posture is a frequent reason desk pain keeps returning. The aim is a supported, upright position that keeps the natural curve of the lower back.",
+      },
+      {
+        type: "heading",
+        text: "Which Positions Should You Avoid?",
+      },
+      {
+        type: "list",
+        items: [
+          "Slouching, which rounds the lower back and increases pressure on the discs.",
+          "Hunching forward over a laptop or phone, which loads the back and neck.",
+          "Bending forward for long stretches, which stresses the discs and is a common trigger for pain while sitting.",
+        ],
+      },
+      {
+        type: "heading",
+        text: "Why Does My Back Hurt When Sitting But Not Standing?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Disc load is generally higher when you sit than when you stand. That difference helps explain why some people have low-back pain in a chair and feel better once they are on their feet.",
+      },
+      {
+        type: "heading",
+        text: "Why Is Pain Position-Specific?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Sitting loads the discs, so pain may settle when you stand and the spine is unloaded. The same pattern can show up as upper-back discomfort or pain on one side of the lower back. The position changes the load, even when the underlying problem is the same.",
+      },
+      {
+        type: "heading",
+        text: "Why Does My Lower Back Hurt When I Get Up From Sitting?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "The change from sitting to standing can hurt because the spine has been flexed and the discs compressed. Standing up suddenly loads tissues that have stiffened, and the supporting muscles often feel tight and achy.",
+      },
+      {
+        type: "heading",
+        text: "What Causes Pain During the Sitting-to-Standing Transition?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Getting up after a long sit, or reaching toward the floor, can be painful because the tissues are stiff and the discs load quickly. Stand up slowly, use your legs, and give the back a moment to extend rather than snapping upright.",
+      },
+      {
+        type: "heading",
+        text: "How to Fix and Relieve Lower Back Pain from Sitting",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Short-term relief and longer-term change work together. Movement breaks and simple stretches can ease an ache the same day. A better chair setup, stronger supporting muscles, and less uninterrupted sitting help stop the pain from coming back.",
+      },
+      {
+        type: "heading",
+        text: "How to Get Rid of Back Pain After Sitting Too Long?",
+      },
+      {
+        type: "list",
+        items: [
+          "Take a movement break every 30 to 45 minutes.",
+          "Open the hips and gently extend the lower back.",
+          "Add lumbar support so the lower back is not left unsupported.",
+          "Use heat or cold for short-term relief, depending on what feels better.",
+        ],
+      },
+      {
+        type: "heading",
+        text: "How to Reverse the Effects of Sitting Too Long?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Over the longer term, set the desk and chair so the screen, arms, and feet are supported, build regular exercise into the day, and avoid sitting for hours without a break. Strengthening the core and glutes is one of the more durable ways to reduce lower-back pain that comes from sitting.",
+      },
+      {
+        type: "heading",
+        text: "Quick Checklist for Managing Back Pain After Sitting",
+      },
+      {
+        type: "heading",
+        text: "What Are the Key Steps?",
+      },
+      {
+        type: "list",
+        items: [
+          "Break every 30 minutes for about 2 minutes of movement.",
+          "Adjust the chair so the lower back is supported.",
+          "Avoid slouching or hunching forward.",
+          "Stretch and exercise daily.",
+          "Change position through the day, including standing for part of the time.",
+        ],
+      },
+      {
+        type: "paragraph",
+        text:
+          "Lower-back pain after sitting usually follows higher disc pressure and a poor sitting posture. Breaks, stretches, and a more supportive workstation ease that ache. If the pain keeps returning, a clinical review with Dr. Tushar Nayak can help identify the cause and a plan that fits your work and activity.",
+      },
+      {
+        type: "heading",
+        text: "FAQ",
+      },
+      {
+        type: "heading",
+        text: "Can sitting too long cause permanent back damage?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Long periods of sitting can contribute to disc degeneration and ongoing pain. That change is not automatically permanent. Movement, posture, and timely care can reduce the risk and often improve symptoms.",
+      },
+      {
+        type: "heading",
+        text: "How long should I take breaks during the day?",
+      },
+      {
+        type: "paragraph",
+        text: "A practical target is about 2 minutes of movement every 30 to 45 minutes.",
+      },
+      {
+        type: "heading",
+        text: "Should you stand or sit for back pain?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Neither sitting nor standing all day is ideal. Alternating between the two, with a supported posture in each, is the better approach.",
+      },
+      {
+        type: "heading",
+        text: "What is the best chair for back pain?",
+      },
+      {
+        type: "paragraph",
+        text:
+          "Choose a chair with lumbar support, adjustable height, and a seat depth that lets your feet rest flat on the floor.",
+      },
+    ],
+  },
+  {
     slug: "sciatica-vs-slipped-disc-differences",
     title: "Sciatica vs Slipped Disc: What Is the Real Difference?",
     heroImage: "/images/sciatica-vs-slipped-disc.jpg",
@@ -593,7 +789,6 @@ export const blogArticles: BlogArticle[] = [
     excerpt:
       "Discover the key differences between sciatica and a slipped disc. Understand their causes, symptoms, and when to seek urgent care.",
     readingTime: "7 min read",
-    isNew: true,
     author: "Dr. Tushar Nayak | Robotic Knee Replacement Surgeon | Joint Replacement & Orthopaedic Specialist",
     content: [
       {
